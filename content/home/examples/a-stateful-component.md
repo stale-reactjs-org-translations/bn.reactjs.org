@@ -1,7 +1,7 @@
 ---
-title: A Stateful Component
+title: একটি স্টেটফুল কম্পোনেন্ট
 order: 1
 domid: timer-example
 ---
 
-In addition to taking input data (accessed via `this.props`), a component can maintain internal state data (accessed via `this.state`). When a component's state data changes, the rendered markup will be updated by re-invoking `render()`.
+ইনপুট ডেটা গ্রহণ করার পাশাপাশি (`this.props` ব্যবহার করে) কম্পোনেন্ট অভ্যন্তরীণ স্টেট ডেটা বজায় রাখতে পারে (`this.state` ব্যবহার করে)। যখন একটি কম্পোনেন্ট এর স্টেট ডেটা পরিবর্তিত হয়, রেন্ডার করা মার্কআপ `render()` মেধডে পুনরায় প্রেরণ করে আপডেট করা হয়।
