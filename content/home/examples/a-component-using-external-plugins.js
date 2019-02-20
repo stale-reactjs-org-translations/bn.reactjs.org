@@ -19,7 +19,7 @@ class MarkdownEditor extends React.Component {
       <div className="MarkdownEditor">
         <h3>ইনপুট</h3>
         <label htmlFor="markdown-content">
-          কিছু মারকডাউন লিখুন
+          কিছু মার্কডাউন লিখুন
         </label>
         <textarea
           id="markdown-content"
