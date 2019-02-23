@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: কম্পোনেন্ট-ভিত্তিক
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+এটি এনক্যাপ্সুলেটেড কম্পোনেন্ট তৈরি করতে পারে যেগুলো নিজেরাই নিজেদের স্টেট ম্যানেজ করে, অতঃপর তাদের একত্রিত করে জটিল UI গঠন করে।
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+যেহেতু কম্পোনেন্টের লজিক টেমপ্ল্যাটের পরিবর্তে জাভাস্ক্রিপ্টে লিখা হয়েছে, আপনি সহজেই আপনার অ্যাপের মাধ্যমে সমৃদ্ধ ডেটা পাস করতে পারেন এবং DOM থেকে স্টেটকে পৃথক রাখতে পারেন।

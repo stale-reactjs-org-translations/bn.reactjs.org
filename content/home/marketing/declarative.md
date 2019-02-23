@@ -1,8 +1,8 @@
 ---
-title: Declarative
+title: ডিক্লারেটিভ
 order: 0
 ---
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+React ঝামেলাহীনভাবে ইন্টারেক্টিভ UI তৈরি করে। আপনার অ্যাপ্লিকেশনের প্রতিটি ষ্টেটের জন্য সহজ ভিউ ডিজাইন করুন, এবং React দক্ষতার সাথে সঠিক কম্পোনেন্টটি আপডেট এবং রেন্ডার করবে যখন আপনার ডেটা পরিবর্তন হবে।
 
-Declarative views make your code more predictable and easier to debug.
+ডিক্লারেটিভ ভিউ আপনার কোডকে আরো প্রেডিক্টেবল এবং ডিবাগ করতে সহজ করে।
