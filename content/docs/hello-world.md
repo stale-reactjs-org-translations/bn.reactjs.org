@@ -1,34 +1,34 @@
 ---
-id: hello-world
-title: Hello World
+id: হ্যালো-বিশ্ব
+title: হ্যালো বিশ্ব
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+সবচেয়ে ছোট React উদাহরণ এরকম দেখাবেঃ
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>হ্যালো, বিশ্ব!</h1>,
   document.getElementById('root')
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+এটি এই পাতার শিরোনামে "হ্যালো বিশ্ব" দেখাবে।
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+অনলাইন এডিটরে দেখতে উপরের লিঙ্কটিতে যান. আপনার ইচ্ছামত কোডটি পরিবর্তন করুন, এবং দেখুন আউটপুট কিভাবে পরিবর্তিত হয়. এই নির্দেশিকার সব পৃষ্ঠাগুলিতে এইরকম সম্পাদনাযোগ্য উদাহরণ থাকবে ।
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## কিভাবে এই নির্দেশিকা পড়বেন {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+এই নির্দেশিকায়, React অ্যাপ্লিকেশনের বিল্ডিং ব্লকগুলি যেমনঃ এলিমেন্টস এবং কম্পোনেন্টস গুলো আমরা পরীক্ষা করে দেখব। আপনি যখন ভাল করে বুঝতে পারবেন, আপনি তখন ছোট বার বার ব্যাবহার করা যায় এমন কম্পোনেন্ট দিয়ে জটিল আপ্লিকেশন বানাতে পারবেন ।
 
->Tip
+>পরামর্শ
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>এই নির্দেশিকাটি তাদের জন্যই সাজানো হয়েছে যারা **ধাপে ধাপে শিখতে পছন্দ করেন** । আপনি যদি কোড করে শিখতে চান তাহলে আমাদের [ব্যবহারিক টিউটোরিয়াল](/tutorial/tutorial.html) পৃষ্ঠাটি দেখুন। আপনি এই নির্দেশিকাটি এবং টিউটোরিয়ালটি একে অপরের পরিপূরক মনে করতে পারেন।
 
 This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
 
