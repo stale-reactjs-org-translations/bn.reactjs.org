@@ -1,16 +1,16 @@
 - title: Tutorial
   items:
     - id: before-we-start-the-tutorial
-      title: Before We Start the Tutorial
+      title: টিউটোরিয়াল শুরু করার আগে
       href: /tutorial/tutorial.html#before-we-start-the-tutorial
       forceInternal: true
       subitems:
         - id: what-are-we-building
-          title: What Are We Building?
+          title: আমরা কি তৈরি করছি?
           href: /tutorial/tutorial.html#what-are-we-building
           forceInternal: true
         - id: prerequisites
-          title: Prerequisites
+          title: পূর্বশর্ত
           href: /tutorial/tutorial.html#prerequisites
           forceInternal: true
     - id: setup-for-the-tutorial

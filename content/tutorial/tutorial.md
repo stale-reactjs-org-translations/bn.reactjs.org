@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "টিউটোরিয়ালঃ React পরিচিতি"
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,42 +12,42 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+এই টিউটোরিয়ালটির জন্য React সম্পর্কে পূর্ব ধারণা থাকার প্রয়োজন নেই।
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## টিউটোরিয়াল শুরু করার আগে  {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React apps, and mastering it will give you a deep understanding of React.
+আমরা এই টিউটোরিয়ালের সময় একটি ছোট গেম বানাবো। **আপনি হয়ত এটা এড়িয়ে যেতে চাইবেন কেননা আপনি কোন গেম বানাতে যাচ্ছেন না -- কিন্তু একটি সুযোগ নিতেই পারেন।** টিউটোরিয়ালে আপনি যে কৌশলগুলি শিখবেন তা যে কোন React অ্যাপ্লিকেশন তৈরির জন্য অপরিহার্য, এবং এটিতে দক্ষতা অর্জন করতে পারলে আপনি React সম্পর্কেও গভীর ধারণা পাবেন।
 
->Tip
+>পরামর্শ
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>এই টিউটোরিয়ালটি তাদের জন্য সাজানো হয়েছে যারা **কোড করে শিখতে** পছন্দ করেন। আপনি যদি প্রাথমিক ধারণা থেকে শিখতে আগ্রহী হোন তবে আমাদের [ধাপে-ধাপে গাইডটি](/docs/hello-world.html) দেখুন। আপনি এই টিউটোরিয়াল এবং এই গাইডটিকে একে অপরের পরিপূরক মনে করতে পারেন।
 
-The tutorial is divided into several sections:
+এই টিউটোরিয়ালটি বিভিন্ন বিভাগে ভাগ করা হয়েছেঃ
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [টিউটোরিয়ালের জন্য সেটআপ](#setup-for-the-tutorial) আপনাকে এই টিউটোরিয়াল শুরু করার **হাতেখড়ি** দিবে।
+* [ওভারভিউ](#overview) আপনাকে React এর **মূলভিত্তি** components, props, এবং state শেখাবে।
+* [গেম বানানো সম্পন্ন](#completing-the-game) React ডেভেলপমেন্টের **সবচেয়ে সাধারণ কৌশলগুলো** শেখাবে।
+* [টাইম ট্রাভেল সংযোজন](#adding-time-travel) আপনাকে React এর অনন্য শক্তি সম্পর্কে **একটি গভীর ধারণা** দিবে।
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+এই টিউটোরিয়াল থেকে সুফল পেতে আপনাকে যে সব বিভাগগুলি একবারে শেষ করতে হবে এমন নয়। আপনি যতদূর সম্ভব শেষ করার চেষ্টা করুন - এমনকি যদি এক বা দুটি বিভাগও হয় তাতেও হবে।
 
-It's fine to copy and paste code as you're following along the tutorial, but we recommend to type it by hand. This will help you develop a muscle memory and a stronger understanding.
+আপনি যদি কোড কপি-পেস্ট করেন তাও ভাল, কেননা আপনি টিউটোরিয়াল পড়ার পাশাপাশি তা করছেন, তবে আমরা হাতে টাইপ করে কোড করার সুপারিশ করি। এটি আপনাকে একটি পেশী মেমরি এবং বোঝার ক্ষমতা বিকাশে সাহায্য করে।
 
-### What Are We Building? {#what-are-we-building}
+### আমরা কি তৈরি করছি? {#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+এই টিউটোরিয়ালে, আমরা দেখাব কিভাবে React দিয়ে একটি ইন্টারেক্টিভ tic-tac-toe গেম বানানো যায়।
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+আমরা কি বানাবো তা আপনি এইখানে দেখতে পারবেনঃ **[সর্বশেষ ফলাফল](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**। যদি কোডটি আপনার কাছে অর্থবহ মনে না হয় বা আপনি কোডের সিনট্যাক্সের সাথে পরিচিত না হন তবে চিন্তা করবেন না! এই টিউটোরিয়ালটির লক্ষ্য হচ্ছে আপনাকে React এবং এর সিনট্যাক্স বুঝতে সহায়তা করা।
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+আমরা আপনাকে টিউটোরিয়ালটি চালিয়ে যাওয়ার আগে tic-tac-toe গেমটি দেখতে সুপারিশ করব। যে ফিচারটি আপনি লক্ষ্য করবেন তা হল গেম বোর্ডের ডানদিকে একটি সংখ্যাযুক্ত তালিকা। এই তালিকাটি গেমটিতে যতগুলো ধাপ সম্পন্ন হয়েছে তার একটি ইতিহাস দেয় এবং গেমের অগ্রগতির সাথে সাথে এটি আপডেট হয়।
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+একবার আপনি tic-tac-toe গেমটি সম্পর্কে পরিচিত হলে, গেমটি বন্ধ করতে পারেন। আমরা এই টিউটোরিয়ালে একটি সহজতর টেমপ্লেট থেকে শুরু করব। আমাদের পরবর্তী ধাপ আপনাকে সেট আপ করা যাতে আপনি গেম বানানো শুরু করতে পারেন।
 
-### Prerequisites {#prerequisites}
+### পূর্বশর্ত {#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+আমরা ধরে নিচ্ছি যে আপনার HTML এবং জাভাস্ক্রিপ্টের সাথে কিছু পরিচিতি রয়েছে তবে আপনি যদি অন্য কোন প্রোগ্রামিং ভাষা থেকে আসেন তবেও আপনি অনুসরণ করতে সক্ষম হবেন। আমরা আরও ধরে নিচ্ছি যে আপনি functions, objects, arrays এবং অল্প করে classes মতো প্রোগ্রামিং ধারণাগুলির সাথেও পরিচিত।
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+আপনার যদি জাভাস্ক্রিপ্ট পর্যালোচনা করার প্রয়োজন হয়, তবে আমরা [এই গাইডটি](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) পড়ার সুপারিশ করছি। উল্লেখ্য আমরা জাভাস্ক্রিপ্টের সাম্প্রতিক সংস্করণ — ES6 থেকে কিছু ফিচার ব্যবহার করছি। এই টিউটোরিয়ালে আমরা [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), এবং [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) স্টেটমেন্টস ব্যবহার করছি। ES6 কিভাবে কোড কম্পাইল করে তা দেখার জন্য আপনি [Babel REPL](babel://es5-syntax-example) ব্যবহার করতে পারেন।
 
 ## Setup for the Tutorial {#setup-for-the-tutorial}
 
