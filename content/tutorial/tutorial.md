@@ -25,7 +25,7 @@ redirect_from:
 এই টিউটোরিয়ালটি বিভিন্ন বিভাগে ভাগ করা হয়েছেঃ
 
 * [টিউটোরিয়ালের জন্য সেটআপ](#setup-for-the-tutorial) আপনাকে এই টিউটোরিয়াল শুরু করার **হাতেখড়ি** দিবে।
-* [ওভারভিউ](#overview) আপনাকে React এর **মূলভিত্তি** components, props, এবং state শেখাবে।
+* [সারমর্ম](#overview) আপনাকে React এর **মূলভিত্তি** components, props, এবং state শেখাবে।
 * [গেম বানানো সম্পন্ন](#completing-the-game) React ডেভেলপমেন্টের **সবচেয়ে সাধারণ কৌশলগুলো** শেখাবে।
 * [টাইম ট্রাভেল সংযোজন](#adding-time-travel) আপনাকে React এর অনন্য শক্তি সম্পর্কে **একটি গভীর ধারণা** দিবে।
 
@@ -45,7 +45,7 @@ redirect_from:
 
 ### পূর্বশর্ত {#prerequisites}
 
-আমরা ধারণা করছি যে আপনার HTML এবং জাভাস্ক্রিপ্টের সাথে কিছু পরিচিতি রয়েছে তবে আপনি যদি অন্য কোন প্রোগ্রামিং ভাষা থেকে আসেন তবেও আপনি অনুসরণ করতে সক্ষম হবেন। আমরা আরও ধরণা করছি যে আপনি functions, objects, arrays এবং অল্প বিস্তর classes এর মতো প্রোগ্রামিং ধারণাগুলির সাথেও পরিচিত।
+আমরা ধারণা করছি যে আপনার HTML এবং জাভাস্ক্রিপ্টের সাথে কিছু পরিচিতি রয়েছে তবে আপনি যদি অন্য কোন প্রোগ্রামিং ভাষা থেকে আসেন তবেও আপনি অনুসরণ করতে সক্ষম হবেন। আমরা আরও ধারণা করছি যে আপনি functions, objects, arrays এবং অল্প বিস্তর classes এর মতো প্রোগ্রামিং ধারণাগুলির সাথেও পরিচিত।
 
 আপনার যদি জাভাস্ক্রিপ্ট জ্ঞান ঝালাই করার প্রয়োজন হয়, তবে আমরা [এই গাইডটি](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) পড়ার অনুরোধ করছি। উল্লেখ্য আমরা জাভাস্ক্রিপ্টের সাম্প্রতিক সংস্করণ — ES6 থেকে কিছু ফিচার ব্যবহার করছি। এই টিউটোরিয়ালে আমরা [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), এবং [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) স্টেটমেন্টস ব্যবহার করছি। ES6 কিভাবে কোড কম্পাইল করে তা দেখার জন্য আপনি [Babel REPL](babel://es5-syntax-example) ব্যবহার করতে পারেন।
 
