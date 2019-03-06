@@ -1,6 +1,6 @@
 ---
 id: state-and-lifecycle
-title: State and Lifecycle
+title: State এবং Lifecycle
 permalink: docs/state-and-lifecycle.html
 redirect_from:
   - "docs/interactivity-and-dynamic-uis.html"
@@ -8,9 +8,9 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+এই পৃষ্ঠায় আমরা React কম্পোনেন্ট এর state এবং lifecycle এর সাথে পরিচিত হব। আপনি [কম্পোনেন্ট API রেফারেন্স এর বিস্তারিত এখানে](/docs/react-component.html) জানতে পারবেন।
 
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
+[আগের সেকশনে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) সেকশনে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `ReactDOM.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছি।
 
 ```js{8-11}
 function tick() {
@@ -29,11 +29,11 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
+এই অনুচ্ছেদে আমরা শিখব কিভাবে `Clock` কম্পোনেন্টটিকে সম্পূর্ণভাবে পুনঃব্যবহারযোগ্য এবং encapsulated করা যায়। এটি এর নিজের টাইমার সেট-আপ করে নেবে এবং প্রতি সেকেন্ডেই নিজেকে আপডেট করবে।
 
-We can start by encapsulating how the clock looks:
+আমরা clock টি দেখতে কেমন হবে তা encapsulate করার মাধ্যমে শুরু করতে পারিঃ
 
 ```js{3-6,12}
 function Clock(props) {
@@ -55,11 +55,11 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
+যাহোক, এটি একটি অত্যন্ত গুরুত্বপূর্ণ প্রয়োজন মেটাতে ব্যর্থ হয়ঃ `Clock` এক্ষেত্রে যেভাবে একটি টাইমার সেট-আপ করে নিচ্ছে এবং প্রতি সেকেন্ড অন্তর UI আপডেট করছে এটা `Clock` এর implementation detail এই থাকা উচিত।
 
-Ideally we want to write this once and have the `Clock` update itself:
+আদর্শভাবে আমরা চাইব যাতে এটা একবার লিখার পর `Clock` নিজে নিজে আপডেট হয়ঃ
 
 ```js{2}
 ReactDOM.render(
@@ -68,25 +68,25 @@ ReactDOM.render(
 );
 ```
 
-To implement this, we need to add "state" to the `Clock` component.
+এটা অর্জন করার জন্য `Clock` কম্পোনেন্ট এ আমরা "state" সংযুক্ত করব।
 
-State is similar to props, but it is private and fully controlled by the component.
+State অনেকটা props এর মতই, কিন্তু কম্পোনেন্ট এটিকে সম্পূর্ণভাবে নিয়ন্ত্রণ করে এবং এটি এর সম্পূর্ণ নিজস্ব।
 
-We [mentioned before](/docs/components-and-props.html#functional-and-class-components) that components defined as classes have some additional features. Local state is exactly that: a feature available only to classes.
+আমরা [আগেও বলেছিলাম](/docs/components-and-props.html#functional-and-class-components), যে কম্পোনেন্টগুলো class হিসেবে ডিক্লেয়ার করা হয় তাদের কিছু অতিরিক্ত বৈশিষ্ট্য থাকে। Local state হল একদম তাই-ইঃ এই বৈশিষ্ট্য শুধু class কম্পোনেন্টেই থাকে।
 
-## Converting a Function to a Class {#converting-a-function-to-a-class}
+## ফাংশনকে ক্লাসে রূপান্তর করা {#converting-a-function-to-a-class}
 
-You can convert a function component like `Clock` to a class in five steps:
+আপনি `Clock` এর মত একটি ফাংশন কম্পোনেন্টকে পাঁচটি ধাপ অনুসরণ করে ক্লাস কম্পোনেন্টে রূপান্তর করতে পারেনঃ
 
-1. Create an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), with the same name, that extends `React.Component`.
+১. একই নামে একটি [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) তৈরি করুন যা `React.Component` কে extend করে।
 
-2. Add a single empty method to it called `render()`.
+২. এটিতে `render()` নামের একটি খালি মেথড যুক্ত করুন।
 
-3. Move the body of the function into the `render()` method.
+৩. ফাংশনের ভেতরের সব কোড এই `render()` মেথডের ভেতরে নিয়ে আসুন।
 
-4. Replace `props` with `this.props` in the `render()` body.
+৪. `render()` মেথডে অবস্থিত সকল `props` কে `this.props` দ্বারা প্রতিস্থাপিত করুন।
 
-5. Delete the remaining empty function declaration.
+৫. আগের ফাংশন কম্পোনেন্ট টি মুছে ফেলুন।
 
 ```js
 class Clock extends React.Component {
@@ -103,15 +103,15 @@ class Clock extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
 
-`Clock` is now defined as a class rather than a function.
+`Clock` কম্পোনেন্ট টি এখন একটি ক্লাস দ্বারা define করা হয়েছে ফাংশন এর পরিবর্তে।
 
-The `render` method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the `Clock` class will be used. This lets us use additional features such as local state and lifecycle methods.
+যতক্ষণ পর্যন্ত আমরা সেইম নোডে `<Clock />` রেন্ডার করব ততক্ষণ পর্যন্ত প্রতিবার যেকোন ধরণের আপডেটের পর `render` মেথডটি কল করা হবে এবং `Clock` ক্লাসের শুধুমাত্র একটি ইন্সট্যান্স ব্যবহার করা হবে। এটি আমাদেরকে local state এবং lifecycle মেথডের মত কিছু ফিচার ব্যবহার করার সুযোগ করে দেয়।
 
-## Adding Local State to a Class {#adding-local-state-to-a-class}
+## ক্লাসে Local State যুক্ত করুন {#adding-local-state-to-a-class}
 
-We will move the `date` from props to state in three steps:
+আমরা `date` কে ৩ ধাপে props থেকে সরিয়ে state এ নিয়ে আসবঃ
 
-1) Replace `this.props.date` with `this.state.date` in the `render()` method:
+১) `render()` মেথডের সকল `this.props.date` কে `this.state.date` দ্বারা প্রতিস্থাপিত করেঃ
 
 ```js{6}
 class Clock extends React.Component {
@@ -126,7 +126,7 @@ class Clock extends React.Component {
 }
 ```
 
-2) Add a [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
+২) একটি [ক্লাস কন্সট্রাক্টর](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) সংযুক্ত করে যা `this.state` এর প্রাথমিক মান নির্ধারণ করে দেবেঃ
 
 ```js{4}
 class Clock extends React.Component {
@@ -146,7 +146,7 @@ class Clock extends React.Component {
 }
 ```
 
-Note how we pass `props` to the base constructor:
+খেয়াল করে দেখুন আমরা কিভাবে `props` কে কন্সট্রাক্টরে পাঠাচ্ছিঃ
 
 ```js{2}
   constructor(props) {
@@ -155,9 +155,9 @@ Note how we pass `props` to the base constructor:
   }
 ```
 
-Class components should always call the base constructor with `props`.
+ক্লাস কম্পোনেন্টগুলোকে সবসময়ই base কন্সট্রাক্টরকে `props` সহ কল করা উচিতঃ
 
-3) Remove the `date` prop from the `<Clock />` element:
+৩) `<Clock />` element থেকে `date` prop টি মুছে ফেলুনঃ
 
 ```js{2}
 ReactDOM.render(
@@ -166,9 +166,9 @@ ReactDOM.render(
 );
 ```
 
-We will later add the timer code back to the component itself.
+আমরা পরে কম্পোনেন্ট এর মধ্যেই টাইমার এর কোড গুলো সংযুক্ত করব।
 
-The result looks like this:
+আমাদের কোড এখন এরকম দেখায়ঃ
 
 ```js{2-5,11,18}
 class Clock extends React.Component {
@@ -193,19 +193,19 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
-Next, we'll make the `Clock` set up its own timer and update itself every second.
+এখন আমরা `Clock` কম্পোনেন্ট কে এমনভাবে পরিবর্তন করব যাতে তা নিজের টাইমার নিজে সেট-আপ করতে পারে এবং নিজেকে প্রতি সেকেন্ডে আপডেট করতে পারে।
 
-## Adding Lifecycle Methods to a Class {#adding-lifecycle-methods-to-a-class}
+## ক্লাসে Lifecycle মেথডগুলো সংযুক্ত করা {#adding-lifecycle-methods-to-a-class}
 
-In applications with many components, it's very important to free up resources taken by the components when they are destroyed.
+যেসব অ্যাপ্লিকেশনে অনেক কম্পোনেন্ট থাকে, সেগুলোতে কম্পোনেন্ট দ্বারা দখলকৃত রিসোর্স গুলো কম্পোনেন্ট মুছে ফেলার সময় ছেড়ে দেয়া অত্যন্ত গুরুত্বপূর্ণ।
 
-We want to [set up a timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) whenever the `Clock` is rendered to the DOM for the first time. This is called "mounting" in React.
+আমরা একটি [টাইমার সেট-আপ](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) করতে চাই যখন `Clock` কম্পোনেন্টটি DOM এ প্রথমবারের মত রেন্ডার হবে। এই ধাপকে React এর ভাষায় "mounting" বলা হয়।
 
-We also want to [clear that timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) whenever the DOM produced by the `Clock` is removed. This is called "unmounting" in React.
+আবার আমরা এই টাইমারটি ক্লিয়ার করে দিতে চাই যখন `Clock` দ্বারা তৈরিকৃত DOM মুছে ফেলা হবে। এই ধাপকে React এর ভাষায় "unmounting" বলা হয়।
 
-We can declare special methods on the component class to run some code when a component mounts and unmounts:
+আমরা কম্পোনেন্ট ক্লাসে কিছু স্পেশাল মেথড ডিক্লেয়ার করে কম্পোনেন্ট মাউন্ট এবং আনমাউন্টের সময় কিছু কোড রান করাতে পারিঃ
 
 ```js{7-9,11-13}
 class Clock extends React.Component {
@@ -233,9 +233,9 @@ class Clock extends React.Component {
 }
 ```
 
-These methods are called "lifecycle methods".
+এই মেথডগুলোকে বলা হয় "lifecycle methods"।
 
-The `componentDidMount()` method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+`componentDidMount()` মেথডটি কম্পোনেন্ট এর আউটপুট DOM এ রেন্ডার করার পর রান হয়। এটি টাইমার সেট-আপ করার জন্য একটি উপযুক্ত জায়গাঃ
 
 ```js{2-5}
   componentDidMount() {
@@ -246,11 +246,11 @@ The `componentDidMount()` method runs after the component output has been render
   }
 ```
 
-Note how we save the timer ID right on `this`.
+খেয়াল করুন কিভাবে আমরা টাইমার এর আইডিকে `this` এর মাধ্যমে সেইভ করে রাখছি। 
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+`this.props` React নিজেই সেট-আপ করে নেয় এবং `this.state` এর একটি আলাদা অর্থ আছে, আপনি আপনার প্রয়োজন মত অতিরিক্ত ফিল্ড ক্লাসে সংযুক্ত করতে পারেন যদি আপনার এমন কিছু সংরক্ষণ করে রাখতে হয় যা আপনার ডাটা ফ্লো তে অংশগ্রহণ করবেনা(যেমনঃ একটি টাইমার আইডি)।
 
-We will tear down the timer in the `componentWillUnmount()` lifecycle method:
+আমরা টাইমার টি `componentWillUnmount()` lifecycle মেথডে মুছে ফেলবঃ
 
 ```js{2}
   componentWillUnmount() {
@@ -258,9 +258,9 @@ We will tear down the timer in the `componentWillUnmount()` lifecycle method:
   }
 ```
 
-Finally, we will implement a method called `tick()` that the `Clock` component will run every second.
+সবশেষে, আমরা `tick()` নামের একটি মেথড `Clock` কম্পোনেন্টে সংযুক্ত করব যা প্রতি সেকেন্ড অন্তর রান হবে।
 
-It will use `this.setState()` to schedule updates to the component local state:
+এটি `this.setState()` ব্যবহার করে কম্পোনেন্ট এর local state কে আপডেট করবেঃ
 
 ```js{18-22}
 class Clock extends React.Component {
@@ -302,72 +302,72 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
-Now the clock ticks every second.
+এখন clock প্রতি সেকেন্ডে নিজে নিজে আপডেট হয়।
 
-Let's quickly recap what's going on and the order in which the methods are called:
+আমরা সংক্ষেপে আরেকবার দেখে নেই এখানে কি হচ্ছে এবং মেথডগুলো কোনটার পর কোনটা কল হচ্ছেঃ
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+১) যখন `ReactDOM.render()` এ `<Clock />` পাস করা হয়, React `Clock` কম্পোনেন্টের কন্সট্রাক্টরকে কল করে। যেহেতু `Clock` এর বর্তমান সময় দেখাতে হবে, এটি `this.state` কে একটি অবজেক্ট এর মাধ্যমে ইনিশিয়ালাইজ করে যা বর্তমান সময় ধারণ করে। আমরা পরে এই state টি আপডেট করব।
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+২) React এরপর `Clock` কম্পোনেন্টের `render()` মেথডকে কল করে। এটির মাধ্যমেই React জানতে পারে স্ক্রিনে কি দেখাতে হবে। React এরপর DOM আপডেট করে যাতে তা `Clock` এর রেন্ডার আউটপুটের মত হয়।
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle method. Inside it, the `Clock` component asks the browser to set up a timer to call the component's `tick()` method once a second.
+৩) যখন `Clock` এর আউটপুট DOM এ প্রবেশ করানো হয়, React তখন `componentDidMount()` lifecycle মেথডটি কল করে। এর ভেতরে, `Clock` কম্পোনেন্টটি ব্রাউজার কে নির্দেশ দেয় যাতে তা একটি টাইমার সেট-আপ করে এবং প্রতি সেকেন্ড অন্তর `tick()` মেথডকে কল করে।
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+৪) প্রতি সেকেন্ডেই ব্রাউজার `tick()` মেথডটিকে কল করে। এর ভেতরে, `Clock` কম্পোনেন্টটি  `setState()` মেথডে বর্তমান সময় ধারণ করে এমন একটি অবজেক্ট এর মাধ্যমে ইউজার ইন্টারফেস আপডেট করে। `setState()` মেথড কল করার কারণে React জানতে পারে যে কম্পোনেন্টটির state পরিবর্তন হয়েছে এবং `render()` মেথডকে আবার কল করে জানতে চায় এরপর স্ক্রিনে কি হওয়া উচিত। এবার, `render()` মেথডের ভেতরের `this.state.date` ভিন্ন হবে, তাই রেন্ডারের আউটপুট নতুন সময়টি দেখাবে। React এই আউটপুট অনুযায়ী DOM আপডেট করে।
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
+৫) যদি `Clock` কম্পোনেন্টটি কখনো DOM থেকে মুছে ফেলা হয়, React `componentWillUnmount()` lifecycle মেথডটি কল করে তাতে টাইমারটি বন্ধ হয়ে যায়।
 
-## Using State Correctly {#using-state-correctly}
+## State কে সঠিকভাবে ব্যবহার করা {#using-state-correctly}
 
-There are three things you should know about `setState()`.
+`setState()` সম্পর্কে ৩টি জিনিস আপনার জানা উচিত।
 
-### Do Not Modify State Directly {#do-not-modify-state-directly}
+### State কে সরাসরি পরিবর্তন করবেন না {#do-not-modify-state-directly}
 
-For example, this will not re-render a component:
+উদাহরণ হিসেবে, এটি একটি কম্পোনেন্ট কে রি-রেন্ডার করবেনাঃ
 
 ```js
 // Wrong
 this.state.comment = 'Hello';
 ```
 
-Instead, use `setState()`:
+পরিবর্তে, `setState()` ব্যবহার করুনঃ
 
 ```js
 // Correct
 this.setState({comment: 'Hello'});
 ```
 
-The only place where you can assign `this.state` is the constructor.
+আপনি শুধুমাত্র কন্সট্রাক্টরেই `this.state` এসাইন করতে পারবেন।
 
-### State Updates May Be Asynchronous {#state-updates-may-be-asynchronous}
+### State এর আপডেটগুলো Asynchronous হতে পারে {#state-updates-may-be-asynchronous}
 
-React may batch multiple `setState()` calls into a single update for performance.
+React এর দক্ষতা বাড়ানোর জন্য অনেকগুলো `setState()` কলকে একীভূত করে কম্পোনেন্ট আপডেট করতে পারে।
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+যেহেতু `this.props` এবং `this.state` asynchronously আপডেট হতে পারে, আপনার এ দুটো মানের উপর নির্ভর করে পরবর্তী state নির্ধারণ করা থেকে বিরত থাকা উচিত।
 
-For example, this code may fail to update the counter:
+উদাহরণস্বরূপ, নিচের কোড কাউন্টার আপডেট করতে ব্যর্থ হতে পারেঃ
 
 ```js
-// Wrong
+// ভুল
 this.setState({
   counter: this.state.counter + this.props.increment,
 });
 ```
 
-To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+এটিকে শুধরানোর জন্য, আপনি `setState()` ভিন্নভাবে ব্যবহার করতে পারেন যাতে তা একটি অবজেক্ট আর্গুমেন্ট হিসেবে না নিয়ে একটি ফাংশন আর্গুমেন্ট হিসেবে নেয়। এই ফাংশনটি আগের state কে প্রথম আর্গুমেন্ট হিসেবে গ্রহণ করে, এবং আপডেটের সময়কার prop গুলোকে দ্বিতীয় আর্গুমেন্ট হিসেবে নেয়ঃ
 
 ```js
-// Correct
+// সঠিক
 this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
 ```
 
-We used an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) above, but it also works with regular functions:
+আমরা উপরে [এরো ফাংশন](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ব্যবহার করেছি, কিন্তু এটি সাধারণ ফাংশনগুলোর সাথেও কাজ করেঃ
 
 ```js
-// Correct
+// সঠিক
 this.setState(function(state, props) {
   return {
     counter: state.counter + props.increment
@@ -375,11 +375,11 @@ this.setState(function(state, props) {
 });
 ```
 
-### State Updates are Merged {#state-updates-are-merged}
+### State এর আপডেটগুলো একীভূত করা হয় {#state-updates-are-merged}
 
-When you call `setState()`, React merges the object you provide into the current state.
+যখন আপনি `setState()` কল করেন, React আপনার দেয়া অবজেক্ট কে বর্তমান state এর সাথে একীভূত করে।
 
-For example, your state may contain several independent variables:
+উদাহরণস্বরূপ, আপনার state অনেকগুলো ভ্যরিয়েবল ধারণ করতে পারেঃ
 
 ```js{4,5}
   constructor(props) {
@@ -391,7 +391,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+আপনি এক্ষেত্রে এগুলোকে আলাদাভাবে `setState()` কল করে আপডেট করতে পারেনঃ
 
 ```js{4,10}
   componentDidMount() {
@@ -409,27 +409,27 @@ Then you can update them independently with separate `setState()` calls:
   }
 ```
 
-The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+এই একীভূতকরণ অগভীর, তাই `this.setState({comments})` `this.state.posts` এর কোন পরিবর্তন করেনা, কিন্তু `this.state.comments` কে সম্পূর্ণভাবে প্রতিস্থাপিত করে।
 
-## The Data Flows Down {#the-data-flows-down}
+## ডাটা নিচের দিকে যায় {#the-data-flows-down}
 
-Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether it is defined as a function or a class.
+কোন কম্পোনেন্ট stateful নাকি stateless তা parent অথবা child কম্পোনেন্টগুলো জানতে পারেনা, এবং কম্পোনেন্টটি ক্লাস হিসেবে নাকি ফাংশন হিসাবে ডিক্লেয়ার করা হয়েছে এটি নিয়ে তাদের চিন্তা করার প্রয়োজন নেই।
 
-This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+এজন্যই অনেকসময় state কে local অথবা encapsulated বলা হয়। এটি শুধুমাত্র ঐ কম্পোনেন্টটি ছাড়া আর অন্য কোন কম্পোনেন্ট দ্বারা পরিবর্তন করা বা পড়া যায়না।
 
-A component may choose to pass its state down as props to its child components:
+একটি কম্পোনেন্ট তার state কে props হিসেবে এর child কম্পোনেন্টগুলোতে পাস করতে পারেঃ
 
 ```js
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
-This also works for user-defined components:
+ইউজার দ্বারা ডিফাইনকৃত কম্পোনেন্টগুলোর ক্ষেত্রেও এটি কাজ করেঃ
 
 ```js
 <FormattedDate date={this.state.date} />
 ```
 
-The `FormattedDate` component would receive the `date` in its props and wouldn't know whether it came from the `Clock`'s state, from the `Clock`'s props, or was typed by hand:
+`FormattedDate` কম্পোনেন্টটি props এর মাধ্যমে `date` টি পাবে এবং এটি আদৌ `Clock` এর state থেকে এসেছে, নাকি `Clock` এর props থেকে এসেছে, নাকি সরাসরি হাতে লিখা হয়েছে এ সম্পর্কে এর কোন ধারণা থাকবেনাঃ
 
 ```js
 function FormattedDate(props) {
@@ -437,13 +437,13 @@ function FormattedDate(props) {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
-This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
+এই পদ্ধতিকে সাধারণত "top-down" অথবা "unidirectional" ডাটা ফ্লো বলা হয়। যেকোন state ই কোন না কোন নির্দিষ্ট কম্পোনেন্ট এর ভেতরে থাকে, এবং state থেকে আসা যেকোন ডাটা অথবা UI শুধুমাত্র ঐ কম্পোনেন্টগুলিতে প্রভাব ফেলতে পারে যেগুলো ট্রিতে ঐ কম্পোনেন্টের "নিচে" অবস্থান করে।
 
-If you imagine a component tree as a waterfall of props, each component's state is like an additional water source that joins it at an arbitrary point but also flows down.
+আপনি যদি কম্পোনেন্ট ট্রি কে একটি props এর ঝর্ণার সাথে তুলনা করেন, তাহলে প্রতিটি কম্পোনেন্টের state গুলো হল অনেকটা অতিরিক্ত পানির উৎসের মত যা এই ঝর্ণার সাথে ইচ্ছামত কোন বিন্দুতে মিলিত হয় এবং নিচের দিকে বয়ে যেতে থাকে।
 
-To show that all components are truly isolated, we can create an `App` component that renders three `<Clock>`s:
+প্রতিটি কম্পোনেন্ট একে অপর থেকে আলাদা এটি দেখানোর জন্য আমরা একটি `App` কম্পোনেন্ট তৈরি করব যা তিনটি `<Clock>` রেন্ডার করেঃ
 
 ```js{4-6}
 function App() {
@@ -462,8 +462,8 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
-Each `Clock` sets up its own timer and updates independently.
+প্রতিটি `Clock` নিজের টাইমার সেট-আপ করে এবং নিজে নিজে আপডেট হয়।
 
-In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+React অ্যাপের মধ্যে, একটি কম্পোনেন্ট stateful হবে নাকি stateless হবে তা এর implementation detail হিসেবে ধরা হয় যা সময়ের সাথে বদলাতেও পারে। আপনি যেমন stateful কম্পোনেন্টের ভেতরে stateless কম্পোনেন্ট ব্যবহার করতে পারেন, তেমনি এর উল্টোটাও stateless কম্পোনেন্টের ভেতরে stateful কম্পোনেন্টও ব্যবহার করতে পারেন।
