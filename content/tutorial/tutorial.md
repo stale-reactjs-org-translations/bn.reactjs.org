@@ -47,62 +47,62 @@ redirect_from:
 
 আপনার যদি জাভাস্ক্রিপ্ট জ্ঞান ঝালাই করার প্রয়োজন হয়, তবে আমরা [এই গাইডটি](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) পড়ার অনুরোধ করছি। উল্লেখ্য আমরা জাভাস্ক্রিপ্টের সাম্প্রতিক সংস্করণ — ES6 থেকে কিছু ফিচার ব্যবহার করছি। এই টিউটোরিয়ালে আমরা [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), এবং [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) স্টেটমেন্টস ব্যবহার করছি। ES6 কিভাবে কোড কম্পাইল করে তা দেখার জন্য আপনি [Babel REPL](babel://es5-syntax-example) ব্যবহার করতে পারেন।
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## টিউটোরিয়ালের জন্য সেটআপ {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+দুইটি উপায়ে এই টিউটোরিয়ালটি শেষ করা যায়ঃ আপনি আপনার ব্রাউজারে কোড করতে পারেন, অথবা আপনি আপনার কম্পিউটারে একটি লোকাল ডেভেলপমেন্ট এনভারমেন্ট সেট করতে পারেন।
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### সেটআপ উপায় ১ঃ  ব্রাউজারে কোড করুন {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+শুরু করার জন্য এটি দ্রুততম উপায়!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
+প্রথমে, আপনি এই **[স্টার্টার কোডটি](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** একটি ট্যাবে খুলুন। এই নতুন ট্যাবে একটি tic-tac-toe গেম বোর্ড এবং কিছু React কোড দেখতে পাবেন. এই টিউটোরিয়ালে আমরা এই React কোডটি এডিট করব।
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+আপনি এখন সেটআপের দ্বিতীয় উপায়টি বাদ দিতে পারেন এবং React সম্পর্কে ধারণা পাওয়ার জন্য [সারমর্ম](#overview) অনুচ্ছেদে যেতে পারেন।
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### সেটআপ উপায় ২ঃ লোকাল ডেভেলপমেন্ট এনভারমেন্ট {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+এই সম্পূর্ণরূপে অপশনাল এবং এই টিউটোরিয়াল জন্য প্রয়োজন হয় না!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>অপশনাল: লোকালি আপনার পছন্দের টেক্সট এডিটর ব্যবহার করে টিউটোরিয়ালটি অনুসরণ করার নির্দেশাবলী</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+এই সেটআপের আরও কিছু ধাপ রয়েছে তবে এটি আপনাকে আপনার পছন্দের এডিটর ব্যবহার করে টিউটোরিয়ালটি সম্পূর্ণ করতে সাহায্য করবে। ধাপগুলি নিম্নে বর্ণিত হয়েছেঃ
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. নিশ্চিত করুন আপনার কাছে [Node.js](https://nodejs.org/en/) এর সাম্প্রতিক ভার্সনটি ইন্সটল রয়েছে।
+2. একটি নতুন প্রোজেক্ট তৈরির জন্য [Create React App ইন্সটলের নির্দেশাবলী](/docs/create-a-new-react-app.html#create-react-app) অনুসরণ করুন।
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+1. নতুন প্রোজেক্টের `src/` ফোল্ডারের সব ফাইল ডিলিট করুন।
 
-> Note:
+> বিঃ দ্রঃ
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**`src` ফোল্ডারটি সম্পূর্ণরূপে ডিলিট করবেন না। শুধু তার ভিতরের সব সোর্স ফাইলগুলো ডিলিট করুন।** আমরা পরবর্তী ধাপে এই প্রোজেক্টের জন্য ডিফল্ট সোর্স ফাইলগুলিকে উদাহরণ দ্বারা প্রতিস্থাপিত করব।
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# আপনি যদি Mac অথবা Linux ব্যবহার করেনঃ
 rm -f *
 
-# Or, if you're on Windows:
+# অথবা আপনি যদি Windows ব্যবহার করেনঃ
 del *
 
-# Then, switch back to the project folder
+# অতঃপর প্রোজেক্ট ফোল্ডারে ফেরত আসুন
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+1. `index.css` নামে `src/` ফোল্ডারের ভিতরে [এই CSS কোড](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) দিয়ে একটি ফাইল সংযোজন করুন।
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+2. `index.js` নামে `src/` ফোল্ডারের ভিতরে [এই JS কোড](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) দিয়ে একটি ফাইল সংযোজন করুন।
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+3. নিমোক্ত তিনটি লাইন `src/` ফোল্ডারের `index.js` ফাইলের উপরে সংযোজন করুন।
 
 ```js
 import React from 'react';
@@ -110,15 +110,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+এখন আপনি যদি প্রোজেক্ট ফোল্ডারে `npm start` লিখেন এবং ব্রাউজারে `http://localhost:3000` খুলেন, তবে আপনি একটি tic-tac-toe গেম দেখতে পাবেন।
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+আপনার এডিটরে সিনট্যাক্স হাইলাইট করার জন্য আমরা [এই নির্দেশাবলী](https://babeljs.io/docs/editors/) অনুসরণ করার জন্য অনূর্ধ্ব করছি।
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### আমি আটকে গেছি! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+আপনি যদি কোথাও আটকে যান, তবে [কমিউনিটি সাপোর্ট রিসোর্সে](/community/support.html) যেতে পারেন। নির্দিষ্টভাবে বললে, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) এর মাধ্যমে আপনি খুব দ্রুত সাহায্য পেতে পারেন। আপনি যদি তাদের থেকে কোন উত্তর না পান অথবা এরপরও আটকে থাকেন, তবে একটি ইস্যু খুলতে পারেন, সেক্ষেত্রে আমরাই আপনাকে সাহায্য করব।
 
 ## Overview {#overview}
 
