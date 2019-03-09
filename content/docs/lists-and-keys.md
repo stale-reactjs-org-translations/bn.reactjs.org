@@ -10,7 +10,7 @@ next: forms.html
 
 <!-- First, let's review how you transform lists in JavaScript. -->
 
-নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `নাম্বার` অ্যারে (array) নিয়ে তার মানকে দুগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত (রিটার্ন) মানকে আমরা `doubled` variable নামে সংজ্ঞায়িত করে একে কনসোল লগে (`console.log()`) প্রকাশ করি।
+নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `নাম্বার` অ্যারে নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত (রিটার্ন) মানকে আমরা `doubled` variable নামে সংজ্ঞায়িত করে একে কনসোল লগে (`console.log()`) প্রকাশ করি।
 <!-- Given the code below, we use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function to take an array of `numbers` and double their values. We assign the new array returned by `map()` to the variable `doubled` and log it: -->
 
 ```javascript{2}
@@ -30,7 +30,7 @@ React এ অ্যারেকে লিস্ট [ উপাদানে (elem
 আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে এলিমেন্টস এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে  [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
 <!-- You can build collections of elements and [include them in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) using curly braces `{}`. -->
 
-নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` অ্যারেকে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটান করি। পরিশেষে আমরা প্রাপ্ত অ্যারে উপাদানকে `listItems` এর অন্তর্গত করিঃ
+নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` অ্যারেকে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত অ্যারে উপাদানকে `listItems` এর অন্তর্গত করিঃ
 <!-- Below, we loop through the `numbers` array using the JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function. We return a `<li>` element for each item. Finally, we assign the resulting array of elements to `listItems`: -->
 
 ```javascript{2-4}
