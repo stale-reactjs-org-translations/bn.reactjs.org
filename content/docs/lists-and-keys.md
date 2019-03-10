@@ -5,13 +5,12 @@ permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
 ---
-প্রথমে চলুন আমরা পর্যালোচন করি কিভাবে আমরা জাভাস্ক্রিপ্টে  লিস্ট রুপান্তর (তৈরি) করি
+প্রথমে চলুন আমরা পর্যালোচন করি কিভাবে আপনি জাভাস্ক্রিপ্টে  লিস্ট রুপান্তর করবেন
 
 
 
 
-নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `নাম্বার` অ্যারে নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত (রিটার্ন) মানকে আমরা `doubled` variable নামে সংজ্ঞায়িত করে একে কনসোল লগে (`console.log()`) প্রকাশ করি।
-
+নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `numbers` array নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত মানকে আমরা `doubled` ভ্যারিয়েবল নামে সংজ্ঞায়িত করে একে কনসোলে লগ করি।
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
@@ -22,14 +21,14 @@ console.log(doubled);
 
 এই কোড কনসোলে  `[2, 4, 6, 8, 10]` প্রকাশ করে।
 
-React এ অ্যারেকে লিস্ট [ উপাদানে (elements)](/docs/rendering-elements.html) রূপান্তর করা প্রায় একেই রকম।
+React এ array কে লিস্ট [ elements](/docs/rendering-elements.html) এ রূপান্তর করা প্রায় একেই রকম।
 
 ### একাধিক কম্পোনেন্টসকে (Components) রেন্ডার করা।{#rendering-multiple-components}
 
-আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে এলিমেন্টস এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে  [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
+আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে elements এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে  [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
 
 
-নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` অ্যারেকে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত অ্যারে উপাদানকে `listItems` এর অন্তর্গত করিঃ
+নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array উপাদানকে `listItems` এর অন্তর্গত করিঃ
 
 
 ```javascript{2-4}
@@ -38,7 +37,7 @@ const listItems = numbers.map((number) =>
   <li>{number}</li>
 );
 ```
-সম্পূর্ণ `listItems` অ্যারেকে আমরা একটি `<ul>` element এর ভিতরে রাখি এবং এটাকে [DOM এ রেন্ডার করি](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+সম্পূর্ণ `listItems` array কে আমরা একটি `<ul>` element এর ভিতরে রাখি এবং এটাকে [DOM এ রেন্ডার করি](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -57,7 +56,7 @@ ReactDOM.render(
 সাধারণত আপনি লিস্টগুলকে [কম্পোনেন্ট](/docs/components-and-props.html) এর মধ্যে রেন্ডার করবেন।
 
 
-আমরা পূর্বের উদাহারনকে এমন একটি কম্পোনেন্টে refactor করতে পারি যেটা `numbers`অ্যারেকে গ্রহন করবে এবং একটি  এলিমেন্টস লিস্ট  আউটপুট করবে ।
+আমরা পূর্বের উদাহারনকে এমন একটি কম্পোনেন্টে refactor করতে পারি যেটা `numbers` array কে গ্রহন করবে এবং একটি  elements লিস্ট  আউটপুট করবে ।
 
 
 ```javascript{3-5,7,13}
@@ -107,7 +106,7 @@ ReactDOM.render(
 
 ## Keys {#keys}
 
-Keys, কোন আইটেম টি পরিবর্তিত হইসে, কোনটি  যোগ হইসে অথবা কোনটি মুছে ফেলা হয়েছে তা সনাক্ত করতে React কে সাহায্য করে। এলিমেন্টসকে স্থির পরিচয় দেয়ার জন্য  অ্যারে এর মধ্যে এলিমেন্টসকে Keys প্রদান করতে হবে।
+Keys, কোন আইটেম টি পরিবর্তিত হইসে, কোনটি  যোগ হইসে অথবা কোনটি মুছে ফেলা হয়েছে তা সনাক্ত করতে React কে সাহায্য করে। elements কে স্থির পরিচয় দেয়ার জন্য  অ্যারে এর মধ্যে elements কে Keys প্রদান করতে হবে।
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -138,18 +137,18 @@ const todoItems = todos.map((todo, index) =>
   </li>
 );
 ```
-যে ক্ষেত্রে আইটেম অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্স (indexes) ব্যবহার করতে সুপারিশ করব না। এটি performance এর উপর নেতিবাচক  প্রভাব ফেলতে পারে এবং কম্পোনেন্টে এর state এর   সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল  [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব এর বিস্তারিত ব্যাখ্যা ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সূস্পষ্ট কোন key  নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসাবে ইনডেক্সকে keys হিসাবে  ব্যবহার করবে
+যে ক্ষেত্রে আইটেম অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্স (indexes) ব্যবহার করতে সুপারিশ করব না। এটি performance এর উপর নেতিবাচক  প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর   সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল  [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব এর বিস্তারিত ব্যাখ্যা ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key  নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে
 
 
 আপনি যদি আরো শেখার আগ্রহী হন তাহলে দেখতে পারেন [ Key কেন দরকারি এর বিস্তারিত ব্যাখ্যা](/docs/reconciliation.html#recursing-on-children)
 
-### কম্পোনেন্টেকে Keys সহ  Extract করা {#extracting-components-with-keys}
+### কম্পোনেন্টেকে Keys সহ Extract করা {#extracting-components-with-keys}
 
-কেবলমাত্র অ্যারে উপাদান গুলোর ক্ষেত্রেই Keys গুলো অর্থপূর্ন হয়।
+কেবলমাত্র array elements গুলোর ক্ষেত্রেই Keys গুলো অর্থপূর্ন হয়।
 
-উদাহারন স্বরূপ যদি তুমি একটি `ListItem` কম্পোনেন্টেকে  [extract](/docs/components-and-props.html#extracting-components) কর তাহলে তুমি অ্যারে এর key কে `ListItem` এর `<li>`এলিমেন্ট এর পরিবর্তে `<ListItem />` এলিমেন্ট এর মধ্যেই দিয়ে দিবে।
+উদাহারন স্বরূপ যদি তুমি একটি `ListItem` কম্পোনেন্টেকে  [extract](/docs/components-and-props.html#extracting-components) কর তাহলে তুমি array এর key কে `ListItem` এর `<li>`element এর পরিবর্তে `<ListItem />` element এর মধ্যেই দিয়ে দিবে।
 
-**উদাহারন:  Key এর ভুল ব্যবহার**
+**উদাহারন: Key এর ভুল ব্যবহার**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
@@ -182,7 +181,7 @@ ReactDOM.render(
 );
 ```
 
-**উদাহারন:  Key এর সঠিক ব্যবহার**
+**উদাহারন: Key এর সঠিক ব্যবহার**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
@@ -213,11 +212,11 @@ ReactDOM.render(
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
-একটি ভাল প্রচলিত রীতি হল `map()` ফাংশন  কল এর মধ্যের এলিমেন্টস গুলোর keys দরকার।
+একটি ভাল প্রচলিত রীতি হল `map()` ফাংশন  কল এর মধ্যের elements গুলোর keys দরকার।
 
-### পারিপার্শ্বিক এলিমেন্টস গুলোর মধ্যে Keys কে  অদ্বিতীয় হতে হবে {#keys-must-only-be-unique-among-siblings}
+### পারিপার্শ্বিক elements গুলোর মধ্যে Keys কে  অদ্বিতীয় হতে হবে {#keys-must-only-be-unique-among-siblings}
 
-অ্যারের মধ্যে ব্যবহৃত Keys তাদের পারিপার্শ্বিক   অন্যান্য আইটেম গুলোর মধ্যে অনন্য হতে হবে কিন্ত গ্লোবাল ভাবে তাদের অনন্য হওয়া দরকারি না। আমরা দুইটি ভিন্ন ভিন্ন অ্যারে এর ক্ষেত্রে একেই keys ব্যবহার করতে পারি।
+অ্যারের মধ্যে ব্যবহৃত Keys তাদের পারিপার্শ্বিক   অন্যান্য আইটেম গুলোর মধ্যে অনন্য হতে হবে কিন্ত গ্লোবাল ভাবে তাদের অনন্য হওয়া দরকারি না। আমরা দুইটি ভিন্ন ভিন্ন array এর ক্ষেত্রে একেই keys ব্যবহার করতে পারি।
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -257,7 +256,7 @@ ReactDOM.render(
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
- React এ সংকেত হিসাবে Keys বাবহারিত হয় কিন্ত এটি আপনার কম্পোনেন্ট  এর মধ্যে দিয়ে পাস (pass) হয়না। আপনার কম্পোনেন্ট এর যদি ওই একই মান প্রয়োজন হয় তাহলে এটাকে ভিন্ন নামে prop হিসাবে কম্পোনেন্ট সুস্পষ্ট ভাবে পাস (pass) করে দিনঃ
+ React এ সংকেত হিসাবে Keys বাবহারিত হয় কিন্ত এটি আপনার কম্পোনেন্ট  এর মধ্যে দিয়ে পাস (pass) হয়না। আপনার কম্পোনেন্ট এর যদি ওই একই মান প্রয়োজন হয় তাহলে এটাকে ভিন্ন নামে prop হিসেবে কম্পোনেন্টে সুস্পষ্ট ভাবে পাস (pass) করে দিনঃ
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -272,7 +271,7 @@ const content = posts.map((post) =>
 
 ### map() কে JSX এ বসান {#embedding-map-in-jsx}
 
-নিচের উদাহরণে আমরা একটি পৃথক `listItems` ভারিয়াবল ঘোষণা দেই এবং এটাকে JSX এ অন্তর্গত করিঃ
+নিচের উদাহরণে আমরা একটি পৃথক `listItems` ভ্যারিয়েবল ঘোষণা দেই এবং এটাকে JSX এ অন্তর্গত করিঃ
 
 ```js{3-6}
 function NumberList(props) {
@@ -309,4 +308,4 @@ function NumberList(props) {
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
 
-এর ফলে মাঝেমাঝে পরিছন্ন কোড পাওয়া যায়, কিন্ত এই   স্টাইল এর ও অপবাবহার হতে পারে। জাভাস্ক্রিপ্ট এর মত এটাও আপনার সিধান্ত যে পড়ার সুবিধার জন্য আপনার া এখান থেকে একটি ভারিয়াবল বের করা যুক্তিযুক্ত কিনা। মনে রাখা দরকার যদি `map()` বডি যদি অনেক বেশি nested হয়, তাহলে এটি একটি [কম্পোনেন্ট বের করে আনার](/docs/components-and-props.html#extracting-components) জন্য উপযুক্ত সময়।
+এর ফলে মাঝেমাঝে পরিচ্ছন্ন কোড পাওয়া যায়, কিন্ত এই স্টাইলের ও অপব্যবহার হতে পারে। জাভাস্ক্রিপ্টের মত এটাও আপনার সিদ্ধান্ত যে পড়ার সুবিধার জন্য আপনার এখান থেকে একটি ভ্যারিয়েবল বের করা যুক্তিযুক্ত কিনা। মনে রাখা দরকার `map()` বডি যদি অনেক বেশি nested হয়, তাহলে এটি একটি [কম্পোনেন্ট বের করে আনার](/docs/components-and-props.html#extracting-components) জন্য উপযুক্ত সময়।
