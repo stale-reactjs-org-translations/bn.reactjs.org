@@ -235,7 +235,7 @@ class Clock extends React.Component {
 
 এই মেথডগুলোকে বলা হয় "lifecycle methods"।
 
-componentDidMount() মেথডটি কম্পোনেন্টের আউটপুট DOM এ রেন্ডার করার পর কাজ করে। এটি টাইমার সেট-আপ করার জন্য একটি উপযুক্ত জায়গাঃ
+`componentDidMount()` মেথডটি কম্পোনেন্টের আউটপুট DOM এ রেন্ডার করার পর কাজ করে। এটি টাইমার সেট-আপ করার জন্য একটি উপযুক্ত জায়গাঃ
 
 ```js{2-5}
   componentDidMount() {
