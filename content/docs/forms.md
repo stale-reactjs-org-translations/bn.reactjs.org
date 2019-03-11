@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: ফরম
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -9,19 +9,20 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+
+এইচটিএমএল form উপাদানগুলি React এ  অন্যান্য DOM উপাদানের থেকে আলাদা আলাদাভাবে কাজ করে , কারণ form উপাদান এর  স্বাভাবিকভাবে কিছু অভ্যন্তরীণ state আছে। উদাহরণস্বরূপ, এই  HTML ফর্মটি একটি একক নাম  গ্রহণ করে :
 
 ```html
 <form>
   <label>
-    Name:
+    নাম:
     <input type="text" name="name" />
   </label>
   <input type="submit" value="Submit" />
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+এই ফর্মটির ডিফল্ট HTML ফর্ম আচরণ হল , ব্যবহারকারীর ফর্মটি submit করলে এই ফর্মটি একটি নতুন পৃষ্ঠায় নিয়ে যায় । আপনি যদি এই আচরণ চান , React এ এটা কাজ করে । তবে বেশিরভাগ ক্ষেত্রে, এটি একটি জাভাস্ক্রিপ্ট ফাংশন থাকা সুবিধাজনক যা ফর্মটি জমা দেওয়ার পরিচালনা করে  এবং  ব্যবহারকারীর form ডাটা অ্যাক্সেস থাকে। এটি অর্জনের আদর্শ উপায় "নিয়ন্ত্রণাধীন উপাদান" নামে একটি কৌশল।
 
 ## Controlled Components {#controlled-components}
 
