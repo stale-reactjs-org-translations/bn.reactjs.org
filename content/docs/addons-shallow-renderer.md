@@ -13,7 +13,7 @@ import ShallowRenderer from 'react-test-renderer/shallow'; // ES6
 var ShallowRenderer = require('react-test-renderer/shallow'); // ES5 with npm
 ```
 
-## সংক্ষিপ্ত বিবরণ {#overview}
+## সারমর্ম {#overview}
 
 React এ unit test লেখার সময় shallow rendering সুবিধাজনক হতে পারে । Shallow rendering আপনাকে একটা component render করতে দেয় "এক ধাপ নিচ পর্যন্ত" এবং  শর্ত দিয়ে নির্ধারণ করা যাবে ঐ component-টি কি ফেরত পাঠাবে । এক্ষেত্রে component টির child component এর কথা চিন্তা করতে হয় না, কেননা তা instantiate বা render করা হয় না। এরজন্য DOM এর প্রয়োজন হয় না।
 
