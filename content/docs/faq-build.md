@@ -8,7 +8,7 @@ category: FAQ
 
 ### React এর সাথে কি আমার JSX ব্যবহার করতে হবে? {#do-i-need-to-use-jsx-with-react}
 
-না! এখানে দেখুন ["JSX ছাড়া React"](/docs/react-without-jsx.html) আরও জানার জন্য.
+না! আরও জানার জন্য এখানে দেখুন ["JSX ছাড়া React"](/docs/react-without-jsx.html)।
 
 ### আমার কি ES6 (+) ব্যবহার করতে হবে React এর সাথে? {#do-i-need-to-use-es6--with-react}
 
