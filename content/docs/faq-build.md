@@ -12,7 +12,7 @@ category: FAQ
 
 ### আমার কি ES6 (+) ব্যবহার করতে হবে React এর সাথে? {#do-i-need-to-use-es6--with-react}
 
-না! এখানে দেখুন ["ES6 ছাড়া React"](/docs/react-without-es6.html) আরও জানার জন্য.
+না! আরও জানার জন্য এখানে দেখুন ["ES6 ছাড়া React"](/docs/react-without-es6.html)।
 
 ### আমি কিভাবে কমেন্ট লিখব React-এ?{#how-can-i-write-comments-in-jsx}
 
