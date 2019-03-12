@@ -71,8 +71,8 @@ redirect_from:
 
 এই সেটআপের আরও কিছু ধাপ রয়েছে তবে এটি আপনাকে আপনার পছন্দের এডিটর ব্যবহার করে টিউটোরিয়ালটি সম্পূর্ণ করতে সাহায্য করবে। ধাপগুলি নিম্নে বর্ণিত হয়েছেঃ
 
-1. নিশ্চিত করুন আপনার কাছে [Node.js](https://nodejs.org/en/) এর সাম্প্রতিক ভার্সনটি ইন্সটল রয়েছে।
-2. একটি নতুন প্রোজেক্ট তৈরির জন্য [Create React App ইন্সটলের নির্দেশাবলী](/docs/create-a-new-react-app.html#create-react-app) অনুসরণ করুন।
+1. নিশ্চিত করুন আপনার কাছে [Node.js](https://nodejs.org/en/) এর সাম্প্রতিক ভার্সনটি ইনস্টল রয়েছে।
+2. একটি নতুন প্রোজেক্ট তৈরির জন্য [Create React App ইনস্টলের নির্দেশাবলী](/docs/create-a-new-react-app.html#create-react-app) অনুসরণ করুন।
 
 ```bash
 npx create-react-app my-app
