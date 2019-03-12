@@ -29,7 +29,7 @@ React এর ক্ষেত্রে কিছুটা ভিন্নঃ
 </button>
 ```
 
-আরেকটা বড় পার্থক্য হল, React এ আপনি `false` রিটার্ন করে ডিফল্ট বিহেভিয়ার প্রতিরোধ করতে পারবেন না। আপনার অবশ্যই আলাদাভাবে `preventDefault` কল করতে হবে। উদাহরণস্বরূপ, সাধারণ HTML এ একটি ডিফল্ট লিংককে একটি নতুন পৃষ্টা খোলা থেকে বিরত রাখতে আপনি লিখতে পারেনঃ
+আরেকটা বড় পার্থক্য হল, React এ আপনি `false` রিটার্ন করে ডিফল্ট আচরণ প্রতিরোধ করতে পারবেন না। আপনার অবশ্যই আলাদাভাবে `preventDefault` কল করতে হবে। উদাহরণস্বরূপ, সাধারণ HTML এ একটি ডিফল্ট লিংককে একটি নতুন পৃষ্ঠা খোলা থেকে বিরত রাখতে আপনি লিখতে পারেনঃ
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
@@ -54,7 +54,7 @@ function ActionLink() {
 }
 ```
 
-এখানে, `e` হল একটি কৃত্রিম ইভেন্ট। React এই কৃত্রিম ইভেন্টগুলো [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) অনুযায়ী নির্ধারণ করে, যাতে আপনার ক্রস-ব্রাউজার কম্প্যাটিবিলিটি নিয়ে চিন্তা করতে না হয়। আরও জানতে [`SyntheticEvent`](/docs/events.html) রেফারেন্স গাইডটি দেখুন।
+এখানে, `e` হল একটি কৃত্রিম ইভেন্ট। React এই কৃত্রিম ইভেন্টগুলো [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) অনুযায়ী নির্ধারণ করে, যাতে আপনার ক্রস-ব্রাউজার কম্প্যাটিবিলিটি নিয়ে চিন্তা করতে না হয়। বিস্তারিত জানতে [`SyntheticEvent`](/docs/events.html) রেফারেন্স গাইডটি দেখুন।
 
 React ব্যবহারের সময় সাধারণত আপনার `addEventListener` কল করে কোন DOM element তৈরি হওয়ার পরে listener সংযুক্ত করার প্রয়োজন হবেনা। এর পরিবর্তে, আপনি element রেন্ডারের সময় একটি listener সরবরাহ করতে পারেন।
 
@@ -95,7 +95,7 @@ ReactDOM.render(
 
 JSX কলব্যাকগুলোর মধ্যে `this` এর অর্থ সম্পর্কে আপনার সতর্ক থাকতে হবে। জাভাস্ক্রিপ্টে, class মেথডগুলো ডিফল্টভাবে [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) থাকেনা। আপনি যদি `this.handleClick` কে bind করতে ভুলে যান এবং `onClick` এ পাস করে দেন, এক্ষেত্রে যখন ফাংশনটি কল হবে তখন `this` এর মান হবে `undefined`।
 
-এটি React-specific কোন বিষয় নয়; [জাভাস্ক্রিপ্টে ফাংশন এভাবেই কাজ করে](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)। সাধারণত আপনি যখন কোন ফাংশনের শেষে `()` ছাড়া উল্লেখ করবেন, যেমন `onClick={this.handleClick}`, তখন আপনার ঐ মেথডটি bind করা উচিত।
+এটি React সম্পর্কিত কোন বিষয় নয়; [জাভাস্ক্রিপ্টে ফাংশন এভাবেই কাজ করে](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)। সাধারণত আপনি যখন কোন ফাংশনের শেষে `()` ছাড়া উল্লেখ করবেন, যেমন `onClick={this.handleClick}`, তখন আপনার ঐ মেথডটি bind করা উচিত।
 
 যদি `bind` কল করা আপনার জন্য বিরক্তিকর হয়, তাহলে দুই উপায়ে আপনি এটি এড়িয়ে যেতে পারেন। আপনি যদি পরীক্ষামূলক [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/) ব্যবহার করেন, তাহলে আপনি class fields ব্যবহারের মাধ্যমে সঠিকভাবে কলব্যাকগুলোকে bind করতে পারবেনঃ
 
