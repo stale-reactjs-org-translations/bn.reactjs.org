@@ -8,8 +8,6 @@ next: forms.html
 প্রথমে চলুন আমরা পর্যালোচন করি কিভাবে আপনি জাভাস্ক্রিপ্টে  লিস্ট রুপান্তর করবেন
 
 
-
-
 নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `numbers` array নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত মানকে আমরা `doubled` ভ্যারিয়েবল নামে সংজ্ঞায়িত করে একে কনসোলে লগ করি।
 
 ```javascript{2}
@@ -21,14 +19,14 @@ console.log(doubled);
 
 এই কোড কনসোলে  `[2, 4, 6, 8, 10]` প্রকাশ করে।
 
-React এ array কে লিস্ট [ elements](/docs/rendering-elements.html) এ রূপান্তর করা প্রায় একেই রকম।
+React এ array কে লিস্ট [ elements](/docs/rendering-elements.html) এ রূপান্তর করা ও প্রায় একেই রকম।
 
-### একাধিক কম্পোনেন্টসকে (Components) রেন্ডার করা।{#rendering-multiple-components}
+### একাধিক কম্পোনেন্টসকে রেন্ডার করা।{#rendering-multiple-components}
 
 আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে elements এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে  [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
 
 
-নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array উপাদানকে `listItems` এর অন্তর্গত করিঃ
+নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array elements কে `listItems` এর অন্তর্গত করিঃ
 
 
 ```javascript{2-4}
@@ -56,7 +54,7 @@ ReactDOM.render(
 সাধারণত আপনি লিস্টগুলকে [কম্পোনেন্ট](/docs/components-and-props.html) এর মধ্যে রেন্ডার করবেন।
 
 
-আমরা পূর্বের উদাহারনকে এমন একটি কম্পোনেন্টে refactor করতে পারি যেটা `numbers` array কে গ্রহন করবে এবং একটি  elements লিস্ট  আউটপুট করবে ।
+আমরা পূর্বের উদাহারনকে এমন একটি কম্পোনেন্টে রিফ্যাক্টর করতে পারি যেটা `numbers` array কে গ্রহন করবে এবং একটি  elements লিস্ট  আউটপুট করবে ।
 
 
 ```javascript{3-5,7,13}
@@ -137,7 +135,7 @@ const todoItems = todos.map((todo, index) =>
   </li>
 );
 ```
-যে ক্ষেত্রে আইটেম অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্স (indexes) ব্যবহার করতে সুপারিশ করব না। এটি performance এর উপর নেতিবাচক  প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর   সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল  [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব এর বিস্তারিত ব্যাখ্যা ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key  নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে
+যে ক্ষেত্রে আইটেম অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্স (indexes) ব্যবহার করতে সুপারিশ করব না। এটি পারফরমেন্স এর উপর নেতিবাচক  প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর   সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল  [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key  নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে
 
 
 আপনি যদি আরো শেখার আগ্রহী হন তাহলে দেখতে পারেন [ Key কেন দরকারি এর বিস্তারিত ব্যাখ্যা](/docs/reconciliation.html#recursing-on-children)
@@ -216,7 +214,7 @@ ReactDOM.render(
 
 ### পারিপার্শ্বিক elements গুলোর মধ্যে Keys কে  অদ্বিতীয় হতে হবে {#keys-must-only-be-unique-among-siblings}
 
-অ্যারের মধ্যে ব্যবহৃত Keys তাদের পারিপার্শ্বিক   অন্যান্য আইটেম গুলোর মধ্যে অনন্য হতে হবে কিন্ত গ্লোবাল ভাবে তাদের অনন্য হওয়া দরকারি না। আমরা দুইটি ভিন্ন ভিন্ন array এর ক্ষেত্রে একেই keys ব্যবহার করতে পারি।
+Array এর মধ্যে ব্যবহৃত Keys তাদের পারিপার্শ্বিক   অন্যান্য আইটেম গুলোর মধ্যে ইউনিক হতে হবে কিন্ত গ্লোবাল ভাবে তাদের ইউনিক হওয়া দরকারি না। আমরা দুইটি ভিন্ন ভিন্ন array এর ক্ষেত্রে একেই keys ব্যবহার করতে পারি।
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -256,7 +254,7 @@ ReactDOM.render(
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
- React এ সংকেত হিসাবে Keys বাবহারিত হয় কিন্ত এটি আপনার কম্পোনেন্ট  এর মধ্যে দিয়ে পাস (pass) হয়না। আপনার কম্পোনেন্ট এর যদি ওই একই মান প্রয়োজন হয় তাহলে এটাকে ভিন্ন নামে prop হিসেবে কম্পোনেন্টে সুস্পষ্ট ভাবে পাস (pass) করে দিনঃ
+ React এ সংকেত হিসাবে Keys ব্যবহৃত হয় কিন্ত এটি আপনার কম্পোনেন্ট  এর মধ্যে দিয়ে পাস (pass) হয়না। আপনার কম্পোনেন্ট এর যদি ওই একই মান প্রয়োজন হয় তাহলে এটাকে ভিন্ন নামে prop হিসেবে কম্পোনেন্টে সুস্পষ্ট ভাবে পাস করে দিনঃ
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -289,7 +287,7 @@ function NumberList(props) {
 ```
 
 
-JSX [যেকোন এক্সপেসন কে কারলি ব্র্যাকেটে  স্থাপন](/docs/introducing-jsx.html#embedding-expressions-in-jsx) করার অনুমতি দেয় তাই আমরা `map()`এর ফলাফল সারিবদ্ধভাবে প্রকাশ করতে পারিঃ
+JSX [যেকোন এক্সপ্রেশন কে কারলি ব্র্যাকেটে  স্থাপন](/docs/introducing-jsx.html#embedding-expressions-in-jsx) করার অনুমতি দেয় তাই আমরা `map()`এর ফলাফল সারিবদ্ধভাবে প্রকাশ করতে পারিঃ
 
 ```js{5-8}
 function NumberList(props) {
