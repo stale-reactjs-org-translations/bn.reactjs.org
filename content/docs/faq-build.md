@@ -6,27 +6,27 @@ layout: docs
 category: FAQ
 ---
 
-### Do I need to use JSX with React? {#do-i-need-to-use-jsx-with-react}
+### React এর সাথে কি আমার JSX ব্যবহার করতে হবে? {#do-i-need-to-use-jsx-with-react}
 
-No! Check out ["React Without JSX"](/docs/react-without-jsx.html) to learn more.
+না! বিস্তারিত জানতে ["JSX ছাড়া React"](/docs/react-without-jsx.html) দেখুন।
 
-### Do I need to use ES6 (+) with React? {#do-i-need-to-use-es6--with-react}
+### React এর সাথে কি আমার ES6 (+) ব্যবহার করতে হবে? {#do-i-need-to-use-es6--with-react}
 
-No! Check out ["React Without ES6"](/docs/react-without-es6.html) to learn more.
+না! বিস্তারিত জানতে  ["ES6 ছাড়া React"](/docs/react-without-es6.html) দেখুন।
 
-### How can I write comments in JSX? {#how-can-i-write-comments-in-jsx}
+### আমি কিভাবে JSX এ কমেন্ট লিখব?{#how-can-i-write-comments-in-jsx}
 
 ```jsx
 <div>
-  {/* Comment goes here */}
+  {/* এখানে কমেন্ট হবে */}
   Hello, {name}!
 </div>
 ```
 
 ```jsx
 <div>
-  {/* It also works 
-  for multi-line comments. */}
+  {/* একাধিক লাইনের কমেন্টের
+  জন্যও এটি কাজ করে */}
   Hello, {name}! 
 </div>
 ```
