@@ -25,7 +25,8 @@ category: FAQ
 
 ```jsx
 <div>
-  {/* Multi-line কমেন্টের জন্যও
+  {/* একাধিক লাইনের
+  কমেন্টের জন্যও
   এটি কাজ করে */}
   Hello, {name}! 
 </div>
