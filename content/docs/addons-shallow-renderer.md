@@ -31,7 +31,7 @@ function MyComponent() {
 }
 ```
 
-তখন আপনি শর্ত আরোপ করতে পারেন:
+তবে আপনি এভাবে সেটিকে যাচাই করতে পারেনঃ 
 
 ```javascript
 import ShallowRenderer from 'react-test-renderer/shallow';
