@@ -23,7 +23,7 @@
           href: /tutorial/tutorial.html#setup-option-1-write-code-in-the-browser
           forceInternal: true
         - id: setup-option-2-local-development-environment
-          title: "উপায় ২ঃ লোকাল ডেভেলপমেন্ট এনভারমেন্ট"
+          title: "উপায় ২ঃ লোকাল ডেভেলপমেন্ট ইনভায়রনমেন্ট"
           href: /tutorial/tutorial.html#setup-option-2-local-development-environment
           forceInternal: true
         - id: help-im-stuck
