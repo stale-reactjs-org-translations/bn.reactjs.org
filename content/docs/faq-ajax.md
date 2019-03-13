@@ -50,7 +50,7 @@ class MyComponent extends React.Component {
             items: result.items
           });
         },
-        // নোট: এখনে catch() ব্লক এর বদলে error
+        // বিঃদ্রঃ এখনে catch() ব্লক এর বদলে error
         // সামলানো খুবই গুরুত্বপূর্ণ কেননা আমরা চাই না
         // কম্পোনেন্টের আসল কোনো সমস্যা হজম করতে।
         (error) => {
