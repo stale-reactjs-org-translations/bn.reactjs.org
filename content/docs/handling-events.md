@@ -1,6 +1,6 @@
 ---
 id: handling-events
-title: ইভেন্ট হ্যান্ডেল করা
+title: ইভেন্ট হ্যান্ডেলিং
 permalink: docs/handling-events.html
 prev: state-and-lifecycle.html
 next: conditional-rendering.html
