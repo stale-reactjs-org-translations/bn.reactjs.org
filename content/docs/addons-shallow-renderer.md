@@ -17,7 +17,6 @@ var ShallowRenderer = require('react-test-renderer/shallow'); // ES5 with npm
 
 React এ unit test লেখার জন্য shallow rendering বেশ সুবিধাজনক। Shallow rendering আপনাকে "এক ধাপ নিচ পর্যন্ত" একটি কম্পোনেন্টকে রেন্ডার করতে সহায়তা করে এবং কম্পোনেন্টটির রেন্ডার মেথড কি রিটার্ন করে সেটি যাচাই করে, এক্ষেত্রে তার অভ্যন্তরীণ কম্পোনেন্টগুলো, যেগুলা এখনো তৈরি অথবা রেন্ডার হয়নি তাদের ধরণ আমলে নেওয়া হয় না। এই প্রক্রিয়ার জন্য কোন DOM এর প্রয়োজন হয় না।
 
-
 উদাহরণ হিসেবে, যদি আপনি নিচের মতো একটি কম্পোনেন্ট লিখেনঃ
 
 ```javascript
@@ -50,7 +49,7 @@ expect(result.props.children).toEqual([
 
 Shallow testing এর বর্তমানে কিছু সীমাবদ্ধতা আছে, যেমন এটি ref সমর্থন করে না।
 
-> নোট:
+> বিঃদ্রঃ
 >
 > Enzyme এর [Shallow Rendering API](https://airbnb.io/enzyme/docs/api/shallow.html) দেখার জন্য আমরা আপনাকে অনুরোধ করছি। এটি আরও সুন্দর একটি উঁচু-স্তরের API দেয়, যা দিয়ে একই কাজ করা সম্ভব। 
 
