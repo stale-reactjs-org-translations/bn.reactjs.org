@@ -5,6 +5,7 @@ permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
 ---
+
 প্রথমে চলুন আমরা পর্যালোচনা করি কিভাবে আপনি জাভাস্ক্রিপ্টে লিস্ট রুপান্তর করবেন
 
 নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `numbers` array নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত মানকে আমরা `doubled` ভ্যারিয়েবল নামে সংজ্ঞায়িত করে একে কনসোলে লগ করি।
@@ -17,12 +18,11 @@ console.log(doubled);
 
 এই কোড কনসোলে `[2, 4, 6, 8, 10]` প্রকাশ করে।
 
-React এ array কে লিস্ট [elements](/docs/rendering-elements.html) এ রূপান্তর করাও প্রায় একেই রকম।
+React এ array কে লিস্ট [elements](/docs/rendering-elements.html) এ রূপান্তর করাও প্রায় একই  রকম।
 
 ### একাধিক কম্পোনেন্টসকে রেন্ডার করা।{#rendering-multiple-components}
 
 আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে elements এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
-
 
 নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array elements কে `listItems` এর অন্তর্গত করিঃ
 
@@ -47,6 +47,7 @@ ReactDOM.render(
 এই কোড ১ থেকে ৫ পর্যন্ত সংখ্যা গুলোকে বুলেট লিস্ট আকারে প্রকাশ করে।
 
 ### বেসিক লিস্ট কম্পোনেন্ট {#basic-list-component}
+
 সাধারণত আপনি লিস্টগুলকে [কম্পোনেন্ট](/docs/components-and-props.html) এর মধ্যে রেন্ডার করবেন।
 
 আমরা পূর্বের উদাহারনকে এমন একটি কম্পোনেন্টে রিফ্যাক্টর করতে পারি যেটা `numbers` array কে গ্রহন করবে এবং একটি elements লিস্ট আউটপুট করবে ।
@@ -109,6 +110,7 @@ const listItems = numbers.map((number) =>
 ```
 
 Key নেয়ার সবচেয়ে ভালো উপায় হল এমন string ব্যবহার করা যেগুলো পাশাপাশি অবস্থিত লিস্ট আইটেম গুলকে স্বতন্ত্রভাবে চিহ্নিত করতে পারে। অধিকাংশ সময় আপনি আপনার ডাটা থেকে আইডি গুলকে (IDs) keys হিসাবে ব্যবহার করবেন।
+
 ```js{2}
 const todoItems = todos.map((todo) =>
   <li key={todo.id}>
@@ -127,6 +129,7 @@ const todoItems = todos.map((todo, index) =>
   </li>
 );
 ```
+
 যে ক্ষেত্রে আইটেম অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্স (indexes) ব্যবহার করতে সুপারিশ করব না। এটি পারফরমেন্স এর উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর   সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে
 
 আপনি যদি আরো শেখার আগ্রহী হন তাহলে দেখতে পারেন [Key কেন দরকারি এর বিস্তারিত ব্যাখ্যা](/docs/reconciliation.html#recursing-on-children)
@@ -260,7 +263,7 @@ const content = posts.map((post) =>
 
 ### map() কে JSX এ বসান {#embedding-map-in-jsx}
 
-নিচের উদাহরণে আমরা একটি পৃথক `listItems` ভ্যারিয়েবল ঘোষণা দেই এবং এটাকে JSX এ অন্তর্গত করিঃ
+উপরের উদাহরণে আমরা একটি পৃথক `listItems` ভ্যারিয়েবল ঘোষণা দেই এবং এটাকে JSX এ অন্তর্গত করিঃ
 
 ```js{3-6}
 function NumberList(props) {
