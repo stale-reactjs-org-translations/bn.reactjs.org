@@ -1,14 +1,14 @@
 ---
 id: faq-styling
-title: Styling and CSS
+title: Styling এবং CSS
 permalink: docs/faq-styling.html
 layout: docs
 category: FAQ
 ---
 
-### How do I add CSS classes to components? {#how-do-i-add-css-classes-to-components}
+### আমি কিভাবে কম্পোনেন্টের সাথে CSS ক্লাস যুক্ত করবো? {#how-do-i-add-css-classes-to-components}
 
-Pass a string as the `className` prop:
+একটা string-কে `className` prop হিসেবে পাঠাওঃ
 
 ```jsx
 render() {
@@ -16,7 +16,7 @@ render() {
 }
 ```
 
-It is common for CSS classes to depend on the component props or state:
+কম্পোনেন্টের prop বা state এর ওপর CSS class নির্ভর করা স্বাভাবিকঃ
 
 ```jsx
 render() {
@@ -28,24 +28,24 @@ render() {
 }
 ```
 
->Tip
+>পরামর্শ
 >
->If you often find yourself writing code like this, [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) package can simplify it.
+>যদি আপনি প্রায়ই এরকম code লিখে থাকেন, তাহলে  [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) প্যাকেজ এটি সহজ করতে পারে।
 
-### Can I use inline styles? {#can-i-use-inline-styles}
+### আমি কি inline style ব্যবহার করতে পারি? {#can-i-use-inline-styles}
 
-Yes, see the docs on styling [here](/docs/dom-elements.html#style).
+হ্যা, styling এর উপর ডকুমেন্টটা দেখুন [এখানে](/docs/dom-elements.html#style)।
 
-### Are inline styles bad? {#are-inline-styles-bad}
+### Inline styles কি খারাপ? {#are-inline-styles-bad}
 
-CSS classes are generally better for performance than inline styles.
+CSS class সাধারণত পারফরমান্সের দিক দিয়ে inline style এর থেকে ভালো।
 
-### What is CSS-in-JS? {#what-is-css-in-js}
+### CSS-in-JS কি?{#what-is-css-in-js}
 
-"CSS-in-JS" refers to a pattern where CSS is composed using JavaScript instead of defined in external files. Read a comparison of CSS-in-JS libraries [here](https://github.com/MicheleBertoli/css-in-js).
+"CSS-in-JS" বলতে এমন একটা প্যাটার্নকে বুঝায় যেখানে CSS-কে বাহিরের কোনো ফাইলে না লিখে JavaScript এর ভিতর লেখা করা হয়।     CSS-in-JS লাইব্রেরিগুলোর পার্থক্য দেখুন [এখানে](https://github.com/MicheleBertoli/css-in-js)।
 
-_Note that this functionality is not a part of React, but provided by third-party libraries._ React does not have an opinion about how styles are defined; if in doubt, a good starting point is to define your styles in a separate `*.css` file as usual and refer to them using [`className`](/docs/dom-elements.html#classname).
+_বিঃদ্রঃ এই ফিচারটি React এর অংশ নয়, বরং তৃতীয়-পক্ষের লাইব্রেরি এই ফিচারটি দিয়ে থাকে।_ কিভাবে স্টাইল লেখা উচিত সে সম্পর্কে React এর কোনো পরামর্শ নেই। যদি সিদ্ধান্তহীনতা থাকে, তাহলে আলাদা একটা `*.css` ফাইলে স্বাভাবিকভাবে স্টাইল লিখে [`className`](/docs/dom-elements.html#classname) এর সাহায্যে তা ব্যবহার করার মাধ্যমে শুরু করতে পারো।
 
-### Can I do animations in React? {#can-i-do-animations-in-react}
+### আমি কি React এ অ্যানিমেশন করতে পারি?{#can-i-do-animations-in-react}
 
-React can be used to power animations. See [React Transition Group](https://reactcommunity.org/react-transition-group/) and [React Motion](https://github.com/chenglou/react-motion), for example.
+অ্যানিমেশনের জন্য React-কে ব্যবহার করা যেতে পারে। আরোও জানতে [React Transition Group](https://reactcommunity.org/react-transition-group/) এবং [React Motion](https://github.com/chenglou/react-motion) দেখুন।
