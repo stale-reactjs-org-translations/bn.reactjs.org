@@ -34,7 +34,7 @@ render() {
 
 ### আমি কি inline style ব্যবহার করতে পারি? {#can-i-use-inline-styles}
 
-হ্যা, styling এর উপর ডকুমেন্টটা দেখুন [এখানে](/docs/dom-elements.html#style)।
+হ্যাঁ, styling এর ডকুমেন্টেশন [এখানে](/docs/dom-elements.html#style) দেখুন।
 
 ### Inline styles কি খারাপ? {#are-inline-styles-bad}
 
