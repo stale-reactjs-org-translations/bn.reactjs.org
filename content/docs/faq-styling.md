@@ -48,4 +48,4 @@ _বিঃদ্রঃ এই ফিচারটি React এর অংশ ন�
 
 ### আমি কি React এ অ্যানিমেশন করতে পারি?{#can-i-do-animations-in-react}
 
-অ্যানিমেশনের জন্য React-কে ব্যবহার করা যেতে পারে। আরোও জানতে [React Transition Group](https://reactcommunity.org/react-transition-group/) এবং [React Motion](https://github.com/chenglou/react-motion) দেখুন।
+অ্যানিমেশনের জন্য React-কে ব্যবহার করা যেতে পারে। উদাহরণস্বরূপ, [React Transition Group](https://reactcommunity.org/react-transition-group/) এবং [React Motion](https://github.com/chenglou/react-motion) দেখুন।
