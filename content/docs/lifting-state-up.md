@@ -1,6 +1,6 @@
 ---
 id: lifting-state-up
-title: Lifting State Up
+title: State উপরে তোলা
 permalink: docs/lifting-state-up.html
 prev: forms.html
 next: composition-vs-inheritance.html
@@ -9,11 +9,11 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+অনেক সময়, একই ডাটা পরিবর্তন বিভিন্ন কম্পোনেন্টে একসাথে প্রতিফলিত করতে হয়। আমরা এক্ষেত্রে কম্পোনেন্টগুলোর shared state কে তাদের নিকটতম ancestor এ তুলে আনার পরামর্শ দেই। চলুন আমরা দেখি কিভাবে এটি কাজ করে।
 
-In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.
+এই অনুচ্ছেদে, আমরা একটি তাপমাত্রা পরিমাপক ক্যালকুলেটর তৈরি করব যা হিসাব করবে আদৌ কোন প্রদত্ত তাপমাত্রায় পানি ফুটতে শুরু করবে কিনা।
 
-We will start with a component called `BoilingVerdict`. It accepts the `celsius` temperature as a prop, and prints whether it is enough to boil the water:
+আমরা `BoilingVerdict` নামের একটি কম্পোনেন্টের মাধ্যমে শুরু করব। এটি `celsius` তাপমাত্রা কে একটি prop হিসেবে গ্রহণ করে এবং প্রিন্ট করে আদৌ ঐ তাপমাত্রা পানি ফুটানোর জন্য যথেষ্ট কিনাঃ
 
 ```js{3,5}
 function BoilingVerdict(props) {
@@ -24,9 +24,9 @@ function BoilingVerdict(props) {
 }
 ```
 
-Next, we will create a component called `Calculator`. It renders an `<input>` that lets you enter the temperature, and keeps its value in `this.state.temperature`.
+এরপর, আমরা `Calculator` নামের একটি কম্পোনেন্ট তৈরি করব। এটি একটি `<input>` রেন্ডার করে যা আপনাকে তাপমাত্রা ইনপুট করার সুযোগ করে দেয় এবং ঐ মান `this.state.temperature` এ সংরক্ষণ করে।
 
-Additionally, it renders the `BoilingVerdict` for the current input value.
+এছাড়াও, এটি বর্তমান ইনপুট এর মানের জন্য `BoilingVerdict` রেন্ডার করে।
 
 ```js{5,9,13,17-21}
 class Calculator extends React.Component {
@@ -56,13 +56,13 @@ class Calculator extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOBm?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ZXeOBm?editors=0010)
 
-## Adding a Second Input {#adding-a-second-input}
+## দ্বিতীয় একটি ইনপুট যুক্ত করা {#adding-a-second-input}
 
-Our new requirement is that, in addition to a Celsius input, we provide a Fahrenheit input, and they are kept in sync.
+আমাদের নতুন প্রয়োজনীয়তা হল, আমরা সেলসিয়াস ইনপুটের পাশাপাশি ফারেনহাইট ইনপুট ও সরবরাহ করব এবং তারা একে অপরের মানের সাথে মিলিয়ে চলবে।
 
-We can start by extracting a `TemperatureInput` component from `Calculator`. We will add a new `scale` prop to it that can either be `"c"` or `"f"`:
+আমরা `Calculator` কম্পোনেন্ট থেকে একটি `TemperatureInput` কম্পোনেন্ট বের করে আনার মাধ্যমে শুরু করতে পারি। আমরা এর সাথে নতুন একটি `scale` prop সংযুক্ত করব যার মান `"c"` অথবা `"f"` হবেঃ
 
 ```js{1-4,19,22}
 const scaleNames = {
@@ -95,7 +95,7 @@ class TemperatureInput extends React.Component {
 }
 ```
 
-We can now change the `Calculator` to render two separate temperature inputs:
+আমরা এখন `Calculator` কে পরিবর্তন করতে পারি যাতে তা দু'টি ভিন্ন তাপমাত্রার ইনপুট রেন্ডার করেঃ
 
 ```js{5,6}
 class Calculator extends React.Component {
@@ -110,15 +110,15 @@ class Calculator extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
 
-We have two inputs now, but when you enter the temperature in one of them, the other doesn't update. This contradicts our requirement: we want to keep them in sync.
+আমাদের এখন দুইটি ইনপুট রয়েছে, কিন্তু যখন আপনি এদের যেকোন একটিতে তাপমাত্রা প্রবেশ করাবেন, অন্যটিতে কোন আপডেট হবেনা। এটি আমাদের প্রয়োজনীয়তার বিপরীতঃ আমরা এদেরকে একইসাথে আপডেট করতে চাই।
 
-We also can't display the `BoilingVerdict` from `Calculator`. The `Calculator` doesn't know the current temperature because it is hidden inside the `TemperatureInput`.
+এছাড়াও আমরা `Calculator` থেকে `BoilingVerdict` দেখাতে পারবনা। `Calculator` জানেনা বর্তমান তাপমাত্রা কত কারণ এটি `TemperatureInput` এর ভেতর লুকানো রয়েছে।
 
-## Writing Conversion Functions {#writing-conversion-functions}
+## পরিবর্তনের ফাংশন লিখা {#writing-conversion-functions}
 
-First, we will write two functions to convert from Celsius to Fahrenheit and back:
+প্রথমত, আমরা দুইটি ফাংশন লিখব যা সেলসিয়াস কে ফারেনহাইটে এবং ফারেনহাইটকে পুনরায় সেলসিয়াসে রূপান্তর করতে পারেঃ
 
 ```js
 function toCelsius(fahrenheit) {
@@ -130,9 +130,9 @@ function toFahrenheit(celsius) {
 }
 ```
 
-These two functions convert numbers. We will write another function that takes a string `temperature` and a converter function as arguments and returns a string. We will use it to calculate the value of one input based on the other input.
+এই দুইটি ফাংশন numbers কনভার্ট করে। আমরা আরও একটি ফাংশন লিখব যা একটি string `temperature` এবং একটি converter function কে আর্গুমেন্ট হিসেবে নেবে এবং একটি string রিটার্ন করবে। আমরা এর মাধ্যমে একটি ইনপুটের মান থেকে অন্য ইনপুটের মান নির্ণয় করব।
 
-It returns an empty string on an invalid `temperature`, and it keeps the output rounded to the third decimal place:
+এটি ভুল `temperature` এর জন্য একটি খালি string রিটার্ন করবে, এবং এটি তিন দশমিক স্থান পর্যন্ত আউটপুটের মান নিখুঁতভাবে রাখবেঃ
 
 ```js
 function tryConvert(temperature, convert) {
@@ -146,11 +146,11 @@ function tryConvert(temperature, convert) {
 }
 ```
 
-For example, `tryConvert('abc', toCelsius)` returns an empty string, and `tryConvert('10.22', toFahrenheit)` returns `'50.396'`.
+উদাহরণস্বরূপ, `tryConvert('abc', toCelsius)` একটি খালি string রিটার্ন করে, এবং `tryConvert('10.22', toFahrenheit)` রিটার্ন করে `'50.396'`।
 
-## Lifting State Up {#lifting-state-up}
+## State উপরে তোলা {#lifting-state-up}
 
-Currently, both `TemperatureInput` components independently keep their values in the local state:
+বর্তমানের, উভয় `TemperatureInput` কম্পোনেন্টই স্বাধীনভাবে তাদের মান local state এ সংরক্ষণ করেঃe:
 
 ```js{5,9,13}
 class TemperatureInput extends React.Component {
@@ -169,13 +169,13 @@ class TemperatureInput extends React.Component {
     // ...  
 ```
 
-However, we want these two inputs to be in sync with each other. When we update the Celsius input, the Fahrenheit input should reflect the converted temperature, and vice versa.
+যাহোক, আমরা চাই এই দুইটি ইনপুট যাতে একে অপরের সাথে সামঞ্জস্যপূর্ণ হয়। যখনই আমরা সেলসিয়াস ইনপুট আপডেট করব, তখনই ফারেনহাইট ইনপুটও রূপান্তরিত তাপমাত্রা প্রতিফলিত করবে, এবং এর উল্টোটাও হবে।
 
-In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called "lifting state up". We will remove the local state from the `TemperatureInput` and move it into the `Calculator` instead.
+React-এ, যেই কম্পোনেন্টগুলোর state শেয়ার করার দরকার হয় তাদের নিকটতম পূর্বপুরুষ কম্পোনেন্টে ঐ state কে তুলে এনে state শেয়ার করা হয়। একে বলা হয় "state উপরে তোলা"। আমরা `TemperatureInput` থেকে এর লোকাল state টি মুছে ফেলব এবং একে `Calculator` কম্পোনেন্টে নিয়ে যাব।
 
-If the `Calculator` owns the shared state, it becomes the "source of truth" for the current temperature in both inputs. It can instruct them both to have values that are consistent with each other. Since the props of both `TemperatureInput` components are coming from the same parent `Calculator` component, the two inputs will always be in sync.
+যদি `Calculator` এই শেয়ারকৃত state নিয়ন্ত্রণ করে, এটি তখন উভয় ইনপুটেই বর্তমান তাপমাত্রার জন্য "সত্যের উৎস" হয়ে ওঠে। এটি তখন এদের নির্দেশ দিতে পারে যাতে উভয়ের মান একে অপরের সাথে সামঞ্জস্যপূর্ণ হয়। যেহেতু, উভয় `TemperatureInput` এর props গুলোই তাদের একই parent `Calculator` কম্পোনেন্ট থেকে আসছে, সেহেতু উভয় ইনপুটই সবসময় একে অপরের সাথে সামঞ্জস্যপূর্ণ থাকবে।
 
-Let's see how this works step by step.
+চলুন, ধাপে ধাপে দেখি এটি কিভাবে কাজ করে।
 
 First, we will replace `this.state.temperature` with `this.props.temperature` in the `TemperatureInput` component. For now, let's pretend `this.props.temperature` already exists, although we will need to pass it from the `Calculator` in the future:
 
@@ -327,4 +327,3 @@ If something can be derived from either props or state, it probably shouldn't be
 When you see something wrong in the UI, you can use [React Developer Tools](https://github.com/facebook/react-devtools) to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source:
 
 <img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%">
-
