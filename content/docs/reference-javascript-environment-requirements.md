@@ -1,14 +1,14 @@
 ---
 id: javascript-environment-requirements
-title: JavaScript Environment Requirements
+title: জাভাস্ক্রিপ্ট ইনভায়রনমেন্টের প্রয়োজনীয়তাসমূহ
 layout: docs
 category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
-React 16 depends on the collection types [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). If you support older browsers and devices which may not yet provide these natively (e.g. IE < 11) or which have non-compliant implementations (e.g. IE 11), consider including a global polyfill in your bundled application, such as [core-js](https://github.com/zloirock/core-js) or [babel-polyfill](https://babeljs.io/docs/usage/polyfill/).
+React 16 [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) এবং [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) এর মত কালেকশন টাইপের উপর নির্ভর করে। আপনি যদি পুরনো ব্রাউজারগুলো বা ডিভাইসগুলো সাপোর্ট করেন যা হয়ত এই টাইপগুলো সাপোর্ট করেনা (যেমনঃ IE < 11) অথবা যা এই টাইপগুলো সাধারণের চেয়ে ভিন্নভাবে ইমপ্লিমেন্ট করে (যেমনঃ IE 11), সেক্ষেত্রে আপনার bundled অ্যাপ্লিকেশনের সাথে [core-js](https://github.com/zloirock/core-js) অথবা [babel-polyfill](https://babeljs.io/docs/usage/polyfill/) এর মত একটি গ্লোবাল পলিফিল সংযুক্ত করতে পারেন।
 
-A polyfilled environment for React 16 using core-js to support older browsers might look like:
+পুরনো ব্রাউজারগুলো সাপোর্ট করার জন্য React 16 এ core-js এর মাধ্যমে পলিফিলকৃত একটি ইনভায়রনমেন্ট এমন হতে পারেঃ 
 
 ```js
 import 'core-js/es6/map';
@@ -23,8 +23,8 @@ ReactDOM.render(
 );
 ```
 
-React also depends on `requestAnimationFrame` (even in test environments).  
-You can use the [raf](https://www.npmjs.com/package/raf) package to shim `requestAnimationFrame`:
+React এছাড়াও `requestAnimationFrame` এর উপর নির্ভর করে (এমনকি test ইনভায়রনমেন্টেও).
+আপনি [raf](https://www.npmjs.com/package/raf) package টি ব্যবহার করে `requestAnimationFrame` shim করতে পারেনঃ
 
 ```js
 import 'raf/polyfill';
