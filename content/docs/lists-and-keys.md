@@ -24,7 +24,7 @@ React এ array কে লিস্ট [elements](/docs/rendering-elements.html)
 
 আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে elements এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
 
-নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রত্যেকটা আইটেম এর জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array elements কে `listItems` এর অন্তর্ভুক্ত করিঃ
+নিচে আমরা জাভাস্ক্রিপ্ট [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশন ব্যবহার করে `numbers` array কে লুপ করি। প্রতিটি আইটেমের জন্য আমরা একটি `<li>` element রিটার্ন করি। পরিশেষে আমরা প্রাপ্ত array elements কে `listItems` এর অন্তর্ভুক্ত করিঃ
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
@@ -119,7 +119,7 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-যখন আপনার রেন্ডারড আইটেম এর জন্য কোন স্থিতিশীল আইডি থাকবেনা তখন আপনি শেষ অবলম্বন হিসাবে আইটেমের ইনডেক্সকে key হিসাবে ব্যবহার করতে পারেনঃ
+যখন আপনার রেন্ডারড আইটেমের জন্য কোন স্থিতিশীল আইডি থাকবেনা তখন আপনি শেষ অবলম্বন হিসাবে আইটেমের ইনডেক্সকে key হিসাবে ব্যবহার করতে পারেনঃ
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
@@ -130,7 +130,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-যে ক্ষেত্রে আইটেমের অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্সকে ব্যবহার করার পরামর্শ দেবনা। এটি পারফরমেন্স এর উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল [ইনডেক্স কে key হিসাবে ব্যবহার এর নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে।
+যে ক্ষেত্রে আইটেমের অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্সকে ব্যবহার করার পরামর্শ দেবনা। এটি পারফরমেন্সের উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল [ইনডেক্সকে key হিসাবে ব্যবহারের নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে।
 
 আপনি যদি বিস্তারিত জানতে চান তাহলে [keys কেন দরকারি এ বিষয়ে গভীর আলোচনাটি](/docs/reconciliation.html#recursing-on-children) দেখতে পারেন।
 
@@ -204,7 +204,7 @@ ReactDOM.render(
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
-একটি ভাল প্রচলিত রীতি হল `map()` ফাংশন  কল এর মধ্যের elements গুলোর keys দরকার।
+একটি ভাল প্রচলিত রীতি হল `map()` ফাংশন  কলের মধ্যের elements গুলোর keys দরকার।
 
 ### পারিপার্শ্বিক elements গুলোর মধ্যে Keys কে ইউনিক হতে হবে {#keys-must-only-be-unique-among-siblings}
 
@@ -280,7 +280,7 @@ function NumberList(props) {
 }
 ```
 
-JSX কারলি ব্র্যাকেটে [যেকোন এক্সপ্রেশন কে স্থাপন করার](/docs/introducing-jsx.html#embedding-expressions-in-jsx) অনুমতি দেয় তাই আমরা `map()`এর ফলাফল সারিবদ্ধভাবে প্রকাশ করতে পারিঃ
+JSX কারলি ব্র্যাকেটে [যেকোন এক্সপ্রেশনকে স্থাপন করার](/docs/introducing-jsx.html#embedding-expressions-in-jsx) অনুমতি দেয় তাই আমরা `map()`এর ফলাফল সারিবদ্ধভাবে প্রকাশ করতে পারিঃ
 
 ```js{5-8}
 function NumberList(props) {
