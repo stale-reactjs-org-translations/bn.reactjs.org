@@ -20,7 +20,7 @@ console.log(doubled);
 
 React এ array কে লিস্ট [elements](/docs/rendering-elements.html) এ রূপান্তর করাও প্রায় একই রকম।
 
-### একাধিক কম্পোনেন্টসকে রেন্ডার করা।{#rendering-multiple-components}
+### একাধিক কম্পোনেন্ট রেন্ডার করা।{#rendering-multiple-components}
 
 আপনি কারলি ব্র্যাকেট `{}` ব্যবহার করে elements এর সম্ভার গঠন করতে পারবেন এবং তাদেরকে [JSX এর অন্তর্ভুক্ত করতে পারবেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)
 
