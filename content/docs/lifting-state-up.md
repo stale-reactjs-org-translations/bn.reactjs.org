@@ -177,7 +177,7 @@ React-এ, যেই কম্পোনেন্টগুলোর state শে�
 
 চলুন, ধাপে ধাপে দেখি এটি কিভাবে কাজ করে।
 
-First, we will replace `this.state.temperature` with `this.props.temperature` in the `TemperatureInput` component. For now, let's pretend `this.props.temperature` already exists, although we will need to pass it from the `Calculator` in the future:
+প্রথমত, আমরা `TemperatureInput` কম্পোনেন্টের `this.state.temperature` কে `this.props.temperature` দ্বারা প্রতিস্থাপিত করব। এখনের জন্য, ধরে নিই `this.props.temperature` বিদ্যমান, যদিও ভবিষ্যতে আমাদেরকে এটি `Calculator` থেকে পাস করতে হবেঃ
 
 ```js{3}
   render() {
@@ -186,11 +186,11 @@ First, we will replace `this.state.temperature` with `this.props.temperature` in
     // ...
 ```
 
-We know that [props are read-only](/docs/components-and-props.html#props-are-read-only). When the `temperature` was in the local state, the `TemperatureInput` could just call `this.setState()` to change it. However, now that the `temperature` is coming from the parent as a prop, the `TemperatureInput` has no control over it.
+আমরা জানি, [prop হল read-only](/docs/components-and-props.html#props-are-read-only)। যখন `temperature` লোকাল state-এ ছিল, তখন `TemperatureInput` `this.setState()` কল করেই এটি পরিবর্তন করতে পারত। যাহোক, এখন যেহেতু `temperature` parent থেকে একটি prop হিসেবে আসছে, সেহেতু `TemperatureInput`-এর `temperature`-এর উপর কোন নিয়ন্ত্রণ নেই।
 
-In React, this is usually solved by making a component "controlled". Just like the DOM `<input>` accepts both a `value` and an `onChange` prop, so can the custom `TemperatureInput` accept both `temperature` and `onTemperatureChange` props from its parent `Calculator`.
+React-এ, সাধারণ একটি কম্পোনেন্টকে "controlled" এ রূপান্তরিত করে এটি সমাধান করা হয়। ঠিক যেমন `<input>` একটি `value` এবং `onChange` prop উভয়ই গ্রহণ করে, তেমন করেই `Calculator` parent থেকে কাস্টম `TemperatureInput` একটি `temperature` এবং `onTemperatureChange` prop উভয়ই গ্রহণ করবে।
 
-Now, when the `TemperatureInput` wants to update its temperature, it calls `this.props.onTemperatureChange`:
+এখন, যখন `TemperatureInput` এর তাপমাত্রা আপডেট করতে চাইবে, তখন এটি `this.props.onTemperatureChange` কল করবেঃ
 
 ```js{3}
   handleChange(e) {
@@ -199,9 +199,9 @@ Now, when the `TemperatureInput` wants to update its temperature, it calls `this
     // ...
 ```
 
->Note:
+>বিঃদ্রঃ
 >
->There is no special meaning to either `temperature` or `onTemperatureChange` prop names in custom components. We could have called them anything else, like name them `value` and `onChange` which is a common convention.
+>কাস্টম কম্পোনেন্টে `temperature` অথবা `onTemperatureChange` prop এর নামগুলোর বিশেষ কোন অর্থ নেই। আমরা চাইলে এদেরকে অন্য যেকোন কিছুও নাম দিতে পারতাম, যেমনঃ `value` এবং `onChange` নাম দিতে পারতাম যা একটি সাধারণ প্রচলন।
 
 The `onTemperatureChange` prop will be provided together with the `temperature` prop by the parent `Calculator` component. It will handle the change by modifying its own local state, thus re-rendering both inputs with the new values. We will look at the new `Calculator` implementation very soon.
 
