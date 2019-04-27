@@ -318,12 +318,12 @@ class Calculator extends React.Component {
 
 ## যা শিখলাম {#lessons-learned}
 
-There should be a single "source of truth" for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down).
+React অ্যাপ্লিকেশনে যেকোন ডাটা পরিবর্তনের জন্য শুধুমাত্র একটি "সত্যের উৎস" থাকবে। সাধারণত, state সর্বপ্রথম সেই কম্পোনেন্টে সংযুক্ত করা হয় যার রেন্ডারে এর দরকার পড়ে। এরপর, যদি অন্যান্য কম্পোনেন্টেরও এর দরকার হয় তাহলে আপনি একে এদের নিকটতম সাধারণ ancestor কম্পোনেন্টে তুলে আনতে পারেন। বিভিন্ন কম্পোনেন্টে state একইসাথে পরিবর্তন করার বদলে আপনার [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down) এর উপর নির্ভর করা উচিত।
 
-Lifting state involves writing more "boilerplate" code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state "lives" in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.
+State উপরে তোলার ক্ষেত্রে two-way binding পদ্ধতির চেয়ে অনেক বেশি "boilerplate" কোড লিখতে হয়, কিন্তু এর একটি সুবিধা হল এতে কম পরিশ্রমে কোডের বাগগুলো খুঁজে বের করা যায়। যেহেতু যেকোন state কোন একটি কম্পোনেন্টে "বসবাস" করে এবং শুধুমাত্র ঐ কম্পোনেন্টই তা পরিবর্তন করতে পারে, কোডের বাগের বিচরণস্থল অনেকখানি কমে যায়। এরপরও আপনি ইউজার ইনপুট প্রত্যাখ্যান করার জন্য যেকোন কাস্টম লজিক দাঁড় করাতে পারেন।
 
-If something can be derived from either props or state, it probably shouldn't be in the state. For example, instead of storing both `celsiusValue` and `fahrenheitValue`, we store just the last edited `temperature` and its `scale`. The value of the other input can always be calculated from them in the `render()` method. This lets us clear or apply rounding to the other field without losing any precision in the user input.
+যদি কোনকিছু props অথবা state থেকে বের করা সম্ভব হয়, তাহলে সম্ভবত এটি state এ না থাকা উচিত। উদাহরণস্বরূপ, `celsiusValue` এবং `fahrenheitValue` উভয়কেই সংরক্ষণ করার পরিবর্তে আমরা শুধুমাত্র সর্বশেষ পরিবর্তিত `temperature` এবং এর `scale` সংরক্ষণ করছি। অপর ইনপুটের মান সবসময়ই `render()` মেথডে এদের থেকে হিসাব করা যায়। এটি আমাদেরকে অপর ফিল্ডটি মুছে ফেলার বা মানের নির্ভুলতা সংরক্ষণ করে রাউন্ডিং করতে সাহায্য করে।
 
-When you see something wrong in the UI, you can use [React Developer Tools](https://github.com/facebook/react-devtools) to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source:
+যখন আপনি ইউজার ইন্টারফেসে কিছু ভুল দেখতে পাবেন, তখন আপনি [React Developer Tools](https://github.com/facebook/react-devtools) ব্যবহার করে prop গুলো পরীক্ষা করে দেখতে পারেন এবং tree উপরে তুলতে পারেন যতক্ষণ না আপনি state পরিবর্তনকারী কম্পোনেন্টটি খুঁজে পাচ্ছেন। এটি আপনাকে বাগগুলো এদের উৎস থেকে খুঁজে বের করতে সাহায্য করেঃ
 
 <img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%">
