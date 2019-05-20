@@ -11,8 +11,8 @@ React 16 [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 পুরনো ব্রাউজারগুলো সাপোর্ট করার জন্য React 16 এ core-js এর মাধ্যমে পলিফিলকৃত একটি ইনভায়রনমেন্ট এমন হতে পারেঃ 
 
 ```js
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import 'core-js/es/map';
+import 'core-js/es/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
