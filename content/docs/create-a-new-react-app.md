@@ -1,6 +1,6 @@
 ---
 id: create-a-new-react-app
-title: Create a New React App
+title: নতুন একটি React অ্যাপ তৈরী করুন
 permalink: docs/create-a-new-react-app.html
 redirect_from:
   - "docs/add-react-to-a-new-app.html"
@@ -8,17 +8,17 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
-Use an integrated toolchain for the best user and developer experience.
+আরো ভালো ইউজার এবং ডেভেলপার এক্সপেরিয়েন্স পেতে কোনো একটি ইন্টিগ্রেটেড টুলচেইন ব্যাবহার করুন।
 
-This page describes a few popular React toolchains which help with tasks like:
+এই পৃষ্ঠায় কিছু জনপ্রিয় React টুলচেইন নিয়ে আলোচনা করা হয়েছে যা এরুপ কাজগুলোর ক্ষেত্রে সাহায্য করবেঃ 
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+* ফাইল এবং কম্পোনেন্টসমূহ স্কেল করা।
+* npm থেকে third-party লাইব্রেরীসমূহ ব্যাবহার করা।
+* সাধারণ ভুলগুলো দ্রুত সনাক্ত করা।
+* ডেভেলপমেন্টের সময় CSS এবং JS লাইভ-এডিট করা।
+* প্রোডাকশনের জন্য আউটপুট অপ্টিমাইজ করা।
 
-The toolchains recommended on this page **don't require configuration to get started**.
+এই পৃষ্ঠায় নির্দেশিত টুলচেইনসমূহ **প্রাথমিকক্ষেত্রে  কনফিগারেশন করার প্রয়োজন ণেই**।
 
 ## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
 
