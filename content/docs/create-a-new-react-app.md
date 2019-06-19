@@ -26,14 +26,14 @@ next: cdn-links.html
 
 এছাড়াও এটা **React- কে একটি বিদ্যমান ওয়েবসাইটের সাথে একীভূত করার সহজতম উপায়।** আপনি চাইলে যেকনো সময় আপনার সুবিধা অনুযায়ী বৃহত্তর টুলচেইন যুক্ত করতে পারেন। 
 
-## Recommended Toolchains {#recommended-toolchains}
+## সুপারিশকৃত টুলচেইনসমূহ {#recommended-toolchains}
 
-The React team primarily recommends these solutions:
+React টিম প্রাথমিকভাবে এই সমাধানসমূহের পরামর্শ দেয়ঃ  
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+- যদি আপনি **React শিক্ষানবিস** হোন অথবা **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ তৈরী করছেন**, তবে ব্যাবরাহ করুন [Create React App](#create-react-app)। 
+- যদি আপনি **Node.js দিয়ে একটি সার্ভার-রেন্ডারর্ড ওয়েবসাইট** বানানোরতো থাকেন, তবে [Next.js](#nextjs) পরখ করুন।
+- যদি আপনি একটি **স্ট্যাটিক কন্টেন্ট-অরিয়েন্টেড ওয়েবসাইট** বানানোরতো থাকেন, তবে [Gatsby](#gatsby) পরখ করুন।
+- যদি আপনি একটি **কম্পোনেন্ট লাইব্রেরী** বানানোরতো থাকেন অথবা **বিদ্যমান কোদবেজের সাথে একীভূত করছেন, তবে [আরও সহজবশ্য টুলচেইনসমূহ](#more-flexible-toolchains) পরখ করুন।**
 
 ### Create React App {#create-react-app}
 
