@@ -20,11 +20,11 @@ next: cdn-links.html
 
 এই পৃষ্ঠায় নির্দেশিত টুলচেইনসমূহ **প্রাথমিকক্ষেত্রে  কনফিগারেশন করার প্রয়োজন ণেই**।
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+## আপনার হয়তো টুলচেইনের প্রয়োজন নাও হতে পারে {#you-might-not-need-a-toolchain}
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+যদি আপনি উপরে আলোচিত উপায়সমূহের অভিজ্ঞতা নিতে না চান অথবা জাভাস্ক্রিপ্ট টুলগুলো ব্যাবহার করতে ভালো না লাগে থাকে, তবে [HTML পেইজে React- কে `<script>` ট্যাগে যুক্ত করুন](/docs/add-react-to-a-website.html), অন্যক্ষেত্রে [JSX এর সাথে](/docs/add-react-to-a-website.html#optional-try-react-with-jsx)।
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+এছাড়াও এটা **React- কে একটি বিদ্যমান ওয়েবসাইটের সাথে একীভূত করার সহজতম উপায়।** আপনি চাইলে যেকনো সময় আপনার সুবিধা অনুযায়ী বৃহত্তর টুলচেইন যুক্ত করতে পারেন। 
 
 ## Recommended Toolchains {#recommended-toolchains}
 
