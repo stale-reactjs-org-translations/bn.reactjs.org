@@ -63,9 +63,9 @@ Next.js শিখুন [এর স্বীকৃত প্রদর্শক](
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+React দিয়ে **স্ট্যাটিক ওয়েবসাইট** তৈরী করার জন্য  সেরা উপায় হচ্ছে [Gatsby](https://www.gatsbyjs.org/)। এটি আপনাকে React কম্পোনেন্ট ব্যাবহার করতে দেয়, কিন্তু আউটপুট দেয় প্রি-রেন্ডার্ড HTML এবং CSS, দ্রুততম লোড টাইম নিশিত করার জন্য।
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](https://www.gatsbyjs.org/docs/) এবং একটি [স্টার্টার কিটগুলোর  গ্যাল্যারি](https://www.gatsbyjs.org/docs/gatsby-starters/) থেকে। 
 
 ### More Flexible Toolchains {#more-flexible-toolchains}
 
