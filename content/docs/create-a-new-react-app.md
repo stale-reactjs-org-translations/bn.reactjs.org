@@ -37,9 +37,9 @@ React টিম প্রাথমিকভাবে এই সমাধান�
 
 ### Create React App {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+[Create React App](https://github.com/facebookincubator/create-react-app) হচ্ছে **React শিখার** জন্য একটি সুবিধাজনক এনভাইরনমেন্ট, এবং React এ **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ্লিকেশন** বানানো শুরু করার জন্য সবচেয়ে ভালো পন্থা।
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have Node >= 6 and npm >= 5.2 on your machine. To create a project, run:
+এটা আপানার ডেভেলপমেন্ট এনভাইরন্মেন্ট সেট আপ করে দিবে যাতে করে আপনি JavaScript এর সর্বশেষ ফিচারসমূহ ব্যাবহার করতে পারেন, সুন্দর ডেভেলপার এক্সপেরিইয়েন্স সরবরাহ করে, এবং প্রোডাকশনের জন্য অ্যাপকে আরো নিখুঁত করে। এর জন্য আপনার যন্ত্রে Node >= 6 এবং npm >= 5.2 থাকতে হবে। একটি প্রোজেক্ট তৈরী করতে, চালনা করুনঃ
 
 ```bash
 npx create-react-app my-app
@@ -47,13 +47,13 @@ cd my-app
 npm start
 ```
 
->Note
+>বিঃদ্রঃ
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>প্রথম সারিতে `npx` কোন আক্ষরিক ত্রুটি নয় -- ইহা [package চালনা করার জন্য একটি টুল যা npm 5.2+ এর সাথে এসেছে](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)। 
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+Create React App ব্যাকএন্ডের যুক্তি বা ডাটাবেইস নিয়ন্ত্রণ করে না; এটা শুধু ফ্রন্টএন্ডে গঠিত পাইপলাইন তৈরী করে, যেন আপনি চাইলে যেকোনো ব্যাকএন্ডের সাথে ব্যাবহার করতে পারেন। আড়ালে, এটি [Babel](https://babeljs.io/) এবং [webpack](https://webpack.js.org/) ব্যাবহার করে, কিন্তু এগুলো সম্পর্কে আপনাকে কিছু না জানলেও চলবে।
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+যখন আপনি প্রোডাকশনের এর জন্য স্থাপন( deploy ) করতে প্রস্তুত, `npm run build` চালনা করলে আপনার অ্যাপের `build` ফোল্ডারে একটি সংক্ষেপিত কাঠামো তৈরী করবে। আপনি Create React App সম্পর্কে আরো জানতে পারেন [এই README থেকে](https://github.com/facebookincubator/create-react-app#create-react-app--) এবং এই [ইউজার গাইডটি](https://facebook.github.io/create-react-app/)। 
 
 ### Next.js {#nextjs}
 
