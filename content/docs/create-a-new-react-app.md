@@ -57,9 +57,9 @@ Create React App ব্যাকএন্ডের যুক্তি বা ড
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/) **স্ট্যাটিক এবং সার্ভার-রেন্ডার্ড অ্যাপ্লিকেশনসমূহের** জন্য React দিয়ে গঠিত একটি জনপ্রিয় এবং ক্ষীণ ফ্রেমওয়ার্ক। প্রসঙ্গের বাইরে এটি **স্টাইলিং এবং রাউটিং সমাধানসমূহ** অন্তর্গত করে, এবং ধরে নেয় যে আপনি [Node.js](https://nodejs.org/) কে সার্ভার এনভাইরনমেন্ট হিসেবে ব্যাবহার করছেন। 
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+Next.js শিখুন [এর স্বীকৃত প্রদর্শক](https://nextjs.org/learn/) থেকে। 
 
 ### Gatsby {#gatsby}
 
