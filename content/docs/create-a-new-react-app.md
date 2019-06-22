@@ -57,38 +57,38 @@ Create React App ব্যাকএন্ডের যুক্তি বা ড
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/) **স্ট্যাটিক এবং সার্ভার-রেন্ডার্ড অ্যাপ্লিকেশনসমূহের** জন্য React দিয়ে গঠিত একটি জনপ্রিয় এবং ক্ষীণ ফ্রেমওয়ার্ক। প্রসঙ্গের বাইরে এটি **স্টাইলিং এবং রাউটিং সমাধানসমূহ** অন্তর্গত করে, এবং ধরে নেয় যে আপনি [Node.js](https://nodejs.org/) কে সার্ভার এনভাইরনমেন্ট হিসেবে ব্যাবহার করছেন। 
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+Next.js শিখুন [এর স্বীকৃত প্রদর্শক](https://nextjs.org/learn/) থেকে। 
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+React দিয়ে **স্ট্যাটিক ওয়েবসাইট** তৈরী করার জন্য  সেরা উপায় হচ্ছে [Gatsby](https://www.gatsbyjs.org/)। এটি আপনাকে React কম্পোনেন্ট ব্যাবহার করতে দেয়, কিন্তু আউটপুট দেয় প্রি-রেন্ডার্ড HTML এবং CSS, দ্রুততম লোড টাইম নিশিত করার জন্য।
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](https://www.gatsbyjs.org/docs/) এবং একটি [স্টার্টার কিটগুলোর  গ্যাল্যারি](https://www.gatsbyjs.org/docs/gatsby-starters/) থেকে। 
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### আরও সহজবশ্য টুলচেইনসমূহ {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+উল্লিখিত টুলচেইনসমূহ আরো বেশি সুবিধা ও পছন্দ দিয়ে থাকে। সেইগুলোকে আমরা আরো অভিজ্ঞ ব্যাবহারকারীদের জন্য পরামর্শ করই। 
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) এর ক্ষমতাকে একত্রিত করে সহজ প্রিসেটগুলোর সাথে, এবং একটি প্রিসেটকে [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) অন্তর্ভুক্ত করে। 
 
-- **[nwb](https://github.com/insin/nwb)** is particularly great for [publishing React components for npm](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). It [can be used](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb) for creating React apps, too. 
+- **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য প্রকাশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপসমূহের জন্যও **ব্যাবহার করা জেতে পারে**।
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)** একটি দ্রুত, জিরো কনফিগার্ড ওয়েব অ্যাপ্লিকেশন বান্ডেলার যা [React এর সাথে কাজ করে](https://parceljs.org/recipes.html#react)। 
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Razzle](https://github.com/jaredpalmer/razzle)** একটি সার্ভার-রেন্ডারিং ফ্রেমওয়ার্ক যাতে কোনো কনফিগারেশন দরকার হয় না, কিন্তু Next.js এর চেয়ে বেশি সুবিধা দেয়। 
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## শুরু থেকে একটি টুলচেইন তৈরী করা {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+সাধারণত জাভাস্ক্রিপ্ট তৈরী একটি টুলচেইন যা নিয়ে গঠিত হয়ঃ 
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* একটি **প্যাকেজ ম্যানাজার**, যেমন [Yarn](https://yarnpkg.com/) অথবা [npm](https://www.npmjs.com/)। এর মাধ্যমে আপনি সুবিশাল বাস্তুতন্ত্রবিশেষ থার্ড-পার্টি প্যাকেজগুলোর সুবুধা পাবেন, সহজে সেগুলো ইন্সটল বা আপডেট করতে পারবেন।
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* একটি **বান্ডেলার**, যেমন [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/)। লোড টাইম নিখুঁত করতে, এটি আপনাকে মডুলার কোড লিখতে দেয় এবং একে ছোট প্যাকেজসমূহে একত্রিত করে। 
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* একটি **কম্পাইলার**, যেমন [Babel](https://babeljs.io/)। এটি আপনাকে আধুনিক জাভাস্ক্রিপ্ট কোড লিখতে দেয় যা এখনো পুরোনো ব্রাউজারগুলোতে কাজ করে।
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+যদি আপনি শুরু থেকে নিজের জাভাস্ক্রিপ্ট টুলচেইন সেটআপ করার চিন্তা করে থাকেন, [এই প্রদর্সশক দেখে নিন](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) যা কিছু Create React App এর কার্যকারিতা পুনরায় তৈরী করে।
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+আপনার নিজের তৈরী টুলচেইন [সঠিকভাবে প্রোডাকশনের জন্য সেটআপ হয়েছে কি না](/docs/optimizing-performance.html#use-the-production-build), তা নিশ্চিত করতে ভুলবেন না। 
