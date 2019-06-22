@@ -79,16 +79,16 @@ Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](h
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** একটি সার্ভার-রেন্ডারিং ফ্রেমওয়ার্ক যাতে কোনো কনফিগারেশন দরকার হয় না, কিন্তু Next.js এর চেয়ে বেশি সুবিধা দেয়। 
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## শুরু থেকে একটি টুলচেইন তৈরী করা {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+সাধারণত জাভাস্ক্রিপ্ট তৈরী একটি টুলচেইন যা নিয়ে গঠিত হয়ঃ 
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* একটি **প্যাকেজ ম্যানাজার**, যেমন [Yarn](https://yarnpkg.com/) অথবা [npm](https://www.npmjs.com/)। এর মাধ্যমে আপনি সুবিশাল বাস্তুতন্ত্রবিশেষ থার্ড-পার্টি প্যাকেজগুলোর সুবুধা পাবেন, সহজে সেগুলো ইন্সটল বা আপডেট করতে পারবেন।
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* একটি **বান্ডেলার**, যেমন [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/)। লোড টাইম নিখুঁত করতে, এটি আপনাকে মডুলার কোড লিখতে দেয় এবং একে ছোট প্যাকেজসমূহে একত্রিত করে। 
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* একটি **কম্পাইলার**, যেমন [Babel](https://babeljs.io/)। এটি আপনাকে আধুনিক জাভাস্ক্রিপ্ট কোড লিখতে দেয় যা এখনো পুরোনো ব্রাউজারগুলোতে কাজ করে।
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+যদি আপনি শুরু থেকে নিজের জাভাস্ক্রিপ্ট টুলচেইন সেটআপ করার চিন্তা করে থাকেন, [এই প্রদর্সশক দেখে নিন](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) যা কিছু Create React App এর কার্যকারিতা পুনরায় তৈরী করে।
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+আপনার নিজের তৈরী টুলচেইন [সঠিকভাবে প্রোডাকশনের জন্য সেটআপ হয়েছে কি না](/docs/optimizing-performance.html#use-the-production-build), তা নিশ্চিত করতে ভুলবেন না। 
