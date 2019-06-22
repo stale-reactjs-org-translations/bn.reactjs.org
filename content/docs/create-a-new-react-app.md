@@ -67,17 +67,17 @@ React দিয়ে **স্ট্যাটিক ওয়েবসাইট** ত�
 
 Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](https://www.gatsbyjs.org/docs/) এবং একটি [স্টার্টার কিটগুলোর  গ্যাল্যারি](https://www.gatsbyjs.org/docs/gatsby-starters/) থেকে। 
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### আরও সহজবশ্য টুলচেইনসমূহ {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+উল্লিখিত টুলচেইনসমূহ আরো বেশি সুবিধা ও পছন্দ দিয়ে থাকে। সেইগুলোকে আমরা আরো অভিজ্ঞ ব্যাবহারকারীদের জন্য পরামর্শ করই। 
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) এর ক্ষমতাকে একত্রিত করে সহজ প্রিসেটগুলোর সাথে, এবং একটি প্রিসেটকে [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) অন্তর্ভুক্ত করে। 
 
-- **[nwb](https://github.com/insin/nwb)** is particularly great for [publishing React components for npm](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). It [can be used](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb) for creating React apps, too. 
+- **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য প্রকাশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপসমূহের জন্যও **ব্যাবহার করা জেতে পারে**।
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)** একটি দ্রুত, জিরো কনফিগার্ড ওয়েব অ্যাপ্লিকেশন বান্ডেলার যা [React এর সাথে কাজ করে](https://parceljs.org/recipes.html#react)। 
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Razzle](https://github.com/jaredpalmer/razzle)** একটি সার্ভার-রেন্ডারিং ফ্রেমওয়ার্ক যাতে কোনো কনফিগারেশন দরকার হয় না, কিন্তু Next.js এর চেয়ে বেশি সুবিধা দেয়। 
 
 ## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
 
