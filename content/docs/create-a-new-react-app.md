@@ -30,16 +30,16 @@ next: cdn-links.html
 
 React টিম প্রাথমিকভাবে এই সমাধানসমূহের পরামর্শ দেয়ঃ  
 
-- যদি আপনি **React শিক্ষানবিস** হোন অথবা **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ তৈরী করছেন**, তবে ব্যাবরাহ করুন [Create React App](#create-react-app)। 
-- যদি আপনি **Node.js দিয়ে একটি সার্ভার-রেন্ডারর্ড ওয়েবসাইট** বানানোরতো থাকেন, তবে [Next.js](#nextjs) পরখ করুন।
-- যদি আপনি একটি **স্ট্যাটিক কন্টেন্ট-অরিয়েন্টেড ওয়েবসাইট** বানানোরতো থাকেন, তবে [Gatsby](#gatsby) পরখ করুন।
-- যদি আপনি একটি **কম্পোনেন্ট লাইব্রেরী** বানানোরতো থাকেন অথবা **বিদ্যমান কোদবেজের সাথে একীভূত করছেন, তবে [আরও সহজবশ্য টুলচেইনসমূহ](#more-flexible-toolchains) পরখ করুন।**
+- যদি আপনি **React শিক্ষানবিস** হন অথবা **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ তৈরী করছেন**, তবে [Create React App](#create-react-app) ব্যাবরাহ করুন । 
+- যদি আপনি **Node.js দিয়ে একটি সার্ভার-রেন্ডার্ড ওয়েবসাইট** বানাতে চান, তবে [Next.js](#nextjs) ব্যবহার করে দেখুন।
+- যদি আপনি একটি **স্ট্যাটিক কন্টেন্ট-অরিয়েন্টেড ওয়েবসাইট** বানাতে চান, তবে [Gatsby](#gatsby) ব্যবহার করে দেখুন।
+- যদি আপনি একটি **কম্পোনেন্ট লাইব্রেরী** বানাতে চান অথবা **বিদ্যমান কোডবেজের সাথে একীভূত করতে চান, তবে [আরও সহজবশ্য টুলচেইনসমূহ](#more-flexible-toolchains) ব্যবহার করে দেখুন।**
 
 ### Create React App {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) হচ্ছে **React শিখার** জন্য একটি সুবিধাজনক এনভাইরনমেন্ট, এবং React এ **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ্লিকেশন** বানানো শুরু করার জন্য সবচেয়ে ভালো পন্থা।
+[Create React App](https://github.com/facebookincubator/create-react-app) হচ্ছে **React শিখার** জন্য একটি সুবিধাজনক ইনভায়রনমেন্ট, এবং React এ **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ্লিকেশন** বানানো শুরু করার জন্য সবচেয়ে ভালো পন্থা।
 
-এটা আপানার ডেভেলপমেন্ট এনভাইরন্মেন্ট সেট আপ করে দিবে যাতে করে আপনি JavaScript এর সর্বশেষ ফিচারসমূহ ব্যাবহার করতে পারেন, সুন্দর ডেভেলপার এক্সপেরিইয়েন্স সরবরাহ করে, এবং প্রোডাকশনের জন্য অ্যাপকে আরো নিখুঁত করে। এর জন্য আপনার যন্ত্রে Node >= 6 এবং npm >= 5.2 থাকতে হবে। একটি প্রোজেক্ট তৈরী করতে, চালনা করুনঃ
+এটা আপনার ডেভেলপমেন্ট ইনভায়রনমেন্ট সেট-আপ করে দিবে যাতে করে আপনি জাভাস্ক্রিপ্টের সর্বশেষ ফিচারসমূহ ব্যাবহার করতে পারেন, সুন্দর ডেভেলপার এক্সপেরিইয়েন্স উপভোগ করতে পারেন, এবং প্রোডাকশনের জন্য অ্যাপকে আরো নিখুঁত করতে পারেন। এর জন্য আপনার যন্ত্রে Node >= 6 এবং npm >= 5.2 থাকতে হবে। একটি প্রোজেক্ট তৈরী করতে, চালনা করুনঃ
 
 ```bash
 npx create-react-app my-app
@@ -49,11 +49,11 @@ npm start
 
 >বিঃদ্রঃ
 >
->প্রথম সারিতে `npx` কোন আক্ষরিক ত্রুটি নয় -- ইহা [package চালনা করার জন্য একটি টুল যা npm 5.2+ এর সাথে এসেছে](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)। 
+>প্রথম লাইনে `npx` কোন আক্ষরিক ত্রুটি নয় -- এটি [package চালনা করার একটি টুল যা npm 5.2+ এর সাথে আসে](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)। 
 
-Create React App ব্যাকএন্ডের যুক্তি বা ডাটাবেইস নিয়ন্ত্রণ করে না; এটা শুধু ফ্রন্টএন্ডে গঠিত পাইপলাইন তৈরী করে, যেন আপনি চাইলে যেকোনো ব্যাকএন্ডের সাথে ব্যাবহার করতে পারেন। আড়ালে, এটি [Babel](https://babeljs.io/) এবং [webpack](https://webpack.js.org/) ব্যাবহার করে, কিন্তু এগুলো সম্পর্কে আপনাকে কিছু না জানলেও চলবে।
+Create React App ব্যাকএন্ডের যুক্তি বা ডাটাবেইজ নিয়ন্ত্রণ করে না; এটা শুধু ফ্রন্টএন্ডে গঠিত পাইপলাইন তৈরী করে, যেন আপনি চাইলে যেকোনো ব্যাকএন্ডের সাথে ব্যবহার করতে পারেন। আড়ালে, এটি [Babel](https://babeljs.io/) এবং [webpack](https://webpack.js.org/) ব্যবহার করে, কিন্তু এগুলো সম্পর্কে আপনার কিছু না জানলেও চলবে।
 
-যখন আপনি প্রোডাকশনের এর জন্য স্থাপন( deploy ) করতে প্রস্তুত, `npm run build` চালনা করলে আপনার অ্যাপের `build` ফোল্ডারে একটি সংক্ষেপিত কাঠামো তৈরী করবে। আপনি Create React App সম্পর্কে আরো জানতে পারেন [এই README থেকে](https://github.com/facebookincubator/create-react-app#create-react-app--) এবং এই [ইউজার গাইডটি](https://facebook.github.io/create-react-app/)। 
+যখন আপনি প্রোডাকশনের এর জন্য স্থাপন( deploy ) করতে প্রস্তুত, `npm run build` চালনা করলে আপনার অ্যাপের `build` ফোল্ডারে একটি সংক্ষেপিত কাঠামো তৈরী করবে। আপনি [এই README থেকে](https://github.com/facebookincubator/create-react-app#create-react-app--) এবং এই [ইউজার গাইডটি](https://facebook.github.io/create-react-app/) থেকে Create React App সম্পর্কে আরো জানতে পারেন।
 
 ### Next.js {#nextjs}
 
@@ -63,7 +63,7 @@ Next.js শিখুন [এর স্বীকৃত প্রদর্শক](
 
 ### Gatsby {#gatsby}
 
-React দিয়ে **স্ট্যাটিক ওয়েবসাইট** তৈরী করার জন্য  সেরা উপায় হচ্ছে [Gatsby](https://www.gatsbyjs.org/)। এটি আপনাকে React কম্পোনেন্ট ব্যাবহার করতে দেয়, কিন্তু আউটপুট দেয় প্রি-রেন্ডার্ড HTML এবং CSS, দ্রুততম লোড টাইম নিশিত করার জন্য।
+React দিয়ে **স্ট্যাটিক ওয়েবসাইট** তৈরী করার জন্য  সেরা উপায় হচ্ছে [Gatsby](https://www.gatsbyjs.org/)। এটি আপনাকে React কম্পোনেন্ট ব্যাবহার করতে দেয়, কিন্তু আউটপুট দেয় প্রি-রেন্ডার্ড HTML এবং CSS, দ্রুততম লোড টাইম নিশ্চিত করার জন্য।
 
 Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](https://www.gatsbyjs.org/docs/) এবং একটি [স্টার্টার কিটগুলোর  গ্যাল্যারি](https://www.gatsbyjs.org/docs/gatsby-starters/) থেকে। 
 
@@ -73,7 +73,7 @@ Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](h
 
 - **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) এর ক্ষমতাকে একত্রিত করে সহজ প্রিসেটগুলোর সাথে, এবং একটি প্রিসেটকে [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) অন্তর্ভুক্ত করে। 
 
-- **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য প্রকাশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপসমূহের জন্যও **ব্যাবহার করা জেতে পারে**।
+- **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য প্রকাশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপ তৈরি করার জন্যও **ব্যবহার করা যেতে পারে**।
 
 - **[Parcel](https://parceljs.org/)** একটি দ্রুত, জিরো কনফিগার্ড ওয়েব অ্যাপ্লিকেশন বান্ডেলার যা [React এর সাথে কাজ করে](https://parceljs.org/recipes.html#react)। 
 
@@ -81,14 +81,14 @@ Gatsby শিখুন [এর স্বীকৃত প্রদর্শক](h
 
 ## শুরু থেকে একটি টুলচেইন তৈরী করা {#creating-a-toolchain-from-scratch}
 
-সাধারণত জাভাস্ক্রিপ্ট তৈরী একটি টুলচেইন যা নিয়ে গঠিত হয়ঃ 
+সাধারণত জাভাস্ক্রিপ্টের একটি বিল্ড টুলচেইন যা নিয়ে গঠিত হয়ঃ 
 
-* একটি **প্যাকেজ ম্যানাজার**, যেমন [Yarn](https://yarnpkg.com/) অথবা [npm](https://www.npmjs.com/)। এর মাধ্যমে আপনি সুবিশাল বাস্তুতন্ত্রবিশেষ থার্ড-পার্টি প্যাকেজগুলোর সুবুধা পাবেন, সহজে সেগুলো ইন্সটল বা আপডেট করতে পারবেন।
+* একটি **প্যাকেজ ম্যানেজার**, যেমন [Yarn](https://yarnpkg.com/) অথবা [npm](https://www.npmjs.com/)। এর মাধ্যমে আপনি সুবিশাল বাস্তুতন্ত্রবিশেষ থার্ড-পার্টি প্যাকেজগুলোর সুবিধা পাবেন, সহজে সেগুলো ইন্সটল বা আপডেট করতে পারবেন।
 
-* একটি **বান্ডেলার**, যেমন [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/)। লোড টাইম নিখুঁত করতে, এটি আপনাকে মডুলার কোড লিখতে দেয় এবং একে ছোট প্যাকেজসমূহে একত্রিত করে। 
+* একটি **বান্ডেলার**, যেমন [webpack](https://webpack.js.org/) অথবা [Parcel](https://parceljs.org/)। এটি আপনাকে মডুলার কোড লিখতে দেয় এবং একে ছোট প্যাকেজসমূহে একত্রিত করে লোড টাইম নিখুঁত করতে সাহায্য করে।
 
 * একটি **কম্পাইলার**, যেমন [Babel](https://babeljs.io/)। এটি আপনাকে আধুনিক জাভাস্ক্রিপ্ট কোড লিখতে দেয় যা এখনো পুরোনো ব্রাউজারগুলোতে কাজ করে।
 
-যদি আপনি শুরু থেকে নিজের জাভাস্ক্রিপ্ট টুলচেইন সেটআপ করার চিন্তা করে থাকেন, [এই প্রদর্সশক দেখে নিন](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) যা কিছু Create React App এর কার্যকারিতা পুনরায় তৈরী করে।
+যদি আপনি শুরু থেকে নিজের জাভাস্ক্রিপ্ট টুলচেইন সেটআপ করার চিন্তা করে থাকেন, [এই গাইড দেখে নিন](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) যা কিছু Create React App এর কার্যকারিতা পুনরায় তৈরী করে।
 
 আপনার নিজের তৈরী টুলচেইন [সঠিকভাবে প্রোডাকশনের জন্য সেটআপ হয়েছে কি না](/docs/optimizing-performance.html#use-the-production-build), তা নিশ্চিত করতে ভুলবেন না। 
