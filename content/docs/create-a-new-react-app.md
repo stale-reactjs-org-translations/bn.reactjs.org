@@ -71,7 +71,7 @@ Gatsby শিখুন [এর অফিশিয়াল গাইড](https://ww
 
 উল্লিখিত টুলচেইনসমূহ আরো বেশি সুবিধা ও অপশান দিয়ে থাকে। সেইগুলোকে আমরা আরো অভিজ্ঞ ব্যবহারকারীদের জন্য পরামর্শ করি।
 
-- **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) প্রিসেটগুলোর সরলতা ব্যবহার করে [webpack](https://webpack.js.org/) এর ক্ষমতাকে একত্রিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
+- **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) প্রিসেটগুলোর সরলতা ব্যবহার করে এর ক্ষমতাকে একত্রিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
 
 - **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য পাবলিশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপ তৈরি করার জন্যও **ব্যবহার করা যেতে পারে**।
 
