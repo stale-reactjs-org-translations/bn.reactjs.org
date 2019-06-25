@@ -30,10 +30,10 @@ next: cdn-links.html
 
 React টিম প্রাথমিকভাবে এই সমাধানসমূহের পরামর্শ দেয়ঃ  
 
-- যদি আপনি **React শিক্ষানবিস** হন অথবা **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ তৈরী করছেন**, তবে [Create React App](#create-react-app) ব্যবহার করুন ।
-- যদি আপনি **Node.js দিয়ে একটি সার্ভার-রেন্ডার্ড ওয়েবসাইট** বানাতে চান, তবে [Next.js](#nextjs) ব্যবহার করে দেখুন।
-- যদি আপনি একটি **স্ট্যাটিক কন্টেন্ট-অরিয়েন্টেড ওয়েবসাইট** বানাতে চান, তবে [Gatsby](#gatsby) ব্যবহার করে দেখুন।
-- যদি আপনি একটি **কম্পোনেন্ট লাইব্রেরী** বানাতে চান অথবা **বিদ্যমান কোডবেজের সাথে একীভূত করতে চান, তবে [আরও সহজে ব্যবহারযোগ্য টুলচেইনসমূহ](#more-flexible-toolchains) ব্যবহার করে দেখুন।**
+- আপনি যদি **React শিক্ষানবিস** হন অথবা **নতুন একটি [সিঙ্গেল-পেইজ](/docs/glossary.html#single-page-application) অ্যাপ তৈরী করছেন**, তবে [Create React App](#create-react-app) ব্যবহার করুন ।
+- আপনি যদি **Node.js দিয়ে একটি সার্ভার-রেন্ডার্ড ওয়েবসাইট** বানাতে চান, তবে [Next.js](#nextjs) ব্যবহার করে দেখুন।
+- আপনি যদি একটি **স্ট্যাটিক কনটেন্ট-ওরিয়েন্টেড ওয়েবসাইট** বানাতে চান, তবে [Gatsby](#gatsby) ব্যবহার করে দেখুন।
+- আপনি যদি একটি **কম্পোনেন্ট লাইব্রেরী** বানাতে চান অথবা **বিদ্যমান কোডবেজের সাথে একীভূত করতে চান, তবে [আরও সহজে ব্যবহারযোগ্য টুলচেইনসমূহ](#more-flexible-toolchains) ব্যবহার করে দেখুন।**
 
 ### Create React App {#create-react-app}
 
@@ -53,11 +53,11 @@ npm start
 
 Create React App ব্যাকএন্ডের লজিক বা ডাটাবেইজ নিয়ন্ত্রণ করে না; এটা শুধু ফ্রন্টএন্ডে গঠিত পাইপলাইন তৈরী করে, যেন আপনি চাইলে যেকোনো ব্যাকএন্ডের সাথে ব্যবহার করতে পারেন। আড়ালে, এটি [Babel](https://babeljs.io/) এবং [webpack](https://webpack.js.org/) ব্যবহার করে, কিন্তু এগুলো সম্পর্কে আপনার কিছু না জানলেও চলবে।
 
-যখন আপনি প্রোডাকশনের এর জন্য স্থাপন( deploy ) করতে প্রস্তুত, `npm run build` চালনা করলে আপনার অ্যাপের `build` ফোল্ডারে একটি সংক্ষেপিত কাঠামো তৈরী করবে। আপনি [এই README থেকে](https://github.com/facebookincubator/create-react-app#create-react-app--) এবং এই [ইউজার গাইডটি](https://facebook.github.io/create-react-app/) থেকে Create React App সম্পর্কে আরো জানতে পারেন।
+যখন আপনি প্রোডাকশনের এর জন্য ডিপ্লয় করতে প্রস্তুত, `npm run build` চালনা করলে আপনার অ্যাপের `build` ফোল্ডারে একটি সংক্ষেপিত কাঠামো তৈরী করবে। আপনি [এই README থেকে](https://github.com/facebookincubator/create-react-app#create-react-app--) এবং এই [ইউজার গাইডটি](https://facebook.github.io/create-react-app/) থেকে Create React App সম্পর্কে আরো জানতে পারেন।
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) **স্ট্যাটিক এবং সার্ভার-রেন্ডার্ড অ্যাপ্লিকেশনসমূহের** জন্য React দিয়ে গঠিত একটি জনপ্রিয় এবং ক্ষীণ ফ্রেমওয়ার্ক। প্রসঙ্গের বাইরে এটি **স্টাইলিং এবং রাউটিং বিষয়সমূহকে** অন্তর্গত করে, এবং ধরে নেয় যে আপনি [Node.js](https://nodejs.org/) কে সার্ভার এনভাইরনমেন্ট হিসেবে ব্যবহার করছেন।
+[Next.js](https://nextjs.org/) **স্ট্যাটিক এবং সার্ভার-রেন্ডার্ড অ্যাপ্লিকেশনসমূহের** জন্য React দিয়ে গঠিত একটি জনপ্রিয় এবং ক্ষীণ ফ্রেমওয়ার্ক। প্রসঙ্গের বাইরে এটি **স্টাইলিং এবং রাউটিং বিষয়সমূহকে** অন্তর্গত করে, এবং ধরে নেয় যে আপনি [Node.js](https://nodejs.org/) কে সার্ভার ইনভায়রনমেন্ট হিসেবে ব্যবহার করছেন।
 
 Next.js শিখুন [এর অফিশিয়াল গাইড](https://nextjs.org/learn/) থেকে।
 
@@ -69,9 +69,9 @@ Gatsby শিখুন [এর অফিশিয়াল গাইড](https://ww
 
 ### আরও সহজবশ্য টুলচেইনসমূহ {#more-flexible-toolchains}
 
-উল্লিখিত টুলচেইনসমূহ আরো বেশি সুবিধা ও অপশান দিয়ে থাকে। সেইগুলোকে আমরা আরো অভিজ্ঞ ব্যবহারকারীদের জন্য পরামর্শ করি।
+উল্লিখিত টুলচেইনসমূহ আরো বেশি সুবিধা ও অপশন দিয়ে থাকে। সেইগুলোকে আমরা আরো অভিজ্ঞ ব্যবহারকারীদের জন্য পরামর্শ করি।
 
-- **[Neutrino](https://neutrinojs.org/)**, [webpack](https://webpack.js.org/) প্রিসেটগুলোর সরলতা ব্যবহার করে এর ক্ষমতাকে একত্রিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
+- **[Neutrino](https://neutrinojs.org/)** তার প্রিসেটগুলো ব্যবহার করে [webpack](https://webpack.js.org/) এর ক্ষমতাকে আরও তরান্বিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
 
 - **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য পাবলিশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপ তৈরি করার জন্যও **ব্যবহার করা যেতে পারে**।
 
