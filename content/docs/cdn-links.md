@@ -6,14 +6,14 @@ prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-React এবং ReactDOM উভয়ই CDN- এ পাওয়া যায়।
+React এবং ReactDOM উভয়ই CDN-এ পাওয়া যায়।
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-উপরের ভার্সনগুলো শুধুমাত্র ডেভেলপমেন্টের জন্য নির্দেশিত, এবং প্রোডাকশনের জন্য উপযুক্ত নয়। React এর সংক্ষেপিত এবং নিখুঁত প্রোডাকশন ভার্সন এখানে পাওয়া যেবেঃ 
+উপরের ভার্সনগুলো শুধুমাত্র ডেভেলপমেন্টের জন্য নির্দেশিত, এবং প্রোডাকশনের জন্য উপযুক্ত নয়। React এর সংক্ষেপিত এবং নিখুঁত প্রোডাকশন ভার্সন এখানে পাওয়া যাবেঃ
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -34,4 +34,4 @@ React এবং ReactDOM উভয়ই CDN- এ পাওয়া যায়।
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-এটি React 16 এবং এর পরবর্তী ভার্সনগুলোতে আরো ভালো [ইরর হ্যান্ডেল করার অভিজ্ঞতাকে](/blog/2017/07/26/error-handling-in-react-16.html) সক্রিয় করে।
+এটি React 16 এবং এর পরবর্তী ভার্সনগুলোতে আরো ভালো [ইরর হ্যান্ডেল করার অভিজ্ঞতা](/blog/2017/07/26/error-handling-in-react-16.html) দেয়।
