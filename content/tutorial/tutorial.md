@@ -16,11 +16,7 @@ redirect_from:
 
 ## টিউটোরিয়াল শুরু করার আগে  {#before-we-start-the-tutorial}
 
-<<<<<<< HEAD
 আমরা এই টিউটোরিয়ালের সময় একটি ছোট গেম বানাবো। **আপনি হয়ত এটা এড়িয়ে যেতে চাইবেন কেননা আপনি কোন গেম বানাতে যাচ্ছেন না -- কিন্তু, একবার চেষ্টা করেই দেখুন না।** টিউটোরিয়ালে আপনি যে কৌশলগুলি শিখবেন তা যে কোন React অ্যাপ্লিকেশন তৈরির জন্য অপরিহার্য, এবং এটিতে দক্ষতা অর্জন করতে পারলে আপনি React সম্পর্কেও গভীর ধারণা পাবেন।
-=======
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
->>>>>>> ed9d73105a93239f94d84c619e84ae8adec43483
 
 >পরামর্শ
 >
