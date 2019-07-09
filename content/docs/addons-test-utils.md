@@ -44,12 +44,10 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 
 ### `act()` {#act}
 
-To prepare a component for assertions, wrap the code rendering it and performing updates inside an `act()` call. This makes your test run closer to how React works in the browser.
 একটি কম্পোনেন্টকে assertions এর জন্য প্রস্তুত করতে ঐ কম্পোনেন্টের রেন্ডারিং এবং আপডেটের জন্য লিখা সকল কোডকে একটি `act()` কলের মধ্যে অন্তর্ভুক্ত করুন। এটি আপনার টেস্টগুলো React ব্রাউজারে যেভাবে কাজ করে তার অনেকটা কাছাকাছিভাবে চালনা করে।
 
 >বিঃদ্রঃ
 >
->If you use `react-test-renderer`, it also provides an `act` export that behaves the same way.
 >আপনি যদি `react-test-renderer` ব্যবহার করে থাকেন, এটিও একটি `act` export সরবরাহ করে থাকে যা একইভাবে কাজ করে।
 
 উদাহরণস্বরূপ, ধরে নিই আমাদের এই `Counter` কম্পোনেন্টটি আছেঃ
@@ -137,11 +135,12 @@ mockComponent(
 )
 ```
 
-Pass a mocked component module to this method to augment it with useful methods that allow it to be used as a dummy React component. Instead of rendering as usual, the component will become a simple `<div>` (or other tag if `mockTagName` is provided) containing any provided children.
+একটি mocked কম্পোনেন্ট মডিউলকে এই মেথডে পাস করে এর সাথে বিভিন্ন প্রয়োজনীয় মেথড জুড়ে দিতে পারবেন যা একে একটি কৃত্রিম React কম্পোনেন্ট হিসেবে ব্যবহার করার সুযোগ করে দেবে। সাধারণভাবে রেন্ডার করার পরিবর্তে কম্পোনেন্টটি এর সরবরাহকৃত children সহ একটি সাধারণ `<div>` (যদি `mockTagName` সরবরাহ করা হয় তাহলে অন্য ট্যাগে) এ পরিণত হবে।
 
-> Note:
+> বিঃদ্রঃ
 >
 > `mockComponent()` is a legacy API. We recommend using [shallow rendering](/docs/shallow-renderer.html) or [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
+> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [shallow rendering](/docs/shallow-renderer.html) অথবা [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
 
 * * *
 
@@ -151,7 +150,7 @@ Pass a mocked component module to this method to augment it with useful methods 
 isElement(element)
 ```
 
-Returns `true` if `element` is any React element.
+`element` যদি কোন React element হয়ে থাকে তাহলে রিটার্ন করে।
 
 * * *
 
@@ -164,7 +163,7 @@ isElementOfType(
 )
 ```
 
-Returns `true` if `element` is a React element whose type is of a React `componentClass`.
+`element` যদি একটি React element হয় যার টাইপ হল একটি React `componentClass` এর তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -175,6 +174,7 @@ isDOMComponent(instance)
 ```
 
 Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
+`instance` যদি একটি DOM কম্পোনেন্ট হয়ে থাকে (যেমনঃ `<div>` অথবা `<span>`) তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -184,7 +184,7 @@ Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
 isCompositeComponent(instance)
 ```
 
-Returns `true` if `instance` is a user-defined component, such as a class or a function.
+`instance` যদি একটি ইউজার দ্বারা ডিফাইনকৃত কম্পোনেন্ট, যেমনঃ একটি ক্লাস অথবা একটি ফাংশন হয়ে থাকে তাহলে `true` রিটার্ন করে।
 
 * * *
 
