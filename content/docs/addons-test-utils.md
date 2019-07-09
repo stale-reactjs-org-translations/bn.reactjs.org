@@ -1,6 +1,6 @@
 ---
 id: test-utils
-title: Test Utilities
+title: Test ইউটিলিটি
 permalink: docs/test-utils.html
 layout: docs
 category: Reference
@@ -13,15 +13,15 @@ import ReactTestUtils from 'react-dom/test-utils'; // ES6
 var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## সারমর্ম {#overview}
 
-`ReactTestUtils` makes it easy to test React components in the testing framework of your choice. At Facebook we use [Jest](https://facebook.github.io/jest/) for painless JavaScript testing. Learn how to get started with Jest through the Jest website's [React Tutorial](https://jestjs.io/docs/tutorial-react).
+`ReactTestUtils` React কম্পোনেন্টগুলোকে আপনার পছন্দের টেস্টিং ফ্রেমওয়ার্কে টেস্ট করার কাজটি সহজ করে দেয়। ফেসবুকে আমরা সহজ জাভস্ক্রিপ্ট টেস্টিং এর জন্য [Jest](https://facebook.github.io/jest/) ব্যবহার করে থাকি। Jest দিয়ে কিভাবে শুরু করবেন তা Jest ওয়েবসাইটের [React টিউটোরিয়াল](https://jestjs.io/docs/tutorial-react) অংশে শিখতে পারবেন।
 
-> Note:
+> বিঃদ্রঃ
 >
-> We recommend using [React Testing Library](https://testing-library.com/react) which is designed to enable and encourage writing tests that use your components as the end users do.
+> আমরা [React Testing Library](https://testing-library.com/react) ব্যবহার করার পরামর্শ দেই যেটা এমনভাবে ডিজাইন করা হয়েছে যাতে আপনি আপনার কম্পোনেন্টগুলোকে এদের ব্যবহারকারীদের মত টেস্ট করতে পারবেন।
 >
-> Alternatively, Airbnb has released a testing utility called [Enzyme](https://airbnb.io/enzyme/), which makes it easy to assert, manipulate, and traverse your React Components' output.
+> অন্যথায়, Airbnb [Enzyme](https://airbnb.io/enzyme/) নামের একটি টেস্টিং ইউটিলিটি প্রকাশ করেছে, যেটা আপনার React কম্পোনেন্টের আউটপুট assert, manipulate এবং traverse করার কাজগুলো সহজ করে দেয়।
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -40,17 +40,19 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
  - [`renderIntoDocument()`](#renderintodocument)
  - [`Simulate`](#simulate)
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
 ### `act()` {#act}
 
 To prepare a component for assertions, wrap the code rendering it and performing updates inside an `act()` call. This makes your test run closer to how React works in the browser.
+একটি কম্পোনেন্টকে assertions এর জন্য প্রস্তুত করতে ঐ কম্পোনেন্টের রেন্ডারিং এবং আপডেটের জন্য লিখা সকল কোডকে একটি `act()` কলের মধ্যে অন্তর্ভুক্ত করুন। এটি আপনার টেস্টগুলো React ব্রাউজারে যেভাবে কাজ করে তার অনেকটা কাছাকাছিভাবে চালনা করে।
 
->Note
+>বিঃদ্রঃ
 >
 >If you use `react-test-renderer`, it also provides an `act` export that behaves the same way.
+>আপনি যদি `react-test-renderer` ব্যবহার করে থাকেন, এটিও একটি `act` export সরবরাহ করে থাকে যা একইভাবে কাজ করে।
 
-For example, let's say we have this `Counter` component:
+উদাহরণস্বরূপ, ধরে নিই আমাদের এই `Counter` কম্পোনেন্টটি আছেঃ
 
 ```js
 class Counter extends React.Component {
@@ -83,7 +85,7 @@ class Counter extends React.Component {
 }
 ```
 
-Here is how we can test it:
+আমরা একে নিচের মত টেস্ট করতে পারিঃ
 
 ```js{3,20-22,29-31}
 import React from 'react';
@@ -122,7 +124,7 @@ it('can render and update a counter', () => {
 });
 ```
 
-Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a helper like [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) to reduce the boilerplate code.
+আমাদের মনে রাখতে হবে DOM ইভেন্ট dispatch করলে তা শুধু তখনই কাজ করবে যখন DOM কন্টেইনারটি `document` এ সংযুক্ত করা হবে। আপনি বয়লারপ্লেট কোড কমাতে [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) এর মত একটি হেল্পার ব্যবহার করতে পারেন।
 
 * * *
 
