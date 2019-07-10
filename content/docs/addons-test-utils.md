@@ -1,12 +1,12 @@
 ---
 id: test-utils
-title: Test ইউটিলিটি
+title: টেস্ট ইউটিলিটি
 permalink: docs/test-utils.html
 layout: docs
 category: Reference
 ---
 
-**Importing**
+**ইম্পোর্ট করা**
 
 ```javascript
 import ReactTestUtils from 'react-dom/test-utils'; // ES6
@@ -197,7 +197,7 @@ isCompositeComponentWithType(
 )
 ```
 
-Returns `true` if `instance` is a component whose type is of a React `componentClass`.
+`instance` যদি React `componentClass` টাইপের একটি কম্পোনেন্ট হয় তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -210,7 +210,7 @@ findAllInRenderedTree(
 )
 ```
 
-Traverse all components in `tree` and accumulate all components where `test(component)` is `true`. This is not that useful on its own, but it's used as a primitive for other test utils.
+`tree` তে থাকা সকল কম্পোনেন্টকে ট্রাভার্স করে এবং যেসকল কম্পোনেন্টের ক্ষেত্রে `test(component)` এর মান `true` হয় সেগুলোকে একত্রিত করে। এটি নিজে থেকে তেমন একটা দরকারি হয়না, কিন্তু অন্যান্য টেস্ট ইউটিলিটির ক্ষেত্রে এটি একটি প্রারম্ভিক মান হিসেবে কাজ করে।
 
 * * *
 
@@ -223,7 +223,7 @@ scryRenderedDOMComponentsWithClass(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the class name matching `className`.
+রেন্ডারকৃত ট্রি থেকে কম্পোনেন্টের সকল DOM elements কে খুঁজে বের করে যাদের class name সরবরাহকৃত `className` এর সাথে মিলে যায়।
 
 * * *
 
@@ -236,7 +236,7 @@ findRenderedDOMComponentWithClass(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 * * *
 
@@ -249,7 +249,7 @@ scryRenderedDOMComponentsWithTag(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the tag name matching `tagName`.
+রেন্ডারকৃত ট্রি থেকে সকল DOM elements খুঁজে বের করে যাদের tag name এর সাথে `tagName` মিলে যায়।
 
 * * *
 
@@ -262,7 +262,7 @@ findRenderedDOMComponentWithTag(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 * * *
 
@@ -275,7 +275,7 @@ scryRenderedComponentsWithType(
 )
 ```
 
-Finds all instances of components with type equal to `componentClass`.
+`componentClass` টাইপের সকল কম্পোনেন্ট ইন্সট্যান্স খুঁজে বের করে।
 
 * * *
 
@@ -288,7 +288,7 @@ findRenderedComponentWithType(
 )
 ```
 
-Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) but expects there to be one result and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 ***
 
@@ -298,20 +298,20 @@ Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) bu
 renderIntoDocument(element)
 ```
 
-Render a React element into a detached DOM node in the document. **This function requires a DOM.** It is effectively equivalent to:
+ডকুমেন্টের একটি বিচ্ছিন্ন DOM নোডে একটি React element রেন্ডার করে। **এই ফাংশনের একটি DOM এর প্রয়োজন হয়।** এটি কার্যকারভাবে নিচের মত কাজ করেঃ
 
 ```js
 const domContainer = document.createElement('div');
 ReactDOM.render(element, domContainer);
 ```
 
-> Note:
+> বিঃদ্রঃ
 >
-> You will need to have `window`, `window.document` and `window.document.createElement` globally available **before** you import `React`. Otherwise React will think it can't access the DOM and methods like `setState` won't work.
+> আপনি `React` ইম্পোর্ট করার **আগে** আপনার `window`, `window.document` এবং `window.document.createElement` globally এভেইলেভল থাকতে হবে। অন্যথায় React মনে করবে এটি DOM এ প্রবেশ করতে পারছেনা এবং `setState` এর মত মেথডগুলো কাজ করবেনা।
 
 * * *
 
-## Other Utilities {#other-utilities}
+## অন্যান্য ইউটিলিটি {#other-utilities}
 
 ### `Simulate` {#simulate}
 
@@ -322,11 +322,11 @@ Simulate.{eventName}(
 )
 ```
 
-Simulate an event dispatch on a DOM node with optional `eventData` event data.
+একটি DOM নোডে `eventData` ইভেন্ট ডাটা সহ একটি event dispatch এর অনুকরণ করুন।
 
-`Simulate` has a method for [every event that React understands](/docs/events.html#supported-events).
+[React যেসকল ইভেন্ট বুঝতে পারে](/docs/events.html#supported-events) প্রত্যেকটির জন্যই `Simulate` এ একটি মেথড রয়েছে।
 
-**Clicking an element**
+**একটি element কে ক্লিক করা**
 
 ```javascript
 // <button ref={(node) => this.button = node}>...</button>
@@ -334,7 +334,7 @@ const node = this.button;
 ReactTestUtils.Simulate.click(node);
 ```
 
-**Changing the value of an input field and then pressing ENTER.**
+**একটি ইনপুট ফিল্ডের মান পরিবর্তন করা এবং এরপর ENTER চাপা।**
 
 ```javascript
 // <input ref={(node) => this.textInput = node} />
@@ -344,8 +344,8 @@ ReactTestUtils.Simulate.change(node);
 ReactTestUtils.Simulate.keyDown(node, {key: "Enter", keyCode: 13, which: 13});
 ```
 
-> Note
+> বিঃদ্রঃ
 >
-> You will have to provide any event property that you're using in your component (e.g. keyCode, which, etc...) as React is not creating any of these for you.
+> আপনার কম্পোনেন্টে ব্যবহৃত যেকোন ইভেন্ট প্রোপার্টি আপনাকেই সরবরাহ করতে হবে (যেমনঃ keyCode, which, ইত্যাদি...) যেহেতু React আপনার জন্য এর কোনটিই তৈরি করছেনা।
 
 * * *
