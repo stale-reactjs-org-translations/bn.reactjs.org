@@ -139,7 +139,6 @@ mockComponent(
 
 > বিঃদ্রঃ
 >
-> `mockComponent()` is a legacy API. We recommend using [shallow rendering](/docs/shallow-renderer.html) or [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
 > `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [shallow rendering](/docs/shallow-renderer.html) অথবা [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
 
 * * *
@@ -173,7 +172,6 @@ isElementOfType(
 isDOMComponent(instance)
 ```
 
-Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
 `instance` যদি একটি DOM কম্পোনেন্ট হয়ে থাকে (যেমনঃ `<div>` অথবা `<span>`) তাহলে `true` রিটার্ন করে।
 
 * * *
