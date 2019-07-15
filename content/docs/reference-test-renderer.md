@@ -1,25 +1,25 @@
 ---
 id: test-renderer
-title: Test Renderer
+title: টেস্ট রেন্ডারার
 permalink: docs/test-renderer.html
 layout: docs
 category: Reference
 ---
 
-**Importing**
+**ইম্পোর্ট করা**
 
 ```javascript
 import TestRenderer from 'react-test-renderer'; // ES6
 const TestRenderer = require('react-test-renderer'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## সারমর্ম {#overview}
 
-This package provides a React renderer that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment.
+এই প্যাকেজ একটি React রেন্ডারার সরবরাহ করে যার মাধ্যমে DOM অথবা কোন নেটিভ মোবাইল ইনভায়রনমেন্টের উপর নির্ভর না করেই React কম্পোনেন্টগুলোকে বিশুদ্ধ জাভাস্ক্রিপ্ট অবজেক্টে রেন্ডার করা যায়।
 
-Essentially, this package makes it easy to grab a snapshot of the platform view hierarchy (similar to a DOM tree) rendered by a React DOM or React Native component without using a browser or [jsdom](https://github.com/tmpvar/jsdom).
+মূলত, এই প্যাকেজ ব্রাউজার অথবা [jsdom](https://github.com/tmpvar/jsdom) ব্যবহার না করেই একটি React DOM অথবা React Native কম্পোনেন্টের রেন্ডারকৃত platform view hierarchy (অনেকটা DOM ট্রি এর মত) এর স্ন্যাপশট নেয়ার কাজটি সহজ করে দেয়।
 
-Example:
+উদাহরণঃ
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -38,9 +38,9 @@ console.log(testRenderer.toJSON());
 //   children: [ 'Facebook' ] }
 ```
 
-You can use Jest's snapshot testing feature to automatically save a copy of the JSON tree to a file and check in your tests that it hasn't changed: [Learn more about it](https://jestjs.io/docs/en/snapshot-testing).
+আপনি Jest এর স্ন্যাপশট টেস্টিং ফিচার ব্যবহার করে স্বয়ংক্রিয়ভাবে JSON ট্রি এর একটি কপি সংরক্ষণ করে আপনার টেস্টে এর কোন পরিবর্তন হয়েছে কিনা দেখতে পারেনঃ [এ সম্পর্কে বিস্তারিত জানুন](https://jestjs.io/docs/en/snapshot-testing)।
 
-You can also traverse the output to find specific nodes and make assertions about them.
+আপনি এছাড়াও আউটপুট ট্রাভার্স করে নির্দিষ্ট নোড খুঁজে বের করতে পারেন এবং এদের মধ্যে assertions করতে পারেন।
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -71,7 +71,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 
 * [`TestRenderer.create()`](#testrenderercreate)
 
-### TestRenderer instance {#testrenderer-instance}
+### TestRenderer ইন্সট্যান্স {#testrenderer-instance}
 
 * [`testRenderer.toJSON()`](#testrenderertojson)
 * [`testRenderer.toTree()`](#testrenderertotree)
@@ -94,7 +94,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 * [`testInstance.parent`](#testinstanceparent)
 * [`testInstance.children`](#testinstancechildren)
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
 ### `TestRenderer.create()` {#testrenderercreate}
 
