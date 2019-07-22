@@ -102,7 +102,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
-Create a `TestRenderer` instance with the passed React element. It doesn't use the real DOM, but it still fully renders the component tree into memory so you can make assertions about it. The returned instance has the following methods and properties.
+পাসকৃত React element এর সাথে একটি `TestRenderer` ইন্সট্যান্স তৈরি করুন। এটি আসল DOM ব্যবহার করেনা কিন্তু মেমোরিতে পুরো কম্পোনেন্ট-ট্রিটিকে রেন্ডার করে যাতে করে আপনি এটি সম্পর্কে assertions করতে পারেন। রিটার্নকৃত ইন্সট্যান্সে নিম্নোক্ত মেথড এবং প্রপার্টিসমূহ থাকে।
 
 ### `testRenderer.toJSON()` {#testrenderertojson}
 
@@ -110,7 +110,7 @@ Create a `TestRenderer` instance with the passed React element. It doesn't use t
 testRenderer.toJSON()
 ```
 
-Return an object representing the rendered tree. This tree only contains the platform-specific nodes like `<div>` or `<View>` and their props, but doesn't contain any user-written components. This is handy for [snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
+রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। এই ট্রিতে শুধুমাত্র প্লাটফর্ম-স্পেসিফিক নোড যেমন `<div>` অথবা `<View>` এবং এদের props গুলো থাকে কিন্তু কোন ইউজার দ্বারা তৈরিকৃত কম্পোনেন্ট থাকেনা। এটি [snapshot টেস্টিং](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest) এর কাজ অনেক সহজ করে দেয়।
 
 ### `testRenderer.toTree()` {#testrenderertotree}
 
@@ -118,7 +118,7 @@ Return an object representing the rendered tree. This tree only contains the pla
 testRenderer.toTree()
 ```
 
-Return an object representing the rendered tree. Unlike `toJSON()`, the representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
+রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। কিন্তু `toJSON()` এর চেয়েও অনেক বেশি তথ্য এই অবজেক্টে থাকে,এবং ইউজার দ্বারা তৈরিকৃত কম্পোনেন্টগুলোও এখানে সংযুক্ত করা হয়। আপনার এই হয়ত এই মেথডের প্রয়োজন নাও হতে পারে যদি না আপনি টেস্ট রেন্ডারারের উপর ভিত্তি করে নিজের কোন assertion লাইব্রেরি তৈরি না করেন।
 
 ### `testRenderer.update()` {#testrendererupdate}
 
@@ -126,7 +126,7 @@ Return an object representing the rendered tree. Unlike `toJSON()`, the represen
 testRenderer.update(element)
 ```
 
-Re-render the in-memory tree with a new root element. This simulates a React update at the root. If the new element has the same type and key as the previous element, the tree will be updated; otherwise, it will re-mount a new tree.
+মেমোরিতে থাকা ট্রিকে নতুন একটি root element এ রি-রেন্ডার করে। এটি root এ React আপডেটকে নকল করে। যদি নতুন element এর টাইপ এবং key আগের element এর মতই হয় তাহলে ট্রিটি আপডেট হবে; অন্যথায় এটি নতুন একটি ট্রিকে রি-মাউন্ট করবে।
 
 ### `testRenderer.unmount()` {#testrendererunmount}
 
@@ -134,7 +134,7 @@ Re-render the in-memory tree with a new root element. This simulates a React upd
 testRenderer.unmount()
 ```
 
-Unmount the in-memory tree, triggering the appropriate lifecycle events.
+মেমোরিতে থাকা ট্রিকে এর সাথে সংযুক্ত lifecycle ইভেন্টগুলোসহ আনমাউন্ট করে।
 
 ### `testRenderer.getInstance()` {#testrenderergetinstance}
 
