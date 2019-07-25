@@ -2,56 +2,108 @@
 id: thinking-in-react
 title: React-উপায়ে চিন্তা করা
 permalink: docs/thinking-in-react.html
+
 redirect_from:
-  - 'blog/2013/11/05/thinking-in-react.html'
-  - 'docs/thinking-in-react-zh-CN.html'
+
+- 'blog/2013/11/05/thinking-in-react.html'
+
+- 'docs/thinking-in-react-zh-CN.html'
+
 prev: composition-vs-inheritance.html
+
 ---
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+  
 
-One of the many great parts of React is how it makes you think about apps as you build them. In this document, we'll walk you through the thought process of building a searchable product data table using React.
+আমাদের মতে, বড় এবং দ্রুতগতির ওয়েব এপ্লিকেশন বানাবার জন্য সবচেয়ে ভাল উপায় হচ্ছে React   
 
-## Start With A Mock {#start-with-a-mock}
+  
 
-Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:
+React এর অনেক গুলো অসাধারণ ব্যাপারের একটি হচ্ছে, যখন আপনি React ব্যবহার করে একটি এপ্লিকেশন তৈরী করেন তখন এটি আপনাকে ওই এপ্লিকেশন সম্বন্ধে যেভাবে ভাবায় সেটি। সার্চ করা যায় এমন একটি ডাটা টেবল রিয়েক্ট দিয়ে বানালে আপনার চিন্তাধারা কেমন হবে সেটি আমরা এই লেখাটিতে দেখানোর চেষ্টা করব।    
+
+  
+
+## একটি মক দিয়ে শুরু করুন  {#start-with-a-mock}
+
+  
+ধরে নিন, আপনার কাছে ইতোমধ্যে একটি JASON API এবং একটি মক রয়েছে যা আপনি ডিজাইনারের কাছ থেকে পেয়েছেন। সেটি দেখতে এমন
+
+
+
+
 
 ![Mockup](../images/blog/thinking-in-react-mock.png)
 
-Our JSON API returns some data that looks like this:
+
+আমাদের JASON API কিছু তথ্য পাঠায় যা এমন: 
+  
 
 ```
+
 [
-  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
-  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
-  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
-  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
-  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
-  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+
+{category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+
+{category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+
+{category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+
+{category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+
+{category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+
+{category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+
 ];
+
 ```
 
-## Step 1: Break The UI Into A Component Hierarchy {#step-1-break-the-ui-into-a-component-hierarchy}
+  
 
-The first thing you'll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you're working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!
+##  ধাপ ১ :  UI কে একটি Component Hierarchy তে ভেঙে ফেলুন   {#step-1-break-the-ui-into-a-component-hierarchy}
 
-But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+  
 
-Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*. Separate your UI into components, where each component matches one piece of your data model.
+
+
+যেটা আপনার একদম শুরুতে করা উচিত সেটা হল প্রতিটা কম্পোনেন্ট (এবং সাবকম্পোনেন্ট) এর চারিদিকে একটি বক্স আঁকানো এবং প্রতিটার একটি নাম দেওয়া। আপনি যদি একজন ডিজাইনারের সাথে কাজ করে থাকেন উনি হয়ত ইতোমধ্যেই এগুলোর নাম দিয়ে রেখেছেন। সুতরাং উনার সাথে কথা বলুন! উনার ফটোশপ লেয়ারের নাম ই হয়ত হতে পারে আপনার React কম্পোনেন্ট এর নাম!
+
+  
+
+
+কিন্তু আপনি কিভাবে জানবেন যে কোন কাজটার নিজেরই একটি কম্পোনেন্ট থাকা দরকার? যখন সিদ্ধান্ত নেবেন যে একটি ফাংশন তৈরী করবেন নাকি একটি অবজেক্ট, তখন যেভাবে চিন্তা করেন, ঠিক সেভাবেই এই সিদ্ধান্ত ও নেওয়া সম্ভব। এমন একটি পরিচিত পদ্ধতি হল [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), যা মূলত বলে যে, একটা কম্পোনেন্ট   আদর্শগতভাবে একটি কাজ ই করা উচিত। যদি এটি বড় হয়ে যায়, তাহলে এটিকে ভেঙে ছোট ছোট সাবকম্পোনেন্ট এ ভাগ করে ফেলতে হবে।  
+
+ যেহেতু আপনি প্রায়শই এপ্লিকেশন ব্যবহারকারীকে একটি JSON ডাটা মডেল দেখাচ্ছেন, খেয়াল করে থাকবেন আপনার মডেল যদি সঠিকভাবে বানানো হয়ে থাকে, আপনার (এবং আপনার কম্পোনেন্ট এর গঠনবিন্যাস) সুন্দরমত মিলে  যাবে। এর কারণ হচ্ছে UI এবং ডাটা মডেল একই *information architecture* কে অনুসরণ করে। আপনার UI কে কম্পোনেন্ট এ এমন ভাবে ভেঙে ফেলুন যেন আপনার ডাটা মডেল এর প্রতিটি অংশের জন্য একটি করে কম্পোনেন্ট খাপ খায়।
+  
 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
-You'll see here that we have five components in our app. We've italicized the data each component represents.
+  
 
-  1. **`FilterableProductTable` (orange):** contains the entirety of the example
-  2. **`SearchBar` (blue):** receives all *user input*
-  3. **`ProductTable` (green):** displays and filters the *data collection* based on *user input*
-  4. **`ProductCategoryRow` (turquoise):** displays a heading for each *category*
-  5. **`ProductRow` (red):** displays a row for each *product*
+এখানে আপনি দেখতে পাচ্ছেন, আমাদের এপ্লিকেশন এ পাঁচটি কম্পোনেন্ট রয়েছে, প্রতিটা কম্পোনেন্ট যে তথ্য দেখাচ্ছে সেগুলো আমরা ইটালিক করে দিয়েছি।   
 
-If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (i.e. if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+  
 
-Now that we've identified the components in our mock, let's arrange them into a hierarchy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+1.  **`FilterableProductTable` (কমলা):** এর মধ্যে পুরো উদাহরণটি রয়েছে
+
+2.  **`SearchBar` (নীল):** এই অংশটি  সব *user input* পায়  
+
+3.  **`ProductTable` (সবুজ ):** *user input* এর নিরিখে *data collection* দেখায় এবং ফিল্টার করে 
+
+4.  **`ProductCategoryRow` (টারকোয়াইজ ):**  *category* এর জন্য একটি শিরোনাম দেখায় 
+
+5.  **`ProductRow` (লাল):** প্রতিটি *product* এর জন্য একটি সারি   দেখায় 
+ 
+  
+
+
+যদি `ProductTable` এর দিকে লক্ষ্য করা হয় তবে দেখা যাবে টেবলের শিরোনাম (যার মধ্যে "Name" এবং "Price" লেবেলগুলো রয়েছে) এর নিজের কম্পোনেন্ট নয়। এটি কিছুটা ব্যক্তিগত পছন্দের বিষয়। এর যেকোন দিকেই যুক্তি প্রদর্শন সম্ভব। এই উদাহরণের ক্ষেত্রে আমরা এটিকে `ProductTable` এর একটি অংশ হিসেবে রেখেছি, কারণ এটি *data collection* দেখানোর অংশ। এবং  *data collection* এর দায়িত্ব বর্তায় `ProductTable` এর উপর। তবে, যদি এপ্লিকেশনটি আরো অগ্রসর হলে এই শিরোনাম জটিল আকার ধারণ করে (যেমন সর্ট করার আরো কিছু উপায় যোগ করা হল), সেই ক্ষেত্রে শিরোনাম এর জন্য আলাদা কম্পোনেন্ট `ProductTableHeader`বানানো যথেষ্ট যুক্তিযুক্ত হবে।    
+
+  
+
+
+
+এখন যেহেতু আমরা আমাদের মক এর জন্য কম্পোনেন্ট চিহ্নিত করে ফেলেছি, সেহেতু আমরা এদেরকে একটি hierarchy তে সাজিয়ে ফেলতে পারি। যেই কম্পোনেন্ট গুলো অন্য একটি কম্পোনেন্ট এর মধ্যে দেখা যায় সেগুলো hierarchyতে চাইল্ড  হিসেবে দেখতে হবে:
 
   * `FilterableProductTable`
     * `SearchBar`
