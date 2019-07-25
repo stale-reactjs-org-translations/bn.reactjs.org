@@ -1,6 +1,6 @@
 ---
 id: react-api
-title: React Top-Level API
+title: React টপ লেভেল API
 layout: docs
 category: Reference
 permalink: docs/react-api.html
@@ -13,61 +13,62 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` is the entry point to the React library. If you load React from a `<script>` tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+React লাইব্রেরীর একদম শুরুর API হল `React`। আপনি যদি `<script>` ট্যাগ থেকে React লোড করেন, এই টপ ্লেভেল APIগুলো আপনারা `React` গ্লোবালে পাবেন। আপনি যদি ES6 এর সাথে npm ব্যবহার করে থাকেন, লিখতে পারেন `import React from 'react'`। আপনি যদি ES5 এর সাথে npm ব্যবহার করে থাকেন, লিখতে পারেন `var React = require('react')`। 
 
-## Overview {#overview}
+## একনজরে {#overview}
 
-### Components {#components}
+### কম্পোনেন্ট {#components}
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
+React কম্পোনেন্টসমূহ আপনার UI কে স্বাধীন পুনর্ব্যবহারযোগ্য বিভিন্ন খন্ডে ভাগ করার এবং বিচ্ছিন্নভাবে প্রতিটি খন্ড নিয়ে আলাদাভাবে ভাবার সুযোগ করে দেয়। `React.Component` বা `React.PureComponent` কে সাবক্লাস করার মাধ্যমে React কম্পোনেন্ট গুলোকে ডিফাইন করা যায়।
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-If you don't use ES6 classes, you may use the `create-react-class` module instead. See [Using React without ES6](/docs/react-without-es6.html) for more information.
+আপনি যদি ES6 ক্লাসসমূহ ব্যবহার না করে থাকেন, তাহলে `create-react-class` মডিউলটি ব্যবহার করতে পারেন। বিস্তারিত জানবার জন্য [ES6 ব্যতীত React ব্যবহার](/docs/react-without-es6.html) লেখাটি দেখতে পারেন। 
 
-React components can also be defined as functions which can be wrapped:
-
+React কম্পোনেন্টগুলোকে wrap করা যায় এমন ফাংশন হিসেবেও ডিফাইন করা সম্ভব।
+ 
 - [`React.memo`](#reactmemo)
 
-### Creating React Elements {#creating-react-elements}
+### React এলিমেন্ট তৈরি করা {#creating-react-elements}
 
-We recommend [using JSX](/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
+আপনার UI কেমন হবে তা বর্ণনার জন্য আমরা [JSX এর ব্যবহারকে](/docs/introducing-jsx.html) সমর্থন করি। প্রতিটা JSX এলিমেন্ট [`React.createElement()`](#createelement) কে কল করার জন্য একটি ব্যবস্থা মাত্র। আপনি যদি JSX ব্যবহার করে থাকেন, তাহলে সাধারণভাবে নিচের মেথডগুলো ব্যবহার করার প্রয়োজন পড়বে না। 
 
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
-See [Using React without JSX](/docs/react-without-jsx.html) for more information.
+আরো জানবার জন্য [JSX ব্যতীত React ব্যবহার](/docs/react-without-jsx.html) লেখাটি দেখুন।
 
-### Transforming Elements {#transforming-elements}
+### এলিমেন্টের ট্রান্সফর্মেশন {#transforming-elements}
 
-`React` provides several APIs for manipulating elements:
+`React` এলিমেন্ট বদলে ফেলবার জন্য কয়েকটি API ব্যবহারের সুযোগ দেয়: 
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
 - [`React.Children`](#reactchildren)
 
-### Fragments {#fragments}
+### ফ্র্যাগমেন্ট {#fragments}
 
-`React` also provides a component for rendering multiple elements without a wrapper.
+কয়েকটি এলিমেন্টকে কোনরকম র‍্যাপার(wrapper) ছাড়াই একসাথে রেন্ডার করবার জন্য একটি কম্পোনেন্টের সুবিধা দেয়। 
 
 - [`React.Fragment`](#reactfragment)
 
-### Refs {#refs}
+### রেফ {#refs}
 
 - [`React.createRef`](#reactcreateref)
 - [`React.forwardRef`](#reactforwardref)
 
-### Suspense {#suspense}
+### সাসপেন্স {#suspense}
 
-Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with `React.lazy`](/docs/code-splitting.html#reactlazy). In the future, it will support other use cases like data fetching.
+কোন কিছু দেখাবার আগে "অপেক্ষা" করবার জন্য সাসপেন্স ব্যবহার করা যায়। এখন পর্যন্ত সাসপেন্স শুধু মাত্র একটি কাজেই ব্যবহার সম্ভব: [`React.lazy` ব্যবহার করে ডাইনামিকভাবে কম্পোনেন্ট লোড করা।](/docs/code-splitting.html#reactlazy)ভবিষ্যতে, ডেটা আনবার (data fetch) মত কাজেও এটি ব্যবহার করা যাবে।
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
 
-### Hooks {#hooks}
+### হুক {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*হুক* হচ্ছে React 16.8 এ যোগ হওয়া নতুন ফিচার। এটি আপনাকে কোন ক্লাস না লিখেই স্টেট এবং অন্যান্য বিভিন্ন React ফিচার ব্যবহারের সুযোগ দেয়। হুকের [নিজরই একটি ডক সেকশন](/docs/hooks-intro.html)এবং আলাদা একটি API রেফারেন্স রয়েছে।
+
 
 - [Basic Hooks](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
@@ -84,11 +85,11 @@ Suspense lets components "wait" for something before rendering. Today, Suspense 
 
 * * *
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+React কম্পোনেন্ট যখন [ES6 ক্লাস](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ব্যবহার করে ডিফাইন করা হয় তখন মূল ক্লাসটি হয় `React.Component`:
 
 ```javascript
 class Greeting extends React.Component {
@@ -98,21 +99,21 @@ class Greeting extends React.Component {
 }
 ```
 
-See the [React.Component API Reference](/docs/react-component.html) for a list of methods and properties related to the base `React.Component` class.
+মূল ক্লাস `React.Component` এর সাথে জড়িত মেথড এবং প্রোপার্টির একটি লিস্ট পেতে [React.Component API রেফারেন্স](/docs/react-component.html) দেখুন।
 
 * * *
 
 ### `React.PureComponent` {#reactpurecomponent}
 
-`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison. 
+`React.PureComponent` অনেকটা [`React.Component`](#reactcomponent) এর মতই। এদের মধ্যে পার্থক্য হচ্ছে যে, [`React.Component`](#reactcomponent) এর মাঝে [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) কাজ করে না, কিন্তু `React.PureComponent` খুব বেশি গভীরে না এমন প্রপ আর স্টেটে তুলনা ব্যবহার করে কাজে লাগাতে পারে।  
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+যদি আপনার React কম্পোনেন্ট এর `render()` ফাংশন একই প্রপ এবং স্টেটে সবসময় একই ফলাফল দেখায় তবে কিছু কিছু ক্ষেত্রে অ্যাপ্লিকেশনের দক্ষতা বৃদ্ধির জন্য আপনি `React.PureComponent` ব্যবহার করতে পারেন। 
 
-> Note
+> নোট
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> `React.PureComponent`এর `shouldComponentUpdate()` খুব অগভীরভাবে অব্জেক্টের মধ্যে তুলনা করে। যদি এদের মধ্যে জটিল ডাটা স্ট্রাকচার থাকে তবে, হায়ারার্কি ট্রির খুব গভীরে থাকা কোন অসমতার জন্য ফলস-নেগেটিভ ফলাফল দিতে পারে। যখন আপনার প্রপ এবং স্টেট একদম সরল হবে তখনই শুধুমাত্র `PureComponent` এক্সটেন্ড করবেন। আর যদি আপনি জেনে থাকেন ডাটা স্ট্রাকচারের গভীরে কিছু পরিবর্তন হয়ে আছে তবে [`forceUpdate()`](/docs/react-component.html#forceupdate) ব্যবহার করুন। অথবা, খুব দ্রুত এ ধরণের নেস্টেড ডেটা তুলনা করবার জন্য [immutable objects](https://facebook.github.io/immutable-js/) ব্যবহার করতে পারেন।
 >
-> Furthermore, `React.PureComponent`'s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also "pure".
+> এছাড়াও, `React.PureComponent` এর `shouldComponentUpdate()` পুরো কম্পোনেন্ট সাবট্রি জুড়েই প্রপ এর যেকোন পরিবর্তনকে অগ্রাহ্য করে। নিশ্চিত করুন যে প্রতিটা চাইল্ড কম্পোনেন্ট ও "পিওর"।
 
 * * *
 
@@ -124,9 +125,9 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.memo` হচ্ছে একটি [উঁচু স্তরের কম্পোনেন্ট](/docs/higher-order-components.html). এটা [`React.PureComponent`](#reactpurecomponent) এর মতোই তবে শুধু ফাংশন কম্পোনেন্ট এর জন্য, ক্লাসের জন্য নয়। 
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+যদি আপনার ফাংশন কম্পোনেন্ট একই প্রপের জন্য একই ফলাফল দিয়ে থাকে, তাহলে আপনি একে `React.memo` এর জন্য একটি কল এ wrap করে ফেলতে পারেন। এটি  কিছু কিছু ক্ষেত্রে ফলাফলগুলোকে মনে রাখার মাধ্যমে(memoizing) অ্যাপ্লিকেশনের কার্যক্ষমতা বাড়িয়ে দিতে পারে। অর্থাৎ, React বার বার কম্পোনেন্টটি রেন্ডার না করে সর্বশেষ রেন্ডার করা ফলাফল মনে রাখবে। 
 
 By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
 
