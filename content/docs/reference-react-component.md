@@ -15,11 +15,11 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
-This page contains a detailed API reference for the React component class definition. It assumes you're familiar with fundamental React concepts, such as [Components and Props](/docs/components-and-props.html), as well as [State and Lifecycle](/docs/state-and-lifecycle.html). If you're not, read them first.
+এই লেখাটিতে React কম্পোনেন্ট ক্লাস ডেফিনিশনের জন্য বিস্তারিত API রেফারেন্স রয়েছে। আমরা ধরে নিচ্ছি React এর মৌলিক ধারণাসমূহ যেমন, [কম্পোনেন্ট এবং প্রপ](/docs/components-and-props.html), একই সাথে [স্টেট এবং লাইফসাইকেল](/docs/state-and-lifecycle.html) এর বিষয়ে আপনার সম্যক জ্ঞান রয়েছে। যদি আপনি এই বিষয়গুলোর সাথে যথেষ্ট পরিচিত না হয়ে থাকেন, তবে সেগুলো আগে পড়ে নিন। 
 
-## Overview {#overview}
+## একনজরে {#overview}
 
-React lets you define components as classes or functions. Components defined as classes currently provide more features which are described in detail on this page. To define a React component class, you need to extend `React.Component`:
+React আপনাকে কম্পোনেন্টকে ক্লাস এবং ফাংশন হিসেবে ডিফাইন করার সুযোগ দেয়। বর্তমানে ক্লাস হিসেবে ডিফাইন করা কম্পোনেন্ট বেশি সুবিধা দিচ্ছে, যা এই লেখাটিতে বিস্তারিতভাবে বর্ণনা করা আছে। একটি React কম্পোনেন্ট ক্লাস ডিফাইন করবার জন্য আপনাকে  `React.Component` এক্সটেন্ড করতে হবে: 
 
 ```js
 class Welcome extends React.Component {
@@ -29,36 +29,36 @@ class Welcome extends React.Component {
 }
 ```
 
-The only method you *must* define in a `React.Component` subclass is called [`render()`](#render). All the other methods described on this page are optional.
+যেই একটি মাত্র মেথড আপনাকে একটি `React.Component` সাবক্লাসে *অবশ্যই* ডিফাইন করতে হবে তা হল [`render()`](#render)। এই পৃষ্ঠার অন্য সকল মেথড ব্যবহার করা বা না করা একান্তই আপনার প্রয়োজনের উপর নির্ভর করে। 
 
-**We strongly recommend against creating your own base component classes.** In React components, [code reuse is primarily achieved through composition rather than inheritance](/docs/composition-vs-inheritance.html).
+**আমরা খুব জোরালোভাবে আপনাকে আপনার নিজের বেইজ কম্পোনেন্ট ক্লাস তৈরি করতে নিরুৎসাহিত করব।** React কম্পোনেন্টের ক্ষেত্রে [কোডের পুনর্ব্যবহার মূলত ইনহেরিটেন্সের বদলে কম্পোজিশনের মাধ্যমে করা হয়ে থাকে।](/docs/composition-vs-inheritance.html)
 
->Note:
+>নোট:
 >
->React doesn't force you to use the ES6 class syntax. If you prefer to avoid it, you may use the `create-react-class` module or a similar custom abstraction instead. Take a look at [Using React without ES6](/docs/react-without-es6.html) to learn more.
+React আপনাকে ES6 ক্লাস সিনট্যাক্স ব্যবহার করার জন্য বাধ্য করবে না। আপনি যদি একে এড়িয়ে যেতে চান, তবে `create-react-class` মডিউলটি বা এরকম কোন একটি কাস্টম এবস্ট্রাকশন (custom abstraction) ব্যবহার করতে পারেন। আরো জানতে [ES6 ছাড়া React এর ব্যবহার](/docs/react-without-es6.html) লেখাটি পড়তে পারেন। 
 
-### The Component Lifecycle {#the-component-lifecycle}
+### কম্পোনেন্টের জীবনচক্র {#the-component-lifecycle}
 
-Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
+প্রতিটি কম্পোনেন্টের একাধিক "লাইফসাইকেল মেথড"(lifecycle method) রয়েছে যা আপনি নির্দিষ্ট সময়ে কোন একটি কোড রান করবার জন্য ওভাররাইড করতে পারেন। **আপনি [জীবনচক্রের এই চিত্রটি](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) চিট শিট (cheat sheet) হিসেবে ব্যবহার করতে পারেন।** সাধারণত যেসব লাইফসাইকেল মেথড ব্যবহৃত হয়, সেগুলো নিচের তালিকায় **বোল্ড** করে দেওয়া আছে।
 
-#### Mounting {#mounting}
+#### মাউন্টিং {#mounting}
 
-These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+যখন কোন একটি কম্পোনেন্টের একটি ইন্সট্যান্স তৈরি করা হয় এবং DOM এ ইনসার্ট করা হয়, নিচের মেথডগুলো ক্রমানুযায়ী কল হয়।
 
 - [**`constructor()`**](#constructor)
 - [`static getDerivedStateFromProps()`](#static-getderivedstatefromprops)
 - [**`render()`**](#render)
 - [**`componentDidMount()`**](#componentdidmount)
 
->Note:
+>নোট:
 >
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>এই মেথডগুলোকে লেগাসি (legacy) মেথড হিসেবে ধরা হয় এবং নতুন কোডে আপনার উচিত এগুলোকে [পরিহার করা:](/blog/2018/03/27/update-on-async-rendering.html)
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
-#### Updating {#updating}
+#### আপডেট করা {#updating}
 
-An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+প্রপ বা স্টেট এ কোন পরিবর্তনের কারণে আপডেট ঘটতে পারে। যখন একটি কম্পোনেন্ট রি-রেন্ডার (re-render) করা হয়, নিচের মেথডগুলো ক্রমানুযায়ী কল হয়:
 
 - [`static getDerivedStateFromProps()`](#static-getderivedstatefromprops)
 - [`shouldComponentUpdate()`](#shouldcomponentupdate)
@@ -66,50 +66,50 @@ An update can be caused by changes to props or state. These methods are called i
 - [`getSnapshotBeforeUpdate()`](#getsnapshotbeforeupdate)
 - [**`componentDidUpdate()`**](#componentdidupdate)
 
->Note:
+>নোট:
 >
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>এই মেথডগুলোকে লেগাসি মেথড হিসেবে ধরা হয় এবং নতুন কোডে আপনার উচিত এগুলোকে [পরিহার করা:](/blog/2018/03/27/update-on-async-rendering.html)
 >
 >- [`UNSAFE_componentWillUpdate()`](#unsafe_componentwillupdate)
 >- [`UNSAFE_componentWillReceiveProps()`](#unsafe_componentwillreceiveprops)
 
-#### Unmounting {#unmounting}
+#### আনমাউন্টিং {#unmounting}
 
-This method is called when a component is being removed from the DOM:
+যখন DOM থেকে একটি কম্পোনেন্ট সরানো হয়, তখন এই মেথডটি কল হয়।
 
 - [**`componentWillUnmount()`**](#componentwillunmount)
 
-#### Error Handling {#error-handling}
+#### এরর হ্যান্ডলিং {#error-handling}
 
-These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+যখন একটি লাইফসাইকেল মেথডে বা চাইল্ড কম্পোনেন্টের কন্সট্রাক্টরে রেন্ডারিং হবার সময়ে কোন একটি এরর হ্যান্ডলিং করতে হয় তখন এই মেথডগুলো কল হয়।
 
 - [`static getDerivedStateFromError()`](#static-getderivedstatefromerror)
 - [`componentDidCatch()`](#componentdidcatch)
 
-### Other APIs {#other-apis}
+### অন্যান্য API সমূহ {#other-apis}
 
-Each component also provides some other APIs:
+প্রতিটি কম্পোনেন্ট অন্যান্য কিছু API এর সুবিধাও দেয়:
 
   - [`setState()`](#setstate)
   - [`forceUpdate()`](#forceupdate)
 
-### Class Properties {#class-properties}
+### ক্লাস প্রপার্টিস {#class-properties}
 
   - [`defaultProps`](#defaultprops)
   - [`displayName`](#displayname)
 
-### Instance Properties {#instance-properties}
+### ইন্সট্যান্স প্রপার্টিস {#instance-properties}
 
   - [`props`](#props)
   - [`state`](#state)
 
 * * *
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
-### Commonly Used Lifecycle Methods {#commonly-used-lifecycle-methods}
+### সাধারণভাবে ব্যবহৃত লাইফসাইকেল মেথডসমূহ {#commonly-used-lifecycle-methods}
 
-The methods in this section cover the vast majority of use cases you'll encounter creating React components. **For a visual reference, check out [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).**
+The methods in this section cover the vast majority of use cases you'll encounter creating React components. **For a visual reference, check out [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).**React কম্পোনেন্ট তৈরি করার সময় আপনার যেসব ইউজে কেইস (use cases) লাগতে পারে, এই সেকশনের এই মেথডটিতে তার বড় একটা অংশ বর্ণিত আছে। **চাক্ষুষ রেফারেন্সের জন্য [এই লাইফসাইকেল ডায়াগ্রামটি](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) দেখুন।**
 
 ### `render()` {#render}
 
@@ -117,23 +117,23 @@ The methods in this section cover the vast majority of use cases you'll encounte
 render()
 ```
 
-The `render()` method is the only required method in a class component.
+একটি ক্লাস কম্পোনেন্টের একমাত্র আবশ্যক মেথড হচ্ছে `render()`।
 
-When called, it should examine `this.props` and `this.state` and return one of the following types:
+যখন একে কল করা হয়, তখন এটি `this.props` এবং `this.state` নিরীক্ষা করে এবং নিচের টাইপগুলোর যেকোন একটি রিটার্ন করে:
 
-- **React elements.** Typically created via [JSX](/docs/introducing-jsx.html). For example, `<div />` and `<MyComponent />` are React elements that instruct React to render a DOM node, or another user-defined component, respectively.
-- **Arrays and fragments.** Let you return multiple elements from render. See the documentation on [fragments](/docs/fragments.html) for more details.
-- **Portals**. Let you render children into a different DOM subtree. See the documentation on [portals](/docs/portals.html) for more details.
-- **String and numbers.** These are rendered as text nodes in the DOM.
-- **Booleans or `null`**. Render nothing. (Mostly exists to support `return test && <Child />` pattern, where `test` is boolean.)
+- **React elements.** সাধারণত [JSX](/docs/introducing-jsx.html) দিয়ে তৈরি. যেমন, `<div />` এবং `<MyComponent />` এমন দুটি React এলিমেন্ট,  যা React কে যথাক্রমে একটি DOM নোড বা অন্য একটি ইউজার-ডিফাইন্ড (user-defined) কম্পোনেন্ট রেন্ডার করতে বলে।
+- **Arrays and fragments.** আপনাকে রেন্ডার থেকে একাধিক এলিমেন্ট রিটার্ন করার সুযোগ দেয়. বিস্তারিতভাবে জানবার জন্য [ফ্র্যাগমেন্টস](/docs/fragments.html) লেখাটি পড়ুন। 
+- **Portals**. Let you render children into a different DOM subtree. See the documentation on অন্য একটি DOM সাবট্রিতে (subtree) চিল্ড্রেন রেন্ডার করতে দেয়। বিস্তারিতভাবে জানবার জন্য [পোর্টাল](/docs/portals.html) এর উপর ডকুমেন্টেশন পড়ুন। 
+- **String and numbers.** DOM এ এগুলো টেক্সট নোড হিসেবে রেন্ডার হয়।
+- **Booleans or `null`**. কিছুই রেন্ডার করে না। (এর অস্তিত্বের কারণ মূলত `return test && <Child />` প্যটার্নটিকে সাপোর্ট করা, যেখানে `test` বুলিয়ান।)
 
-The `render()` function should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked, and it does not directly interact with the browser.
+`render()` ফাংশনটিকে একটি pure বা বিশুদ্ধ ফাংশন হতে হবে, অর্থাৎ এটি কম্পোনেন্টের স্টেট পরিবর্তন করবে না, একে যতবারই ইনভোক করা হোক একই ফলাফল দিবে এবং এটি সরাসরি ব্রাউজারের সাথে কোন ইনটার‍্যাকশন (interaction) করবে না।
 
-If you need to interact with the browser, perform your work in `componentDidMount()` or the other lifecycle methods instead. Keeping `render()` pure makes components easier to think about.
+আপনি যদি আপনার ব্রাউজারের সাথে ইন্টার‍্যাক্ট করতে চান, তবে `componentDidMount()`এ অথবা অন্য লাইফসাইকেল মেথডে করতে পারেন। `render()`  ফাংশনটিকে বিশুদ্ধ রাখলে কম্পোনেন্ট সম্বন্ধে চিন্তা করা সহজ হয়ে যায়। 
 
-> Note
+> নোট:
 >
-> `render()` will not be invoked if [`shouldComponentUpdate()`](#shouldcomponentupdate) returns false.
+> [`shouldComponentUpdate()`](#shouldcomponentupdate) যদি false রিটার্ন করে তবে `render()` ইনভোকড হবে না। 
 
 * * *
 
