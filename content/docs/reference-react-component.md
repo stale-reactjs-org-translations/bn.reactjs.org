@@ -143,47 +143,47 @@ render()
 constructor(props)
 ```
 
-**If you don't initialize state and you don't bind methods, you don't need to implement a constructor for your React component.**
+**আপনি যদি স্টেট initialize না করেন, এবং মেথড বাইন্ডিং ও না করেন, তবে আপনার React কম্পোনেন্টের জন্য আপনাকে কোন কনস্ট্রাক্টর ব্যবহার করতে হবে না।**
 
-The constructor for a React component is called before it is mounted. When implementing the constructor for a `React.Component` subclass, you should call `super(props)` before any other statement. Otherwise, `this.props` will be undefined in the constructor, which can lead to bugs.
+একটি React কম্পোনেন্ট মাউন্ট হবার আগে এর কনস্ট্রাক্টর কল হয়। `React.Component` সাবক্লাসের জন্য কোন কন্সট্রাক্টর ইমপ্লিমেন্ট করার সময়ে আপনার উচিত অন্য যেকোন স্টেটমেন্টের আগে `super(props)` কল করা। অন্যথায়, কনস্ট্রাক্টরে `this.props` ডিফাইন করা থাকবে না। এর কারণে পরে বাগ(bug) দেখা যেতে পারে। 
 
-Typically, in React constructors are only used for two purposes:
+সাধারণত React কন্সট্রাক্টর শুধুমাত্র দুটি কাজের জন্য ব্যবহৃত হয়:
 
-* Initializing [local state](/docs/state-and-lifecycle.html) by assigning an object to `this.state`.
-* Binding [event handler](/docs/handling-events.html) methods to an instance.
+* `this.state` এ একটি অবজেক্ট এসাইন (assign) করার মাধ্যমে [লোকাল স্টেট](/docs/state-and-lifecycle.html) ইনিশিয়ালাইজ করা। 
+* একটি ইন্সট্যান্সে [ইভেন্ট হ্যান্ডলার](/docs/handling-events.html) মেথড বাইন্ড করা।
 
-You **should not call `setState()`** in the `constructor()`. Instead, if your component needs to use local state, **assign the initial state to `this.state`** directly in the constructor:
+`constructor()` এ **`setState()` কল করা উচিত না।** বরং, যদি আপনার কম্পোনেন্টের লোকাল স্টেট ব্যবহার করার প্রয়োজন পড়ে, সরাসরি কন্সট্রাক্টরে **`this.state` এ ইনিশিয়াল স্টেট(initial state) এসাইন করে দেওয়া উচিত।**
 
 ```js
 constructor(props) {
   super(props);
-  // Don't call this.setState() here!
+  // এখানে this.setState() কল করবেন না!
   this.state = { counter: 0 };
   this.handleClick = this.handleClick.bind(this);
 }
 ```
 
-Constructor is the only place where you should assign `this.state` directly. In all other methods, you need to use `this.setState()` instead.
+কন্সট্রাক্টরই একমাত্র জায়গা যেখানে আপনার `this.state` সরাসরি এসাইন(assign) করা উচিত। এছাড়া বাকি সকল মেথডে `this.setState()` ব্যবহার করা উচিত।
 
-Avoid introducing any side-effects or subscriptions in the constructor. For those use cases, use `componentDidMount()` instead.
+কনস্ট্রাক্টরে কোন পার্শ্বপ্রতিক্রিয়া (side-effects) বা সাবস্ক্রিপশন (subscription) আরম্ভ করা থেকে বিরক্ত থাকুন। সেরকম প্রয়োজন পড়লে `componentDidMount()` ব্যবহার করুন। 
 
->Note
+>নোট
 >
->**Avoid copying props into state! This is a common mistake:**
+>**প্রপকে স্টেট এ কপি করা থেকে বিরত থাকবেন! এটি একটি সাধারণ ভুল।**
 >
 >```js
 >constructor(props) {
 >  super(props);
->  // Don't do this!
+>  // এটা করবেন না!
 >  this.state = { color: props.color };
 >}
 >```
 >
->The problem is that it's both unnecessary (you can use `this.props.color` directly instead), and creates bugs (updates to the `color` prop won't be reflected in the state).
+>সমস্যাটা হল, দু'টা কাজই অপ্রয়োজনীয় (এর বদলে আপনি `this.props.color` সরাসরি ব্যবহার করতে পারেন।), এবং একই সাথে কিছু 'বাগ' এর জন্ম দেয় (`color` প্রপ এর কোন পরিবর্তন স্টেট এ দেখা যাবে না।)।  
 >
->**Only use this pattern if you intentionally want to ignore prop updates.** In that case, it makes sense to rename the prop to be called `initialColor` or `defaultColor`. You can then force a component to "reset" its internal state by [changing its `key`](/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key) when necessary.
+>**এটি তখনই শুধুমাত্র ব্যবহার করবেন যখন আপনি ইচ্ছাকৃতভাবে প্রপ এর আপডেট অগ্রাহ্য করতে চান।** এই ক্ষেত্রটিতে প্রপের নাম বদলে `initialColor` বা `defaultColor` করে ফেলাটা যুক্তিযুক্ত।. সেক্ষেত্রে, প্রয়োজন পড়লে আপনি আপনার কম্পোনেন্টকে [এর `key` বদলে ফেলার](/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key) এর ইন্টার্নাল স্টেটে (internal state) "রিসেট" (reset) করে ফেলতে পারেন।
 >
->Read our [blog post on avoiding derived state](/blog/2018/06/07/you-probably-dont-need-derived-state.html) to learn about what to do if you think you need some state to depend on the props.
+>[Derived state এড়িয়ে যাবার জন্য আমাদের ব্লগ](/blog/2018/06/07/you-probably-dont-need-derived-state.html) পড়ে আপনি জানতে পারবেন আপনার যদি প্রপের উপর নির্ভরশীল কোন স্টেট দরকার পড়ে তাহলে কি করতে হবে।
 
 
 * * *
@@ -194,11 +194,11 @@ Avoid introducing any side-effects or subscriptions in the constructor. For thos
 componentDidMount()
 ```
 
-`componentDidMount()` is invoked immediately after a component is mounted (inserted into the tree). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+একটি কম্পোনেন্ট মাউন্ট হবার (ট্রিতে ঢুকানোর) সাথে সাথে  `componentDidMount()` ইনভোক হয়। যেসব ইনিশিয়ালাইজেশন (initialization) এর জন্য DOM নোডের দরকার, সেগুলো এখানে থাকা উচিত। কোণ একটি দূরবর্তী এন্ডপয়েন্ট (remote endpoint) থেকে ডেটা লোড করবার প্রয়োজন হলে নেটওয়ার্ক রিকুয়েস্ট শুরু করবার জন্য এটি একটি ভাল জায়গা।
 
-This method is a good place to set up any subscriptions. If you do that, don't forget to unsubscribe in `componentWillUnmount()`.
+এই মেথডটি যেকোন সাবস্ক্রিপশন সেট আপ (set up) করার জন্য ভাল জায়গা। যদি আপনি সেটা করে থাকেন, তবে `componentWillUnmount()`-এ আনসাবস্ক্রাইব করতে ভুলবেন না। 
 
-You **may call `setState()` immediately** in `componentDidMount()`. It will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the `render()` will be called twice in this case, the user won't see the intermediate state. Use this pattern with caution because it often causes performance issues. In most cases, you should be able to assign the initial state in the `constructor()` instead. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.
+You **may call `setState()` immediately** in `componentDidMount()`. It will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the `render()` will be called twice in this case, the user won't see the intermediate state. Use this pattern with caution because it often causes performance issues. In most cases, you should be able to assign the initial state in the `constructor()` instead. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position. আপনি চাইলে `componentDidMount()` এ **সাথে সাথে `setState()` কল দিতে পারেন।** এর কারণে একটি অতিরিক্ত রেন্ডারিং হবে, তবে সেটা হবে ব্রাউজার স্ক্রিন আপডেট করবার আগেই। এটা এই নিশ্চয়তা দেয় যে, এই ক্ষেত্রে `render()` দুইবার কল করা হবে, তবে ইউজার অন্তর্বতী স্টেট দেখতে পারবেন না। এই প্যটার্নটি সাবধানতার সাথে ব্যবহার করুন, কারণ এটি সাধারণত কর্মদক্ষতার উপরে প্রভাব ফেলে। বেশিরভাগ ক্ষেত্রেই, আপনি বরং `constructor()` এ ইনিশিয়াল স্টেট এসাইন করে দেবার সুযোগ পাবেন। তবে এটি কিছু কিছু ক্ষেত্রে কাজে লাগতে পারে। যেমন মোডাল বা টুলটিপ (modals and tooltips) এর ক্ষেত্রে, অর্থাৎ যখন আপনি একটি DOM নোড এর আকার বা অবস্থানের উপর নির্ভরশীল কোন কিছু রেন্ডার করবার আগেই DOM নোডটি সম্বন্ধে জানতে চান। 
 
 * * *
 
@@ -208,7 +208,7 @@ You **may call `setState()` immediately** in `componentDidMount()`. It will trig
 componentDidUpdate(prevProps, prevState, snapshot)
 ```
 
-`componentDidUpdate()` is invoked immediately after updating occurs. This method is not called for the initial render.
+আপডেট হবার সাথে সাথে `componentDidUpdate()` ইনভোক হয়। প্রাথমিক রেন্ডার এর জন্য এই মেথডটি কল হয় না। 
 
 Use this as an opportunity to operate on the DOM when the component has been updated. This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
 
