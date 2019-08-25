@@ -122,7 +122,9 @@ it('can render and update a counter', () => {
 });
 ```
 
-আমাদের মনে রাখতে হবে DOM ইভেন্ট dispatch করলে তা শুধু তখনই কাজ করবে যখন DOM কন্টেইনারটি `document` এ সংযুক্ত করা হবে। আপনি বয়লারপ্লেট কোড কমাতে [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) এর মত একটি হেল্পার ব্যবহার করতে পারেন।
+- আমাদের মনে রাখতে হবে DOM ইভেন্ট dispatch করলে তা শুধু তখনই কাজ করবে যখন DOM কন্টেইনারটি `document` এ সংযুক্ত করা হবে। আপনি বয়লারপ্লেট কোড কমাতে [React Testing Library](https://testing-library.com/react) এর মত একটি লাইব্রেরি ব্যবহার করতে পারেন।
+
+- [`recipes`](/docs/testing-recipes.html) পৃষ্ঠায় `act()` কিভাবে আচরণ করে তা বিস্তারিতভাবে উদাহরণ এবং ব্যবহারপদ্ধতি সহ দেওয়া আছে।
 
 * * *
 
@@ -139,7 +141,8 @@ mockComponent(
 
 > বিঃদ্রঃ
 >
-> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [shallow rendering](/docs/shallow-renderer.html) অথবা [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
+> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
+
 
 * * *
 

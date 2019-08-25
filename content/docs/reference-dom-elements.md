@@ -14,27 +14,27 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
-React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
+React পারফরমেন্স এবং ক্রস-ব্রাউজারের উপযোগিতা চিন্তা করে একটি ব্রাউজার-নিরপেক্ষ DOM সিস্টেম তৈরি করে। আমরা এই সুবিধাকে কাজে লাগিয়ে ব্রাউজারে DOM তৈরির সময় কিছু অপ্রয়োজনীয় কাজ মুছে ফেলতে পারি।
 
-In React, all DOM properties and attributes (including event handlers) should be camelCased. For example, the HTML attribute `tabindex` corresponds to the attribute `tabIndex` in React. The exception is `aria-*` and `data-*` attributes, which should be lowercased. For example, you can keep `aria-label` as `aria-label`.
+React এ, সব DOM properties এবং attributes গুলো (ইভেন্ট হ্যান্ডেলারসহ) camelCase হওয়া উচিত। উদাহরণস্বরূপ, HTML `tabindex` attributeটি React এর `tabIndex` এর অনুরূপ। ব্যতিক্রম কেবল `aria-*` এবং `data-*` attributeগুলো, যেগুলো lowercase হওয়া উচিত। উদাহরণস্বরূপ, আপনি `aria-label`কে `aria-label` হিসেবেই রাখতে পারেন।
 
-## Differences In Attributes {#differences-in-attributes}
+## Attributes এর মধ্যে পার্থক্য {#differences-in-attributes}
 
-There are a number of attributes that work differently between React and HTML:
+React এবং HTML এর মধ্যে কিছু attributes আছে যেগুলো ভিন্নভাবে কাজ করেঃ
 
 ### checked {#checked}
 
-The `checked` attribute is supported by `<input>` components of type `checkbox` or `radio`. You can use it to set whether the component is checked. This is useful for building controlled components. `defaultChecked` is the uncontrolled equivalent, which sets whether the component is checked when it is first mounted.
+`checked` attributeটি `<input>` কম্পোনেন্টের `checkbox` অথবা `radio` টাইপে সাপোর্ট করে। যেখানে এই কম্পোনেন্টটি checked হয়, সেখানেই আপনি এটি ব্যবহার করতে পারেন। এটি controlled কম্পোনেন্ট তৈরির জন্য খুব উপকারী। `defaultChecked` এটির uncontrolled রূপ, যেটি কম্পোনেন্টটি প্রথম মাউন্ট হওয়ার সময় সেট হয়।
 
 ### className {#classname}
 
-To specify a CSS class, use the `className` attribute. This applies to all regular DOM and SVG elements like `<div>`, `<a>`, and others.
+CSS class তৈরির সময় `className` attributeটি ব্যবহার করুন। এটি সকল DOM এবং SVG elements যেমন `<div>`, `<a>`, এবং অন্যান্য elements এর উপর ব্যবহৃত হয়।
 
-If you use React with Web Components (which is uncommon), use the `class` attribute instead.
+আপনি যদি Web কম্পোনেন্ট দিয়ে React ব্যবহার করতে চান (যেটি আসলে বিরল), তবে `class` attribute ব্যবহার করুন।
 
 ### dangerouslySetInnerHTML {#dangerouslysetinnerhtml}
 
-`dangerouslySetInnerHTML` is React's replacement for using `innerHTML` in the browser DOM. In general, setting HTML from code is risky because it's easy to inadvertently expose your users to a [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) attack. So, you can set HTML directly from React, but you have to type out `dangerouslySetInnerHTML` and pass an object with a `__html` key, to remind yourself that it's dangerous. For example:
+`dangerouslySetInnerHTML` হচ্ছে ব্রাউজার DOM এর `innerHTML` এর একটি React বিকল্প। সাধারণত, কোডের মাধ্যমে HTML সেট করা বিপদজনক, কারণ এটি সহজেই আপনার ইউজারকে অসাবধানতাবশত [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) এটাকের শিকার করে। তাই আপনি React এর মাধ্যমে সরাসরি HTML সেট করতে পারেন, কিন্তু আপনাকে অবশ্যই `dangerouslySetInnerHTML` লিখতে হবে এবং `__html` key সহ একটি object পাঠাতে হবে, যাতে করে আপনি মনে রাখতে পারেন এটি বিপদজনক। উদাহরণস্বরূপঃ
 
 ```js
 function createMarkup() {
@@ -48,23 +48,23 @@ function MyComponent() {
 
 ### htmlFor {#htmlfor}
 
-Since `for` is a reserved word in JavaScript, React elements use `htmlFor` instead.
+যেহেতু `for` হচ্ছে জাভাস্ক্রিপ্টের একটি সংরক্ষিত শব্দ, সেহেতু React elements `htmlFor` ব্যবহার করে।
 
 ### onChange {#onchange}
 
-The `onChange` event behaves as you would expect it to: whenever a form field is changed, this event is fired. We intentionally do not use the existing browser behavior because `onChange` is a misnomer for its behavior and React relies on this event to handle user input in real time.
+`onChange` ইভেন্টটি আপনি যেভাবে আশা করেন সেভাবেই কাজ করেঃ যখনি একটি ফর্ম ফিল্ড পরিবর্তন হবে, তখনি এই ইভেন্টটি ফায়ার হবে। আমরা ইচ্ছাকৃতভাবে বিদ্যমান ব্রাউজারের আচরণ ব্যবহার করি না কারণ `onChange` তার আচরণের প্রেক্ষিতে একটি অসঙ্গত নামকরণ এবং React রিয়েল টাইমে ইউজারের ইনপুট পর্যালোচনা করার জন্য এই ইভেন্টের উপর নির্ভর করে।
 
 ### selected {#selected}
 
-The `selected` attribute is supported by `<option>` components. You can use it to set whether the component is selected. This is useful for building controlled components.
+`selected` attributeটি `<option>` কম্পোনেন্টে সাপোর্ট করে। যেখানে এই কম্পোনেন্টটি selected হয়, সেখানেই আপনি এটি ব্যবহার করতে পারেন। এটি controlled কম্পোনেন্ট তৈরির জন্য খুব উপকারী।
 
 ### style {#style}
 
->Note
+>বিঃদ্রঃ
 >
->Some examples in the documentation use `style` for convenience, but **using the `style` attribute as the primary means of styling elements is generally not recommended.** In most cases, [`className`](#classname) should be used to reference classes defined in an external CSS stylesheet. `style` is most often used in React applications to add dynamically-computed styles at render time. See also [FAQ: Styling and CSS](/docs/faq-styling.html).
+>এই ডকুমেন্টেশনে কিছু উদাহরণে সুবিধার জন্য `style` ব্যবহার করা হয়েছে, কিন্তু **element এ  style দেওয়ার জন্য প্রাথমিক মাধ্যম হিসেবে `style` attribute ব্যবহার করা সাধারণত সুপারিশ করা হয় না।** বেশিরভাগ ক্ষেত্রে, বাহ্যিক CSS  স্টাইলশিটে সংজ্ঞায়িত classes এর রেফারেন্স হিসেবে [`className`](#classname) ব্যবহার করা উচিত। রেন্ডার টাইমে dynamically-computed  style দেওয়ার জন্য, `style`প্রায়শই React অ্যাপ্লিকেশনগুলিতে ব্যবহৃত হয়। আরও দেখুন [FAQ: Styling এবং CSS](/docs/faq-styling.html).
 
-The `style` attribute accepts a JavaScript object with camelCased properties rather than a CSS string. This is consistent with the DOM `style` JavaScript property, is more efficient, and prevents XSS security holes. For example:
+`style` attributeটি CSS string এর পরিবর্তে camelCased properties যুক্ত জাভাস্ক্রিপ্টের object গ্রহণ করে। এটি জাভাস্ক্রিপ্টের DOM `style` property এর সাথে সামঞ্জস্যপূর্ণ, আরও কার্যকর, এবং XSS এর নিরাপত্তা হোলগুলোকেও প্রতিরোধ করে। উদাহরণস্বরূপঃ
 
 ```js
 const divStyle = {
@@ -77,7 +77,7 @@ function HelloWorldComponent() {
 }
 ```
 
-Note that styles are not autoprefixed. To support older browsers, you need to supply corresponding style properties:
+মনে রাখবেন  style কিন্তু autoprefixed নয়। পুরানো ব্রাউজারগুলোকে সাপোর্ট করার জন্য, আপনাকে সংশ্লিষ্ট  style properties প্রদান করতে হবেঃ
 
 ```js
 const divStyle = {
@@ -90,9 +90,9 @@ function ComponentWithTransition() {
 }
 ```
 
-Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes from JS (e.g. `node.style.backgroundImage`). Vendor prefixes [other than `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) should begin with a capital letter. This is why `WebkitTransition` has an uppercase "W".
+JS থেকে DOM nodes এর properties ব্যবহার করার মত সামঞ্জস্য রাখার জন্য  style key গুলো সব (e.g. `node.style.backgroundImage`). ভেন্ডরের prefix গুলো [`ms` ব্যতীত](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) ক্যাপিটাল লেটারে শুরু হওয়া উচিত। এই কারণেই `WebkitTransition` এর একটি uppercase "W" রয়েছে।
 
-React will automatically append a "px" suffix to certain numeric inline style properties. If you want to use units other than "px", specify the value as a string with the desired unit. For example:
+নির্দিষ্ট সংখ্যাসূচক কিছু  style properties এর জন্য React আপনাআপনি একটি "px" suffix যোগ করে নেয়।  আপনি যদি "px" এর পরিবর্তে অন্য কোন ইউনিট ব্যবহার করতে চান, তবে string আকারে ভ্যালু এর সাথে কাঙ্ক্ষিত ইউনিটটি যোগ করে দিন। উদাহরণস্বরূপঃ
 
 ```js
 // Result style: '10px'
@@ -106,27 +106,27 @@ React will automatically append a "px" suffix to certain numeric inline style pr
 </div>
 ```
 
-Not all style properties are converted to pixel strings though. Certain ones remain unitless (eg `zoom`, `order`, `flex`). A complete list of unitless properties can be seen [here](https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59).
+সব  style properties কিন্তু পিক্সেল string এ পরিবর্তিত হয় না। নির্দিষ্ট কিছু ইউনিটহীন অবস্থায় থাকে। (eg `zoom`, `order`, `flex`). ইউনিটহীন properties এর সম্পূর্ণ লিস্ট [এখানে](https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59) দেখতে পারেন।
 
 ### suppressContentEditableWarning {#suppresscontenteditablewarning}
 
-Normally, there is a warning when an element with children is also marked as `contentEditable`, because it won't work. This attribute suppresses that warning. Don't use this unless you are building a library like [Draft.js](https://facebook.github.io/draft-js/) that manages `contentEditable` manually.
+সাধারণত children আছে এমন element যদি `contentEditable` হিসেবে গণ্য হয় তবে একটি warning দেখানো হয়, কারণ এটি কাজ করবে না। এই attributeটি ঐ warning কে দেখানো থেকে বিরত রাখে। এই attributeটি ব্যবহার থেকে বিরত থাকুন, যদি না আপনি [Draft.js](https://facebook.github.io/draft-js/) এর মত কোন লাইব্রেরি তৈরি না করেন যেটি নিজস্ব উপায়ে `contentEditable` ম্যানেজ করে।
 
 ### suppressHydrationWarning {#suppresshydrationwarning}
 
-If you use server-side React rendering, normally there is a warning when the server and the client render different content. However, in some rare cases, it is very hard or impossible to guarantee an exact match. For example, timestamps are expected to differ on the server and on the client.
+ আপনি যদি সার্ভার-সাইডে React রেন্ডার করেন, তবে সাধারণত সার্ভার এবং ক্লায়েন্টের কন্টেন্টে পার্থক্য থাকলে একটি warning দেখানো হয়। যেহেতু কিছু বিরল ক্ষেত্রে, খাপে খাপ মিল পাওয়া খুবই কঠিন ব্যাপার, এক কথায় অসম্ভব। উদাহরণস্বরূপ, সার্ভার এবং ক্লায়েন্টে timestamps ভিন্ন হতে পারে।
 
-If you set `suppressHydrationWarning` to `true`, React will not warn you about mismatches in the attributes and the content of that element. It only works one level deep, and is intended to be used as an escape hatch. Don't overuse it. You can read more about hydration in the [`ReactDOM.hydrate()` documentation](/docs/react-dom.html#hydrate).
+আপনি যদি `suppressHydrationWarning`কে `true` হিসেবে সেট করেন, তবে attributes এবং element এর কন্টেন্টের অমিল নিয়ে React কোন সতর্কবার্তা দেখাবে না। এটি এক ধাপ গভীরে কাজ করে, এবং বেশি সমস্যায় পরলে উত্তরণের জন্য ব্যবহৃত হয়। এটি বেশি ব্যবহার করবেন না।  hydration এর ব্যাপারে আপনি আরও পড়তে পারবেন [`ReactDOM.hydrate()` ডকুমেন্টেশানে](/docs/react-dom.html#hydrate).
 
 ### value {#value}
 
-The `value` attribute is supported by `<input>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+`value` attributeটি `<input>` এবং `<textarea>` কম্পোনেন্টে সাপোর্ট করে।  আপনি এটি কম্পোনেন্টের value সেট করার জন্য ব্যবহার করতে পারেন। এটি controlled কম্পোনেন্ট তৈরির জন্য খুব উপকারী। `defaultValue` এটির uncontrolled রূপ, যেটি কম্পোনেন্টটি প্রথম মাউন্ট হওয়ার সময় সেট হয়।
 
 ## All Supported HTML Attributes {#all-supported-html-attributes}
 
-As of React 16, any standard [or custom](/blog/2017/09/08/dom-attributes-in-react-16.html) DOM attributes are fully supported.
+React 16 থেকে, যে কোন স্ট্যান্ডার্ড [অথবা কাস্টম](/blog/2017/09/08/dom-attributes-in-react-16.html) DOM attributes সম্পূর্ণরূপে সাপোর্ট করা হয়।
 
-React has always provided a JavaScript-centric API to the DOM. Since React components often take both custom and DOM-related props, React uses the `camelCase` convention just like the DOM APIs:
+React সব সময়ই একটি JavaScript-centric API তার DOM কে প্রদান করে। যখন থেকে React কম্পোনেন্ট প্রায়শই কাস্টম এবং DOM-related props নেয়, তখন থেকেই React DOM APIs এর মত `camelCase` কনভেনশান ব্যবহার করেঃ
 
 ```js
 <div tabIndex="-1" />      // Just like node.tabIndex DOM API
@@ -134,9 +134,9 @@ React has always provided a JavaScript-centric API to the DOM. Since React compo
 <input readOnly={true} />  // Just like node.readOnly DOM API
 ```
 
-These props work similarly to the corresponding HTML attributes, with the exception of the special cases documented above.
+এই props গুলো  সংশ্লিষ্ট HTML attributes এর মতই কাজ করে, উপরে বর্ণিত বিশেষ কিছু অবস্থা ছাড়া।
 
-Some of the DOM attributes supported by React include:
+যেসব DOM attributes গুলো React সাপোর্ট করেন সেগুলোঃ
 
 ```
 accept acceptCharset accessKey action allowFullScreen alt async autoComplete
@@ -154,7 +154,7 @@ sizes span spellCheck src srcDoc srcLang srcSet start step style summary
 tabIndex target title type useMap value width wmode wrap
 ```
 
-Similarly, all SVG attributes are fully supported:
+একইভাবে, সব SVG attributes সম্পূর্ণরূপে সাপোর্ট করা হয়ঃ
 
 ```
 accentHeight accumulate additive alignmentBaseline allowReorder alphabetic
@@ -193,4 +193,4 @@ xlinkHref xlinkRole xlinkShow xlinkTitle xlinkType xmlns xmlnsXlink xmlBase
 xmlLang xmlSpace y y1 y2 yChannelSelector z zoomAndPan
 ```
 
-You may also use custom attributes as long as they're fully lowercase.
+আপনি হয়ত কিছু কাস্টম  attributes ব্যবহার করতে পারেন যদি তারা সম্পূর্ণরূপে lowercase হয়।
