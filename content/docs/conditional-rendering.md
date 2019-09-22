@@ -1,6 +1,6 @@
 ---
 id: conditional-rendering
-title: Conditional Rendering
+title: কন্ডিশানাল রেন্ডারিং
 permalink: docs/conditional-rendering.html
 prev: handling-events.html
 next: lists-and-keys.html
@@ -8,11 +8,11 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+React এ আপনি একটি স্বতন্ত্র কম্পোনেন্ট তৈরি করতে পারেন যা আপনার প্রয়োজনীয় চাহিদাগুলোকে পৃথক করে রাখবে। তারপরে, আপনার অ্যাপ্লিকেশনের স্টেটের উপর নির্ভর করে তাদের মধ্যে কয়েকটি রেন্ডার করতে পারেন।
 
-Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
+React এ কন্ডিশানাল রেন্ডারিং, জাভাস্ক্রিপ্টে কন্ডিশান যেভাবে কাজ করে ঠিক সেভাবেই কাজ করে। [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) অথবা [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) এর মত জাভাস্ক্রিপ্টের অপারেটরগুলি ব্যবহার করে বর্তমান স্টেটের elements তৈরি করুন, এবং React কে তাদের সাথে মিলিয়ে UI আপডেট করতে দিন।
 
-Consider these two components:
+এই দুটি কম্পোনেন্ট বিবেচনা করুন:
 
 ```js
 function UserGreeting(props) {
@@ -24,7 +24,7 @@ function GuestGreeting(props) {
 }
 ```
 
-We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
+আমরা একটি `Greeting` কম্পোনেন্ট তৈরি করব, যা ইউজার লগ ইন করেছে কিনা তার উপর নির্ভর করে উপরের কম্পোনেন্টগুলোর মধ্যে যেকোন একটি কম্পোনেন্ট প্রদর্শন করবেঃ
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-This example renders a different greeting depending on the value of `isLoggedIn` prop.
+এই উদাহরণ `isLoggedIn` prop এর মানের উপর নির্ভর করে ভিন্ন ধরনের greeting রেন্ডার করে।
 
 ### Element Variables {#element-variables}
 
-You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
+elements সংরক্ষণ করতে আপনি variable ব্যবহার করতে পারেন। এটি আপনাকে element এর একটি অংশ কন্ডিশানালি রেন্ডার করতে সহায়তা করতে পারে যদিও তার বাকি অংশের কোন পরিবর্তন হয়নি।
 
-Consider these two new components representing Logout and Login buttons:
+এই দুটি নতুন কম্পোনেন্ট বিবেচনা করুন যা Logout এবং Login buttons তৈরি করেঃ
 
 ```js
 function LoginButton(props) {
@@ -70,9 +70,9 @@ function LogoutButton(props) {
 }
 ```
 
-In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
+নিচের উদাহরণে, আমরা `LoginControl` নামে একটি [stateful কম্পোনেন্ট](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) তৈরি করব।
 
-It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
+এটি বর্তমান স্টেটের উপর নির্ভর করে `<LoginButton />` বা `<LogoutButton />`সরবরাহ করবে। এটা পূর্ববর্তী উদাহরণের `<Greeting />` কম্পোনেন্টকেও রেন্ডার করবেঃ
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -116,13 +116,13 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+variable ডিক্লেয়ার করার মাধ্যমে `if` স্টেটমেন্টের ভিতর সেটিকে ব্যবহার করা মূলত কম্পোনেন্টকে কন্ডিশানালি রেন্ডার করার একটু সুন্দর উপায়, মাঝে মাঝে আপনি shorter syntax ব্যবহার করেও এটি করতে পারেন। কন্ডিশানকে inline এর মাধ্যমে JSX এ ব্যবহার করার জন্য কিছু উপায় রয়েছে, নিচে তা ব্যাখ্যা করা হল।
 
-### Inline If with Logical && Operator {#inline-if-with-logical--operator}
+### Logical && Operator এর সাথে Inline If {#inline-if-with-logical--operator}
 
-You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+আপনি curly braces এর ভিতরে [যে কোন এক্সপ্রেশন JSX এর মধ্যে বসাতে পারেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)। এই এক্সপ্রেশনগুলোর মধ্যে জাভাস্ক্রিপ্টের logical `&&` operator ও অন্তর্ভুক্ত। কন্ডিশানাল element অন্তর্ভুক্ত করার জন্য এটি বেশ সুবিধাজনক হতে পারে।
 
 ```js{6-10}
 function Mailbox(props) {
@@ -146,17 +146,17 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+এটি কার্যকরী, কারণ জাভাস্ক্রিপ্টে `true && expression`টি `expression`কে মূল্যায়ন করে এবং `false && expression` টি `false`কে মূল্যায়ন করে।
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
+অতএব, যদি কন্ডিশানটি `true` হয়, তবে `&&` এরপরের কম্পোনেন্টি আউটপুট এ প্রদর্শিত হবে। যদি `false` হয় তবে React এটিকে অবজ্ঞা করবে এবং বাদ দিবে।
 
-### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+### Conditional Operator এর সাথে Inline If-Else {#inline-if-else-with-conditional-operator}
 
-Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+element কে inline এ কন্ডিশানালি রেন্ডারিং করার অন্য একটি উপায় হচ্ছে জাভাস্ক্রিপ্টের conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ব্যবহার করা।
 
-In the example below, we use it to conditionally render a small block of text.
+নিম্নের উদাহরণে আমরা এটা ব্যবহার করে text এর একটি ছোট ব্লককে কন্ডিশানালি রেন্ডার করেছি।
 
 ```javascript{5}
 render() {
@@ -169,7 +169,7 @@ render() {
 }
 ```
 
-It can also be used for larger expressions although it is less obvious what's going on:
+এটি বৃহত্তর expressions এর জন্যও ব্যবহার করা যেতে পারে যদিও কী ঘটছে তা মোটেও স্পষ্ট নয়ঃ
 
 ```js{5,7,9}
 render() {
@@ -186,13 +186,13 @@ render() {
 }
 ```
 
-Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+জাভাস্ক্রিটের মতই, আপনি এবং আপনার দলের কাছে কোন styleটি পাঠযোগ্য তার উপর ভিত্তি করে আপনি আপনার পছন্দমত style নির্বাচন করতে পারেন। এছাড়াও মনে রাখবেন কন্ডিশান খুব জটিল হয়ে পরে, এটি একটি উপযুক্ত সময় [কম্পোনেন্টকে extract করার](/docs/components-and-props.html#extracting-components)।
 
-### Preventing Component from Rendering {#preventing-component-from-rendering}
+### কম্পোনেন্টকে রেন্ডারিং থেকে বিরত রাখা {#preventing-component-from-rendering}
 
-In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+বিরল ক্ষেত্রে আপনি হয়ত চাইবেন একটি কম্পোনেন্ট hide থাকুক যদিও এটি অন্য একটি কম্পোনেন্ট দিয়ে রেন্ডার হয়েছিল। এটা কার্যকর করার জন্য তার রেন্ডার আউটপুটের পরিবর্তে। `null` রিটার্ন করুন।
 
-In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
+নিম্নের উদাহরণটিতে `<WarningBanner />`কে `warn` prop এর মানের উপর নির্ভর করে রেন্ডার করা হয়েছে। যদি prop এর মান `false` হয় তবে কম্পোনেন্টটি রেন্ডার করবে নাঃ
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -238,6 +238,6 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
+কম্পোনেন্টের `render` মেথড থেকে `null` রিটার্ন করা, ওই কম্পোনেন্টের লাইফসাইকেল মেথডগুলোতে কোন প্রভাব ফেলে না। উদাহরণ স্বরূপ `componentDidUpdate` তখনো কল হবে।
