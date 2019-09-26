@@ -60,6 +60,7 @@ permalink: community/ui-components.html
 * **[react-uwp](https://www.react-uwp.com)** A set of React Components that Implement Microsoft's UWP Design & Fluent Design..
 * **[react-validate-framework](https://github.com/MinJieLiu/react-validate-framework)**: A lightweight and extensible React validation component.
 * **[reactstrap](https://reactstrap.github.io/):** Simple Bootstrap 4 components built with [tether](http://tether.io/)
+* **[Reakit](https://reakit.io/):** Toolkit for building accessible rich web apps with React.
 * **[recharts](https://github.com/recharts/recharts)**: A composable charting library built on React components.
 * **[Selectivity](https://arendjr.github.io/selectivity/):** Modular and light-weight selection library.
 * **[Semantic-ui](https://react.semantic-ui.com/)**: The official Semantic-UI-React integration, Advanced components and declarative UI.
@@ -72,6 +73,7 @@ permalink: community/ui-components.html
 ## Fee Based Components {#fee-based-components}
 
 * **[ag-Grid](https://www.ag-grid.com)** Advanced data grid / data table for React.
+* **[DevExtreme Reactive](https://devexpress.github.io/devextreme-reactive/react/)** High-performance plugin-based Data Grid, Scheduler and Chart components for Bootstrap and Material Design.
 * **[ExtReact components](https://www.sencha.com/products/extreact//)**: 115+ Ready-to-Use UI Components.
 * **[Grapecity Wijmo UI Components for React](https://www.grapecity.com/en/react/)**: Expand your React UI options with Wijmo’s complete collection of JavaScript components.
 * **[jQWidgets React components](https://www.jqwidgets.com/react/)**: Enterprise Ready 70+ UI Components.

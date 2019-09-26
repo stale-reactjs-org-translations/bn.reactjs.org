@@ -1,27 +1,27 @@
 ---
 id: test-utils
-title: Test Utilities
+title: টেস্ট ইউটিলিটি
 permalink: docs/test-utils.html
 layout: docs
 category: Reference
 ---
 
-**Importing**
+**ইম্পোর্ট করা**
 
 ```javascript
 import ReactTestUtils from 'react-dom/test-utils'; // ES6
 var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## সারমর্ম {#overview}
 
-`ReactTestUtils` makes it easy to test React components in the testing framework of your choice. At Facebook we use [Jest](https://facebook.github.io/jest/) for painless JavaScript testing. Learn how to get started with Jest through the Jest website's [React Tutorial](https://jestjs.io/docs/tutorial-react).
+`ReactTestUtils` React কম্পোনেন্টগুলোকে আপনার পছন্দের টেস্টিং ফ্রেমওয়ার্কে টেস্ট করার কাজটি সহজ করে দেয়। ফেসবুকে আমরা সহজ জাভস্ক্রিপ্ট টেস্টিং এর জন্য [Jest](https://facebook.github.io/jest/) ব্যবহার করে থাকি। Jest দিয়ে কিভাবে শুরু করবেন তা Jest ওয়েবসাইটের [React টিউটোরিয়াল](https://jestjs.io/docs/tutorial-react) অংশে শিখতে পারবেন।
 
-> Note:
+> বিঃদ্রঃ
 >
-> We recommend using [React Testing Library](https://testing-library.com/react) which is designed to enable and encourage writing tests that use your components as the end users do.
+> আমরা [React Testing Library](https://testing-library.com/react) ব্যবহার করার পরামর্শ দেই যেটা এমনভাবে ডিজাইন করা হয়েছে যাতে আপনি আপনার কম্পোনেন্টগুলোকে এদের ব্যবহারকারীদের মত টেস্ট করতে পারবেন।
 >
-> Alternatively, Airbnb has released a testing utility called [Enzyme](https://airbnb.io/enzyme/), which makes it easy to assert, manipulate, and traverse your React Components' output.
+> অন্যথায়, Airbnb [Enzyme](https://airbnb.io/enzyme/) নামের একটি টেস্টিং ইউটিলিটি প্রকাশ করেছে, যেটা আপনার React কম্পোনেন্টের আউটপুট assert, manipulate এবং traverse করার কাজগুলো সহজ করে দেয়।
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -40,17 +40,17 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
  - [`renderIntoDocument()`](#renderintodocument)
  - [`Simulate`](#simulate)
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
 ### `act()` {#act}
 
-To prepare a component for assertions, wrap the code rendering it and performing updates inside an `act()` call. This makes your test run closer to how React works in the browser.
+একটি কম্পোনেন্টকে assertions এর জন্য প্রস্তুত করতে ঐ কম্পোনেন্টের রেন্ডারিং এবং আপডেটের জন্য লিখা সকল কোডকে একটি `act()` কলের মধ্যে অন্তর্ভুক্ত করুন। এটি আপনার টেস্টগুলো React ব্রাউজারে যেভাবে কাজ করে তার অনেকটা কাছাকাছিভাবে চালনা করে।
 
->Note
+>বিঃদ্রঃ
 >
->If you use `react-test-renderer`, it also provides an `act` export that behaves the same way.
+>আপনি যদি `react-test-renderer` ব্যবহার করে থাকেন, এটিও একটি `act` export সরবরাহ করে থাকে যা একইভাবে কাজ করে।
 
-For example, let's say we have this `Counter` component:
+উদাহরণস্বরূপ, ধরে নিই আমাদের এই `Counter` কম্পোনেন্টটি আছেঃ
 
 ```js
 class Counter extends React.Component {
@@ -83,7 +83,7 @@ class Counter extends React.Component {
 }
 ```
 
-Here is how we can test it:
+আমরা একে নিচের মত টেস্ট করতে পারিঃ
 
 ```js{3,20-22,29-31}
 import React from 'react';
@@ -122,7 +122,9 @@ it('can render and update a counter', () => {
 });
 ```
 
-Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a helper like [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) to reduce the boilerplate code.
+- আমাদের মনে রাখতে হবে DOM ইভেন্ট dispatch করলে তা শুধু তখনই কাজ করবে যখন DOM কন্টেইনারটি `document` এ সংযুক্ত করা হবে। আপনি বয়লারপ্লেট কোড কমাতে [React Testing Library](https://testing-library.com/react) এর মত একটি লাইব্রেরি ব্যবহার করতে পারেন।
+
+- [`recipes`](/docs/testing-recipes.html) পৃষ্ঠায় `act()` কিভাবে আচরণ করে তা বিস্তারিতভাবে উদাহরণ এবং ব্যবহারপদ্ধতি সহ দেওয়া আছে।
 
 * * *
 
@@ -135,11 +137,12 @@ mockComponent(
 )
 ```
 
-Pass a mocked component module to this method to augment it with useful methods that allow it to be used as a dummy React component. Instead of rendering as usual, the component will become a simple `<div>` (or other tag if `mockTagName` is provided) containing any provided children.
+একটি mocked কম্পোনেন্ট মডিউলকে এই মেথডে পাস করে এর সাথে বিভিন্ন প্রয়োজনীয় মেথড জুড়ে দিতে পারবেন যা একে একটি কৃত্রিম React কম্পোনেন্ট হিসেবে ব্যবহার করার সুযোগ করে দেবে। সাধারণভাবে রেন্ডার করার পরিবর্তে কম্পোনেন্টটি এর সরবরাহকৃত children সহ একটি সাধারণ `<div>` (যদি `mockTagName` সরবরাহ করা হয় তাহলে অন্য ট্যাগে) এ পরিণত হবে।
 
-> Note:
+> বিঃদ্রঃ
 >
-> `mockComponent()` is a legacy API. We recommend using [shallow rendering](/docs/shallow-renderer.html) or [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
+> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
+
 
 * * *
 
@@ -149,7 +152,7 @@ Pass a mocked component module to this method to augment it with useful methods 
 isElement(element)
 ```
 
-Returns `true` if `element` is any React element.
+`element` যদি কোন React element হয়ে থাকে তাহলে রিটার্ন করে।
 
 * * *
 
@@ -162,7 +165,7 @@ isElementOfType(
 )
 ```
 
-Returns `true` if `element` is a React element whose type is of a React `componentClass`.
+`element` যদি একটি React element হয় যার টাইপ হল একটি React `componentClass` এর তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -172,7 +175,7 @@ Returns `true` if `element` is a React element whose type is of a React `compone
 isDOMComponent(instance)
 ```
 
-Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
+`instance` যদি একটি DOM কম্পোনেন্ট হয়ে থাকে (যেমনঃ `<div>` অথবা `<span>`) তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -182,7 +185,7 @@ Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
 isCompositeComponent(instance)
 ```
 
-Returns `true` if `instance` is a user-defined component, such as a class or a function.
+`instance` যদি একটি ইউজার দ্বারা ডিফাইনকৃত কম্পোনেন্ট, যেমনঃ একটি ক্লাস অথবা একটি ফাংশন হয়ে থাকে তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -195,7 +198,7 @@ isCompositeComponentWithType(
 )
 ```
 
-Returns `true` if `instance` is a component whose type is of a React `componentClass`.
+`instance` যদি React `componentClass` টাইপের একটি কম্পোনেন্ট হয় তাহলে `true` রিটার্ন করে।
 
 * * *
 
@@ -208,7 +211,7 @@ findAllInRenderedTree(
 )
 ```
 
-Traverse all components in `tree` and accumulate all components where `test(component)` is `true`. This is not that useful on its own, but it's used as a primitive for other test utils.
+`tree` তে থাকা সকল কম্পোনেন্টকে ট্রাভার্স করে এবং যেসকল কম্পোনেন্টের ক্ষেত্রে `test(component)` এর মান `true` হয় সেগুলোকে একত্রিত করে। এটি নিজে থেকে তেমন একটা দরকারি হয়না, কিন্তু অন্যান্য টেস্ট ইউটিলিটির ক্ষেত্রে এটি একটি প্রারম্ভিক মান হিসেবে কাজ করে।
 
 * * *
 
@@ -221,7 +224,7 @@ scryRenderedDOMComponentsWithClass(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the class name matching `className`.
+রেন্ডারকৃত ট্রি থেকে কম্পোনেন্টের সকল DOM elements কে খুঁজে বের করে যাদের class name সরবরাহকৃত `className` এর সাথে মিলে যায়।
 
 * * *
 
@@ -234,7 +237,7 @@ findRenderedDOMComponentWithClass(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 * * *
 
@@ -247,7 +250,7 @@ scryRenderedDOMComponentsWithTag(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the tag name matching `tagName`.
+রেন্ডারকৃত ট্রি থেকে সকল DOM elements খুঁজে বের করে যাদের tag name এর সাথে `tagName` মিলে যায়।
 
 * * *
 
@@ -260,7 +263,7 @@ findRenderedDOMComponentWithTag(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 * * *
 
@@ -273,7 +276,7 @@ scryRenderedComponentsWithType(
 )
 ```
 
-Finds all instances of components with type equal to `componentClass`.
+`componentClass` টাইপের সকল কম্পোনেন্ট ইন্সট্যান্স খুঁজে বের করে।
 
 * * *
 
@@ -286,7 +289,7 @@ findRenderedComponentWithType(
 )
 ```
 
-Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) but expects there to be one result and returns that one result, or throws exception if there is any other number of matches besides one.
+[`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) এর মতই কিন্তু এটি শুধুমাত্র একটি ফলাফলই আশা করে এবং ঐ ফলাফল রিটার্ন করে, অন্যথায় যদি একের অধিক ফলাফল পাওয়া যায় এক্সেপশন থ্রো করে।
 
 ***
 
@@ -296,20 +299,20 @@ Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) bu
 renderIntoDocument(element)
 ```
 
-Render a React element into a detached DOM node in the document. **This function requires a DOM.** It is effectively equivalent to:
+ডকুমেন্টের একটি বিচ্ছিন্ন DOM নোডে একটি React element রেন্ডার করে। **এই ফাংশনের একটি DOM এর প্রয়োজন হয়।** এটি কার্যকারভাবে নিচের মত কাজ করেঃ
 
 ```js
 const domContainer = document.createElement('div');
 ReactDOM.render(element, domContainer);
 ```
 
-> Note:
+> বিঃদ্রঃ
 >
-> You will need to have `window`, `window.document` and `window.document.createElement` globally available **before** you import `React`. Otherwise React will think it can't access the DOM and methods like `setState` won't work.
+> আপনি `React` ইম্পোর্ট করার **আগে** আপনার `window`, `window.document` এবং `window.document.createElement` globally এভেইলেভল থাকতে হবে। অন্যথায় React মনে করবে এটি DOM এ প্রবেশ করতে পারছেনা এবং `setState` এর মত মেথডগুলো কাজ করবেনা।
 
 * * *
 
-## Other Utilities {#other-utilities}
+## অন্যান্য ইউটিলিটি {#other-utilities}
 
 ### `Simulate` {#simulate}
 
@@ -320,11 +323,11 @@ Simulate.{eventName}(
 )
 ```
 
-Simulate an event dispatch on a DOM node with optional `eventData` event data.
+একটি DOM নোডে `eventData` ইভেন্ট ডাটা সহ একটি event dispatch এর অনুকরণ করুন।
 
-`Simulate` has a method for [every event that React understands](/docs/events.html#supported-events).
+[React যেসকল ইভেন্ট বুঝতে পারে](/docs/events.html#supported-events) প্রত্যেকটির জন্যই `Simulate` এ একটি মেথড রয়েছে।
 
-**Clicking an element**
+**একটি element কে ক্লিক করা**
 
 ```javascript
 // <button ref={(node) => this.button = node}>...</button>
@@ -332,7 +335,7 @@ const node = this.button;
 ReactTestUtils.Simulate.click(node);
 ```
 
-**Changing the value of an input field and then pressing ENTER.**
+**একটি ইনপুট ফিল্ডের মান পরিবর্তন করা এবং এরপর ENTER চাপা।**
 
 ```javascript
 // <input ref={(node) => this.textInput = node} />
@@ -342,8 +345,8 @@ ReactTestUtils.Simulate.change(node);
 ReactTestUtils.Simulate.keyDown(node, {key: "Enter", keyCode: 13, which: 13});
 ```
 
-> Note
+> বিঃদ্রঃ
 >
-> You will have to provide any event property that you're using in your component (e.g. keyCode, which, etc...) as React is not creating any of these for you.
+> আপনার কম্পোনেন্টে ব্যবহৃত যেকোন ইভেন্ট প্রোপার্টি আপনাকেই সরবরাহ করতে হবে (যেমনঃ keyCode, which, ইত্যাদি...) যেহেতু React আপনার জন্য এর কোনটিই তৈরি করছেনা।
 
 * * *

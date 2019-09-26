@@ -70,6 +70,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 ### TestRenderer {#testrenderer}
 
 * [`TestRenderer.create()`](#testrenderercreate)
+* [`TestRenderer.act()`](#testrendereract)
 
 ### TestRenderer ইন্সট্যান্স {#testrenderer-instance}
 
@@ -104,6 +105,36 @@ TestRenderer.create(element, options);
 
 পাসকৃত React element এর সাথে একটি `TestRenderer` ইন্সট্যান্স তৈরি করুন। এটি আসল DOM ব্যবহার করেনা কিন্তু মেমোরিতে পুরো কম্পোনেন্ট-ট্রিটিকে রেন্ডার করে যাতে করে আপনি এটি সম্পর্কে assertions করতে পারেন। রিটার্নকৃত ইন্সট্যান্সে নিম্নোক্ত মেথড এবং প্রপার্টিসমূহ থাকে।
 
+### `TestRenderer.act()` {#testrendereract}
+
+```javascript
+TestRenderer.act(callback);
+```
+
+[`react-dom/test-utils` এর `act()` হেল্পারের](/docs/test-utils.html#act) মতই, `TestRenderer.act` একটি কম্পোনেন্টকে assertions এর জন্য প্রস্তুত করে। `act()` এর এই ভার্সনকে `TestRenderer.create` এবং `testRenderer.update` কলকে wrap করতে ব্যবহার করুন।
+
+```javascript
+import {create, act} from 'react-test-renderer';
+import App from './app.js'; // The component being tested
+
+// render the component
+let root; 
+act(() => {
+  root = create(<App value={1}/>)
+});
+
+// make assertions on root 
+expect(root.toJSON()).toMatchSnapshot();
+
+// update with some different props
+act(() => {
+  root = root.update(<App value={2}/>);
+})
+
+// make assertions on root 
+expect(root.toJSON()).toMatchSnapshot();
+```
+
 ### `testRenderer.toJSON()` {#testrenderertojson}
 
 ```javascript
@@ -118,7 +149,7 @@ testRenderer.toJSON()
 testRenderer.toTree()
 ```
 
-রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। কিন্তু `toJSON()` এর চেয়েও অনেক বেশি তথ্য এই অবজেক্টে থাকে,এবং ইউজার দ্বারা তৈরিকৃত কম্পোনেন্টগুলোও এখানে সংযুক্ত করা হয়। আপনার এই হয়ত এই মেথডের প্রয়োজন নাও হতে পারে যদি না আপনি টেস্ট রেন্ডারারের উপর ভিত্তি করে নিজের কোন assertion লাইব্রেরি তৈরি না করেন।
+রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। কিন্তু `toJSON()` এর চেয়েও অনেক বেশি তথ্য এই অবজেক্টে থাকে,এবং ইউজার দ্বারা তৈরিকৃত কম্পোনেন্টগুলোও এখানে সংযুক্ত করা হয়। আপনার হয়ত এই মেথডের প্রয়োজন নাও হতে পারে যদি না আপনি টেস্ট রেন্ডারারের উপর ভিত্তি করে নিজের কোন assertion লাইব্রেরি তৈরি না করেন।
 
 ### `testRenderer.update()` {#testrendererupdate}
 
