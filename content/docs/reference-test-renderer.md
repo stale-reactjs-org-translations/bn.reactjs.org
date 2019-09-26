@@ -142,7 +142,7 @@ testRenderer.unmount()
 testRenderer.getInstance()
 ```
 
-Return the instance corresponding to the root element, if available. This will not work if the root element is a function component because they don't have instances.
+যদি পাওয়া যায় তাহলে root element এর সাথে সম্পর্কিত ইন্সট্যান্সটি রিটার্ন করে। এটি কাজ করবেনা যদি root element একটি ফাংশন কম্পোনেন্ট হয় কারণ এই কম্পোনেন্টের কোন ইন্সট্যান্স থাকেনা।
 
 ### `testRenderer.root` {#testrendererroot}
 
@@ -150,7 +150,7 @@ Return the instance corresponding to the root element, if available. This will n
 testRenderer.root
 ```
 
-Returns the root "test instance" object that is useful for making assertions about specific nodes in the tree. You can use it to find other "test instances" deeper below.
+ট্রি এর নির্দিষ্ট নোডের সম্পর্কে প্রয়োজনীয় assertions এ সাহায্যকারী root "টেস্ট ইন্সট্যান্স" অবজেক্ট রিটার্ন করে। আপনি এটি ব্যবহার করে অন্য ভেতরের আরও "টেস্ট ইন্সট্যান্স" খুঁজে বের করতে পারেন।
 
 ### `testInstance.find()` {#testinstancefind}
 
@@ -158,7 +158,7 @@ Returns the root "test instance" object that is useful for making assertions abo
 testInstance.find(test)
 ```
 
-Find a single descendant test instance for which `test(testInstance)` returns `true`. If `test(testInstance)` does not return `true` for exactly one test instance, it will throw an error.
+এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন যার জন্য `test(testInstance)` ফাংশন কল `true` রিটার্ন করে। যদি `test(testInstance)` শুধুমাত্র একটি টেস্ট ইন্সট্যান্সের জন্য `true` রিটার্ন না করে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findByType()` {#testinstancefindbytype}
 
@@ -166,7 +166,7 @@ Find a single descendant test instance for which `test(testInstance)` returns `t
 testInstance.findByType(type)
 ```
 
-Find a single descendant test instance with the provided `type`. If there is not exactly one test instance with the provided `type`, it will throw an error.
+সরবরাহকৃত `type` এর সাথে মিলে যায় এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন। যদি সরবরাহকৃত `type` এর শুধু একটি টেস্ট ইন্সট্যান্স না থাকে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findByProps()` {#testinstancefindbyprops}
 
@@ -174,7 +174,7 @@ Find a single descendant test instance with the provided `type`. If there is not
 testInstance.findByProps(props)
 ```
 
-Find a single descendant test instance with the provided `props`. If there is not exactly one test instance with the provided `props`, it will throw an error.
+সরবরাহকৃত `props` এর সাথে মিলে যায় এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন। যদি সরবরাহকৃত `props` এর শুধু একটি টেস্ট ইন্সট্যান্স না থাকে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findAll()` {#testinstancefindall}
 
@@ -182,7 +182,7 @@ Find a single descendant test instance with the provided `props`. If there is no
 testInstance.findAll(test)
 ```
 
-Find all descendant test instances for which `test(testInstance)` returns `true`.
+সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন যাদের জন্য `test(testInstance)` ফাংশন কল `true` রিটার্ন করে।
 
 ### `testInstance.findAllByType()` {#testinstancefindallbytype}
 
@@ -190,7 +190,7 @@ Find all descendant test instances for which `test(testInstance)` returns `true`
 testInstance.findAllByType(type)
 ```
 
-Find all descendant test instances with the provided `type`.
+সরবরাহকৃত `type` এর সাথে মিলে যায় এমন সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন।
 
 ### `testInstance.findAllByProps()` {#testinstancefindallbyprops}
 
@@ -198,7 +198,7 @@ Find all descendant test instances with the provided `type`.
 testInstance.findAllByProps(props)
 ```
 
-Find all descendant test instances with the provided `props`.
+সরবরাহকৃত `props` এর সাথে মিলে যায় এমন সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন।
 
 ### `testInstance.instance` {#testinstanceinstance}
 
@@ -206,7 +206,7 @@ Find all descendant test instances with the provided `props`.
 testInstance.instance
 ```
 
-The component instance corresponding to this test instance. It is only available for class components, as function components don't have instances. It matches the `this` value inside the given component.
+কম্পোনেন্ট ইন্সট্যান্সের সাথে সম্পৃক্ত টেস্ট ইন্সট্যান্স। এটি শুধুমাত্র ক্লাস কম্পোনেন্টেই ব্যবহারযোগ্য, যেহেতু ফাংশন কম্পোনেন্টের কোন ইন্সট্যান্স থাকেনা। এটি সরবরাহকৃত কম্পোনেন্টের অভ্যন্তরীণ `this` এর মানের সাথে তুলনা করে।
 
 ### `testInstance.type` {#testinstancetype}
 
@@ -214,7 +214,7 @@ The component instance corresponding to this test instance. It is only available
 testInstance.type
 ```
 
-The component type corresponding to this test instance. For example, a `<Button />` component has a type of `Button`.
+এই টেস্ট ইন্সট্যান্সের সাথে সম্পৃক্ত কম্পোনেন্ট টাইপ। উদাহরণস্বরূপ, একটি `<Button />` কম্পোনেন্ট এর টাইপ হল `Button`।
 
 ### `testInstance.props` {#testinstanceprops}
 
@@ -222,7 +222,7 @@ The component type corresponding to this test instance. For example, a `<Button 
 testInstance.props
 ```
 
-The props corresponding to this test instance. For example, a `<Button size="small" />` component has `{size: 'small'}` as props.
+এই টেস্টে ইন্সট্যান্সের সাথে সম্পৃক্ত props। উদাহরণস্বরূপ, একটি `<Button size="small" />` কম্পোনেন্টে props হিসেবে `{size: 'small'}` থাকে।
 
 ### `testInstance.parent` {#testinstanceparent}
 
@@ -230,7 +230,7 @@ The props corresponding to this test instance. For example, a `<Button size="sma
 testInstance.parent
 ```
 
-The parent test instance of this test instance.
+এই টেস্ট ইন্সট্যান্সের parent টেস্ট ইন্সট্যান্স।
 
 ### `testInstance.children` {#testinstancechildren}
 
@@ -238,13 +238,13 @@ The parent test instance of this test instance.
 testInstance.children
 ```
 
-The children test instances of this test instance.
+এই টেস্ট ইন্সট্যান্সের children টেস্ট ইন্সট্যান্সগুলো।
 
-## Ideas {#ideas}
+## ধারণা {#ideas}
 
-You can pass `createNodeMock` function to `TestRenderer.create` as the option, which allows for custom mock refs.
-`createNodeMock` accepts the current element and should return a mock ref object.
-This is useful when you test a component that relies on refs.
+আপনি `TestRenderer.create` এর অপশন হিসেবে `createNodeMock` ফাংশন পাস করতে পারেন, যা আপনাকে custom mock refs তৈরি করার সুযোগ করে দেয়।
+`createNodeMock` বর্তমান element গ্রহণ করে এবং এটির একটি mock ref অবজেক্ট রিটার্ন করা উচিত।
+এটি দরকারী যখন আপনি একটি refs এর উপর নির্ভরশীল কম্পোনেন্ট টেস্ট করবেন।
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
