@@ -1,25 +1,25 @@
 ---
 id: test-renderer
-title: Test Renderer
+title: টেস্ট রেন্ডারার
 permalink: docs/test-renderer.html
 layout: docs
 category: Reference
 ---
 
-**Importing**
+**ইম্পোর্ট করা**
 
 ```javascript
 import TestRenderer from 'react-test-renderer'; // ES6
 const TestRenderer = require('react-test-renderer'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## সারমর্ম {#overview}
 
-This package provides a React renderer that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment.
+এই প্যাকেজ একটি React রেন্ডারার সরবরাহ করে যার মাধ্যমে DOM অথবা কোন নেটিভ মোবাইল ইনভায়রনমেন্টের উপর নির্ভর না করেই React কম্পোনেন্টগুলোকে বিশুদ্ধ জাভাস্ক্রিপ্ট অবজেক্টে রেন্ডার করা যায়।
 
-Essentially, this package makes it easy to grab a snapshot of the platform view hierarchy (similar to a DOM tree) rendered by a React DOM or React Native component without using a browser or [jsdom](https://github.com/tmpvar/jsdom).
+মূলত, এই প্যাকেজ ব্রাউজার অথবা [jsdom](https://github.com/tmpvar/jsdom) ব্যবহার না করেই একটি React DOM অথবা React Native কম্পোনেন্টের রেন্ডারকৃত platform view hierarchy (অনেকটা DOM ট্রি এর মত) এর snapshot নেয়ার কাজটি সহজ করে দেয়।
 
-Example:
+উদাহরণঃ
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -38,9 +38,9 @@ console.log(testRenderer.toJSON());
 //   children: [ 'Facebook' ] }
 ```
 
-You can use Jest's snapshot testing feature to automatically save a copy of the JSON tree to a file and check in your tests that it hasn't changed: [Learn more about it](https://jestjs.io/docs/en/snapshot-testing).
+আপনি Jest এর snapshot টেস্টিং ফিচার ব্যবহার করে স্বয়ংক্রিয়ভাবে JSON ট্রি এর একটি কপি সংরক্ষণ করে আপনার টেস্টে এর কোন পরিবর্তন হয়েছে কিনা দেখতে পারেনঃ [এ সম্পর্কে বিস্তারিত জানুন](https://jestjs.io/docs/en/snapshot-testing)।
 
-You can also traverse the output to find specific nodes and make assertions about them.
+আপনি এছাড়াও আউটপুট ট্রাভার্স করে নির্দিষ্ট নোড খুঁজে বের করতে পারেন এবং এদের মধ্যে assertions করতে পারেন।
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -72,7 +72,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 * [`TestRenderer.create()`](#testrenderercreate)
 * [`TestRenderer.act()`](#testrendereract)
 
-### TestRenderer instance {#testrenderer-instance}
+### TestRenderer ইন্সট্যান্স {#testrenderer-instance}
 
 * [`testRenderer.toJSON()`](#testrenderertojson)
 * [`testRenderer.toTree()`](#testrenderertotree)
@@ -95,7 +95,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 * [`testInstance.parent`](#testinstanceparent)
 * [`testInstance.children`](#testinstancechildren)
 
-## Reference {#reference}
+## রেফারেন্স {#reference}
 
 ### `TestRenderer.create()` {#testrenderercreate}
 
@@ -103,7 +103,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
-Create a `TestRenderer` instance with the passed React element. It doesn't use the real DOM, but it still fully renders the component tree into memory so you can make assertions about it. Returns a [TestRenderer instance](#testrenderer-instance).
+পাসকৃত React element এর সাথে একটি `TestRenderer` ইন্সট্যান্স তৈরি করুন। এটি আসল DOM ব্যবহার করেনা কিন্তু মেমোরিতে পুরো কম্পোনেন্ট-ট্রিটিকে রেন্ডার করে যাতে করে আপনি এটি সম্পর্কে assertions করতে পারেন। রিটার্নকৃত ইন্সট্যান্সে নিম্নোক্ত মেথড এবং প্রপার্টিসমূহ থাকে।
 
 ### `TestRenderer.act()` {#testrendereract}
 
@@ -111,7 +111,7 @@ Create a `TestRenderer` instance with the passed React element. It doesn't use t
 TestRenderer.act(callback);
 ```
 
-Similar to the [`act()` helper from `react-dom/test-utils`](/docs/test-utils.html#act), `TestRenderer.act` prepares a component for assertions. Use this version of `act()` to wrap calls to `TestRenderer.create` and `testRenderer.update`.
+[`react-dom/test-utils` এর `act()` হেল্পারের](/docs/test-utils.html#act) মতই, `TestRenderer.act` একটি কম্পোনেন্টকে assertions এর জন্য প্রস্তুত করে। `act()` এর এই ভার্সনকে `TestRenderer.create` এবং `testRenderer.update` কলকে wrap করতে ব্যবহার করুন।
 
 ```javascript
 import {create, act} from 'react-test-renderer';
@@ -141,7 +141,7 @@ expect(root.toJSON()).toMatchSnapshot();
 testRenderer.toJSON()
 ```
 
-Return an object representing the rendered tree. This tree only contains the platform-specific nodes like `<div>` or `<View>` and their props, but doesn't contain any user-written components. This is handy for [snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
+রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। এই ট্রিতে শুধুমাত্র প্লাটফর্ম-স্পেসিফিক নোড যেমন `<div>` অথবা `<View>` এবং এদের props গুলো থাকে কিন্তু কোন ইউজার দ্বারা তৈরিকৃত কম্পোনেন্ট থাকেনা। এটি [snapshot টেস্টিং](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest) এর কাজ অনেক সহজ করে দেয়।
 
 ### `testRenderer.toTree()` {#testrenderertotree}
 
@@ -149,7 +149,7 @@ Return an object representing the rendered tree. This tree only contains the pla
 testRenderer.toTree()
 ```
 
-Return an object representing the rendered tree. The representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
+রেন্ডার ট্রিকে উপস্থাপন করে এমন একটি অবজেক্ট রিটার্ন করে। কিন্তু `toJSON()` এর চেয়েও অনেক বেশি তথ্য এই অবজেক্টে থাকে,এবং ইউজার দ্বারা তৈরিকৃত কম্পোনেন্টগুলোও এখানে সংযুক্ত করা হয়। আপনার হয়ত এই মেথডের প্রয়োজন নাও হতে পারে যদি না আপনি টেস্ট রেন্ডারারের উপর ভিত্তি করে নিজের কোন assertion লাইব্রেরি তৈরি না করেন।
 
 ### `testRenderer.update()` {#testrendererupdate}
 
@@ -157,7 +157,7 @@ Return an object representing the rendered tree. The representation is more deta
 testRenderer.update(element)
 ```
 
-Re-render the in-memory tree with a new root element. This simulates a React update at the root. If the new element has the same type and key as the previous element, the tree will be updated; otherwise, it will re-mount a new tree.
+মেমোরিতে থাকা ট্রিকে নতুন একটি root element এ রি-রেন্ডার করে। এটি root এ React আপডেটকে নকল করে। যদি নতুন element এর টাইপ এবং key আগের element এর মতই হয় তাহলে ট্রিটি আপডেট হবে; অন্যথায় এটি নতুন একটি ট্রিকে রি-মাউন্ট করবে।
 
 ### `testRenderer.unmount()` {#testrendererunmount}
 
@@ -165,7 +165,7 @@ Re-render the in-memory tree with a new root element. This simulates a React upd
 testRenderer.unmount()
 ```
 
-Unmount the in-memory tree, triggering the appropriate lifecycle events.
+মেমোরিতে থাকা ট্রিকে এর সাথে সংযুক্ত lifecycle ইভেন্টগুলোসহ আনমাউন্ট করে।
 
 ### `testRenderer.getInstance()` {#testrenderergetinstance}
 
@@ -173,7 +173,7 @@ Unmount the in-memory tree, triggering the appropriate lifecycle events.
 testRenderer.getInstance()
 ```
 
-Return the instance corresponding to the root element, if available. This will not work if the root element is a function component because they don't have instances.
+যদি পাওয়া যায় তাহলে root element এর সাথে সম্পর্কিত ইন্সট্যান্সটি রিটার্ন করে। এটি কাজ করবেনা যদি root element একটি ফাংশন কম্পোনেন্ট হয় কারণ এই কম্পোনেন্টের কোন ইন্সট্যান্স থাকেনা।
 
 ### `testRenderer.root` {#testrendererroot}
 
@@ -181,7 +181,7 @@ Return the instance corresponding to the root element, if available. This will n
 testRenderer.root
 ```
 
-Returns the root "test instance" object that is useful for making assertions about specific nodes in the tree. You can use it to find other "test instances" deeper below.
+ট্রি এর নির্দিষ্ট নোডের সম্পর্কে প্রয়োজনীয় assertions এ সাহায্যকারী root "টেস্ট ইন্সট্যান্স" অবজেক্ট রিটার্ন করে। আপনি এটি ব্যবহার করে অন্য ভেতরের আরও "টেস্ট ইন্সট্যান্স" খুঁজে বের করতে পারেন।
 
 ### `testInstance.find()` {#testinstancefind}
 
@@ -189,7 +189,7 @@ Returns the root "test instance" object that is useful for making assertions abo
 testInstance.find(test)
 ```
 
-Find a single descendant test instance for which `test(testInstance)` returns `true`. If `test(testInstance)` does not return `true` for exactly one test instance, it will throw an error.
+এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন যার জন্য `test(testInstance)` ফাংশন কল `true` রিটার্ন করে। যদি `test(testInstance)` শুধুমাত্র একটি টেস্ট ইন্সট্যান্সের জন্য `true` রিটার্ন না করে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findByType()` {#testinstancefindbytype}
 
@@ -197,7 +197,7 @@ Find a single descendant test instance for which `test(testInstance)` returns `t
 testInstance.findByType(type)
 ```
 
-Find a single descendant test instance with the provided `type`. If there is not exactly one test instance with the provided `type`, it will throw an error.
+সরবরাহকৃত `type` এর সাথে মিলে যায় এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন। যদি সরবরাহকৃত `type` এর শুধু একটি টেস্ট ইন্সট্যান্স না থাকে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findByProps()` {#testinstancefindbyprops}
 
@@ -205,7 +205,7 @@ Find a single descendant test instance with the provided `type`. If there is not
 testInstance.findByProps(props)
 ```
 
-Find a single descendant test instance with the provided `props`. If there is not exactly one test instance with the provided `props`, it will throw an error.
+সরবরাহকৃত `props` এর সাথে মিলে যায় এমন একটি descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন। যদি সরবরাহকৃত `props` এর শুধু একটি টেস্ট ইন্সট্যান্স না থাকে, তাহলে এটি একটি এরর থ্রো করবে।
 
 ### `testInstance.findAll()` {#testinstancefindall}
 
@@ -213,7 +213,7 @@ Find a single descendant test instance with the provided `props`. If there is no
 testInstance.findAll(test)
 ```
 
-Find all descendant test instances for which `test(testInstance)` returns `true`.
+সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন যাদের জন্য `test(testInstance)` ফাংশন কল `true` রিটার্ন করে।
 
 ### `testInstance.findAllByType()` {#testinstancefindallbytype}
 
@@ -221,7 +221,7 @@ Find all descendant test instances for which `test(testInstance)` returns `true`
 testInstance.findAllByType(type)
 ```
 
-Find all descendant test instances with the provided `type`.
+সরবরাহকৃত `type` এর সাথে মিলে যায় এমন সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন।
 
 ### `testInstance.findAllByProps()` {#testinstancefindallbyprops}
 
@@ -229,7 +229,7 @@ Find all descendant test instances with the provided `type`.
 testInstance.findAllByProps(props)
 ```
 
-Find all descendant test instances with the provided `props`.
+সরবরাহকৃত `props` এর সাথে মিলে যায় এমন সকল descendant টেস্ট ইন্সট্যান্স খুঁজে বের করুন।
 
 ### `testInstance.instance` {#testinstanceinstance}
 
@@ -237,7 +237,7 @@ Find all descendant test instances with the provided `props`.
 testInstance.instance
 ```
 
-The component instance corresponding to this test instance. It is only available for class components, as function components don't have instances. It matches the `this` value inside the given component.
+কম্পোনেন্ট ইন্সট্যান্সের সাথে সম্পৃক্ত টেস্ট ইন্সট্যান্স। এটি শুধুমাত্র ক্লাস কম্পোনেন্টেই ব্যবহারযোগ্য, যেহেতু ফাংশন কম্পোনেন্টের কোন ইন্সট্যান্স থাকেনা। এটি সরবরাহকৃত কম্পোনেন্টের অভ্যন্তরীণ `this` এর মানের সাথে তুলনা করে।
 
 ### `testInstance.type` {#testinstancetype}
 
@@ -245,7 +245,7 @@ The component instance corresponding to this test instance. It is only available
 testInstance.type
 ```
 
-The component type corresponding to this test instance. For example, a `<Button />` component has a type of `Button`.
+এই টেস্ট ইন্সট্যান্সের সাথে সম্পৃক্ত কম্পোনেন্ট টাইপ। উদাহরণস্বরূপ, একটি `<Button />` কম্পোনেন্ট এর টাইপ হল `Button`।
 
 ### `testInstance.props` {#testinstanceprops}
 
@@ -253,7 +253,7 @@ The component type corresponding to this test instance. For example, a `<Button 
 testInstance.props
 ```
 
-The props corresponding to this test instance. For example, a `<Button size="small" />` component has `{size: 'small'}` as props.
+এই টেস্টে ইন্সট্যান্সের সাথে সম্পৃক্ত props। উদাহরণস্বরূপ, একটি `<Button size="small" />` কম্পোনেন্টে props হিসেবে `{size: 'small'}` থাকে।
 
 ### `testInstance.parent` {#testinstanceparent}
 
@@ -261,7 +261,7 @@ The props corresponding to this test instance. For example, a `<Button size="sma
 testInstance.parent
 ```
 
-The parent test instance of this test instance.
+এই টেস্ট ইন্সট্যান্সের parent টেস্ট ইন্সট্যান্স।
 
 ### `testInstance.children` {#testinstancechildren}
 
@@ -269,13 +269,13 @@ The parent test instance of this test instance.
 testInstance.children
 ```
 
-The children test instances of this test instance.
+এই টেস্ট ইন্সট্যান্সের children টেস্ট ইন্সট্যান্সগুলো।
 
-## Ideas {#ideas}
+## কিছু ভাবনা {#ideas}
 
-You can pass `createNodeMock` function to `TestRenderer.create` as the option, which allows for custom mock refs.
-`createNodeMock` accepts the current element and should return a mock ref object.
-This is useful when you test a component that relies on refs.
+আপনি `TestRenderer.create` এর অপশন হিসেবে `createNodeMock` ফাংশন পাস করতে পারেন, যা আপনাকে custom mock refs তৈরি করার সুযোগ করে দেয়।
+`createNodeMock` বর্তমান element গ্রহণ করে এবং এটির একটি mock ref অবজেক্ট রিটার্ন করা উচিত।
+এটি দরকারী যখন আপনি একটি refs এর উপর নির্ভরশীল কম্পোনেন্ট টেস্ট করবেন।
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
