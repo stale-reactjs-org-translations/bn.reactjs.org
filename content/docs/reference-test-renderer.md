@@ -17,7 +17,7 @@ const TestRenderer = require('react-test-renderer'); // ES5 with npm
 
 এই প্যাকেজ একটি React রেন্ডারার সরবরাহ করে যার মাধ্যমে DOM অথবা কোন নেটিভ মোবাইল ইনভায়রনমেন্টের উপর নির্ভর না করেই React কম্পোনেন্টগুলোকে বিশুদ্ধ জাভাস্ক্রিপ্ট অবজেক্টে রেন্ডার করা যায়।
 
-মূলত, এই প্যাকেজ ব্রাউজার অথবা [jsdom](https://github.com/tmpvar/jsdom) ব্যবহার না করেই একটি React DOM অথবা React Native কম্পোনেন্টের রেন্ডারকৃত platform view hierarchy (অনেকটা DOM ট্রি এর মত) এর স্ন্যাপশট নেয়ার কাজটি সহজ করে দেয়।
+মূলত, এই প্যাকেজ ব্রাউজার অথবা [jsdom](https://github.com/tmpvar/jsdom) ব্যবহার না করেই একটি React DOM অথবা React Native কম্পোনেন্টের রেন্ডারকৃত platform view hierarchy (অনেকটা DOM ট্রি এর মত) এর snapshot নেয়ার কাজটি সহজ করে দেয়।
 
 উদাহরণঃ
 
@@ -38,7 +38,7 @@ console.log(testRenderer.toJSON());
 //   children: [ 'Facebook' ] }
 ```
 
-আপনি Jest এর স্ন্যাপশট টেস্টিং ফিচার ব্যবহার করে স্বয়ংক্রিয়ভাবে JSON ট্রি এর একটি কপি সংরক্ষণ করে আপনার টেস্টে এর কোন পরিবর্তন হয়েছে কিনা দেখতে পারেনঃ [এ সম্পর্কে বিস্তারিত জানুন](https://jestjs.io/docs/en/snapshot-testing)।
+আপনি Jest এর snapshot টেস্টিং ফিচার ব্যবহার করে স্বয়ংক্রিয়ভাবে JSON ট্রি এর একটি কপি সংরক্ষণ করে আপনার টেস্টে এর কোন পরিবর্তন হয়েছে কিনা দেখতে পারেনঃ [এ সম্পর্কে বিস্তারিত জানুন](https://jestjs.io/docs/en/snapshot-testing)।
 
 আপনি এছাড়াও আউটপুট ট্রাভার্স করে নির্দিষ্ট নোড খুঁজে বের করতে পারেন এবং এদের মধ্যে assertions করতে পারেন।
 
@@ -271,7 +271,7 @@ testInstance.children
 
 এই টেস্ট ইন্সট্যান্সের children টেস্ট ইন্সট্যান্সগুলো।
 
-## ধারণা {#ideas}
+## কিছু ভাবনা {#ideas}
 
 আপনি `TestRenderer.create` এর অপশন হিসেবে `createNodeMock` ফাংশন পাস করতে পারেন, যা আপনাকে custom mock refs তৈরি করার সুযোগ করে দেয়।
 `createNodeMock` বর্তমান element গ্রহণ করে এবং এটির একটি mock ref অবজেক্ট রিটার্ন করা উচিত।
