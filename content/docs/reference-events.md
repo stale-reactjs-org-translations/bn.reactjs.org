@@ -12,7 +12,7 @@ category: Reference
 
 আপনার ইভেন্ট হ্যান্ডেলারগুলো `SyntheticEvent`এর ইন্সটেন্স পাস করবে, যা আসলে ব্রাউজারের নেটিভ ইভেন্টের উপর ক্রস-ব্রাউজারের একটি wrapper। ব্রাউজারের নেটিভ ইভেন্টের মত এর একই রকম ইন্টারফেস রয়েছে, , `stopPropagation()` এবং `preventDefault()`ও এর অন্তর্ভুক্ত, তবে ইভেন্টগুলো সব ব্রাউজারে একইভাবে কাজ করে।
 
-আপনি যদি দেখেন কোন কারণে ব্রাউজারের নিজস্ব ইভেন্ট আপনার দরকার, তবে `nativeEvent` attribute ব্যবহার করুন। প্রতিটি `SyntheticEvent` অবজেক্টের নিমোক্ত attributes রয়েছেঃ
+আপনি যদি দেখেন কোন কারণে ব্রাউজারের নিজস্ব ইভেন্ট আপনার দরকার, তবে `nativeEvent` attribute ব্যবহার করুন। প্রতিটি `SyntheticEvent` অবজেক্টের নিম্নোক্ত attributes রয়েছেঃ
 
 ```javascript
 boolean bubbles
@@ -229,7 +229,7 @@ onLostPointerCapture onPointerEnter onPointerLeave onPointerOver onPointerOut
 
 প্রপার্টিসঃ
 
-[W3 spec](https://www.w3.org/TR/pointerevents/) এর সংজ্ঞানুযায়ী, পয়েন্ট ইভেন্টগুলো [মাউস ইভেন্টস](#mouse-events) এর নিমোক্ত প্রপার্টিসকে এক্সটেন্ড করে।
+[W3 spec](https://www.w3.org/TR/pointerevents/) এর সংজ্ঞানুযায়ী, পয়েন্ট ইভেন্টগুলো [মাউস ইভেন্টস](#mouse-events) এর নিম্নোক্ত প্রপার্টিসকে এক্সটেন্ড করে।
 
 ```javascript
 number pointerId
