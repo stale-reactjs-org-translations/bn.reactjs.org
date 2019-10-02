@@ -4,7 +4,7 @@ title: Fragments
 permalink: docs/fragments.html
 ---
 
-A common pattern in React is for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.
+React এর একটি সাধারণ প্যাটার্ন হল একটি কম্পোনেন্ট থেকে একাধিক elements রিটার্ন করা। Fragments আপনাকে children এর একটি তালিকাকে গ্রুপ করতে সাহায্য করে DOM-এ কোন অতিরিক্ত নোড সংযুক্ত না করেই।
 
 ```js
 render() {
@@ -18,11 +18,11 @@ render() {
 }
 ```
 
-There is also a new [short syntax](#short-syntax) for declaring them.
+এটি ডিক্লেয়ার করার একটি নতুন [সংক্ষিপ্ত syntax](#short-syntax)-ও রয়েছে।
 
-## Motivation {#motivation}
+## প্রেরণা {#motivation}
 
-A common pattern is for a component to return a list of children. Take this example React snippet:
+কম্পোনেন্টের একটি সাধারণ প্যাটার্ন হল children এর একটি তালিকা রিটার্ন করা। উদাহরণস্বরূপ এই React snippet টি দেখুনঃ
 
 ```jsx
 class Table extends React.Component {
@@ -38,7 +38,7 @@ class Table extends React.Component {
 }
 ```
 
-`<Columns />` would need to return multiple `<td>` elements in order for the rendered HTML to be valid. If a parent div was used inside the `render()` of `<Columns />`, then the resulting HTML will be invalid.
+`<Columns />` এর এক্ষেত্রে একাধিক `<td>` elements রিটার্ন করতে হবে যাতে রেন্ডারকৃত HTML বৈধ হয়। যদি একটি parent div `<Columns />` এর `render()` এ ব্যবহার করা হয়ে থাকে, তাহলে রেন্ডারকৃত HTML অবৈধ হবে।
 
 ```jsx
 class Columns extends React.Component {
@@ -53,7 +53,7 @@ class Columns extends React.Component {
 }
 ```
 
-results in a `<Table />` output of:
+যা একটি `<Table />` আউটপুট প্রদান করেঃ
 
 ```jsx
 <table>
@@ -66,9 +66,9 @@ results in a `<Table />` output of:
 </table>
 ```
 
-Fragments solve this problem.
+Fragments এই সমস্যার সমাধান করে।
 
-## Usage {#usage}
+## ব্যবহারবিধি {#usage}
 
 ```jsx{4,7}
 class Columns extends React.Component {
@@ -83,7 +83,7 @@ class Columns extends React.Component {
 }
 ```
 
-which results in a correct `<Table />` output of:
+যা একটি সঠিক `<Table />` আউটপুট প্রদান করেঃ
 
 ```jsx
 <table>
@@ -94,9 +94,9 @@ which results in a correct `<Table />` output of:
 </table>
 ```
 
-### Short Syntax {#short-syntax}
+### সংক্ষিপ্ত Syntax {#short-syntax}
 
-There is a new, shorter syntax you can use for declaring fragments. It looks like empty tags:
+fragments ডিক্লেয়ার করার জন্য একটি নতুন সংক্ষিপ্ত syntax রয়েছে যা আপনি ব্যবহার করতে পারেন। এটি দেখতে খালি ট্যাগের মতঃ
 
 ```jsx{4,7}
 class Columns extends React.Component {
@@ -111,11 +111,11 @@ class Columns extends React.Component {
 }
 ```
 
-You can use `<></>` the same way you'd use any other element except that it doesn't support keys or attributes.
+আপনি অন্যান্য element এর মতই `<></>` ব্যবহার করতে পারেন, শুধুমাত্র এক্ষেত্রে এটি keys অথবা এট্রিবিউট সাপোর্ট করবেনা।
 
 ### Keyed Fragments {#keyed-fragments}
 
-Fragments declared with the explicit `<React.Fragment>` syntax may have keys. A use case for this is mapping a collection to an array of fragments -- for example, to create a description list:
+যেসকল Fragments স্পষ্টভাবে `<React.Fragment>` এর মাধ্যমে ডিক্লেয়ার করা হয় সেগুলোর keys থাকতে পারে। ব্যবহারের ক্ষেত্রে এর একটি দিক হতে পারে একটি কালেকশনকে fragments এর একটি এরেতে ম্যাপ করা -- উদাহরণস্বরূপ, একটি description list তৈরির ক্ষেত্রেঃ
 
 ```jsx
 function Glossary(props) {
@@ -133,8 +133,8 @@ function Glossary(props) {
 }
 ```
 
-`key` is the only attribute that can be passed to `Fragment`. In the future, we may add support for additional attributes, such as event handlers.
+`Fragment` এর এট্রিবিউট হিসেবে শুধুমাত্র `key` পাস করা যায়। ভবিষ্যতে, আমরা ইভেন্ট হ্যান্ডলারের মত অতিরিক্ত এট্রিবিউট এর সাপোর্ট সংযুক্ত করতে পারি।
 
-### Live Demo {#live-demo}
+### লাইভ ডেমো {#live-demo}
 
-You can try out the new JSX fragment syntax with this [CodePen](https://codepen.io/reactjs/pen/VrEbjE?editors=1000).
+আপনি নতুন JSX fragment syntax টি এই [কোডপেনে](https://codepen.io/reactjs/pen/VrEbjE?editors=1000) চালিয়ে দেখতে পারেন।
