@@ -27,7 +27,7 @@ class HelloMessage extends React.Component {
 > Web Component দ্বারা এমিট করা ইভেন্টগুলো ঠিকভাবে React রেন্ডার ট্রিতে propagate নাও হতে পারে।
 > এই ইভেন্টগুলো হ্যান্ডেল করার জন্য আপনার React কম্পোনেন্টের সাথে ম্যানুয়ালি ইভেন্ট হ্যান্ডলার সংযুক্ত করে নিতে হবে।
 
-One common confusion is that Web Components use "class" instead of "className".
+অন্য আরেক যেই জায়গায় জট লাগে তা হল Web Components "className" এর পরিবর্তে "class" ব্যবহার করে।
 
 ```javascript
 function BrickFlipbox() {
