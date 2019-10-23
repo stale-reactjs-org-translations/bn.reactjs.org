@@ -1,6 +1,6 @@
 ---
 id: add-react-to-a-website
-title: একটি ওয়েবসাইটে React সংসংযুক্ত করুন
+title: একটি ওয়েবসাইটে React সংযুক্ত করুন
 permalink: docs/add-react-to-a-website.html
 redirect_from:
   - "docs/add-react-to-an-existing-app.html"
