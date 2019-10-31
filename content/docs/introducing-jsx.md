@@ -1,36 +1,36 @@
 ---
 id: introducing-jsx
-title: Introducing JSX
+title: JSX পরিচিতি
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+এই ভ্যারিয়েবল ডিক্লেয়ারেশনটি দেখুনঃ
 
 ```js
 const element = <h1>Hello, world!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+এই মজার ট্যাগ সিনট্যাক্সটি কোন string বা HTML নয়।
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+একে JSX বলা হয়, এটি জাভাস্ক্রিপ্টের একটি সিনট্যাক্স extension। আমরা ইউজার ইন্টারফেস দেখতে কেমন হবে তা বর্ণনা করার জন্য React এর সাথে এটি ব্যবহার করার পরামর্শ দিয়ে থাকি। JSX হয়তো আপনাকে কোন টেমপ্লেট ল্যাঙ্গুয়েজের কথা মনে করিয়ে দেয়, কিন্তু এটি জাভাস্ক্রিপ্টের পরিপূর্ণ ব্যবহার করতে পারে।
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX React "elements" তৈরি করে। আমরা [পরের অনুচ্ছেদে](/docs/rendering-elements.html) DOM এ এদের কিভাবে রেন্ডার করা যায় এ সম্পর্কে জানব। আপনি নিচে শুরু করার জন্য দরকারী JSX সম্পর্কে জানতে পারবেন।
 
-### Why JSX? {#why-jsx}
+### JSX কেন? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React এই তথ্যকে গ্রহণ করে যে রেন্ডারিং লজিক এবং ইউজার ইন্টারফেস লজিক একইসাথে কাজ করেঃ কিভাবে ইভেন্ট হ্যান্ডেল করা হয়, কিভাবে state সময়ের সাথে পরিবর্তিত হয়, এবং কিভাবে ডাটাকে ডিসপ্লের জন্য প্রস্তুত করা হয়।
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+কৃত্রিমভাবে মার্কআপ এবং লজিককে আলাদা ফাইলে রাখার মাধ্যমে *টেকনোলজিগুলোকে* পৃথক করার পরিবর্তে, React "কম্পোনেন্ট" নামক loosely coupled ইউনিট যা উভয়ই ধারণ করে তার মাধ্যমে [**concern** গুলোকে পৃথক](https://en.wikipedia.org/wiki/Separation_of_concerns) করে। আমরা কম্পোনেন্টে পরের একটি অনুচ্ছেদে ফিরে আসব, কিন্তু আপনি যদি JS এ মার্কআপ রাখতে সুবিধাজনক মনে না করেন, [এই আলোচনা](https://www.youtube.com/watch?v=x7cQ3mrcKaY) হয়তো আপনাকে সন্তুষ্ট করবে।
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React এর জন্য JSX [ব্যবহার প্রয়োজনীয় নয়](/docs/react-without-jsx.html), কিন্তু অধিকাংশ মানুষ জাভাস্ক্রিপ্ট কোডে ইউজার ইন্টারফেসে কাজ করার সময় এটিকে সহায়ক মনে করেন। এছাড়াও এটি React কে দরকারী error এবং warning মেসেজ দেখাতে সাহায্য করে।
 
-With that out of the way, let's get started!
+JSX সম্পর্কে তো জানলাম, চলুন শুরু করা যাক!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### JSX-এ এক্সপ্রেশন এমবেড করা {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+নিচের উদাহরণে, আমরা `name` নামের একটি ভ্যারিয়েবল ডিক্লেয়ার করেছি এরপর একে JSX এর ভেতর ব্যবহার করেছি কার্লি ব্রেস দ্বারা আবদ্ধ করেঃ
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+আপনি JSX এর ভেতর যেকোন বৈধ [জাভাস্ক্রিপ্ট এক্সপ্রেশন](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) রাখতে পারেন। উদাহরণস্বরূপ, `2 + 2`, `user.firstName`, অথবা `formatName(user)` সবই বৈধ জাভাস্ক্রিপ্ট এক্সপ্রেশন।
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+নিচের উদাহরণে, আমরা একটি জাভাস্ক্রিপ্ট ফাংশন কলের ফলাফলকে, `formatName(user)` একটি `<h1>` element এ এমবেড করেছি।
 
 ```js{12}
 function formatName(user) {
@@ -70,13 +70,13 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+আমরা JSX কে একাধিক লাইনে বিভক্ত করেছি যাতে সহজে পড়া যায়। যদিও এটি দরকারী নয়, এটি করার সময় আমরা প্যারেনথেসেস এ আবদ্ধ করার পরামর্শ দিয়ে থাকি যাতে [automatic semicolon insertion](https://stackoverflow.com/q/2846283) এর অসুবিধাসমূহ এড়িয়ে যাওয়া যায়।
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX ও একটি এক্সপ্রেশন {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+কম্পাইলেশনের পর, JSX এক্সপ্রেশনগুলো সাধারণ জাভাস্ক্রিপ্ট ফাংশন কলে রূপান্তরিত হয় এবং যা জাভাস্ক্রিপ্ট অবজেক্টে পরিণত হয়।
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+এর মানে আপনি চাইলে `if` স্টেটমেন্ট এবং `for` লুপের ভেতরেও JSX ব্যবহার করতে পারবেন, ভ্যারিয়েবলে এসাইন করতে পারবেন, আর্গুমেন্ট হিসেবে গ্রহণ করতে পারবেন, এবং ফাংশন থেকে রিটার্ন করতে পারবেনঃ
 
 ```js{3,5}
 function getGreeting(user) {
@@ -87,37 +87,37 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### JSX এর মাধ্যমে এট্রিবিউট উল্লেখ করা {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+আপনি চাইলে quotes ব্যবহার করে string লিটেরালকে এট্রিবিউট হিসেবে উল্লেখ করতে পারেনঃ
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+আপনি চাইলে কার্লি ব্রেস ব্যবহার করে একটি এট্রিবিউটে জাভাস্ক্রিপ্ট এক্সপ্রেশন এমবেড করতে পারেনঃ 
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+জাভাস্ক্রিপ্ট এক্সপ্রেশনকে এট্রিবিউটে এমবেড করার সময় একে quotes দ্বারা আবদ্ধ করবেন না। আপনি হয় quotes ব্যবহার করবেন(string ভ্যালুর জন্য) অথবা কার্লি ব্রেস (এক্সপ্রেশনের জন্য), কিন্তু কখনোই একই এট্রিবিউটে দুইটি একসাথে নয়।
 
->**Warning:**
+>**সতর্কতাঃ**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>যেহেতু JSX HTML এর চেয়েও জাভাস্ক্রিপ্টের নিকটবর্তী, React DOM নামকরণের ক্ষেত্রে HTML এট্রিবিউটের পরিবর্তে `camelCase` পদ্ধতি ব্যবহার করে।
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>উদাহরণস্বরূপ, JSX-এ `class` হয়ে যায় [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className), এবং `tabindex` হয়ে যায় [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)।
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### JSX এর মাধ্যমে Children উল্লেখ করা {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+যদি কোন ট্যাগ খালি হয়, আপনি চাইলে XML এর মত একে সাথে সাথে ক্লোজ করতে পারেন `/>` দিয়েঃ
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX ট্যাগের ভেতর children থাকতে পারেঃ
 
 ```js
 const element = (
@@ -128,23 +128,23 @@ const element = (
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX Injection Attacks প্রতিরোধ করে {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+ইউজার ইনপুট JSX এ এমবেড করা নিরাপদঃ
 
 ```js
 const title = response.potentiallyMaliciousInput;
-// This is safe:
+// এটি নিরাপদঃ
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+সাধারণভাবে, React DOM যেকোন ভ্যালুকে রেন্ডার করার আগে [escape](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) করে। এটি নিশ্চিত করে আপনি কোনকিছু ইনজেক্ট করতে পারবেন না যা আপনার এপ্লিকেশনে লিখা নেই। সবকিছুই রেন্ডারের আগে string-এ রূপান্তরিত করা হয়। এটি [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) এটাক প্রতিরোধ করতে সাহায্য করে।
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX অবজেক্ট চিত্রিত করে {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel JSX কে কম্পাইল করে `React.createElement()` কলে পরিণত করে।
 
-These two examples are identical:
+এই দুইটি উদাহরণ একইঃ
 
 ```js
 const element = (
@@ -162,7 +162,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()` কিছু জিনিস চেক করে যাতে আপনি বাগ-ফ্রি কোড লিখতে পারেন কিন্তু মূলত এটি নিচের মত একটি অবজেক্ট তৈরি করেঃ
 
 ```js
 // Note: this structure is simplified
@@ -175,10 +175,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+এই অবজেক্টগুলোকে "React elements" বলা হয়। আপনি এগুলোকে চিন্তা করতে পারেন আপনি স্ক্রিনে কি দেখতে চান এর বিবরণ হিসেবে। React এই অবজেক্টগুলোকে ব্যবহার করে DOM তৈরি করে এবং আপডেটেড রাখে।
 
-We will explore rendering React elements to the DOM in the next section.
+আমরা পরের অনুচ্ছেদে DOM এ React elements কিভাবে রেন্ডার করা যায় এ সম্পর্কে জানব।
 
->**Tip:**
+>**পরামর্শঃ**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>আমরা আপনার পছন্দের এডিটরের সাথে ["Babel" language definition](https://babeljs.io/docs/editors) ব্যবহার করার পরামর্শ দিয়ে থাকি যাতে ES6 এবং JSX কোড উভয়েই সঠিকভাবে চিহ্নিত করা থাকে। এই ওয়েবসাইট [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) কালার স্কিমটি ব্যবহার করে যা এর সাথে সামঞ্জস্যপূর্ণ।
