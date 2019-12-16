@@ -73,9 +73,13 @@ Gatsby শিখুন [এর অফিশিয়াল গাইড](https://ww
 
 - **[Neutrino](https://neutrinojs.org/)** তার প্রিসেটগুলো ব্যবহার করে [webpack](https://webpack.js.org/) এর ক্ষমতাকে আরও তরান্বিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
 
+<<<<<<< HEAD
 - **[nwb](https://github.com/insin/nwb)** বিশেষত [React কম্পোনেন্টসমূহ npm এর জন্য পাবলিশ করার ক্ষেত্রে ](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) খুবই ভালো। এটি React অ্যাপ তৈরি করার জন্যও **ব্যবহার করা যেতে পারে**।
 
 - **[Parcel](https://parceljs.org/)** একটি দ্রুত, জিরো কনফিগার্ড ওয়েব অ্যাপ্লিকেশন বান্ডেলার যা [React এর সাথে কাজ করে](https://parceljs.org/recipes.html#react)।
+=======
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+>>>>>>> 401b97e9591ac573eaf35c7cf57e5f145276d140
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** একটি সার্ভার-রেন্ডারিং ফ্রেমওয়ার্ক যাতে কোনো কনফিগারেশন দরকার হয় না, কিন্তু Next.js এর চেয়ে বেশি সুবিধা দেয়।
 
