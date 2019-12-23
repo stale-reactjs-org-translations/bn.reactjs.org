@@ -36,7 +36,11 @@ React ইন্টারনেট এক্সপ্লোরার ৯ সহ �
 ReactDOM.render(element, container[, callback])
 ```
 
+<<<<<<< HEAD
 এই মেথড React element কে সরবরাহকৃত DOM এর `container` এ রেন্ডার করে এবং এবং তার একটি [রেফারেন্স](/docs/more-about-refs.html) কম্পোনেন্টে রিটার্ন করে(অথবা [stateless কম্পোনেন্ট](/docs/components-and-props.html#functional-and-class-components) এর জন্য `null` রিটার্ন করে)।
+=======
+Render a React element into the DOM in the supplied `container` and return a [reference](/docs/more-about-refs.html) to the component (or returns `null` for [stateless components](/docs/components-and-props.html#function-and-class-components)).
+>>>>>>> 1dd4e325f070ce198aed69fd9cc5467563679e54
 
 যদি React element টি আগেই `container` এ রেন্ডার করা হয়ে থাকে তাহলে `render` মেথড কম্পোনেন্ট টি আপডেট করে এবং শুধু DOM এর প্রয়োজনীয় জায়গাগুলো আপডেট করে যাতে React element এর সর্বশেষ অবস্থা দেখা যায়।
 
