@@ -56,11 +56,7 @@ function ActionLink() {
 
 এখানে, `e` হল একটি কৃত্রিম ইভেন্ট। React এই কৃত্রিম ইভেন্টগুলো [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) অনুযায়ী নির্ধারণ করে, যাতে আপনার ক্রস-ব্রাউজার কম্প্যাটিবিলিটি নিয়ে চিন্তা করতে না হয়। বিস্তারিত জানতে [`SyntheticEvent`](/docs/events.html) রেফারেন্স গাইডটি দেখুন।
 
-<<<<<<< HEAD
 React ব্যবহারের সময় সাধারণত আপনার `addEventListener` কল করে কোন DOM element তৈরি হওয়ার পরে listener সংযুক্ত করার প্রয়োজন হবেনা। এর পরিবর্তে, আপনি element রেন্ডারের সময় একটি listener সরবরাহ করতে পারেন।
-=======
-When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 আপনি যখন একটি কম্পোনেন্ট [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ব্যবহার করে নির্ধারণ করবেন, তখন একটি সাধারণ প্যাটার্ন হল ইভেন্ট হ্যান্ডলারটি ঐ ক্লাসের একটি মেথড হিসেবে থাকা। উদাহরণস্বরূপ, এই `Toggle` কম্পোনেন্টটি একটি বাটন রেন্ডার করে যা ইউজারকে "ON" এবং "OFF" state দুইটির মাঝে toggle করতে দেয়ঃ
 
@@ -146,11 +142,7 @@ class LoggingButton extends React.Component {
 
 ## ইভেন্ট হ্যান্ডলারে আর্গুমেন্ট পাস করুন {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
 একটি লুপের ভেতরে ইভেন্ট হ্যান্ডলারে অতিরিক্ত আর্গুমেন্ট পাস করা একটি সাধারণ বিষয়। উদাহরণস্বরূপ, যদি `id` একটি সারির ID হয়, নিচের যেকোন একটি পদ্ধতি অনুসরণ করলেই হবেঃ
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
