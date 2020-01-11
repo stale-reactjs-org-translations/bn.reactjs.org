@@ -48,11 +48,7 @@ React ডিজাইন করা হয়েছে ধীরে ধীরে গ
 
 আপনি যখন React দিয়ে কোন প্রোজেক্ট শুরু করতে চান, তখন [একটি সিম্পল HTML ডকুমেন্টের সাথে script tags](/docs/add-react-to-a-website.html) ব্যবহার করে মাত্র এক মিনিটেই একটি নতুন React App তৈরি করতে পারেন।
 
-<<<<<<< HEAD
-যখন আপনার অ্যাপ বড় হবে, কোডবেজ বৃদ্ধি পাবে, তখন আপনি একটি সমন্বিত সেটআপ এর প্রয়োজনীয়তা অনুভব করবেন। বর্তমানে [বেশ কিছু জাভাস্ক্রিপ্ট টুলচেইন](/docs/create-a-new-react-app.html) আছে যেগুলো আমরা বড় বড় অ্যাপ্লিকেশন ডেভেলপমেন্ট করার জন্য ব্যাবহারের পরামর্শ দিয়ে থাকি। প্রতিটি টুলচেইনেই অল্প কিছু কনফিগারেশনের দরকার হয় আবার কিছু কিছু ক্ষেত্রে কোন কনফিগারেশনের প্রয়োজন পড়ে না। এভাবে আপনি React ইকোসিস্টেম এর সুবিধা গ্রহন করতে পারেন।
-=======
-As your application grows, you might want to consider a more integrated setup. There are several JavaScript toolchains we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem. [Learn how.](/docs/create-a-new-react-app.html)
->>>>>>> 071f5b0e1622465fb6fe5cf6c1cbd2aaef7c5ef4
+যখন আপনার অ্যাপ বড় হবে, কোডবেজ বৃদ্ধি পাবে, তখন আপনি একটি সমন্বিত সেটআপ এর প্রয়োজনীয়তা অনুভব করবেন। বর্তমানে বেশ কিছু জাভাস্ক্রিপ্ট টুলচেইন আছে যেগুলো আমরা বড় বড় অ্যাপ্লিকেশন ডেভেলপমেন্ট করার জন্য ব্যাবহারের পরামর্শ দিয়ে থাকি। প্রতিটি টুলচেইনেই অল্প কিছু কনফিগারেশনের দরকার হয় আবার কিছু কিছু ক্ষেত্রে কোন কনফিগারেশনের প্রয়োজন পড়ে না। এভাবে আপনি React ইকোসিস্টেম এর সুবিধা গ্রহন করতে পারেন। [আরও শিখুন।](/docs/create-a-new-react-app.html)
 
 ## React শিখুন {#learn-react}
 
