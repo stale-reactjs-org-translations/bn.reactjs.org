@@ -46,7 +46,7 @@ npm install eslint-plugin-react-hooks --save-dev
 }
 ```
 
-আমাদের ভবিষ্যতে এই plugin টি শুরু থেকেই Create React App এবং একই ধরণের টুলকিটগুলোর সাথে সংযুক্ত করে দেয়ার ইচ্ছা আছে।
+এই pluginটি শুরু থেকেই [Create React App](/docs/create-a-new-react-app.html#create-react-app) এর সাথে সংযুক্ত করে দেয়া হয়েছে।
 
 **আপনি এখন চাইলে বাকিটা বাদ দিয়ে পরের পৃষ্ঠায় [আপনার নিজের Hooks](/docs/hooks-custom.html) কিভাবে লিখবেন তা দেখে নিতে পারেন।** এই পৃষ্ঠায়, আমরা এই নিয়মগুলোর কারণ ব্যাখ্যা করব।
 

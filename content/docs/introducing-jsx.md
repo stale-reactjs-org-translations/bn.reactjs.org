@@ -181,4 +181,4 @@ const element = {
 
 >**পরামর্শঃ**
 >
->আমরা আপনার পছন্দের এডিটরের সাথে ["Babel" language definition](https://babeljs.io/docs/editors) ব্যবহার করার পরামর্শ দিয়ে থাকি যাতে ES6 এবং JSX কোড উভয়েই সঠিকভাবে চিহ্নিত করা থাকে। এই ওয়েবসাইট [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme) কালার স্কিমটি ব্যবহার করে যা এর সাথে সামঞ্জস্যপূর্ণ।
+>আমরা আপনার পছন্দের এডিটরের সাথে ["Babel" ল্যংগুয়েজ ডেফিনিশন](https://babeljs.io/docs/editors) ব্যবহার করার পরামর্শ দিয়ে থাকি যাতে ES6 এবং JSX কোড উভয়েই সঠিকভাবে চিহ্নিত করা থাকে।
