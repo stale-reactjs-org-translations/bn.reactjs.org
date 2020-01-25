@@ -6,11 +6,11 @@ redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
 
-> নোট:
+> বিঃদ্রঃ:
 >
-> `React.PropTypes` - অন্য একটি প্যাকেজে সরিয়ে নেয়া হয়েছে React v15.5 এর পর থেকে। দয়া করে এটি ব্যাবহার করুন [the `prop-types` library instead](https://www.npmjs.com/package/prop-types).
+> `React.PropTypes` - অন্য একটি প্যাকেজে সরিয়ে নেয়া হয়েছে React v15.5 এর পর থেকে। দয়া করে এটি ব্যাবহার করুন [ `prop-types`লাইব্রেরী ব্যাবহার করুন](https://www.npmjs.com/package/prop-types).
 >
->আমরা এটি  [একটি codemod স্ক্রিপ্ট](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) দিয়ে স্বয়ংক্রিয় কনভারসেশন চালাই।
+>আমরা এটি  [একটি কোডমড স্ক্রিপ্ট](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) দিয়ে স্বয়ংক্রিয় কনভারসেশন চালাই।
 
 আপনার অ্যাপ যত বড় হতে থাকবে টাইপচেকিং এ তত ভুল ধরা পড়তে থাকবে। কিছু অ্যাপ এর ক্ষেত্রে, টাইপচেকের জন্য আপনি এরকম [ফ্লো](https://flow.org/) or [টাইপস্ক্রিপ্ট](https://www.typescriptlang.org/) কিছু জাভাস্ক্রিপ্ট এক্সটেনশন ব্যাবহার করতে পারেন। আপনি যদি এগুলো ব্যাবহার করতে না চান তাহলে React এর কিছু বিল্ট-ইন টাইপচেকিং এবিলিটি আছে যা আপনি ব্যাবহার করতে পারেন। একটি কম্পোনেন্ট এর জন্য props এর উপর টাইপচেকিং করতে চাইলে আপনি স্পেশাল `propTypes` প্রোপার্টি এসাইন করতে পারেন:
 
