@@ -10,9 +10,9 @@ redirect_from:
 >
 > `React.PropTypes` - অন্য একটি প্যাকেজে সরিয়ে নেয়া হয়েছে React v15.5 এর পর থেকে। দয়া করে এটি ব্যাবহার করুন [the `prop-types` library instead](https://www.npmjs.com/package/prop-types).
 >
->আমরা এটি  [a codemod script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) দিয়ে স্বয়ংক্রিয় কনভারসেশন চালাই।
+>আমরা এটি  [একটি codemod স্ক্রিপ্ট](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) দিয়ে স্বয়ংক্রিয় কনভারসেশন চালাই।
 
-আপনার app যত বড় হতে থাকবে টাইপচেকিং এ তত ভুল ধরা পড়তে থাকবে। কিছু app এর ক্ষেত্রে, টাইপচেকের জন্য আপনি এরকম [Flow](https://flow.org/) or [TypeScript](https://www.typescriptlang.org/) কিছু জাভাস্ক্রিপ্ট এক্সটেনশন ব্যাবহার করতে পারেন। আপনি যদি এগুলো ব্যাবহার করতে না চান তাহলে React এর কিছু বিল্ট-ইন টাইপচেকিং এবিলিটি আছে যা আপনি ব্যাবহার করতে পারেন। একটি component এর জন্য props এর উপর টাইপচেকিং করতে চাইলে আপনি স্পেশাল `propTypes` প্রোপার্টি এসাইন করতে পারেন:
+আপনার অ্যাপ যত বড় হতে থাকবে টাইপচেকিং এ তত ভুল ধরা পড়তে থাকবে। কিছু অ্যাপ এর ক্ষেত্রে, টাইপচেকের জন্য আপনি এরকম [ফ্লো](https://flow.org/) or [টাইপস্ক্রিপ্ট](https://www.typescriptlang.org/) কিছু জাভাস্ক্রিপ্ট এক্সটেনশন ব্যাবহার করতে পারেন। আপনি যদি এগুলো ব্যাবহার করতে না চান তাহলে React এর কিছু বিল্ট-ইন টাইপচেকিং এবিলিটি আছে যা আপনি ব্যাবহার করতে পারেন। একটি কম্পোনেন্ট এর জন্য props এর উপর টাইপচেকিং করতে চাইলে আপনি স্পেশাল `propTypes` প্রোপার্টি এসাইন করতে পারেন:
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -177,7 +177,7 @@ ReactDOM.render(
 );
 ```
 
-আপনি যদি এরকম কোন Babel ট্রান্সফরম ব্যাবহার করে থাকেন [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) , তাহলে আপনি আপনার `defaultProps` কে React component class এর ভেতর static property হিসেবে ডিক্লেয়ার করতে পারবেন। যদিও এই সিনট্যাক্স টি এখনো ফাইনালাইজড করা হয় নাই এবং একটি ব্রাউজারের ভেতর কাজ করানোর জন্য এর জন্য আরো কম্পাইলেশন স্টেপ এর প্রয়োজন আছে। আরও তথ্যের জন্য, এটি দেখুন [class fields proposal](https://github.com/tc39/proposal-class-fields).
+আপনি যদি এরকম কোন Babel ট্রান্সফর্ম ব্যাবহার করে থাকেন [ট্রান্সফর্ম-ক্লাস-প্রোপাটিস](https://babeljs.io/docs/plugins/transform-class-properties/) , তাহলে আপনি আপনার `defaultProps` কে React component class এর ভেতর static property হিসেবে ডিক্লেয়ার করতে পারবেন। যদিও এই সিনট্যাক্স টি এখনো ফাইনালাইজড করা হয় নাই এবং একটি ব্রাউজারের ভেতর কাজ করানোর জন্য এর জন্য আরো কম্পাইলেশন স্টেপ এর প্রয়োজন আছে। আরও তথ্যের জন্য, এটি দেখুন [ক্লাস-ফিল্ড-প্রপোজাল](https://github.com/tc39/proposal-class-fields).
 
 ```javascript
 class Greeting extends React.Component {
@@ -193,4 +193,4 @@ class Greeting extends React.Component {
 }
 ```
 
-`defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent component দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
+`defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
