@@ -129,6 +129,7 @@ MyComponent.propTypes = {
 ```
 
 ### রিক্যুয়েরিং সিংগেল চাইল্ড {#requiring-single-child}
+
 `PropTypes.element` এর মাধ্যমে আপনি একটি সিংগেল চাইল্ড একটি নির্দিষ্ট কম্পোনেন্ট এ পাস করতে পারবেন। 
 
 ```javascript
