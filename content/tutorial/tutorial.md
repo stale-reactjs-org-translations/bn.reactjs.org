@@ -37,7 +37,11 @@ redirect_from:
 
 আমরা কি বানাবো তা আপনি এইখানে দেখতে পারবেনঃ **[সর্বশেষ ফলাফল](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**। যদি কোডটি আপনার কাছে অর্থবহ মনে না হয় বা আপনি কোডের সিনট্যাক্সের সাথে পরিচিত না হন তবে চিন্তা করবেন না! এই টিউটোরিয়ালটির লক্ষ্য হচ্ছে আপনাকে React এবং এর সিনট্যাক্স বুঝতে সহায়তা করা।
 
+<<<<<<< HEAD
 আমরা আপনাকে টিউটোরিয়ালটি চালিয়ে যাওয়ার আগে tic-tac-toe গেমটি দেখতে অনুরোধ করব। যে ফিচারটি আপনি লক্ষ্য করবেন তা হল গেম বোর্ডের ডানদিকে একটি সংখ্যাযুক্ত তালিকা। এই তালিকাটি গেমটিতে যতগুলো ধাপ সম্পন্ন হয়েছে তার একটি ইতিহাস দেয় এবং গেমের অগ্রগতির সাথে সাথে এটি আপডেট হয়।
+=======
+We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+>>>>>>> 4367566bddd06ed9dfbd6b1c3f45f9925e60b2c3
 
 একবার আপনি tic-tac-toe গেমটি সম্পর্কে পরিচিত হলে, গেমটি বন্ধ করতে পারেন। আমরা এই টিউটোরিয়ালে একটি সহজতর টেমপ্লেট থেকে শুরু করব। আমাদের পরবর্তী ধাপ আপনাকে তৈরি করা যাতে আপনি গেম বানানো শুরু করতে পারেন।
 
