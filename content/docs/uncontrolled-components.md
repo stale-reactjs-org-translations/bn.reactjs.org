@@ -41,7 +41,7 @@ class NameForm extends React.Component {
 
 যেহেতু একটি আনকন্ট্রোল্ড কম্পোনেন্ট DOM এর ভিতর আসল উৎসটি ধারণ করে তাই React এবং non-React কোড ইন্টিগ্র্যাট করার সময় প্রায়শই এটা সহজতর হয়। যদি আপনি দ্রুত এবং একটু অগোছালো কোড চান তাহলে একটু কম কোডেও কাজ হয়, তানাহলে কন্ট্রোল্ড কম্পোনেন্ট ব্যবহার করাই শ্রেয়।
 
-যদি এটা এখনো পরিষ্কার না হয় যে কোন পরিস্থিতে কি ধরনের কম্পোনেন্ট ব্যাবহার করা উচিত তাহলে আপনি [controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) এর উপর আর্টিকেলটিতে ঘুরে আসতে পারেন।
+যদি এটা এখনো পরিষ্কার না হয় যে কোন পরিস্থিতিতে কি ধরনের কম্পোনেন্ট ব্যাবহার করা উচিত তাহলে আপনার জন্য [controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) এর উপর আর্টিকেলটি সহায়ক হতে পারে।
 
 ### ডিফল্ট ভ্যালু {#default-values}
 
