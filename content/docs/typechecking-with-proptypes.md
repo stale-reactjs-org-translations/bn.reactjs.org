@@ -6,13 +6,13 @@ redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
 
-> Note:
+> বিঃদ্রঃ
 >
-> `React.PropTypes` has moved into a different package since React v15.5. Please use [the `prop-types` library instead](https://www.npmjs.com/package/prop-types).
+> `React.PropTypes` - অন্য একটি প্যাকেজে সরিয়ে নেয়া হয়েছে React v15.5 এর পর থেকে। দয়া করে এর পরিবর্তে [ `prop-types`লাইব্রেরীটি] (https://www.npmjs.com/package/prop-types)ব্যাবহার করুন।
 >
->We provide [a codemod script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) to automate the conversion.
+>আমরা একটি [codemod স্ক্রিপ্ট](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) সরবরাহ করে থাকি যা দিয়ে স্বয়ংক্রিয়ভাবে পরিবর্তন করা যায়।
 
-As your app grows, you can catch a lot of bugs with typechecking. For some applications, you can use JavaScript extensions like [Flow](https://flow.org/) or [TypeScript](https://www.typescriptlang.org/) to typecheck your whole application. But even if you don't use those, React has some built-in typechecking abilities. To run typechecking on the props for a component, you can assign the special `propTypes` property:
+আপনার অ্যাপ যত বড় হতে থাকবে টাইপচেকিং এ তত ভুল ধরা পড়তে থাকবে। কিছু অ্যাপের ক্ষেত্রে, টাইপচেকের জন্য আপনি এরকম [Flow](https://flow.org/) অথবা [TypeScript](https://www.typescriptlang.org/) এর মত কিছু জাভাস্ক্রিপ্ট এক্সটেনশন ব্যবহার করতে পারেন। আপনি যদি এগুলো ব্যবহার করতে না চান তাহলে React এর কিছু বিল্ট-ইন টাইপচেকিং এবিলিটি আছে যা আপনি ব্যাবহার করতে পারেন। একটি কম্পোনেন্টের জন্য props এর উপর টাইপচেকিং করতে চাইলে আপনি স্পেশাল `propTypes` প্রোপার্টি এসাইন করতে পারেনঃ:
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -30,11 +30,11 @@ Greeting.propTypes = {
 };
 ```
 
-`PropTypes` exports a range of validators that can be used to make sure the data you receive is valid. In this example, we're using `PropTypes.string`. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. For performance reasons, `propTypes` is only checked in development mode.
+`PropTypes` অনেকগুলো ভ্যালিডেটরস এক্সপোর্ট করে যা দিয়ে যাচাই করা হয় আপনার ডাটাগুলো ভ্যালিড কিনা। এই উদাহরণে আমরা `PropTypes.string` ব্যবহার করছি। যখন কোন ইনভ্যালিড ভ্যালু prop এর জন্য দেয়া হয় তখন জাভাস্ক্রিপ্ট কন্সোলে একটি সতর্কবার্তা প্রদর্শন করা হয়। পারফরম্যান্সের স্বার্থে শুধুমাত্র ডেভেলপমেন্ট মোডে `propTypes` চেক করা হয়।
 
 ### PropTypes {#proptypes}
 
-Here is an example documenting the different validators provided:
+এখানে প্রদত্ত বিভিন্ন ভ্যালিডেটরের ডকুমেন্টিং এর একটি উদাহরণ রয়েছেঃ
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -128,9 +128,9 @@ MyComponent.propTypes = {
 };
 ```
 
-### Requiring Single Child {#requiring-single-child}
+### রিক্যুয়েরিং সিংগেল চাইল্ড {#requiring-single-child}
 
-With `PropTypes.element` you can specify that only a single child can be passed to a component as children.
+`PropTypes.element` এর মাধ্যমে আপনি একটি সিংগেল চাইল্ড একটি নির্দিষ্ট কম্পোনেন্ট এ পাস করতে পারবেন। 
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -152,9 +152,9 @@ MyComponent.propTypes = {
 };
 ```
 
-### Default Prop Values {#default-prop-values}
+### ডিফল্ট Prop ভ্যালু {#default-prop-values}
 
-You can define default values for your `props` by assigning to the special `defaultProps` property:
+স্পেশাল `defaultProps` প্রোপার্টি তে এসাইন করার মাধ্যমে আপনি আপনার `props` এর জন্য ডিফল্ট ভ্যালু ডিফাইন করতে পারবেন:
 
 ```javascript
 class Greeting extends React.Component {
@@ -177,7 +177,7 @@ ReactDOM.render(
 );
 ```
 
-If you are using a Babel transform like [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) , you can also declare `defaultProps` as static property within a React component class. This syntax has not yet been finalized though and will require a compilation step to work within a browser. For more information, see the [class fields proposal](https://github.com/tc39/proposal-class-fields).
+আপনি যদি এরকম কোন Babel ট্রান্সফর্ম ব্যাবহার করে থাকেন [ট্রান্সফর্ম-ক্লাস-প্রোপাটিস](https://babeljs.io/docs/plugins/transform-class-properties/) , তাহলে আপনি আপনার `defaultProps` কে React component class এর ভেতর static property হিসেবে ডিক্লেয়ার করতে পারবেন। যদিও এই সিনট্যাক্স টি এখনো ফাইনালাইজড করা হয় নাই এবং একটি ব্রাউজারের ভেতর কাজ করানোর জন্য এর জন্য আরো কম্পাইলেশন স্টেপ এর প্রয়োজন আছে। আরও তথ্যের জন্য, এটি দেখুন [ক্লাস-ফিল্ড-প্রপোজাল](https://github.com/tc39/proposal-class-fields).
 
 ```javascript
 class Greeting extends React.Component {
@@ -193,4 +193,4 @@ class Greeting extends React.Component {
 }
 ```
 
-The `defaultProps` will be used to ensure that `this.props.name` will have a value if it was not specified by the parent component. The `propTypes` typechecking happens after `defaultProps` are resolved, so typechecking will also apply to the `defaultProps`.
+`defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
