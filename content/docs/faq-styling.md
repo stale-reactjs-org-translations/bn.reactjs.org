@@ -8,7 +8,7 @@ category: FAQ
 
 ### আমি কিভাবে কম্পোনেন্টের সাথে CSS ক্লাস যুক্ত করবো? {#how-do-i-add-css-classes-to-components}
 
-একটা string-কে `className` prop হিসেবে পাঠাওঃ
+একটা string-কে `className` prop হিসেবে পাঠানঃ
 
 ```jsx
 render() {
@@ -30,7 +30,7 @@ render() {
 
 >পরামর্শ
 >
->যদি আপনি প্রায়ই এরকম code লিখে থাকেন, তাহলে  [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) প্যাকেজ এটি সহজ করতে পারে।
+>যদি আপনি প্রায়ই এরকম কোড লিখে থাকেন, তাহলে  [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) প্যাকেজ এটি সহজ করতে পারে।
 
 ### আমি কি inline style ব্যবহার করতে পারি? {#can-i-use-inline-styles}
 
@@ -38,14 +38,14 @@ render() {
 
 ### Inline styles কি খারাপ? {#are-inline-styles-bad}
 
-CSS class সাধারণত পারফরমান্সের দিক দিয়ে inline style এর থেকে ভালো।
+CSS class সাধারণত কর্মক্ষমতার দিক দিয়ে inline style এর থেকে ভালো।
 
 ### CSS-in-JS কি?{#what-is-css-in-js}
 
 "CSS-in-JS" বলতে এমন একটা প্যাটার্নকে বুঝায় যেখানে CSS-কে বাহিরের কোনো ফাইলে না লিখে JavaScript এর ভিতর লেখা করা হয়।     CSS-in-JS লাইব্রেরিগুলোর পার্থক্য দেখুন [এখানে](https://github.com/MicheleBertoli/css-in-js)।
 
-_বিঃদ্রঃ এই ফিচারটি React এর অংশ নয়, বরং তৃতীয়-পক্ষের লাইব্রেরি এই ফিচারটি দিয়ে থাকে।_ কিভাবে স্টাইল লেখা উচিত সে সম্পর্কে React এর কোনো পরামর্শ নেই। যদি সিদ্ধান্তহীনতা থাকে, তাহলে আলাদা একটা `*.css` ফাইলে স্বাভাবিকভাবে স্টাইল লিখে [`className`](/docs/dom-elements.html#classname) এর সাহায্যে তা ব্যবহার করার মাধ্যমে শুরু করতে পারো।
+_বিঃদ্রঃ এই ফিচারটি React এর অংশ নয়, বরং তৃতীয়-পক্ষের লাইব্রেরি এই ফিচারটি দিয়ে থাকে।_ কিভাবে স্টাইল লেখা উচিত সে সম্পর্কে React এর কোনো পরামর্শ নেই। যদি সিদ্ধান্তহীনতা থাকে, তাহলে আলাদা একটা `*.css` ফাইলে স্বাভাবিকভাবে স্টাইল লিখে [`className`](/docs/dom-elements.html#classname) এর সাহায্যে তা ব্যবহার করার মাধ্যমে শুরু করতে পারেন।
 
 ### আমি কি React এ অ্যানিমেশন করতে পারি?{#can-i-do-animations-in-react}
 
-অ্যানিমেশনের জন্য React-কে ব্যবহার করা যেতে পারে। উদাহরণস্বরূপ, [React Transition Group](https://reactcommunity.org/react-transition-group/) এবং [React Motion](https://github.com/chenglou/react-motion) দেখুন।
+এনিমেশনের জন্য React-কে ব্যবহার করা যেতে পারে। উদাহরণস্বরূপ, [React Transition Group](https://reactcommunity.org/react-transition-group/) এবং [React Motion](https://github.com/chenglou/react-motion) দেখুন।
