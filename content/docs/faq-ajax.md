@@ -1,24 +1,24 @@
 ---
 id: faq-ajax
-title: AJAX and APIs
+title: AJAX এবং APIs
 permalink: docs/faq-ajax.html
 layout: docs
 category: FAQ
 ---
 
-### How can I make an AJAX call? {#how-can-i-make-an-ajax-call}
+### আমি কিভাবে AJAX ব্যবহার করবো? {#how-can-i-make-an-ajax-call}
 
-You can use any AJAX library you like with React. Some popular ones are [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), and the browser built-in [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+React এর সাথে আপনি যেকোনো AJAX লাইব্রেরি ব্যবহার করতে পারবেন। কয়েকটি বিখ্যাত AJAX লাইব্রেরি হলো [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/) এবং ব্রাউজারের নিজস্ব [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)।
 
-### Where in the component lifecycle should I make an AJAX call? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
+### আমি কম্পোনেন্টের জীবনচক্রের কোথায় AJAX ব্যবহার করবো?{#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-You should populate data with AJAX calls in the [`componentDidMount`](/docs/react-component.html#mounting) lifecycle method. This is so you can use `setState` to update your component when the data is retrieved.
+আপনার উচিত [`componentDidMount`](/docs/react-component.html#mounting) জীবনচক্রের মেথডে ডাটা লোড করা। কারণ, এভাবে আপনার ডাটা লোড হওয়ার পর আপনি `setState` ব্যবহার করে আপনার কম্পোনেন্টের state পরিবর্তন করতে পারবেন।
 
-### Example: Using AJAX results to set local state {#example-using-ajax-results-to-set-local-state}
+### উদাহরণ: AJAX এর তথ্য ব্যবহার করে স্থানীয় state সেট করা। {#example-using-ajax-results-to-set-local-state}
 
-The component below demonstrates how to make an AJAX call in `componentDidMount` to populate local component state. 
+নিচের কম্পোনেন্টে `componentDidMount` এ কিভাবে AJAX ব্যবহার করে স্থানীয় state পরিবর্তন করা যায়, তা দেখানো হয়েছে।
 
-The example API returns a JSON object like this:
+উদাহরণের API-টি নিচের মতো JSON object ফেরত পাঠায়ঃ
 
 ```
 {
@@ -50,9 +50,9 @@ class MyComponent extends React.Component {
             items: result.items
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
+        // বিঃদ্রঃ এখানে catch() ব্লক এর বদলে error
+        // সামলানো খুবই গুরুত্বপূর্ণ কেননা আমরা চাই না
+        // কম্পোনেন্টের আসল কোনো সমস্যা হজম করতে।
         (error) => {
           this.setState({
             isLoaded: true,

@@ -14,20 +14,20 @@
           href: /tutorial/tutorial.html#prerequisites
           forceInternal: true
     - id: setup-for-the-tutorial
-      title: Setup for the Tutorial
+      title: টিউটোরিয়ালের জন্য সেটআপ
       href: /tutorial/tutorial.html#setup-for-the-tutorial
       forceInternal: true
       subitems:
         - id: setup-option-1-write-code-in-the-browser
-          title: "Option 1: Write Code in the Browser"
+          title: "উপায় ১ঃ ব্রাউজারে কোড করুন"
           href: /tutorial/tutorial.html#setup-option-1-write-code-in-the-browser
           forceInternal: true
         - id: setup-option-2-local-development-environment
-          title: "Option 2: Local Development Environment"
+          title: "উপায় ২ঃ লোকাল ডেভেলপমেন্ট ইনভায়রনমেন্ট"
           href: /tutorial/tutorial.html#setup-option-2-local-development-environment
           forceInternal: true
         - id: help-im-stuck
-          title: Help, I'm Stuck!
+          title: আমি আটকে গেছি!
           href: /tutorial/tutorial.html#help-im-stuck
           forceInternal: true
     - id: overview
