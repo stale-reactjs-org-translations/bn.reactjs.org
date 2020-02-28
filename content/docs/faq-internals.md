@@ -9,7 +9,7 @@ category: FAQ
 ### ভার্চুয়াল DOM কি? {#what-is-the-virtual-dom}
 ভার্চুয়াল DOM হলো একটা প্রোগ্রামিং ধারণা যেখানে UI এর একটা আদর্শ অথবা ভার্চুয়াল প্রতিনিধি মেমোরিতে রাখা হয় এবং তা প্রকৃত DOM এর সাথে মিলিয়ে রাখা হয় ReactDOM এর মতো লাইব্রেরির মাধ্যমে। এই কাজটাকে বলে [reconciliation](/docs/reconciliation.html)।
 
-This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
+এই প্রক্রিয়া React এর ঘোষণাভিত্তিক API কে সচল করেঃ আপনি বলবেন React কে বলবেন কোন state এ UI থাকতে হবে আর React নিশ্চিত করবে যাতে DOM সেই state এ থাকে। এই প্রক্রিয়া attribute manipulation, event handling এবং manual DOM হালনাগাদের মতো কাজ বাদ দেয়, যা অন্যথায় আপনার করতে হত আপনার অ্যাপ তৈরি করতে। This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
 
 Since "virtual DOM" is more of a pattern than a specific technology, people sometimes say it to mean different things. In React world, the term "virtual DOM" is usually associated with [React elements](/docs/rendering-elements.html) since they are the objects representing the user interface. React, however, also uses internal objects called "fibers" to hold additional information about the component tree. They may also be considered a part of "virtual DOM" implementation in React.
 
