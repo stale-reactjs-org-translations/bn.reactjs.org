@@ -11,11 +11,11 @@ category: FAQ
 
 এই প্রক্রিয়া React এর ঘোষণাভিত্তিক API কে সচল করেঃ আপনি বলবেন React কে বলবেন কোন state এ UI থাকতে হবে আর React নিশ্চিত করবে যাতে DOM সেই state এ থাকে। এই প্রক্রিয়া attribute manipulation, event handling এবং manual DOM হালনাগাদের মতো কাজ বাদ দেয়, যা অন্যথায় আপনার করতে হত আপনার অ্যাপ তৈরি করতে।
 
-Since "virtual DOM" is more of a pattern than a specific technology, people sometimes say it to mean different things. In React world, the term "virtual DOM" is usually associated with [React elements](/docs/rendering-elements.html) since they are the objects representing the user interface. React, however, also uses internal objects called "fibers" to hold additional information about the component tree. They may also be considered a part of "virtual DOM" implementation in React.
+যেহেতু "ভার্চুয়াল DOM" কোনো নির্দিষ্ট টেকনলজির চেয়ে অনেকটা প্যাটার্নের মতো, সেজন্য অনেকে এটা বলে থাকে বিভিন্ন জিনিস বুঝাতে। React এর জগতে, "ভার্চুয়াল DOM" সাধারণত [React elements](/docs/rendering-elements.html) এর সাথে জড়িত যেহেতু এরা UI এর প্রতিনিধিত্বকারী অবজেক্ট। তবে React আবার "ফাইবার" নামক অভ্যন্তরীণ কিছু অবজেক্ট ব্যবহার করে কম্পোনেন্ট সম্পর্কে আরও কিছু তথ্য ধারণ করতে। এগুলোকেও React এ "ভার্চুয়াল DOM" তৈরির অংশ হিসেবে ধরা জেতে পারে।
 
-### Is the Shadow DOM the same as the Virtual DOM? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
+### Shadow DOM আর Virtual DOM কি একই? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
 
-No, they are different. The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. The virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
+না, এগুলো আলাদা। Shadow DOM একটা ব্রাউজার টেকনোলজি যা প্রাথমিকভাবে তৈরি করা হয়েছিল ওয়েব কম্পোনেন্টে ভারিয়াবল এবং CSS স্কোপ করার জন্য। ভার্চুয়াল DOM হল একটা ধারণা যা লাইব্রেরির মাধ্যমে জাভাস্ক্রিপ্তে তৈরি করা হয়েছে ব্রাউজার API এর উপরে।
 
 ### What is "React Fiber"? {#what-is-react-fiber}
 
