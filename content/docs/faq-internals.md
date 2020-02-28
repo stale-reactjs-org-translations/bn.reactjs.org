@@ -1,12 +1,12 @@
 ---
 id: faq-internals
-title: Virtual DOM and Internals
+title: ভার্চুয়াল DOM এবং এর অভ্যন্তরীন
 permalink: docs/faq-internals.html
 layout: docs
 category: FAQ
 ---
 
-### What is the Virtual DOM? {#what-is-the-virtual-dom}
+### ভার্চুয়াল DOM কি? {#what-is-the-virtual-dom}
 
 The virtual DOM (VDOM) is a programming concept where an ideal, or "virtual", representation of a UI is kept in memory and synced with the "real" DOM by a library such as ReactDOM. This process is called [reconciliation](/docs/reconciliation.html).
 
