@@ -17,6 +17,6 @@ category: FAQ
 
 না, এগুলো আলাদা। Shadow DOM একটা ব্রাউজার টেকনোলজি যা প্রাথমিকভাবে তৈরি করা হয়েছিল ওয়েব কম্পোনেন্টে ভারিয়াবল এবং CSS স্কোপ করার জন্য। ভার্চুয়াল DOM হল একটা ধারণা যা লাইব্রেরির মাধ্যমে জাভাস্ক্রিপ্তে তৈরি করা হয়েছে ব্রাউজার API এর উপরে।
 
-### What is "React Fiber"? {#what-is-react-fiber}
+### "React Fiber" কি? {#what-is-react-fiber}
 
-Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM. [Read more](https://github.com/acdlite/react-fiber-architecture).
+ফাইবার হলো React 16 এর নতুন reconciliation ইঞ্জিন। এর মূল লক্ষ্য হলো ভার্চুয়াল DOM এর ক্রমবর্ধমান render করা। [আরও পড়ুন](https://github.com/acdlite/react-fiber-architecture).
