@@ -26,6 +26,7 @@ void preventDefault()
 boolean isDefaultPrevented()
 void stopPropagation()
 boolean isPropagationStopped()
+void persist()
 DOMEventTarget target
 number timeStamp
 string type
@@ -62,6 +63,7 @@ function onClick(event) {
 
 > বিঃদ্রঃ
 >
+<<<<<<< HEAD
 > আপনি যদি asynchronous উপায়ে কোন ইভেন্ট ব্যবহার করতে চান, তবে আপনার `event.persist()` কে কল করা উচিত। যেটি পুল থেকে সিনথেটিক ইভেন্টকে মুছে দিবে এবং ইভেন্টের রেফারেন্সগুলি ইউজারের কোডে বজায় রাখার অনুমতি দিবে।
 
 ## সাপোর্টেড ইভেন্টস {#supported-events}
@@ -86,6 +88,33 @@ React ইভেন্টগুলোকে নরমালাইজড করে
 - [এনিমেশন ইভেন্টস](#animation-events)
 - [ট্রানজিশান ইভেন্টস](#transition-events)
 - [অন্যান্য ইভেন্টস](#other-events)
+=======
+> If you want to access the event properties in an asynchronous way, you should call `event.persist()` on the event, which will remove the synthetic event from the pool and allow references to the event to be retained by user code.
+
+## Supported Events {#supported-events}
+
+React normalizes events so that they have consistent properties across different browsers.
+
+The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; for example, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
+
+- [Clipboard Events](#clipboard-events)
+- [Composition Events](#composition-events)
+- [Keyboard Events](#keyboard-events)
+- [Focus Events](#focus-events)
+- [Form Events](#form-events)
+- [Generic Events](#generic-events)
+- [Mouse Events](#mouse-events)
+- [Pointer Events](#pointer-events)
+- [Selection Events](#selection-events)
+- [Touch Events](#touch-events)
+- [UI Events](#ui-events)
+- [Wheel Events](#wheel-events)
+- [Media Events](#media-events)
+- [Image Events](#image-events)
+- [Animation Events](#animation-events)
+- [Transition Events](#transition-events)
+- [Other Events](#other-events)
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 * * *
 
@@ -176,14 +205,28 @@ DOMEventTarget relatedTarget
 ইভেন্টগুলোর নামঃ
 
 ```
-onChange onInput onInvalid onSubmit
+onChange onInput onInvalid onReset onSubmit 
 ```
 
 onChange ইভেন্ট সম্পর্কে বিস্তারিত জানতে, [Forms](/docs/forms.html) দেখুন।
 
 * * *
 
+<<<<<<< HEAD
 ### মাউস ইভেন্টস {#mouse-events}
+=======
+### Generic Events {#generic-events}
+
+Event names:
+
+```
+onError onLoad
+```
+
+* * *
+
+### Mouse Events {#mouse-events}
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 ইভেন্টগুলোর নামঃ
 
