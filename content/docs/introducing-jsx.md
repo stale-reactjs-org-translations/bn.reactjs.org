@@ -177,11 +177,7 @@ const element = {
 
 এই অবজেক্টগুলোকে "React elements" বলা হয়। আপনি এগুলোকে চিন্তা করতে পারেন আপনি স্ক্রিনে কি দেখতে চান এর বিবরণ হিসেবে। React এই অবজেক্টগুলোকে ব্যবহার করে DOM তৈরি করে এবং আপডেটেড রাখে।
 
-<<<<<<< HEAD
-আমরা পরের অনুচ্ছেদে DOM এ React elements কিভাবে রেন্ডার করা যায় এ সম্পর্কে জানব।
-=======
-We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+আমরা [পরের অনুচ্ছেদে](/docs/rendering-elements.html) DOM এ React elements কিভাবে রেন্ডার করা যায় এ সম্পর্কে জানব।
 
 >**পরামর্শঃ**
 >
