@@ -26,6 +26,7 @@ void preventDefault()
 boolean isDefaultPrevented()
 void stopPropagation()
 boolean isPropagationStopped()
+void persist()
 DOMEventTarget target
 number timeStamp
 string type
@@ -75,6 +76,7 @@ React ইভেন্টগুলোকে নরমালাইজড করে
 - [কিবোর্ড ইভেন্টস](#keyboard-events)
 - [ফোকাস ইভেন্টস](#focus-events)
 - [ফর্ম ইভেন্টস](#form-events)
+- [জেনেরিক ইভেন্টস](#generic-events)
 - [মাউস ইভেন্টস](#mouse-events)
 - [পয়েন্টার ইভেন্টস](#pointer-events)
 - [সিলেকশান ইভেন্টস](#selection-events)
@@ -176,10 +178,20 @@ DOMEventTarget relatedTarget
 ইভেন্টগুলোর নামঃ
 
 ```
-onChange onInput onInvalid onSubmit
+onChange onInput onInvalid onReset onSubmit 
 ```
 
 onChange ইভেন্ট সম্পর্কে বিস্তারিত জানতে, [Forms](/docs/forms.html) দেখুন।
+
+* * *
+
+### জেনেরিক ইভেন্টস {#generic-events}
+
+Event names:
+
+```
+onError onLoad
+```
 
 * * *
 
