@@ -27,7 +27,7 @@ Hooks হল জাভাস্ক্রিপ্ট ফাংশন, কিন�
 
 আমরা [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) নামের একটি ESLint plugin প্রকাশ করেছি যা দুটি নিয়ম কার্যকর করে। আপনি এই plugin টি আপনার প্রজেক্টে সংযুক্ত করে চেষ্টা করে দেখতে পারেনঃ
 
-This plugin is included by default in [Create React App](/docs/create-a-new-react-app.html#create-react-app).
+এই pluginটি শুরু থেকেই [Create React App](/docs/create-a-new-react-app.html#create-react-app) এর সাথে সংযুক্ত করে দেয়া হয়েছে।
 
 ```bash
 npm install eslint-plugin-react-hooks --save-dev
@@ -48,13 +48,7 @@ npm install eslint-plugin-react-hooks --save-dev
 }
 ```
 
-<<<<<<< HEAD
-এই pluginটি শুরু থেকেই [Create React App](/docs/create-a-new-react-app.html#create-react-app) এর সাথে সংযুক্ত করে দেয়া হয়েছে।
-
 **আপনি এখন চাইলে বাকিটা বাদ দিয়ে পরের পৃষ্ঠায় [আপনার নিজের Hooks](/docs/hooks-custom.html) কিভাবে লিখবেন তা দেখে নিতে পারেন।** এই পৃষ্ঠায়, আমরা এই নিয়মগুলোর কারণ ব্যাখ্যা করব।
-=======
-**You can skip to the next page explaining how to write [your own Hooks](/docs/hooks-custom.html) now.** On this page, we'll continue by explaining the reasoning behind these rules.
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
 
 ## ব্যাখ্যা {#explanation}
 
