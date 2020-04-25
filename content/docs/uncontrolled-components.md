@@ -4,11 +4,11 @@ title: Uncontrolled Components
 permalink: docs/uncontrolled-components.html
 ---
 
-In most cases, we recommend using [controlled components](/docs/forms.html#controlled-components) to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+বেশিরভাগ ক্ষেত্রেই, ফর্ম প্রস্তুতের জন্য আমরা [controlled components] ব্যবহার করার পরামর্শ দিয়ে থাকি (/docs/forms.html#controlled-components)। একটা কন্ট্রোল্ড কম্পোনেন্টে, ফর্ম ডাটা হ্যান্ডেল করা হয় React কম্পোনেন্টের মাধ্যমে। এর বিকল্প হচ্ছে আনকন্ট্রোল্ড কম্পোনেন্ট, যেখানে DOM নিজে ফর্ম ডাটা হ্যান্ডেল করে।
 
-To write an uncontrolled component, instead of writing an event handler for every state update, you can [use a ref](/docs/refs-and-the-dom.html) to get form values from the DOM.
+একটি আনকন্ট্রোল্ড কম্পোনেন্ট লিখতে, প্রতি state আপডেটে ইভেন্ট হ্যান্ডেলার লেখার পরিবর্তে আপনি [ref](/docs/refs-and-the-dom.html) ব্যবহার করতে পারেন DOM থেকে ভ্যালু পাওয়ার জন্য।
 
-For example, this code accepts a single name in an uncontrolled component:
+উদাহরণ হিসেবে, এই কোডটি একটি আনকন্ট্রোল্ড কম্পোনেন্টে একটি name নেয়ঃ
 
 ```javascript{5,9,18}
 class NameForm extends React.Component {
@@ -37,15 +37,15 @@ class NameForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+[**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
 
-Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components. It can also be slightly less code if you want to be quick and dirty. Otherwise, you should usually use controlled components.
+যেহেতু একটি আনকন্ট্রোল্ড কম্পোনেন্ট DOM এর ভিতর আসল উৎসটি ধারণ করে তাই React এবং non-React কোড ইন্টিগ্র্যাট করার সময় প্রায়শই এটা সহজতর হয়। যদি আপনি দ্রুত এবং একটু অগোছালো কোড চান তাহলে একটু কম কোডেও কাজ হয়, তানাহলে কন্ট্রোল্ড কম্পোনেন্ট ব্যবহার করাই শ্রেয়।
 
-If it's still not clear which type of component you should use for a particular situation, you might find [this article on controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) to be helpful.
+যদি এটা এখনো পরিষ্কার না হয় যে কোন পরিস্থিতিতে কি ধরনের কম্পোনেন্ট ব্যাবহার করা উচিত তাহলে আপনার জন্য [controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) এর উপর আর্টিকেলটি সহায়ক হতে পারে।
 
-### Default Values {#default-values}
+### ডিফল্ট ভ্যালু {#default-values}
 
-In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`.
+React রেন্ডারিং লাইফসাইকেল এ, ফর্ম element এ `value` attribute, DOM এর ভ্যালুকে ওভাররাইড করে। একটি আনকন্ট্রোল্ড কম্পোনেন্ট এর দ্বারা আপনি React ইনিশিয়াল ভ্যালুটি নির্দিষ্ট করে রাখতে পারেন এবং পরবর্তী আপডেটগুলো আনকন্ট্রোল্ড রাখতে পারেন। এই ব্যাপারটি সামলানোর জন্য আপনি `value` এর পরিবর্তে একটি `defaultValue` নির্দিষ্ট করে দিতে পারেন।
 
 ```javascript{7}
 render() {
@@ -64,19 +64,19 @@ render() {
 }
 ```
 
-Likewise, `<input type="checkbox">` and `<input type="radio">` support `defaultChecked`, and `<select>` and `<textarea>` supports `defaultValue`.
+একইভাবে `<input type="checkbox">` এবং `<input type="radio">` সাপোর্ট করে `defaultChecked`, এবং `<select>` এবং `<textarea>` সাপোর্ট করে `defaultValue`।
 
-## The file input Tag {#the-file-input-tag}
+## ফাইল ইনপুট ট্যাগ {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTML এ, একটি `<input type="file">`, ব্যবহারকারীকে তাদের ডিভাইস স্টোরেজ থেকে এক বা একাধিক ফাইল কোন সার্ভারে আপলোড করতে বা জাভাস্ক্রিপ্ট দ্বারা [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) এর মাধ্যমে ম্যানিপুলেটেড করতে সুযোগ করে দেয়।
 
 ```html
 <input type="file" />
 ```
 
-In React, an `<input type="file" />` is always an uncontrolled component because its value can only be set by a user, and not programmatically.
+React এ, একটি `<input type="file" />` সবসময় আনকন্ট্রোল্ড কম্পোনেন্ট, কারণ প্রোগ্র্যাম্যাটিক্যালি নয় বরং একজন ইউজারই পারে এর ভ্যালু সেট করতে।
 
-You should use the File API to interact with the files. The following example shows how to create a [ref to the DOM node](/docs/refs-and-the-dom.html) to access file(s) in a submit handler:
+আপনি ফাইলসমূহ নিয়ে কাজ করতে চাইলে File API ব্যাবহার করতে পারেন। নিচের উদাহারণটি দেখাবে কিভাবে একটি [DOM নোডের ref](/docs/refs-and-the-dom.html) প্রস্তুত করতে হয় সাবমিট হ্যান্ডেলারের ফাইলসমূহ এক্সেস করার জন্য:
 
 `embed:uncontrolled-components/input-type-file.js`
 
