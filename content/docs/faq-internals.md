@@ -20,4 +20,4 @@ category: FAQ
 
 ### "React Fiber" কি? {#what-is-react-fiber}
 
-ফাইবার হলো React 16 এর নতুন সংযোজিত ইঞ্জিন। এর মূল লক্ষ্য হলো ভার্চুয়াল DOM এর ক্রমবর্ধমান render করা। [আরও পড়ুন](https://github.com/acdlite/react-fiber-architecture).
+ফাইবার হলো React 16 এর নতুন reconciliation ইঞ্জিন। এর মূল লক্ষ্য হলো ভার্চুয়াল DOM এর ক্রমবর্ধমান render করা। [আরও পড়ুন](https://github.com/acdlite/react-fiber-architecture).
