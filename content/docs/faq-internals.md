@@ -1,23 +1,23 @@
 ---
 id: faq-internals
-title: Virtual DOM and Internals
+title: ভার্চুয়াল DOM এবং এর অভ্যন্তরীণ
 permalink: docs/faq-internals.html
 layout: docs
 category: FAQ
 ---
 
-### What is the Virtual DOM? {#what-is-the-virtual-dom}
+### ভার্চুয়াল DOM কি? {#what-is-the-virtual-dom}
 
-The virtual DOM (VDOM) is a programming concept where an ideal, or "virtual", representation of a UI is kept in memory and synced with the "real" DOM by a library such as ReactDOM. This process is called [reconciliation](/docs/reconciliation.html).
+ভার্চুয়াল DOM হলো একটা প্রোগ্রামিং ধারণা যেখানে UI এর একটা আদর্শ অথবা "ভার্চুয়াল" প্রতিনিধি মেমোরিতে রাখা হয় এবং তা প্রকৃত DOM এর সাথে মিলিয়ে রাখা হয় ReactDOM এর মতো লাইব্রেরির মাধ্যমে। এই কাজটাকে বলে [reconciliation](/docs/reconciliation.html)।
 
-This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
+এই প্রক্রিয়া React এর ঘোষণাভিত্তিক API কে চালু করেঃ আপনি React কে বলবেন কোন state এ আপনি UI কে দেখতে চান আর React নিশ্চিত করবে যাতে DOM সেই state এ থাকে। এই প্রক্রিয়া attribute ম্যানিপুলেশান, ইভেন্ট হ্যান্ডেলিং এবং ম্যানুয়াল DOM আপডেটের মত কাজগুলোকে আলাদা করে দেয়, যা অন্যথায় অ্যাপ তৈরি করতে আপনার  নিজের করতে হত। 
 
-Since "virtual DOM" is more of a pattern than a specific technology, people sometimes say it to mean different things. In React world, the term "virtual DOM" is usually associated with [React elements](/docs/rendering-elements.html) since they are the objects representing the user interface. React, however, also uses internal objects called "fibers" to hold additional information about the component tree. They may also be considered a part of "virtual DOM" implementation in React.
+যেহেতু "ভার্চুয়াল DOM" কোনো নির্দিষ্ট টেকনোলজির চেয়ে অনেকটা প্যাটার্নের মতো, সেজন্য অনেকে বিভিন্ন জিনিস বুঝাতে এটি ব্যবহার করে।  React এর জগতে, "ভার্চুয়াল DOM" সাধারণত [React elements](/docs/rendering-elements.html) এর সাথে জড়িত যেহেতু এরা UI এর প্রতিনিধিত্বকারী অবজেক্ট। তবে React আবার "ফাইবার" নামক অভ্যন্তরীণ কিছু অবজেক্ট ব্যবহার করে কম্পোনেন্ট  ট্রি সম্পর্কে আরও কিছু তথ্য ধারণ করতে। এগুলোকেও React এ "ভার্চুয়াল DOM" তৈরির অংশ হিসেবে ধরা যেতে পারে।
 
-### Is the Shadow DOM the same as the Virtual DOM? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
+### Shadow DOM আর Virtual DOM কি একই? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
 
-No, they are different. The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. The virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
+না, এগুলো আলাদা। Shadow DOM একটা ব্রাউজার টেকনোলজি যা প্রাথমিকভাবে তৈরি করা হয়েছিল ওয়েব কম্পোনেন্টে ভারিয়াবল এবং CSS স্কোপ করার জন্য। ভার্চুয়াল DOM হল একটা ধারণা যা লাইব্রেরির মাধ্যমে জাভাস্ক্রিপ্টে তৈরি করা হয়েছে ব্রাউজার API এর উপরে।
 
-### What is "React Fiber"? {#what-is-react-fiber}
+### "React Fiber" কি? {#what-is-react-fiber}
 
-Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM. [Read more](https://github.com/acdlite/react-fiber-architecture).
+ফাইবার হলো React 16 এর নতুন reconciliation ইঞ্জিন। এর মূল লক্ষ্য হলো ভার্চুয়াল DOM এর ক্রমবর্ধমান render করা। [আরও পড়ুন](https://github.com/acdlite/react-fiber-architecture).
