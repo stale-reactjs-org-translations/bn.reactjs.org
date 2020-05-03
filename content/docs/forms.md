@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: ফর্মসমূহ
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -21,7 +21,7 @@ HTML ফর্ম উপাদানগুলো React এ অন্যান্
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+এই ফর্মটির আচরণ হলো ডিফল্ট HTML ফর্মের মতো , ব্যবহারকারীর ফর্মটি submit করলে এই ফর্মটি একটি নতুন পৃষ্ঠায় নিয়ে যায় । আপনি যদি এই আচরণ চান , React এ এটা কাজ করে । তবে বেশিরভাগ ক্ষেত্রে, একটি জাভাস্ক্রিপ্ট ফাংশন থাকা সুবিধাজনক যা ফর্মটি জমা দেওয়ার কাজ পরিচালনা করে এবং ব্যবহারকারীর ফর্মের তথ্য access করে থাকে। এটি নিয়ন্ত্রিত কম্পোনেন্টের মাধ্যমে অর্জন করা যায় ।
 
 ## Controlled Components {#controlled-components}
 
