@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Components and Props
+title: কম্পোনেন্ট এবং Props
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -16,13 +16,13 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+কম্পোনেন্ট আপনার UIকে স্বতন্ত্র, পুনরায় ব্যবহারযোগ্য অংশে ভাগ করে, যাতে করে আপনি প্রতিটি অংশ নিয়ে পৃথকভাবে চিন্তা করতে পারেন। এই পেইজটি কম্পোনেন্টের ধারণা নিয়ে একটি ভূমিকা দেয়। আপনি [ডিটেইল্ড কম্পোনেন্ট API রেফারেন্স এখানে](/docs/react-component.html) খুঁজে পাবেন।
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+মোটামুটিভাবে, কম্পোনেন্ট অনেকটা জাভাস্ক্রিপ্ট ফাংশনের মত। তারা আরবিটারি ইনপুট গ্রহণ করে (যাকে "props" বলা হয়) React elements রিটার্ন করে যা স্ক্রিনে কি দেখানো হবে তা বর্ণনা করে।
 
-## Function and Class Components {#function-and-class-components}
+## ফাংশন এবং ক্লাস কম্পোনেন্ট {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+ সহজ উপায়ে কম্পোনেন্টের সংজ্ঞা হচ্ছে একটি জাভাস্ক্রিপ্ট ফাংশন লিখাঃ
 
 ```js
 function Welcome(props) {
@@ -30,9 +30,9 @@ function Welcome(props) {
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+এই ফাংশনটি একটি ভ্যালিড React কম্পোনেন্ট কারণ এটি একটি সিঙ্গেল "props" (যাকে properties বোঝায়) অবজেক্ট ডাটাসহ আর্গুমেন্ট হিসেবে গ্রহণ করে এবং একটি React element রিটার্ন করে। আমরা এই ধরনের কম্পোনেন্টকে "ফাংশন কম্পোনেন্ট" বলে কারণ এগুলো আক্ষরিক অর্থেই জাভাস্ক্রিপ্ট ফাংশন।
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+আপনি একটি [ES6 ক্লাস](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ব্যবহার করেও একটি কম্পোনেন্টকে সংজ্ঞায়িত করতে পারেনঃ
 
 ```js
 class Welcome extends React.Component {
@@ -42,27 +42,27 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React's point of view.
+React এর দৃষ্টিকোণ থেকে উপরের কম্পোনেন্ট দুটি আসলে একই।
 
-Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+ফাংশন এবং ক্লাস উভয় কম্পোনেন্টের কিছু বাড়তি ফিচার রয়েছে যেগুলো আমরা [পরবর্তী অনুচ্ছেদে](/docs/state-and-lifecycle.html) আলোচনা করব।
 
-## Rendering a Component {#rendering-a-component}
+## কম্পোনেন্ট রেন্ডারিং {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+পূর্বে, আমরা সেইসব React elements নিয়ে কথা বলেছি যেগুলো কেবল DOM ট্যাগকে প্রকাশ করেঃ
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+যাহোক, elements ইউজার-ডিফাইন্ড কম্পোনেন্টকেও প্রকাশ করেঃ
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+React যখন একটি ইউজার-ডিফাইন্ড কম্পোনেন্ট সম্বলিত element দেখে, এটি সিঙ্গেল অবজেক্ট হিসেবে JSX attributes এবং childrenকে ওই কম্পোনেন্টে পাস করে। আমরা এই অবজেক্টকে "props" বলি।
 
-For example, this code renders "Hello, Sara" on the page:
+উদাহরণস্বরূপ, এই কোডটি "Hello, Sara" লিখাটি এই পেইজে রেন্ডার করেঃ
 
 ```js{1,5}
 function Welcome(props) {
@@ -76,26 +76,26 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+আসুন দেখি এই উদাহরণে কি ঘটলোঃ
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+১. আমরা `<Welcome name="Sara" />` element সহ `ReactDOM.render()`কে কল করি।
+২. React, props হিসেবে `{name: 'Sara'}` সহ `Welcome` কম্পোনেন্টকে কল করে।
+৩. আমাদের `Welcome` কম্পোনেন্টটি `<h1>Hello, Sara</h1>` elementকে ফলাফল হিসেবে রিটার্ন করে।
+৪. React DOM দক্ষতার সাথে `<h1>Hello, Sara</h1>` ম্যাচ করে DOM কে আপডেট করে।
 
->**Note:** Always start component names with a capital letter.
+>**বিঃদ্রঃ** সবসময় ক্যাপিটাল লেটার দিয়ে কম্পোনেন্টের নাম শুরু করবেন।
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>যেসব কম্পোনেন্ট ছোট হাতের অক্ষর দিয়ে শুরু হয়, React তাদের সাথে DOM tags এর মত আচরণ করে। উদাহরণস্বরূপ, `<div />` একটি HTML div tag প্রকাশ করে, কিন্তু `<Welcome />` একটি কম্পোনেন্ট প্রকাশ করে এবং এর জন্য `Welcome`এর স্কোপের মধ্য থাকা প্রয়োজন।
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>এই কনভেনশনের পিছনের কারণ জানতে, অনুগ্রহ করে [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) পড়ুন।
 
-## Composing Components {#composing-components}
+## কম্পোনেন্ট কোম্পোজিং {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+কম্পোনেন্ট তাদের আউটপুট হিসেবে অন্য কম্পোনেন্টদের রেফার করতে পারে। এটি আমাদের একই কম্পোনেন্টের এবস্ট্রাকশন যে কোন বিস্তারিত লেভেল পর্যন্ত ব্যবহার করতে সাহায্য করে। বাটন, ফর্ম, ডায়ালগ, স্ক্রিনঃ React অ্যাপে, এই সবগুলোই কম্পোনেন্ট হিসেবে প্রকাশিত হয়।
 
-For example, we can create an `App` component that renders `Welcome` many times:
+উদাহরণস্বরূপ, আমরা একটি `App` কম্পোনেন্ট তৈরি করতে পারি যেটি `Welcome`কে বহুবার রেন্ডার করতে পারেঃ
 
 ```js{8-10}
 function Welcome(props) {
@@ -118,15 +118,15 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+সাধারণত, নতুন React অ্যাপে একটি  সিঙ্গেল `App` কম্পোনেন্ট সবার উপরে থাকে। যাহোক, যদি আপনি বিদ্যমান অ্যাপ্লিকেশনে React সংযুক্ত করেন, আপনি নীচের অংশে ছোট্ট একটি কম্পোনেন্ট যেমন `Button` দিয়ে শুরু করুন এবং ধীরে ধীরে আপনার ভিউয়ের উপরে কাজ করুন।
 
-## Extracting Components {#extracting-components}
+## কম্পোনেন্ট পৃথকীকরণ {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+কম্পোনেন্টকে ছোট কম্পোনেন্টে পৃথক করতে ভয় পাবেন না।
 
-For example, consider this `Comment` component:
+উদাহরণস্বরূপ, এই `Comment` কম্পোনেন্টটি দেখুনঃ
 
 ```js
 function Comment(props) {
@@ -152,13 +152,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+এটি `author` (একটি অবজেক্ট), `text` (একটি string), এবং `date` (একটি date)কে props হিসেবে গ্রহণ করে, এবং সোশ্যাল মিডিয়া সাইটে একটি কমেন্ট বর্ণনা করে।
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+এই কম্পোনেন্টটি তার সব নেস্টি অংশের জন্য পরিবর্তন করা কৌশলী হতে পারে, এবং এর প্রতিটি অংশ পুনব্যবহার করাও কঠিন। আসুন একে কিছু কম্পোনেন্টে পৃথক করি।
 
-First, we will extract `Avatar`:
+প্রথমে, আমরা `Avatar`কে পৃথক করবঃ
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +171,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+`Avatar` জানার দরকার নেই যে এটি `Comment` এর ভিতরে রেন্ডার হচ্ছে। এইজন্য আমরা এর propকে আরও সাধারণ নাম দিয়েছিঃ `author` এর বদলে `user`।
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+কম্পোনেন্টটি কোন প্রসঙ্গে ব্যবহৃত হচ্ছে তার পরিবর্তে কম্পোনেন্টটির নিজস্ব দৃষ্টিকোণ থেকে তার props এর নামকরণ করতে আমরা পরামর্শ দেই।
 
-We can now simplify `Comment` a tiny bit:
+ আমরা এখন `Comment` এর একটি ছোট অংশ সহজতর করতে পারিঃ
 
 ```js{5}
 function Comment(props) {
@@ -198,7 +198,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+এরপর, আমরা `UserInfo` কম্পোনেন্টকে পৃথক করবো যেটি  ইউজারের নামের পরে `Avatar`কে রেন্ডার করেঃ
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+এটি আমাদের `Comment`কে সহজতর করতে এক ধাপ এগিয়ে নেয়ঃ
 
 ```js{4}
 function Comment(props) {
@@ -231,13 +231,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+কম্পোনেন্ট পৃথক করাকে শুরুতে খুব বিরক্তিকর কাজ মনে হবে, তবে পুনরায় ব্যবহারযোগ্য কম্পোনেন্টের একটি প্যালেট থাকা বড় অ্যাপ্লিকেশনগুলোর জন্য বেশ লাভজনক।  এটি বোঝার একটি সহজ উপায় হল, যদি আপনার UI এর কোন অংশ কয়েকবার ব্যবহৃত হয় (`Button`, `Panel`, `Avatar`), অথবা এটি নিজেই যথেষ্ট জটিল(`App`, `FeedStory`, `Comment`), তবে এটি পুনরায় ব্যবহারযোগ্য কম্পোনেন্ট হতে যোগ্য প্রার্থী।
 
-## Props are Read-Only {#props-are-read-only}
+## Propsরা কেবল রীড-অনলি {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+আপনি কোন কম্পোনেন্টকে [ফাংশন অথবা ক্লাস](#function-and-class-components) যেভাবেই সংজ্ঞায়িত করুন না কেন, এটি কখনোই নিজের propsকে পরিবর্তন করবে না। এই `sum` ফাংশনের কথাই ধরুনঃ
 
 ```js
 function sum(a, b) {
@@ -245,9 +245,9 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+এই ধরনের ফাংশনকে ["pure"](https://en.wikipedia.org/wiki/Pure_function) ফাংশন বলে  কারণ তারা তাদের ইনপুট পরিবর্তন করার চেষ্টা করে না এবং সর্বদা একই ইনপুটের জন্য একই ফলাফল রিটার্ন করে।
 
-In contrast, this function is impure because it changes its own input:
+বিপরীতে, এই ফাংশনটি অশুদ্ধ কারণ এটি নিজের ইনপুট পরিবর্তন করেঃ
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +255,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React বেশ ফ্লেক্সিবল তবে এর একটি কঠোর নিয়ম রয়েছেঃ
 
-**All React components must act like pure functions with respect to their props.**
+**সকল React কম্পোনেন্টকে তার props এর কথা মাথায় রেখে pure ফাংশনের মত হতে হবে।**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+অবশ্যই, অ্যাপ্লিকেশন UI ডাইনামিক এবং সময়ের সাথে সাথে পরিবর্তিত হয়। [পরবর্তী অনুচ্ছেদে](/docs/state-and-lifecycle.html), আমরা "state" এর একটি নতুন ধারণাকে তুলে ধরব। এই নিয়ম লঙ্ঘন না করে state সময়ের সাথে সাথে ইউজারের অ্যাকশন, নেটওয়ার্কের রেসপন্স এবং অন্য যে কোন কিছুর প্রতিক্রিয়া হিসেবে React কম্পোনেন্টকে তার আউটপুট পরিবর্তন করতে সাহায় করে।
