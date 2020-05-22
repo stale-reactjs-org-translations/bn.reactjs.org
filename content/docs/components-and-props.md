@@ -82,7 +82,7 @@ ReactDOM.render(
 
 ১. আমরা `<Welcome name="Sara" />` element সহ `ReactDOM.render()`কে কল করি।
 ২. React, props হিসেবে `{name: 'Sara'}` সহ `Welcome` কম্পোনেন্টকে কল করে।
-৩. আমাদের `Welcome` কম্পোনেন্টটি `<h1>Hello, Sara</h1>` elementকে ফলাফল হিসেবে রিটার্ন করে।
+৩. আমাদের `Welcome` কম্পোনেন্টটি `<h1>Hello, Sara</h1>` element কে ফলাফল হিসেবে রিটার্ন করে।
 ৪. React DOM দক্ষতার সাথে `<h1>Hello, Sara</h1>` ম্যাচ করে DOM কে আপডেট করে।
 
 >**বিঃদ্রঃ** সবসময় ক্যাপিটাল লেটার দিয়ে কম্পোনেন্টের নাম শুরু করবেন।
