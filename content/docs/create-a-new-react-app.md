@@ -73,6 +73,8 @@ Gatsby শিখুন [এর অফিশিয়াল গাইড](https://ww
 
 - **[Neutrino](https://neutrinojs.org/)** তার প্রিসেটগুলো ব্যবহার করে [webpack](https://webpack.js.org/) এর ক্ষমতাকে আরও তরান্বিত করে, এবং [React অ্যাপসমূহ](https://neutrinojs.org/packages/react/) ও [React কম্পোনেন্টসমূহ](https://neutrinojs.org/packages/react-components/) এর জন্য একটি প্রিসেট অন্তর্ভুক্ত করে।
 
+- **[Nx](https://nx.dev/react)** ফুল-স্ট্যাক monorepo ডেভেলপমেন্টের একটি টুলকিট, যাতে React, Next.js, [Express](https://expressjs.com/) সহ আরও অনেকের বিল্ট-ইন সাপোর্ট রয়েছে।
+
 - **[Parcel](https://parceljs.org/)** একটি দ্রুত, জিরো কনফিগার্ড ওয়েব অ্যাপ্লিকেশন বান্ডেলার যা [React এর সাথে কাজ করে](https://parceljs.org/recipes.html#react)।
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** একটি সার্ভার-রেন্ডারিং ফ্রেমওয়ার্ক যাতে কোনো কনফিগারেশন দরকার হয় না, কিন্তু Next.js এর চেয়ে বেশি সুবিধা দেয়।
