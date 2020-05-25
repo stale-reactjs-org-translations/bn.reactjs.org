@@ -13,7 +13,7 @@ Element হল React এপ্লিকেশনের সবথেকে ছো
 একটি element আপনি স্ক্রিনে কী দেখতে চান তা বর্ণনা করেঃ
 
 ```js
-const element = <h1>হ্যালো, ওয়ার্ল্ড</h1>;
+const element = <h1>Hello, World</h1>;
 ```
 
 React element গুলো সাধারণ অবজেক্ট, এবং তৈরি করতে সহজ, যা ব্রাউজারের DOM element এর মত নয়। React element এর সাথে সমকক্ষতা রেখে DOM আপডেট করে React DOM।
