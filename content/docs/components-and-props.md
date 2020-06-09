@@ -233,11 +233,7 @@ function Comment(props) {
 
 [CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components-continued)
 
-<<<<<<< HEAD
-কম্পোনেন্ট পৃথক করাকে শুরুতে খুব বিরক্তিকর কাজ মনে হবে, তবে পুনরায় ব্যবহারযোগ্য কম্পোনেন্টের একটি প্যালেট থাকা বড় অ্যাপ্লিকেশনগুলোর জন্য বেশ লাভজনক।  এটি বোঝার একটি সহজ উপায় হল, যদি আপনার UI এর কোন অংশ কয়েকবার ব্যবহৃত হয় (`Button`, `Panel`, `Avatar`), অথবা এটি নিজেই যথেষ্ট জটিল(`App`, `FeedStory`, `Comment`), তবে এটি পুনরায় ব্যবহারযোগ্য কম্পোনেন্ট হতে যোগ্য প্রার্থী।
-=======
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
->>>>>>> c9b990070fc35d31b56957263e1ea9fe2fe67b40
+কম্পোনেন্ট পৃথক করাকে শুরুতে খুব বিরক্তিকর কাজ মনে হবে, তবে পুনরায় ব্যবহারযোগ্য কম্পোনেন্টের একটি প্যালেট থাকা বড় অ্যাপ্লিকেশনগুলোর জন্য বেশ লাভজনক।  এটি বোঝার একটি সহজ উপায় হল, যদি আপনার UI এর কোন অংশ কয়েকবার ব্যবহৃত হয় (`Button`, `Panel`, `Avatar`), অথবা এটি নিজেই যথেষ্ট জটিল(`App`, `FeedStory`, `Comment`), তবে এটি আলাদা করে নিয়ে একটি ব্যবহারযোগ্য কম্পোনেন্ট হতে যোগ্য প্রার্থী।
 
 ## Propsরা কেবল রীড-অনলি {#props-are-read-only}
 
