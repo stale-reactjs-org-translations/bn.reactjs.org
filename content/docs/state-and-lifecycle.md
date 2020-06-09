@@ -418,15 +418,6 @@ this.setState(function(state, props) {
 একটি কম্পোনেন্ট তার state কে props হিসেবে এর child কম্পোনেন্টগুলোতে পাস করতে পারেঃ
 
 ```js
-<<<<<<< HEAD
-<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-```
-
-ইউজার-ডিফাইনড কম্পোনেন্টগুলোর ক্ষেত্রেও এটি কাজ করেঃ
-
-```js
-=======
->>>>>>> c9b990070fc35d31b56957263e1ea9fe2fe67b40
 <FormattedDate date={this.state.date} />
 ```
 
