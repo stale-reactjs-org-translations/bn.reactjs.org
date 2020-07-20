@@ -122,7 +122,7 @@ variable ডিক্লেয়ার করার মাধ্যমে `if` স
 
 ### Logical && Operator এর সাথে Inline If {#inline-if-with-logical--operator}
 
-আপনি curly braces এর ভিতরে [যে কোন এক্সপ্রেশন JSX এর মধ্যে বসাতে পারেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)। এই এক্সপ্রেশনগুলোর মধ্যে জাভাস্ক্রিপ্টের logical `&&` operator ও অন্তর্ভুক্ত। কন্ডিশানাল element অন্তর্ভুক্ত করার জন্য এটি বেশ সুবিধাজনক হতে পারে।
+আপনি curly braces এর ভিতরে [যে কোন এক্সপ্রেশন JSX এর মধ্যে বসাতে পারেন](/docs/introducing-jsx.html#embedding-expressions-in-jsx)। এই এক্সপ্রেশনগুলোর মধ্যে জাভাস্ক্রিপ্টের logical `&&` operator ও অন্তর্ভুক্ত। কন্ডিশানাল element অন্তর্ভুক্ত করার জন্য এটি বেশ সুবিধাজনক হতে পারেঃ
 
 ```js{6-10}
 function Mailbox(props) {
