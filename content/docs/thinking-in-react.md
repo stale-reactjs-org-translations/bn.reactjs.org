@@ -31,27 +31,27 @@ React এর অন্যতম চমৎকার দিক হচ্ছে, �
 ];
 ```
 
-## Step 1: Break The UI Into A Component Hierarchy {#step-1-break-the-ui-into-a-component-hierarchy}
+## ধাপ ১: UI কে Component Hierarchy তে ভেঙ্গে ফেলা  {#step-1-break-the-ui-into-a-component-hierarchy}
 
-The first thing you'll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you're working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!
+একদম শুরুতে যে কাজটা আপনার করা উচিৎ, তা হলো প্রতিটি Component (এবং Subcomponent) এর চারদিকে বক্স আঁকানো এবং প্রতিটার একটি নাম দেওয়া। আপনার ডিজাইনার হয়তো আগেই এটা করে ফেলেছে, তাই তার সাথে যোগাযোগ করুণ! তার ফটোশপ লেয়ারের নামই হয়ত হতে পারে আপনার React Component এর নাম!
 
-But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+কিন্ত আপনি কিভাবে বুঝবেন যে কো কাজটার নিজেরই একটা component থাকা দরকার? একটা নতুন ফাংশন কিংবা নতুন অবজেক্ট লাগবে কিনা যেভাবে চিন্তা করেন, ঠিক সেভাবেই চিন্তা করুণ। এমন পরিচিত একটা পদ্ধতি হলো [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), যার মতে, সাধারণত একটি Component এর শুধু একটি কাজই করা উচিৎ। বড় হয়ে গেলে একে ক্ষুদ্র ক্ষুদ্র subcomponent ভেঙ্গে ফেলা উচিৎ। 
 
-Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*. Separate your UI into components, where each component matches one piece of your data model.
+যেহেতু আপনি প্রায়শই একটি JSON ডেটা মডেল ব্যবহারকারীকে দেখাচ্ছেন, খেয়াল করে থাকবেন আপনার মডেল যদি সঠিকভাবে তৈরি হয়ে থাকে, আপনার UI (এবং আপনার component এর গঠনবিন্যাস) সুন্দরমত মিলে যাবে। এর কারণ হচ্ছে UI এবং ডেটা মডেল একই *ইনফরমেশন আর্কিটেকচার* অনুসরণ করে। আপনার UI কে component গুলোকে এমনভাবে আলাদা করুণ, যেন আপনার প্রতিটি component একটি ডেটার মডেলের সাথে মিলে যায়।
 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
-You'll see here that we have five components in our app. We've italicized the data each component represents.
+এখানে আপনি দেখবেন যে আমাদের অ্যাপ এ পাঁচটি component রয়েছে। আমরা প্রতিটা component এর উপস্থাপিত ডেটা ইটালিক করে দিয়েছি।
 
-  1. **`FilterableProductTable` (orange):** contains the entirety of the example
-  2. **`SearchBar` (blue):** receives all *user input*
-  3. **`ProductTable` (green):** displays and filters the *data collection* based on *user input*
-  4. **`ProductCategoryRow` (turquoise):** displays a heading for each *category*
-  5. **`ProductRow` (red):** displays a row for each *product*
+  1. **`FilterableProductTable` (কমলা):** সম্পূর্ণ উদাহরণটি এর ভিতরে আছে
+  2. **`SearchBar` (নীল):** সকল *ইউজার ইনপুট* গ্রহণ করে
+  3. **`ProductTable` (সবুজ):** *ইউজার ইনপুট*  এর ভিত্তিতে *ডেটা কালেকশন* দেখায় এবং ফিল্টার করে
+  4. **`ProductCategoryRow` (ফিরোজা):** প্রতিটি *ক্যাটাগরী* এর জন্য শিরোনাম দেখায়
+  5. **`ProductRow` (লাল):** প্রতিটি *পণ্যর* জন্য একটি সারি দেখায়
 
-If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (e.g., if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+যদি `ProductTable` এর দিকে লক্ষ্য করেন, আপনি দেখবেন প্রতিটি টেবিলের শিরোনাম (যাতে "Name" এবং "Price" লেবেল আছে) এর নিজের component নয়। এটা ব্যক্তিগত পছন্দ এবং যেকোনো দিকেই যুক্তি প্রদর্শন সম্ভব। উদাহরণস্বরূপ, আমারা এটাকে `ProductTable`এ রেখেছি কারণ এটি *ডেটা কালেকশন* দেখানোর অংশ, যা `ProductTable` এর কাজ। কিন্তু, যদি এই শিরোনামটি আরো জটিল আকার ধারণ করে (যেমন: সর্ট করার আরো কিছু উপায় করে), তখন শিরোনাম এর জন্য আলাদা `ProductTableHeader` component তৈরি যুক্তিসংগত হবে।
 
-Now that we've identified the components in our mock, let's arrange them into a hierarchy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+এখন যেহেতু আমরা মক এর জন্য component চিহ্নিত করে ফেলেছি, এদেরকে একটি hierarchy তে সাজিয়ে ফেলি। মকে যেই component অন্য component এর মধ্যে দেখা যায়, সেগুলো hierarchy তে চাইল্ড হিসেবে দেখানো উচিৎ:
 
   * `FilterableProductTable`
     * `SearchBar`
