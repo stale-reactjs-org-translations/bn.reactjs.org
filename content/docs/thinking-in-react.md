@@ -1,6 +1,6 @@
 ---
 id: thinking-in-react
-title: Thinking in React
+title: React এ চিন্তা করা
 permalink: docs/thinking-in-react.html
 redirect_from:
   - 'blog/2013/11/05/thinking-in-react.html'
@@ -8,9 +8,9 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+আমাদের মতে বড় এবং দ্রুত ওয়েব অ্যাপ বানানোর সবচেয়ে ভালো উপায় হচ্ছে React। আমাদের ফেইসবুক এবং ইনস্টাগ্রামে এটা খুব ভালো স্কেল হয়েছে।
 
-One of the many great parts of React is how it makes you think about apps as you build them. In this document, we'll walk you through the thought process of building a searchable product data table using React.
+React এর অন্যতম চমৎকার দিক হচ্ছে, এটা দিয়ে অ্যাপ তৈরির সময় যেভাবে ভাবা লাগে। এই লেখাটিতে, React এ একটি সার্চ উপোযোগী প্রোডাক্ট টেবিল বানিয়ে, এই চিন্তা করার বিষয়টি তুলে ধরবো।
 
 ## Start With A Mock {#start-with-a-mock}
 
