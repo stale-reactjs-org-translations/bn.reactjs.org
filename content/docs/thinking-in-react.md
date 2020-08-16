@@ -12,13 +12,13 @@ prev: composition-vs-inheritance.html
 
 React এর অন্যতম চমৎকার দিক হচ্ছে, এটা দিয়ে অ্যাপ তৈরির সময় যেভাবে ভাবা লাগে। এই লেখাটিতে, React এ একটি সার্চ উপোযোগী প্রোডাক্ট টেবিল বানিয়ে, এই চিন্তা করার বিষয়টি তুলে ধরবো।
 
-## Start With A Mock {#start-with-a-mock}
+## মক থেকে শুরু করি {#start-with-a-mock}
 
-Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:
+মনে করি, আমাদের কাছে ইতোমধ্যে একটি JSON API এবং ডিজানারের তৈরি একটি মক আছে। মকটি এরকম:
 
 ![Mockup](../images/blog/thinking-in-react-mock.png)
 
-Our JSON API returns some data that looks like this:
+আমাদের JSON API কিছু ডেটা পাঠায় যা এমন:
 
 ```
 [
