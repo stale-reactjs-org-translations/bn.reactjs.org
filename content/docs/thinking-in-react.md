@@ -78,31 +78,31 @@ React এর অন্যতম চমৎকার দিক হচ্ছে, �
 
 React এ দু'ধরণের "model" বা আদর্শ ডেটা আছেঃ Prop এবং State। এদের মধ্যকার পার্থক্য জানা খুবই দরকারি। যদি আপনি এই পার্থক্য সম্বন্ধে নিশ্চিত না হয়ে থাকেন, তাহলে [অফিশিয়াল রিয়েক্ট ডকে](/docs/state-and-lifecycle.html) এ চোখ বুলিয়ে দেখতে পারেন। আরো দেখতে পারেন [FAQ: What is the difference between state and props?](/docs/faq-state.html#what-is-the-difference-between-state-and-props)
 
-## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
+## ধাপ ৩: UI State এর সংক্ষিপ্ত (কিন্ত পুর্ণ) প্রদর্শন নির্ধারণ {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
-To make your UI interactive, you need to be able to trigger changes to your underlying data model. React achieves this with **state**.
+UI কে ইন্টারেক্টিভ করতে চাইলে ট্রিগারের মাধ্যমে ডেটা মডেলে পরিবর্তন আনা প্রয়োজন। এই জন্য React এ **State** দরকার হয়।
 
-To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, take the length of the TODO items array.
+অ্যাপ সঠিকভাবে তৈরি করতে সর্বপ্রথম অ্যাপে সর্বনিন্ম কয়টি Mutable State প্রয়োজন তা নির্ধারণ করা জরুরী। এখানে মনে রাখা দরকার [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) অর্থাৎ একই কাজ একাধিকবার না করা। অ্যাপ সবথেকে সংক্ষিপ্ত প্রদর্শন করতে প্রয়োজনীয় State নির্ধারণ করে বাকি সবকিছু প্রয়োজন মত হিসেব করা উচিৎ। উদাহরণ সরূপ, TODO list অ্যাপে TODO লিস্টে কি কি আছে তা গুণে বের করবার জন্য কোন স্টেট রাখবেন না, বরং লিস্টের সব কিছু একটি অ্যারেতে রাখুন, এতে লিস্টে কয়টি আইটেম আছে তা অ্যারের সাইজ থেকেই বের করা যাবে।
 
-Think of all of the pieces of data in our example application. We have:
+উদাহরণের অ্যাপের প্রতিটি ডেটা কথা আবার চিন্তা করুন। যা যা আছে:
 
-  * The original list of products
-  * The search text the user has entered
-  * The value of the checkbox
-  * The filtered list of products
+  * পণ্যের মূল তালিকা
+  * ব্যবহারকারী সার্চ করার জন্য যা লিখেছে
+  * চেকবক্সের ভ্যালু
+  * পণ্যের ফিল্টার করা তালিকা
 
-Let's go through each one and figure out which one is state. Ask three questions about each piece of data:
+এখন প্রতিটি ডেটা State হবে কিনা সেটা তিনটি প্রশ্ন করে আমরা জেনে নিতে পারি:
 
-  1. Is it passed in from a parent via props? If so, it probably isn't state.
-  2. Does it remain unchanged over time? If so, it probably isn't state.
-  3. Can you compute it based on any other state or props in your component? If so, it isn't state.
+  1. এটি কি Prop এর সাহায্যে প্যারেন্ট কম্পোনেন্ট থেকে চাইল্ড কম্পোনেন্ট এ পাঠানো যায়? যদি যায়, তাহলে সম্ভবত এটি State না।
+  2. এটি কি সময়ের সাথে অপরিবর্তিত থাকে? যদি থাকে, তাহলে এটি সম্ভবত State না।
+  3. একে কি অন্য কোন State বা Prop এর উপর নির্ভর করে হিসেব করা যায়? যদি যায়, তাহলে এটি সম্ভবত State নয়।
 
-The original list of products is passed in as props, so that's not state. The search text and the checkbox seem to be state since they change over time and can't be computed from anything. And finally, the filtered list of products isn't state because it can be computed by combining the original list of products with the search text and value of the checkbox.
+যেহেতু পণ্যের মূল তালিকা Prop হিসেবে আদান প্রদান করা হচ্ছে, তাই এটি স্টেট হতে পারে না। সার্চ টেক্সট এবং চেকবক্স সম্ভবত State, কারণ এগুলোকে অন্য কোন কম্পোনেন্ট এর উপর নির্ভর করে হিসেব করা সম্ভব না এবং সময়ের সাথে পরিবর্তিত হয়। অবশেষে পণ্যের ফিল্টার করা তালিকা স্টেট না, কারণ তা সার্চ টেক্স এবং চেকবক্সের মান থেকে হিসেব করা সম্ভব।
 
-So finally, our state is:
+পরিশেষে, আমাদের State গুলো হল:
 
-  * The search text the user has entered
-  * The value of the checkbox
+  * ইউজার সার্চ বক্সে যা লিখে
+  * চেকবক্সের মান
 
 ## Step 4: Identify Where Your State Should Live {#step-4-identify-where-your-state-should-live}
 
