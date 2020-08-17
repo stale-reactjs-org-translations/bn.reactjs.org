@@ -141,6 +141,6 @@ React এর এই তথ্য প্রবাহ সুস্পষ্ট হ
 
 আমরা কি করতে চাই তা এবার চিন্তা করি। আমরা চাচ্ছি যে, ব্যবহারকারী যখন ফর্ম এ কোন পরিবর্তন করবে, তখন স্টেট ও সেভাবে পরিবর্তিত হবে। যেহেতু  কম্পোনেন্ট এর শুধুমাত্র নিজেদের স্টেট পরিবর্তন করা উচিৎ, তাই যখন স্টেট পরিবর্তনের দরকার পরবে, `FilterableProductTable` কম্পোনেন্টটি `SearchBar` এ কলব্যাক পাঠাবে। আমরা ইনপুটগুলোতে `onChange` ইভেন্ট ব্যবহার করে এই বিষয়ে তথ্য পেতে পারি। `FilterableProductTable` এর কলব্যাক সমূহ `setState()` কে কল করবে, এবং অ্যাপটি আপডেট হয়ে যাবে।
 
-## And That's It {#and-thats-it}
+## ব্যাস! হয়ে গেল {#and-thats-it}
 
-Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's less difficult to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+আশা করা যায়, এই লেখাটিতে React এ কম্পোনেন্ট এবং অ্যাপ তৈরির সময় কিভাবে চিন্তা করবেন সে সম্পর্কে ধারণা পেয়েছেন। এটিতে যদিও একটু বেশি কোড লেখা লাগে, কিন্তু মনে রাখবেন যতবার কোড লেখা প্রয়োজন পরে তার থেকে অনেক বেশিবার কোড পড়ার প্রয়োজন পরে, এবং এটির মডুলার, সুস্পষ্ট কোড পড়তে অনেক সহজ হয়। আপনি যখন বড় লাইব্রেরী তৈরি শুরু করবেন, আপনার এই সুস্পষ্টতা এবং মডুলারিটি অত্যন্ত ভালো লাগবে, এবং কোড পুনঃব্যবহারের মাধ্যমে আপনার কোডের লাইন সংখ্যা কমতে শুরু করবে :)
