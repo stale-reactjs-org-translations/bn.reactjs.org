@@ -2,6 +2,8 @@
 id: react-without-jsx
 title: JSX ছাড়া React 
 permalink: docs/react-without-jsx.html
+prev: react-without-es6.html
+next: reconciliation.html
 ---
 
 React ব্যবহারের ক্ষেত্রে JSX আবশ্যক নয়। JSX ছাড়া React ব্যবহার করা বিশেষভাবে সুবিধাজনক যখন আপনি আপনার বিল্ড ইনভায়রনমেন্টে কম্পাইলেশন সেটআপ করতে চাননা।

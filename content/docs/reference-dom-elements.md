@@ -56,7 +56,12 @@ function MyComponent() {
 
 ### selected {#selected}
 
+<<<<<<< HEAD
 `selected` attributeটি `<option>` কম্পোনেন্টে সাপোর্ট করে। যেখানে এই কম্পোনেন্টটি selected হয়, সেখানেই আপনি এটি ব্যবহার করতে পারেন। এটি controlled কম্পোনেন্ট তৈরির জন্য খুব উপকারী।
+=======
+If you want to mark an `<option>` as selected, reference the value of that option in the `value` of its `<select>` instead.
+Check out ["The select Tag"](/docs/forms.html#the-select-tag) for detailed instructions.
+>>>>>>> 25cc703d1f23f1782ff96c5c7882a806f8741ec4
 
 ### style {#style}
 
@@ -120,7 +125,11 @@ JS থেকে DOM nodes এর properties ব্যবহার করার �
 
 ### value {#value}
 
+<<<<<<< HEAD
 `value` attributeটি `<input>` এবং `<textarea>` কম্পোনেন্টে সাপোর্ট করে।  আপনি এটি কম্পোনেন্টের value সেট করার জন্য ব্যবহার করতে পারেন। এটি controlled কম্পোনেন্ট তৈরির জন্য খুব উপকারী। `defaultValue` এটির uncontrolled রূপ, যেটি কম্পোনেন্টটি প্রথম মাউন্ট হওয়ার সময় সেট হয়।
+=======
+The `value` attribute is supported by `<input>`, `<select>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+>>>>>>> 25cc703d1f23f1782ff96c5c7882a806f8741ec4
 
 ## All Supported HTML Attributes {#all-supported-html-attributes}
 
