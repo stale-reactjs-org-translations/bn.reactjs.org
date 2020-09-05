@@ -54,11 +54,7 @@ function ActionLink() {
 }
 ```
 
-<<<<<<< HEAD
-এখানে, `e` হল একটি কৃত্রিম ইভেন্ট। React এই কৃত্রিম ইভেন্টগুলো [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) অনুযায়ী নির্ধারণ করে, যাতে আপনার ক্রস-ব্রাউজার কম্প্যাটিবিলিটি নিয়ে চিন্তা করতে না হয়। বিস্তারিত জানতে [`SyntheticEvent`](/docs/events.html) রেফারেন্স গাইডটি দেখুন।
-=======
-Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
->>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
+এখানে, `e` হল একটি কৃত্রিম ইভেন্ট। React এই কৃত্রিম ইভেন্টগুলো [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) অনুযায়ী নির্ধারণ করে, যাতে আপনার ক্রস-ব্রাউজার কম্প্যাটিবিলিটি নিয়ে চিন্তা করতে না হয়। React ইভেন্টগুলো, ন্যাটিভ ইভেন্টের মত কাজ একইভাবে করে না। বিস্তারিত জানতে [`SyntheticEvent`](/docs/events.html) রেফারেন্স গাইডটি দেখুন।
 
 React ব্যবহারের সময় সাধারণত আপনার `addEventListener` কল করে কোন DOM element তৈরি হওয়ার পরে listener সংযুক্ত করার প্রয়োজন হবেনা। এর পরিবর্তে, আপনি element রেন্ডারের সময় একটি listener সরবরাহ করতে পারেন।
 
