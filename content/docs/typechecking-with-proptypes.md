@@ -32,13 +32,9 @@ Greeting.propTypes = {
 };
 ```
 
-<<<<<<< HEAD
-`PropTypes` অনেকগুলো ভ্যালিডেটরস এক্সপোর্ট করে যা দিয়ে যাচাই করা হয় আপনার ডাটাগুলো ভ্যালিড কিনা। এই উদাহরণে আমরা `PropTypes.string` ব্যবহার করছি। যখন কোন ইনভ্যালিড ভ্যালু prop এর জন্য দেয়া হয় তখন জাভাস্ক্রিপ্ট কন্সোলে একটি সতর্কবার্তা প্রদর্শন করা হয়। পারফরম্যান্সের স্বার্থে শুধুমাত্র ডেভেলপমেন্ট মোডে `propTypes` চেক করা হয়।
-=======
-In this example, we are using a class component, but the same functionality could also be applied to function components, or components created by [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) or [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref).
+এই উদাহরণে আমরা একটি ক্লাস কম্পোনেন্ট ব্যবহার করছি কিন্তু একই পদ্ধতি আমরা ফাংশন কম্পোনেন্ট বা [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) অথবা [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref) দ্বারা তৈরিকৃত কম্পোনেন্টের ক্ষেত্রেও ব্যবহার করতে পারি।
 
-`PropTypes` exports a range of validators that can be used to make sure the data you receive is valid. In this example, we're using `PropTypes.string`. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. For performance reasons, `propTypes` is only checked in development mode.
->>>>>>> 25cc703d1f23f1782ff96c5c7882a806f8741ec4
+`PropTypes` অনেকগুলো ভ্যালিডেটরস এক্সপোর্ট করে যা দিয়ে যাচাই করা হয় আপনার ডাটাগুলো ভ্যালিড কিনা। এই উদাহরণে আমরা `PropTypes.string` ব্যবহার করছি। যখন কোন ইনভ্যালিড ভ্যালু prop এর জন্য দেয়া হয় তখন জাভাস্ক্রিপ্ট কন্সোলে একটি সতর্কবার্তা প্রদর্শন করা হয়। পারফরম্যান্সের স্বার্থে শুধুমাত্র ডেভেলপমেন্ট মোডে `propTypes` চেক করা হয়।
 
 ### PropTypes {#proptypes}
 
