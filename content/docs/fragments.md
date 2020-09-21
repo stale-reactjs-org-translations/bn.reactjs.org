@@ -2,8 +2,6 @@
 id: fragments
 title: Fragments
 permalink: docs/fragments.html
-prev: context.html
-next: portals.html
 ---
 
 React এর একটি সাধারণ প্যাটার্ন হল একটি কম্পোনেন্ট থেকে একাধিক elements রিটার্ন করা। Fragments আপনাকে children এর একটি তালিকাকে গ্রুপ করতে সাহায্য করে DOM-এ কোন অতিরিক্ত নোড সংযুক্ত না করেই।

@@ -2,8 +2,6 @@
 id: uncontrolled-components
 title: Uncontrolled Components
 permalink: docs/uncontrolled-components.html
-prev: refs-and-the-dom.html
-next: optimizing-performance.html
 ---
 
 বেশিরভাগ ক্ষেত্রেই, ফর্ম প্রস্তুতের জন্য আমরা [controlled components] ব্যবহার করার পরামর্শ দিয়ে থাকি (/docs/forms.html#controlled-components)। একটা কন্ট্রোল্ড কম্পোনেন্টে, ফর্ম ডাটা হ্যান্ডেল করা হয় React কম্পোনেন্টের মাধ্যমে। এর বিকল্প হচ্ছে আনকন্ট্রোল্ড কম্পোনেন্ট, যেখানে DOM নিজে ফর্ম ডাটা হ্যান্ডেল করে।

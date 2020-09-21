@@ -2,8 +2,6 @@
 id: portals
 title: পোর্টাল
 permalink: docs/portals.html
-prev: fragments.html
-next: error-boundaries.html
 ---
 
 পোর্টাল, একটি  DOM নোডে ফার্স্ট-ক্লাস উপায়ে children রেন্ডার করে থাকে যেটি আসলে parent কম্পোনেন্টের DOM hierarchy এর বাহিরে অবস্থান করে।
