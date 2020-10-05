@@ -30,7 +30,11 @@ Greeting.propTypes = {
 };
 ```
 
+<<<<<<< HEAD
 এই উদাহরণে আমরা একটি ক্লাস কম্পোনেন্ট ব্যবহার করছি কিন্তু একই পদ্ধতি আমরা ফাংশন কম্পোনেন্ট বা [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) অথবা [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref) দ্বারা তৈরিকৃত কম্পোনেন্টের ক্ষেত্রেও ব্যবহার করতে পারি।
+=======
+In this example, we are using a class component, but the same functionality could also be applied to function components, or components created by [`React.memo`](/docs/react-api.html#reactmemo) or [`React.forwardRef`](/docs/react-api.html#reactforwardref).
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 `PropTypes` অনেকগুলো ভ্যালিডেটরস এক্সপোর্ট করে যা দিয়ে যাচাই করা হয় আপনার ডাটাগুলো ভ্যালিড কিনা। এই উদাহরণে আমরা `PropTypes.string` ব্যবহার করছি। যখন কোন ইনভ্যালিড ভ্যালু prop এর জন্য দেয়া হয় তখন জাভাস্ক্রিপ্ট কন্সোলে একটি সতর্কবার্তা প্রদর্শন করা হয়। পারফরম্যান্সের স্বার্থে শুধুমাত্র ডেভেলপমেন্ট মোডে `propTypes` চেক করা হয়।
 
