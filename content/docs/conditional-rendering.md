@@ -152,10 +152,7 @@ ReactDOM.render(
 
 অতএব, যদি কন্ডিশানটি `true` হয়, তবে `&&` এরপরের কম্পোনেন্টি আউটপুট এ প্রদর্শিত হবে। যদি `false` হয় তবে React এটিকে অবজ্ঞা করবে এবং বাদ দিবে।
 
-<<<<<<< HEAD
-### Conditional Operator এর সাথে Inline If-Else {#inline-if-else-with-conditional-operator}
-=======
-Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+মনে রাখা দরকার যে, একটি falsy এক্সপ্রেশন রিটার্নের ক্ষেত্রে `&&` এর পরের element টি এড়িয়ে যাবে কিন্তু falsy এক্সপ্রেশনটি রিটার্ন করবে। নিচের উদাহরণে, render মেথডটি `<div>0</div>` রিটার্ন করবে।
 
 ```javascript{2,5}
 render() {
@@ -168,8 +165,7 @@ render() {
 }
 ```
 
-### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
->>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
+### Conditional Operator এর সাথে Inline If-Else {#inline-if-else-with-conditional-operator}
 
 element কে inline এ কন্ডিশানালি রেন্ডারিং করার অন্য একটি উপায় হচ্ছে জাভাস্ক্রিপ্টের conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ব্যবহার করা।
 
