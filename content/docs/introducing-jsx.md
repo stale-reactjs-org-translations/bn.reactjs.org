@@ -181,4 +181,8 @@ const element = {
 
 >**পরামর্শঃ**
 >
+<<<<<<< HEAD
 >আমরা আপনার পছন্দের এডিটরের সাথে ["Babel" ল্যংগুয়েজ ডেফিনিশন](https://babeljs.io/docs/editors) ব্যবহার করার পরামর্শ দিয়ে থাকি যাতে ES6 এবং JSX কোড উভয়েই সঠিকভাবে চিহ্নিত করা থাকে।
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
