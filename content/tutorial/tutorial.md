@@ -120,15 +120,14 @@ import './index.css';
 
 আপনি যদি কোথাও আটকে যান, তবে [কমিউনিটি সাপোর্ট রিসোর্সে](/community/support.html) যেতে পারেন। নির্দিষ্টভাবে বললে, [Reactiflux Chat](https://discord.gg/reactiflux) এর মাধ্যমে আপনি খুব দ্রুত সাহায্য পেতে পারেন। আপনি যদি তাদের থেকে কোন উত্তর না পান অথবা এরপরও আটকে থাকেন, তবে একটি ইস্যু খুলতে পারেন, সেক্ষেত্রে আমরাই আপনাকে সাহায্য করব।
 
-## Overview {#overview}
+## সারমর্ম {#overview}
+এখন সেট আপ শেষ, চলুন React সম্পর্কে ধারণা নেওয়া যাক।
 
-Now that you're set up, let's get an overview of React!
+### React কি? {#what-is-react}
 
-### What Is React? {#what-is-react}
+React হচ্ছে UI তৈরির জন্য বর্ণনামূলক, কার্যকর এবং ফ্লেক্সিবল জাভাস্ক্রিপ্ট লাইব্রেরি। এটি "কম্পোনেন্ট" নামক ক্ষুদ্র কোড খন্ড থেকে জটিল UI গঠন করতে সাহায্য করে।
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
-
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React এর বিভিন্ন ধরণের কম্পোনেন্ট আছে, কিন্তু আমরা `React.Component` subclass দিয়ে শুরু করব:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -149,11 +148,11 @@ class ShoppingList extends React.Component {
 // Example usage: <ShoppingList name="Mark" />
 ```
 
-We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
+শীঘ্রই আমরা XML-এরমতো মজার ট্যাগগুলো দেখতে যাচ্ছি। কম্পোনেন্ট ব্যাবহার করে আমরা React কে বলি আমরা স্ক্রিনে কি দেখতে চাই। যখন আমাদের ডাটা পরিবর্তিত হয়, React সুদক্ষভাবে কম্পোনেন্টগুলো আপডেট করে এবং পুনরায় রেন্ডার করে।
 
-Here, ShoppingList is a **React component class**, or **React component type**. A component takes in parameters, called `props` (short for "properties"), and returns a hierarchy of views to display via the `render` method.
+এখানে ShoppingList হল একটি **React component class** অথবা **React component type**। একটি কম্পোনেন্ট একাধিক প্যারামিটার ("properties" এর সংক্ষেপ) নেয় যেগুলোকে `props` বলে, এবং `render` মেথডের সাহায্যে প্রদর্শনযোগ্য ভিউগুলোর ক্রমোচ্চ শ্রেণীবিন্যাস ফেরত পাঠায়।
 
-The `render` method returns a *description* of what you want to see on the screen. React takes the description and displays the result. In particular, `render` returns a **React element**, which is a lightweight description of what to render. Most React developers use a special syntax called "JSX" which makes these structures easier to write. The `<div />` syntax is transformed at build time to `React.createElement('div')`. The example above is equivalent to:
+আমরা স্ক্রিনে যা দেখতে চাই `render` মেথডটি তার একটি *বর্ণনা* রিটার্ন করে। React বর্ণনাটি গ্রহণ করে তার ফলাফল প্রদর্শন করে। বিশেষভাবে, `render` একটি **React element**, অর্থাৎ যা দেখাতে হবে তার একটি হালকা বর্ণনা রিটার্ন করে। প্রায় সকল React ডেভেলপাররা "JSX" নামক একটি বিশেষ সিনট্যাক্স ব্যাবহার করে থাকে, যেটি এসব স্ট্রাকচারগুলো নির্মাণ করা সহজ করে তোলে। `<div />` সিনট্যাক্সকে বিল্ড টাইমে `React.createElement('div')` এ রূপান্তরিত করা হয়। যেমন উপড়ের উদাহরণের সমতুল্য হলঃ
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -162,13 +161,13 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[বিশদ ভার্সনটি দেখুন।](babel://tutorial-expanded-version)
 
-If you're curious, `createElement()` is described in more detail in the [API reference](/docs/react-api.html#createelement), but we won't be using it in this tutorial. Instead, we will keep using JSX.
+আগ্রহী থাকলে [API রেফারেন্সে](/docs/react-api.html#createelement) `createElement()` এর সবিস্তারে বর্ণনা পাবেন, কিন্তু আমরা এই টিউটোরিয়ালে তা প্রয়োগ করছিনা। এর পরিবর্তে আমরা JSX ব্যাবহার করব।
 
-JSX comes with the full power of JavaScript. You can put *any* JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+JSX জাভাস্ক্রিপ্টের পরিপূর্ণ ব্যবহার করতে পারে। আপনি JSX এর মধ্যে কার্লি ব্রেসের ভেতরে *যেকোনো* জাভাস্ক্রিপ্ট এক্সপ্রেশন স্থাপন করতে পারবেন। প্রতিটি React element একটি জাভাস্ক্রিপ্ট object যেটা একটি ভ্যারিয়েবলে রাখতে পারবেন অথবা প্রোগ্রামে বিভিন্ন জায়গায় পাস করতে পারবেন।
 
-The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
+উপড়ের `ShoppingList` কম্পোনেন্টটি শুধুমাত্র বিল্ট-ইন DOM কম্পোনেন্ট যেমন `<div />` এবং `<li />` রেন্ডার করে। কিন্তু আপনি কাস্টম React কম্পোনেন্টও কম্পোজ এবং রেন্ডার করতে পারবেন। যেমন, এখন আমরা `<ShoppingList />` লিখে পুরো শপিং লিস্টকে উল্লেখ করতে পারি। প্রতিটি React কম্পোনেন্ট এনক্যাপসুলেটেড থাকে এবং স্বাধীনভাবে পরিচালিত হতে পারে; যা জটিল UI তৈরিতে সাহায্য করে।
 
 ### Inspecting the Starter Code {#inspecting-the-starter-code}
 

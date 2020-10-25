@@ -31,12 +31,12 @@
           href: /tutorial/tutorial.html#help-im-stuck
           forceInternal: true
     - id: overview
-      title: Overview
+      title: সারমর্ম
       href: /tutorial/tutorial.html#overview
       forceInternal: true
       subitems:
         - id: what-is-react
-          title: What Is React?
+          title: React কি?
           href: /tutorial/tutorial.html#what-is-react
           forceInternal: true
         - id: inspecting-the-starter-code
