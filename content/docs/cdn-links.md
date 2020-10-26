@@ -20,11 +20,7 @@ React এবং ReactDOM উভয়ই CDN-এ পাওয়া যায়।
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-<<<<<<< HEAD
-`react` এবং `react-dom` এর নির্দিষ্ট ভার্সন পেতে, `16` এর স্থানে অন্য ভার্সন সংখ্যা প্রতিস্থাপন করুন।
-=======
-To load a specific version of `react` and `react-dom`, replace `17` with the version number.
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+`react` এবং `react-dom` এর নির্দিষ্ট ভার্সন পেতে, `17` এর স্থানে অন্য ভার্সন সংখ্যা প্রতিস্থাপন করুন।
 
 ### `crossorigin` অ্যাট্রিবিউটটি কেন? {#why-the-crossorigin-attribute}
 
