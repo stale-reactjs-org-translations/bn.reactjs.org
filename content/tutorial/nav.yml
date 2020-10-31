@@ -40,7 +40,7 @@
           href: /tutorial/tutorial.html#what-is-react
           forceInternal: true
         - id: inspecting-the-starter-code
-          title: Inspecting the Starter Code
+          title: প্রাথমিক কোড নিরীক্ষণ
           href: /tutorial/tutorial.html#inspecting-the-starter-code
           forceInternal: true
         - id: passing-data-through-props
