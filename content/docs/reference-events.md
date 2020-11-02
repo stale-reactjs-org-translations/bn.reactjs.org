@@ -34,36 +34,11 @@ string type
 
 > বিঃদ্রঃ
 >
-> v0.14 হতে, কোন ইভেন্ট হ্যান্ডেলার থেকে `false` রিটার্ন করলে সেটি আর ইভেন্ট প্রপাগেশান বন্ধ করবে না। বরং , `e.stopPropagation()` অথবা `e.preventDefault()`কে ম্যনুয়্যালি ট্রিগার করাই সঠিক বলে বিবেচিত।
-
-### ইভেন্ট পুলিং {#event-pooling}
-
-`SyntheticEvent` পুল করা হয়েছে। এর মানে হল `SyntheticEvent` অবজেক্টটি পুনরায় ব্যবহার করা হয় এবং ইভেন্ট কলব্যাক শুরু হওয়ার পরে তার সকল প্রপার্টিসকে নালিফাইড করা হয়।
-পারফরমেন্সের কথা চিন্তা করে এটি করা হয়।
-যেমন, asynchronous উপায়ে আপনি কোন ইভেন্ট ব্যবহার করতে পারবেন না।
-
-```javascript
-function onClick(event) {
-  console.log(event); // => nullified object.
-  console.log(event.type); // => "click"
-  const eventType = event.type; // => "click"
-
-  setTimeout(function() {
-    console.log(event.type); // => null
-    console.log(eventType); // => "click"
-  }, 0);
-
-  // Won't work. this.state.clickEvent will only contain null values.
-  this.setState({clickEvent: event});
-
-  // You can still export event properties.
-  this.setState({eventType: event.type});
-}
-```
+> v17 হতে, `e.persist()` কিছুই করে না কেননা `SyntheticEvent` দিয়ে আর [পুল](/docs/legacy-event-pooling.html) করা হয় না।
 
 > বিঃদ্রঃ
 >
-> আপনি যদি asynchronous উপায়ে কোন ইভেন্ট ব্যবহার করতে চান, তবে আপনার `event.persist()` কে কল করা উচিত। যেটি পুল থেকে সিনথেটিক ইভেন্টকে মুছে দিবে এবং ইভেন্টের রেফারেন্সগুলি ইউজারের কোডে বজায় রাখার অনুমতি দিবে।
+> v0.14 হতে, কোন ইভেন্ট হ্যান্ডেলার হতে `false` রিটার্ন করলে আগের মত ইভেন্ট প্রপাগেশান বন্ধ হবে না। বরং, `e.stopPropagation()` অথবা `e.preventDefault()`  ম্যানুয়ালি ট্রিগার করাই উপযুক্ত।
 
 ## সাপোর্টেড ইভেন্টস {#supported-events}
 
@@ -167,9 +142,83 @@ onFocus onBlur
 
 প্রপার্টিসঃ
 
-```javascript
+```js
 DOMEventTarget relatedTarget
 ```
+
+#### onFocus
+
+The `onFocus` event is called when the element (or some element inside of it) receives focus. For example, it's called when the user clicks on a text input.
+
+```javascript
+function Example() {
+  return (
+    <input
+      onFocus={(e) => {
+        console.log('Focused on input');
+      }}
+      placeholder="onFocus is triggered when you click this input."
+    />
+  )
+}
+```
+
+#### onBlur
+
+The `onBlur` event handler is called when focus has left the element (or left some element inside of it). For example, it's called when the user clicks outside of a focused text input.
+
+```javascript
+function Example() {
+  return (
+    <input
+      onBlur={(e) => {
+        console.log('Triggered because this input lost focus');
+      }}
+      placeholder="onBlur is triggered when you click this input and then you click outside of it."
+    />
+  )
+}
+```
+
+#### Detecting Focus Entering and Leaving
+
+You can use the `currentTarget` and `relatedTarget` to differentiate if the focusing or blurring events originated from _outside_ of the parent element. Here is a demo you can copy and paste that shows how to detect focusing a child, focusing the element itself, and focus entering or leaving the whole subtree.
+
+```javascript
+function Example() {
+  return (
+    <div
+      tabIndex={1}
+      onFocus={(e) => {
+        if (e.currentTarget === e.target) {
+          console.log('focused self');
+        } else {
+          console.log('focused child', e.target);
+        }
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          // Not triggered when swapping focus between children
+          console.log('focus entered self');
+        }
+      }}
+      onBlur={(e) => {
+        if (e.currentTarget === e.target) {
+          console.log('unfocused self');
+        } else {
+          console.log('unfocused child', e.target);
+        }
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          // Not triggered when swapping focus between children
+          console.log('focus left self');
+        }
+      }}
+    >
+      <input id="1" />
+      <input id="2" />
+    </div>
+  );
+}
+```
+
 
 * * *
 
@@ -304,6 +353,10 @@ DOMTouchList touches
 ```
 onScroll
 ```
+
+>বিঃদ্রঃ
+>
+> React 17 হতে শুরু করলে,  React এ `onScroll` ইভেন্টটি **আর bubble করে না**।  এটি ব্রাউজারের আচরণের সাথে মেলে এবং কোন নেস্টেড scrollable element এর তার দূরবর্তী parent পর্যন্ত ইভেন্ট ফায়ার করা বিষয়ক বিভ্রান্তি দুর করে।
 
 প্রপার্টিসঃ
 

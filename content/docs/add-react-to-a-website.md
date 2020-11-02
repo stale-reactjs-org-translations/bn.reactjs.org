@@ -54,8 +54,8 @@ React এমন ভাবে ডিজাইন করা হয়েছে যা
 
   <!-- Load React. -->
   <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Load our React component. -->
   <script src="like_button.js"></script>
@@ -115,8 +115,8 @@ ReactDOM.render(e(LikeButton), domContainer);
 আপনি যদি ইতিমধ্যে অ্যাপ্লিকেশন স্ক্রিপ্ট সমূহ মিনিফাই করে থাকেন **তাহলে আপনার সাইট এখন প্রোডাকশনের জন্য প্রস্তুত**। আপনি যদি নির্দিষ্ট করতে চান যে আপনার প্রোডাকশন HTML পেজ React লোড করবে `production.min.js` এই স্ক্রিপ্ট, তাহলে নিচের মত স্ক্রিপ্ট অ্যাড করুন।
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 আপনার যদি স্ক্রিপ্ট সমুহকে মিনিফাই করার বাবস্থা না থাকে তবে [এই পথ অনুসরন করতে পারেন](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)।
@@ -184,7 +184,7 @@ return (
 একটি ফোল্ডার তৈরি করুন `src` নামে এবং নিচের কমান্ড গুলো টার্মিনালে রান করুনঃ
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 > পরামর্শ
