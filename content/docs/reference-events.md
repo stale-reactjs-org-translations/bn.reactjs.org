@@ -34,41 +34,11 @@ string type
 
 > বিঃদ্রঃ
 >
-<<<<<<< HEAD
-> v0.14 হতে, কোন ইভেন্ট হ্যান্ডেলার থেকে `false` রিটার্ন করলে সেটি আর ইভেন্ট প্রপাগেশান বন্ধ করবে না। বরং , `e.stopPropagation()` অথবা `e.preventDefault()`কে ম্যনুয়্যালি ট্রিগার করাই সঠিক বলে বিবেচিত।
-
-### ইভেন্ট পুলিং {#event-pooling}
-
-`SyntheticEvent` পুল করা হয়েছে। এর মানে হল `SyntheticEvent` অবজেক্টটি পুনরায় ব্যবহার করা হয় এবং ইভেন্ট কলব্যাক শুরু হওয়ার পরে তার সকল প্রপার্টিসকে নালিফাইড করা হয়।
-পারফরমেন্সের কথা চিন্তা করে এটি করা হয়।
-যেমন, asynchronous উপায়ে আপনি কোন ইভেন্ট ব্যবহার করতে পারবেন না।
-
-```javascript
-function onClick(event) {
-  console.log(event); // => nullified object.
-  console.log(event.type); // => "click"
-  const eventType = event.type; // => "click"
-
-  setTimeout(function() {
-    console.log(event.type); // => null
-    console.log(eventType); // => "click"
-  }, 0);
-
-  // Won't work. this.state.clickEvent will only contain null values.
-  this.setState({clickEvent: event});
-
-  // You can still export event properties.
-  this.setState({eventType: event.type});
-}
-```
-=======
-> As of v17, `e.persist()` doesn't do anything because the `SyntheticEvent` is no longer [pooled](/docs/legacy-event-pooling.html).
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+> v17 হতে, `e.persist()` কিছুই করে না কেননা `SyntheticEvent` দিয়ে আর [পুল](/docs/legacy-event-pooling.html) করা হয় না।
 
 > বিঃদ্রঃ
 >
-<<<<<<< HEAD
-> আপনি যদি asynchronous উপায়ে কোন ইভেন্ট ব্যবহার করতে চান, তবে আপনার `event.persist()` কে কল করা উচিত। যেটি পুল থেকে সিনথেটিক ইভেন্টকে মুছে দিবে এবং ইভেন্টের রেফারেন্সগুলি ইউজারের কোডে বজায় রাখার অনুমতি দিবে।
+> v0.14 হতে, কোন ইভেন্ট হ্যান্ডেলার হতে `false` রিটার্ন করলে আগের মত ইভেন্ট প্রপাগেশান বন্ধ হবে না। বরং, `e.stopPropagation()` অথবা `e.preventDefault()`  ম্যানুয়ালি ট্রিগার করাই উপযুক্ত।
 
 ## সাপোর্টেড ইভেন্টস {#supported-events}
 
@@ -93,33 +63,6 @@ React ইভেন্টগুলোকে নরমালাইজড করে
 - [এনিমেশন ইভেন্টস](#animation-events)
 - [ট্রানজিশান ইভেন্টস](#transition-events)
 - [অন্যান্য ইভেন্টস](#other-events)
-=======
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
-
-## Supported Events {#supported-events}
-
-React normalizes events so that they have consistent properties across different browsers.
-
-The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; for example, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
-
-- [Clipboard Events](#clipboard-events)
-- [Composition Events](#composition-events)
-- [Keyboard Events](#keyboard-events)
-- [Focus Events](#focus-events)
-- [Form Events](#form-events)
-- [Generic Events](#generic-events)
-- [Mouse Events](#mouse-events)
-- [Pointer Events](#pointer-events)
-- [Selection Events](#selection-events)
-- [Touch Events](#touch-events)
-- [UI Events](#ui-events)
-- [Wheel Events](#wheel-events)
-- [Media Events](#media-events)
-- [Image Events](#image-events)
-- [Animation Events](#animation-events)
-- [Transition Events](#transition-events)
-- [Other Events](#other-events)
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 * * *
 
@@ -411,15 +354,11 @@ DOMTouchList touches
 onScroll
 ```
 
-<<<<<<< HEAD
-প্রপার্টিসঃ
-=======
->Note
+>বিঃদ্রঃ
 >
->Starting with React 17, the `onScroll` event **does not bubble** in React. This matches the browser behavior and prevents the confusion when a nested scrollable element fires events on a distant parent.
+> React 17 হতে শুরু করলে,  React এ `onScroll` ইভেন্টটি **আর bubble করে না**।  এটি ব্রাউজারের আচরণের সাথে মেলে এবং কোন নেস্টেড scrollable element এর তার দূরবর্তী parent পর্যন্ত ইভেন্ট ফায়ার করা বিষয়ক বিভ্রান্তি দুর করে।
 
-Properties:
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+প্রপার্টিসঃ
 
 ```javascript
 number detail
