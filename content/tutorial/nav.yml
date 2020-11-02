@@ -31,16 +31,16 @@
           href: /tutorial/tutorial.html#help-im-stuck
           forceInternal: true
     - id: overview
-      title: সারমর্ম
+      title: Overview
       href: /tutorial/tutorial.html#overview
       forceInternal: true
       subitems:
         - id: what-is-react
-          title: React কি?
+          title: What Is React?
           href: /tutorial/tutorial.html#what-is-react
           forceInternal: true
         - id: inspecting-the-starter-code
-          title: প্রাথমিক কোড নিরীক্ষণ
+          title: Inspecting the Starter Code
           href: /tutorial/tutorial.html#inspecting-the-starter-code
           forceInternal: true
         - id: passing-data-through-props
