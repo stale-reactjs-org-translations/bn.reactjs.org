@@ -120,15 +120,16 @@ import './index.css';
 
 আপনি যদি কোথাও আটকে যান, তবে [কমিউনিটি সাপোর্ট রিসোর্সে](/community/support.html) যেতে পারেন। নির্দিষ্টভাবে বললে, [Reactiflux Chat](https://discord.gg/reactiflux) এর মাধ্যমে আপনি খুব দ্রুত সাহায্য পেতে পারেন। আপনি যদি তাদের থেকে কোন উত্তর না পান অথবা এরপরও আটকে থাকেন, তবে একটি ইস্যু খুলতে পারেন, সেক্ষেত্রে আমরাই আপনাকে সাহায্য করব।
 
-## Overview {#overview}
+## সংক্ষিপ্ত বিবরণ {#overview}
 
-Now that you're set up, let's get an overview of React!
+এখন আপনি সেট আপ করা, আসুন React এর একটি সংক্ষিপ্ত বিবরণ দেখি!
 
-### What Is React? {#what-is-react}
+### React কি? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+User ইন্টারফেস নির্মাণের জন্য React একটি ঘোষণামূলক, দক্ষ, এবং নমনীয় JavaScript লাইব্রেরি. এটি আপনাকে জটিল UIs রচনা করতে দেয় 
+ছোট এবং বিচ্ছিন্ন টুকরা code থেকে যাকে "components" বলে.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React এর ছোট এবং বিচ্ছিন্ন টুকরা components আছে, কিন্তু আমরা `React.Component` subclasses দিয় শুরু করবো:
 
 ```javascript
 class ShoppingList extends React.Component {
