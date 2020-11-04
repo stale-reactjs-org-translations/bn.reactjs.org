@@ -61,7 +61,7 @@ redirect_from:
 
 ### সেটআপ উপায় ২ঃ লোকাল ডেভেলপমেন্ট ইনভায়রনমেন্ট {#setup-option-2-local-development-environment}
 
-এই সম্পূর্ণরূপে অপশনাল এবং এই টিউটোরিয়াল জন্য প্রয়োজন হয় না!
+এটি সম্পূর্ণরূপে অপশনাল এবং এই টিউটোরিয়ালের জন্য প্রয়োজন হয় না!
 
 <br>
 
@@ -120,15 +120,15 @@ import './index.css';
 
 আপনি যদি কোথাও আটকে যান, তবে [কমিউনিটি সাপোর্ট রিসোর্সে](/community/support.html) যেতে পারেন। নির্দিষ্টভাবে বললে, [Reactiflux Chat](https://discord.gg/reactiflux) এর মাধ্যমে আপনি খুব দ্রুত সাহায্য পেতে পারেন। আপনি যদি তাদের থেকে কোন উত্তর না পান অথবা এরপরও আটকে থাকেন, তবে একটি ইস্যু খুলতে পারেন, সেক্ষেত্রে আমরাই আপনাকে সাহায্য করব।
 
-## Overview {#overview}
+## সারমর্ম {#overview}
 
-Now that you're set up, let's get an overview of React!
+এখন সেট আপ শেষ, চলুন React সম্পর্কে ধারণা নেওয়া যাক।
 
-### What Is React? {#what-is-react}
+### React কি? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+React হচ্ছে UI তৈরির জন্য বর্ণনামূলক, কার্যকর এবং সহজে পরিবর্তনীয় জাভাস্ক্রিপ্ট লাইব্রেরি। এটি "কম্পোনেন্ট" নামের ছোট অংশের কোড থেকে জটিল UI গঠন করতে সাহায্য করে।
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React এর বিভিন্ন ধরণের কম্পোনেন্ট আছে, কিন্তু আমরা `React.Component` subclass দিয়ে শুরু করব:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -149,11 +149,11 @@ class ShoppingList extends React.Component {
 // Example usage: <ShoppingList name="Mark" />
 ```
 
-We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
+শীঘ্রই আমরা XML-এরমতো মজার ট্যাগগুলো দেখতে যাচ্ছি। কম্পোনেন্ট ব্যবহার করে আমরা React কে বলি আমরা স্ক্রিনে কি দেখতে চাই। যখন আমাদের ডাটা পরিবর্তিত হয়, React সুদক্ষভাবে কম্পোনেন্টগুলো আপডেট করে এবং পুনরায় রেন্ডার করে।
 
-Here, ShoppingList is a **React component class**, or **React component type**. A component takes in parameters, called `props` (short for "properties"), and returns a hierarchy of views to display via the `render` method.
+এখানে ShoppingList হল একটি **React component class** অথবা **React component type**। একটি কম্পোনেন্ট একাধিক প্যারামিটার নেয় যেগুলোকে `props` ("properties" এর সংক্ষেপ) বলে, এবং `render` মেথডের সাহায্যে প্রদর্শনযোগ্য ভিউগুলোর ক্রমোচ্চ শ্রেণীবিন্যাস রিটার্ন করে।
 
-The `render` method returns a *description* of what you want to see on the screen. React takes the description and displays the result. In particular, `render` returns a **React element**, which is a lightweight description of what to render. Most React developers use a special syntax called "JSX" which makes these structures easier to write. The `<div />` syntax is transformed at build time to `React.createElement('div')`. The example above is equivalent to:
+আমরা স্ক্রিনে যা দেখতে চাই `render` মেথডটি তার একটি *বর্ণনা* রিটার্ন করে। React বর্ণনাটি গ্রহণ করে তার ফলাফল প্রদর্শন করে। বিশেষভাবে, `render` একটি **React element**, অর্থাৎ যা দেখাতে হবে তার একটি হালকা বর্ণনা রিটার্ন করে। প্রায় সকল React ডেভেলপাররা "JSX" নামক একটি বিশেষ সিনট্যাক্স ব্যবহার করে থাকে, যেটি এসব স্ট্রাকচারগুলো নির্মাণ করা সহজ করে তোলে। `<div />` সিনট্যাক্সকে বিল্ড টাইমে `React.createElement('div')` এ রূপান্তরিত করা হয়। যেমন উপড়ের উদাহরণের মতন হলঃ
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -162,27 +162,27 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[বিশদ ভার্সনটি দেখুন।](babel://tutorial-expanded-version)
 
-If you're curious, `createElement()` is described in more detail in the [API reference](/docs/react-api.html#createelement), but we won't be using it in this tutorial. Instead, we will keep using JSX.
+আগ্রহী থাকলে [API রেফারেন্সে](/docs/react-api.html#createelement) `createElement()` এর সবিস্তারে বর্ণনা পাবেন, কিন্তু আমরা এই টিউটোরিয়ালে তা প্রয়োগ করছিনা। এর পরিবর্তে আমরা JSX ব্যবহার করব।
 
-JSX comes with the full power of JavaScript. You can put *any* JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+JSX জাভাস্ক্রিপ্টের পরিপূর্ণ ব্যবহার করতে পারে। আপনি JSX এর মধ্যে কার্লি ব্রেসের ভেতরে *যেকোনো* জাভাস্ক্রিপ্ট এক্সপ্রেশন স্থাপন করতে পারবেন। প্রতিটি React element একটি জাভাস্ক্রিপ্ট object যেটা একটি ভ্যারিয়েবলে রাখতে পারবেন অথবা প্রোগ্রামে বিভিন্ন জায়গায় পাস করতে পারবেন।
 
-The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
+উপরের `ShoppingList` কম্পোনেন্টটি শুধুমাত্র বিল্ট-ইন DOM কম্পোনেন্ট যেমন `<div />` এবং `<li />` রেন্ডার করে। কিন্তু আপনি কাস্টম React কম্পোনেন্টও কম্পোজ এবং রেন্ডার করতে পারবেন। যেমন, এখন আমরা `<ShoppingList />` লিখে পুরো শপিং লিস্টকে উল্লেখ করতে পারি। প্রতিটি React কম্পোনেন্ট এনক্যাপসুলেটেড থাকে এবং স্বাধীনভাবে পরিচালিত হতে পারে; যা জটিল UI তৈরিতে সাহায্য করে।
 
-### Inspecting the Starter Code {#inspecting-the-starter-code}
+### প্রাথমিক কোড নিরীক্ষণ {#inspecting-the-starter-code}
 
-If you're going to work on the tutorial **in your browser,** open this code in a new tab: **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. If you're going to work on the tutorial **locally,** instead open `src/index.js` in your project folder (you have already touched this file during the [setup](#setup-option-2-local-development-environment)).
+আপনার **ব্রাউজার থেকে** এই টিউটোরিয়ালে কাজ করতে চাইলে, **[স্টার্টার কোডটি](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** একটি নতুন ট্যাবে খুলুন। নয়তো **লোকালি** টিউটোরিয়ালে কাজ করতে চাইলে প্রোজেক্ট ফোল্ডারের `src/index.js` খুলুন (আপনি ইতোমধ্যে [সেটআপের](#setup-option-2-local-development-environment)) সময় এই ফাইলটির সাথে পরিচিত হয়েছেন।
 
-This Starter Code is the base of what we're building. We've provided the CSS styling so that you only need to focus on learning React and programming the tic-tac-toe game.
+আমরা যা বানাতে যাচ্ছি তার মূল হল স্টার্টার কোডটি। আমরা CSS স্টাইলিং সরবরাহ করেছি যেন আপনি React শেখা এবং tic-tac-toe গেম প্রোগ্রাম করায় সম্পূর্ণ মনোযোগ দিতে পারেন।
 
-By inspecting the code, you'll notice that we have three React components:
+কোড নিরীক্ষণ করে, আপনি লক্ষ্য করবেন যে এখানে তিনটি React কম্পোনেন্ট আছেঃ
 
 * Square
 * Board
 * Game
 
-The Square component renders a single `<button>` and the Board renders 9 squares. The Game component renders a board with placeholder values which we'll modify later. There are currently no interactive components.
+Square কম্পোনেন্টটি একটিমাত্র `<button>` রেন্ডার করে এবং Board রেন্ডার করে ৯টি স্কোয়ার। Game কম্পোনেন্টটি placeholder ভ্যালুসহ একটি বোর্ড রেন্ডার করে যেটা আমরা পরে পরিবর্তন করব। বর্তমানে এখানে কোনো ইন্টার‌্যাক্টিভ কম্পোনেন্ট নেই।
 
 ### Passing Data Through Props {#passing-data-through-props}
 
