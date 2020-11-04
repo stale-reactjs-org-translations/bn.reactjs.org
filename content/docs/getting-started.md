@@ -36,11 +36,7 @@ React ডিজাইন করা হয়েছে ধীরে ধীরে গ
 
 ### অনলাইন প্লেগ্রাউন্ড {#online-playgrounds}
 
-<<<<<<< HEAD
-আপনি যদি React এ হাত পাকাতে চান, তাহলে কোন অনলাইন কোড প্লেগ্রাউন্ড ব্যবহার করতে পারেন। [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) অথবা [Stackblitz](https://stackblitz.com/fork/react) এ একটি `হ্যালো ওয়ার্ল্ড` টেমপ্লেট লিখে চেষ্টা করুন।
-=======
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Stackblitz](https://stackblitz.com/fork/react).
->>>>>>> 30baecf59de28a8cd3c91a2cd878e3822f864061
+আপনি যদি React এ হাত পাকাতে চান, তাহলে কোন অনলাইন কোড প্লেগ্রাউন্ড ব্যবহার করতে পারেন। [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) অথবা [Stackblitz](https://stackblitz.com/fork/react) এ একটি `হ্যালো ওয়ার্ল্ড` টেমপ্লেট লিখে চেষ্টা করুন।
 
 আপনি যদি আপনার নিজস্ব টেক্সট এডিটর ব্যবহার করতে স্বাচ্ছন্দ্যবোধ করেন তাহলে এখান থেকে [এই HTML ফাইলটি ডাউনলোড করুন](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), এটি পরিবর্তন বা পরিবর্ধন করতে পারেন। এবার লোকাল ফাইল সিস্টেম থেকে আপনার পছন্দের ব্রাউজারে ফাইলটি খুলুন। এই প্রক্রিয়ায় রান টাইম কিছুটা ধীর গতির হয় তাই আমরা শুধুমাত্র সাধারণ ডেমোতেই এটি ব্যবহার করার পরামর্শ দিয়ে থাকি।
 
