@@ -61,7 +61,7 @@ MyComponent.propTypes = {
 
   // A React element type (ie. MyComponent).
   optionalElementType: PropTypes.elementType,
-  
+
   // You can also declare that a prop is an instance of a class. This uses
   // JS's instanceof operator.
   optionalMessage: PropTypes.instanceOf(Message),
@@ -88,7 +88,7 @@ MyComponent.propTypes = {
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
-  
+
   // An object with warnings on extra properties
   optionalObjectWithStrictShape: PropTypes.exact({
     name: PropTypes.string,
@@ -99,7 +99,7 @@ MyComponent.propTypes = {
   // is shown if the prop isn't provided.
   requiredFunc: PropTypes.func.isRequired,
 
-  // A value of any data type
+  // A required value of any data type
   requiredAny: PropTypes.any.isRequired,
 
   // You can also specify a custom validator. It should return an Error
@@ -195,4 +195,52 @@ class Greeting extends React.Component {
 }
 ```
 
+<<<<<<< HEAD
 `defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
+=======
+The `defaultProps` will be used to ensure that `this.props.name` will have a value if it was not specified by the parent component. The `propTypes` typechecking happens after `defaultProps` are resolved, so typechecking will also apply to the `defaultProps`.
+
+### Function Components
+
+If you are using function components in your regular development, you may want to make some small changes to allow PropTypes to be proper applied.
+
+Let's say you have a component like this:
+
+```javascript
+export default function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+```
+
+To add PropTypes, you may want to declare the component in a separate function before exporting, like this:
+
+```javascript
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+export default HelloWorldComponent
+```
+
+Then, you can add PropTypes directly to the `HelloWorldComponent`:
+
+```javascript
+import PropTypes from 'prop-types'
+
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+HelloWorldComponent.propTypes = {
+  name: PropTypes.string
+}
+
+export default HelloWorldComponent
+```
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53

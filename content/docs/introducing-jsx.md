@@ -92,7 +92,7 @@ function getGreeting(user) {
 আপনি চাইলে quotes ব্যবহার করে string লিটেরালকে এট্রিবিউট হিসেবে উল্লেখ করতে পারেনঃ
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <div tabIndex={0}></div>;
 ```
 
 আপনি চাইলে কার্লি ব্রেস ব্যবহার করে একটি এট্রিবিউটে জাভাস্ক্রিপ্ট এক্সপ্রেশন এমবেড করতে পারেনঃ 
