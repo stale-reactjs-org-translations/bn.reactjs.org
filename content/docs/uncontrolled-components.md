@@ -45,11 +45,7 @@ class NameForm extends React.Component {
 
 ### ডিফল্ট ভ্যালু {#default-values}
 
-<<<<<<< HEAD
-React রেন্ডারিং লাইফসাইকেল এ, ফর্ম element এ `value` attribute, DOM এর ভ্যালুকে ওভাররাইড করে। একটি আনকন্ট্রোল্ড কম্পোনেন্ট এর দ্বারা আপনি React ইনিশিয়াল ভ্যালুটি নির্দিষ্ট করে রাখতে পারেন এবং পরবর্তী আপডেটগুলো আনকন্ট্রোল্ড রাখতে পারেন। এই ব্যাপারটি সামলানোর জন্য আপনি `value` এর পরিবর্তে একটি `defaultValue` নির্দিষ্ট করে দিতে পারেন।
-=======
-In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`. Changing the value of `defaultValue` attribute after a component has mounted will not cause any update of the value in the DOM.
->>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
+React রেন্ডারিং লাইফসাইকেল এ, ফর্ম element এ `value` attribute, DOM এর ভ্যালুকে ওভাররাইড করে। একটি আনকন্ট্রোল্ড কম্পোনেন্ট এর দ্বারা আপনি React ইনিশিয়াল ভ্যালুটি নির্দিষ্ট করে রাখতে পারেন এবং পরবর্তী আপডেটগুলো আনকন্ট্রোল্ড রাখতে পারেন। এই ব্যাপারটি সামলানোর জন্য আপনি `value` এর পরিবর্তে একটি `defaultValue` নির্দিষ্ট করে দিতে পারেন। কোন কম্পোনেন্ট মাউন্ট হওয়ার পর `defaultValue` attribute এর মান পরিবর্তন হলে, তা DOM এর ভ্যালুর কোন আপডেট করবে না।
 
 ```javascript{7}
 render() {
