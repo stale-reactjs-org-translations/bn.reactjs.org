@@ -129,7 +129,7 @@ React 16 থেকে, যে কোন স্ট্যান্ডার্ড 
 React সব সময়ই একটি JavaScript-centric API তার DOM কে প্রদান করে। যখন থেকে React কম্পোনেন্ট প্রায়শই কাস্টম এবং DOM-related props নেয়, তখন থেকেই React DOM APIs এর মত `camelCase` কনভেনশান ব্যবহার করেঃ
 
 ```js
-<div tabIndex="-1" />      // Just like node.tabIndex DOM API
+<div tabIndex={-1} />      // Just like node.tabIndex DOM API
 <div className="Button" /> // Just like node.className DOM API
 <input readOnly={true} />  // Just like node.readOnly DOM API
 ```

@@ -61,7 +61,7 @@ MyComponent.propTypes = {
 
   // A React element type (ie. MyComponent).
   optionalElementType: PropTypes.elementType,
-  
+
   // You can also declare that a prop is an instance of a class. This uses
   // JS's instanceof operator.
   optionalMessage: PropTypes.instanceOf(Message),
@@ -88,7 +88,7 @@ MyComponent.propTypes = {
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
-  
+
   // An object with warnings on extra properties
   optionalObjectWithStrictShape: PropTypes.exact({
     name: PropTypes.string,
@@ -99,7 +99,7 @@ MyComponent.propTypes = {
   // is shown if the prop isn't provided.
   requiredFunc: PropTypes.func.isRequired,
 
-  // A value of any data type
+  // A required value of any data type
   requiredAny: PropTypes.any.isRequired,
 
   // You can also specify a custom validator. It should return an Error
@@ -195,4 +195,48 @@ class Greeting extends React.Component {
 }
 ```
 
-`defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
+`defaultProps` ব্যবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়।
+
+### ফাংশন কম্পোনেন্ট
+
+যদি আপনি আপনার নিয়মিত ডেভেলপমেন্টে ফাংশন কম্পোনেন্ট ব্যবহার করেন, PropTypes যথাযথ প্রয়োগ করার জন্য আপনি কিছু ছোট পরিবর্তন করতে চাইতে পারেন।
+
+চলুন মনে করি আপনার এমন একটি কম্পোনেন্ট আছেঃ
+
+```javascript
+export default function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+```
+
+PropTypes ব্যবহার করার জন্য, এক্সপোর্ট করার পূর্বে, আপনি হয়ত কম্পোনেন্টকে একটি পৃথক ফাংশন হিসেবে ডিক্লেয়ার করতে পারেন, উদাহরণস্বরূপঃ
+
+```javascript
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+export default HelloWorldComponent
+```
+
+এরপর, আপনি সরাসরি PropTypes কে `HelloWorldComponent` কম্পোনেন্টে যুক্ত করতে পারেনঃ
+
+```javascript
+import PropTypes from 'prop-types'
+
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+HelloWorldComponent.propTypes = {
+  name: PropTypes.string
+}
+
+export default HelloWorldComponent
+```
