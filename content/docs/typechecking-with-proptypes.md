@@ -195,16 +195,13 @@ class Greeting extends React.Component {
 }
 ```
 
-<<<<<<< HEAD
-`defaultProps` ব্যাবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়। 
-=======
-The `defaultProps` will be used to ensure that `this.props.name` will have a value if it was not specified by the parent component. The `propTypes` typechecking happens after `defaultProps` are resolved, so typechecking will also apply to the `defaultProps`.
+`defaultProps` ব্যবহার করা হবে যাতে এটি নিশ্চিত করা যায় যে `this.props.name` এর জন্য একটি ভ্যালু স্পেসিফাইড থাকে যদি এর parent কম্পোনেন্ট দ্বারা একটি ভ্যালু আগে থেকে স্পেসিফাইড না থাকে। `defaultProps` রিসল্ভের পরপরই `propTypes` টাইপচেকিং করা হয়, এতে করে `defaultProps` এর উপরও টাইপচেকিং এপ্লাই করা যায়।
 
-### Function Components
+### ফাংশন কম্পোনেন্ট
 
-If you are using function components in your regular development, you may want to make some small changes to allow PropTypes to be proper applied.
+যদি আপনি আপনার নিয়মিত ডেভেলপমেন্টে ফাংশন কম্পোনেন্ট ব্যবহার করেন, PropTypes যথাযথ প্রয়োগ করার জন্য আপনি কিছু ছোট পরিবর্তন করতে চাইতে পারেন।
 
-Let's say you have a component like this:
+চলুন মনে করি আপনার এমন একটি কম্পোনেন্ট আছেঃ
 
 ```javascript
 export default function HelloWorldComponent({ name }) {
@@ -214,7 +211,7 @@ export default function HelloWorldComponent({ name }) {
 }
 ```
 
-To add PropTypes, you may want to declare the component in a separate function before exporting, like this:
+PropTypes ব্যবহার করার জন্য, এক্সপোর্ট করার পূর্বে, আপনি হয়ত কম্পোনেন্টকে একটি পৃথক ফাংশন হিসেবে ডিক্লেয়ার করতে পারেন, উদাহরণস্বরূপঃ
 
 ```javascript
 function HelloWorldComponent({ name }) {
@@ -226,7 +223,7 @@ function HelloWorldComponent({ name }) {
 export default HelloWorldComponent
 ```
 
-Then, you can add PropTypes directly to the `HelloWorldComponent`:
+এরপর, আপনি সরাসরি PropTypes কে `HelloWorldComponent` কম্পোনেন্টে যুক্ত করতে পারেনঃ
 
 ```javascript
 import PropTypes from 'prop-types'
@@ -243,4 +240,3 @@ HelloWorldComponent.propTypes = {
 
 export default HelloWorldComponent
 ```
->>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
