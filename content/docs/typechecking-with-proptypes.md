@@ -199,7 +199,11 @@ class Greeting extends React.Component {
 
 ### ফাংশন কম্পোনেন্ট {#function-components}
 
+<<<<<<< HEAD
 যদি আপনি আপনার নিয়মিত ডেভেলপমেন্টে ফাংশন কম্পোনেন্ট ব্যবহার করেন, PropTypes যথাযথ প্রয়োগ করার জন্য আপনি কিছু ছোট পরিবর্তন করতে চাইতে পারেন।
+=======
+If you are using function components in your regular development, you may want to make some small changes to allow PropTypes to be properly applied.
+>>>>>>> 888d9eae7a33ec1a48c18f28e82c26d048d885be
 
 চলুন মনে করি আপনার এমন একটি কম্পোনেন্ট আছেঃ
 
