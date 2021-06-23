@@ -1,42 +1,42 @@
 ---
 id: hooks-intro
-title: Introducing Hooks
+title: হুক- উপস্থাপনা
 permalink: docs/hooks-intro.html
 next: hooks-overview.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*হুক* React 16.8 এ একটি নতুন সংযোজন। এটি ক্লাস না লিখেই স্টেট এবং Reactর আরও অন্যান্য ফিচার ব্যবহার করতে দেয়।
 
 ```js{4,5}
 import React, { useState } from 'react';
 
 function Example() {
-  // Declare a new state variable, which we'll call "count"
+  // "count" নামের একটি নতুন স্টেট ভ্যারিয়েবল বানানো হলো
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>{count} বার ক্লিক হয়েছে</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        ক্লিক করো
       </button>
     </div>
   );
 }
 ```
 
-This new function `useState` is the first "Hook" we'll learn about, but this example is just a teaser. Don't worry if it doesn't make sense yet!
+`useState` নামক এই নতুন ফাংশন দিয়েই আমরা প্রথম "হুক" বুঝবার চেষ্টা করব, তবে এই উদাহরণ অতি সাধারণ। পরবর্তী আলোচনার মাধ্যমে আমরা এটা আরো ভালো করে বুঝবো!
 
-**You can start learning Hooks [on the next page](/docs/hooks-overview.html).** On this page, we'll continue by explaining why we're adding Hooks to React and how they can help you write great applications.
+**হুক সন্বন্ধে বিশদে জানতে দেখুন [পরবর্তী পর্যায়](/docs/hooks-overview.html)।** এখানে আমরা হুকের প্রয়োজনীয়তা এবং তা ব্যবহার করে কিভাবে অ্যপ লেখা সম্ভব তাই নিয়ে আলোচনা করব।
 
->Note
+>মনে রাখবেন
 >
->React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
->React Native supports Hooks since [the 0.59 release of React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+>React 16.8.0 এ হুক প্রথম বার উপলব্ধ. অতএব ব্যবহার করবার সময় অন্যান্য প্যাকেজগুলি, যেমন React DOM আপডেট করতে হবে।
+>React Native এ ইতিমধ্যেই হুক উপলব্ধ [React Native এর 0.59 ভার্সন থেকে](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059)।
 
 ## Video Introduction {#video-introduction}
 
-At React Conf 2018, Sophie Alpert and Dan Abramov introduced Hooks, followed by Ryan Florence demonstrating how to refactor an application to use them. Watch the video here:
+2018 সালে React কনফারেন্সে, সোফি অ্যালবর্ট এবং ড্যান আব্রামভ হুকের উপস্থাপনা করেন। পরবর্তীতে রায়ান ফ্লোরেন্স তার অ্যাপের মাধ্যমে হাতেকলমে হুকের প্রয়োগ করে দেখান. বিশদে দেখুন:
 
 <br>
 
