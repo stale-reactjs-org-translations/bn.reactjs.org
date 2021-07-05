@@ -9,7 +9,7 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <h3>TODO</h3>
+        <h3>TODO</h3>
         <TodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="new-todo">
