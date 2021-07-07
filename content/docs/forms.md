@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: ফর্মসমূহ
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -9,7 +9,7 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML ফর্ম উপাদানগুলো React এ অন্যান্য DOM উপাদানের থেকে আলাদাভাবে কাজ করে , কারণ ফর্ম উপাদানের স্বাভাবিকভাবে কিছু অভ্যন্তরীণ state আছে। উদাহরণস্বরূপ, এই HTML ফর্মটি একটি নাম গ্রহণ করে :
 
 ```html
 <form>
@@ -21,11 +21,11 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+এই ফর্মটির আচরণ হলো ডিফল্ট HTML ফর্মের মতো , ব্যবহারকারীর ফর্মটি submit করলে এই ফর্মটি একটি নতুন পৃষ্ঠায় নিয়ে যায় । আপনি যদি এই আচরণ চান , React এ এটা কাজ করে । তবে বেশিরভাগ ক্ষেত্রে, একটি জাভাস্ক্রিপ্ট ফাংশন থাকা সুবিধাজনক যা ফর্মটি জমা দেওয়ার কাজ পরিচালনা করে এবং ব্যবহারকারীর ফর্মের তথ্য access করে থাকে। এটি নিয়ন্ত্রিত কম্পোনেন্টের মাধ্যমে অর্জন করা যায় ।
 
-## Controlled Components {#controlled-components}
+## নিয়ন্ত্রিত কম্পোনেন্টসমূহ {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+HTML এ, `<input>`, `<textarea>` এবং  `<select>` ফর্ম উপাদানগুলি সাধারণত তাদের নিজস্ব state বজায় রাখে এবং ব্যবহারকারীর ইনপুটের ভিত্তিতে এটি আপডেট করে। React এ , পরিবর্তনযোগ্য state সাধারণত কম্পোনেন্টের state এ রাখা হয় এবং [`setState()`](/docs/react-component.html#setstate) দ্বারা আপডেট করা হয় ।
 
 We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
 
