@@ -58,15 +58,15 @@ function Example() {
 
 ## অনুপ্রেরণা {#motivation}
 
-হুকগুলি React-র এমন কিছু আপাতদৃষ্টিতে অসংলগ্ন সমস্যার সমাধান করে, যা গত পাঁচ বছর ধরে অসংখ্য Components লিখে এবং তা মেইন্টেন করতে গিয়ে আমরা অনুভব করে থাকি. আপনি React-র নবিশ হন, অথবা প্রতিদিন এটি ব্যবহার করে থাকেন, বা এমনকি অন্য কোনও অনুরূপ Component-মডেলযুক্ত একটি ভিন্ন লাইব্রেরি পছন্দ করুন না কেন, আপনি এই সমস্যার কিছুটি চিনতে পারেন।
+হুকগুলি React-র এমন কিছু আপাতদৃষ্টিতে অসংলগ্ন সমস্যার সমাধান করে, যা গত পাঁচ বছর ধরে অসংখ্য Component লিখে এবং তা মেইন্টেন করতে গিয়ে আমরা অনুভব করে থাকি. আপনি React-র নবিশ হন, অথবা প্রতিদিন এটি ব্যবহার করে থাকেন, বা এমনকি অন্য কোনও অনুরূপ Component-মডেলযুক্ত একটি ভিন্ন লাইব্রেরি পছন্দ করুন না কেন, আপনি এই সমস্যার কিছুটি চিনতে পারেন।
 
-### It's hard to reuse stateful logic between components {#its-hard-to-reuse-stateful-logic-between-components}
+### বিভিন্ন Components-র মধ্যে stateful logic-র পুনর্ব্যবহার {#its-hard-to-reuse-stateful-logic-between-components}
 
-React doesn't offer a way to "attach" reusable behavior to a component (for example, connecting it to a store). If you've worked with React for a while, you may be familiar with patterns like [render props](/docs/render-props.html) and [higher-order components](/docs/higher-order-components.html) that try to solve this. But these patterns require you to restructure your components when you use them, which can be cumbersome and make code harder to follow. If you look at a typical React application in React DevTools, you will likely find a "wrapper hell" of components surrounded by layers of providers, consumers, higher-order components, render props, and other abstractions. While we could [filter them out in DevTools](https://github.com/facebook/react-devtools/pull/503), this points to a deeper underlying problem: React needs a better primitive for sharing stateful logic.
+React নিজে থেকে কোনও Component-র সাথে পুনরায় ব্যবহারযোগ্য লজিক "সংযুক্ত" করার কোনও উপায় সরবরাহ করে না (উদাহরণস্বরূপ, কোনও স্টোরের সাথে সংযুক্ত করে)। আপনি যদি কিছুকাল যাবত React নিয়ে কাজ করে থাকেন তবে আপনি এই ধরণের নিয়মগুলির সাথে পরিচিত হতে পারেন, [render props](/docs/render-props.html) এবং [higher-order components](/docs/higher-order-components.html), যা কিনা এই যাবতীয় সমস্যা সমাধানের চেষ্টা করে। তবে এই নিদর্শনগুলির জন্য আপনার Componentগুলি ব্যবহার করার সময় আপনাকে পুনর্লিখন করা দরকার যা পরিশ্রমসাধ্য হতে পারে এবং কোড অনুসরণ করা আরও শক্ত করে তোলে। আপনি যদি React DevTool-এ একটি সাধারণ React অ্যাপ্লিকেশন দেখেন, তবে আপনি সম্ভবত providers, consumers, higher-order components, render props এবং অন্যান্য abstraction-র স্তর দ্বারা বেষ্টিত Component-গুলির একটি "wrapper hell"-কে দেখতে পাবেন। যদিও আমরা এগুলি [DevTools-এ ফিল্টার](https://github.com/facebook/react-devtools/pull/503) করতেই পারি, এটি একটি গভীর অন্তর্নিহিত সমস্যার দিকে ইঙ্গিত করে: stateful logic পুনরায় ব্যবহারযোগ্য করে তোলার জন্য React-এ প্র​য়োজন উত্তমতর প্রক্রিয়া।
 
-With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. **Hooks allow you to reuse stateful logic without changing your component hierarchy.** This makes it easy to share Hooks among many components or with the community.
+এমত অবস্থায় হুক ব্যবহার করে, **আমরা component থেকে stateful logic আলাদা করে নিজের মত টেস্ট ও পুনর্ব্যবহার করতে পারি এবং এর জন্য component-র শ্রেণিবিন্যাসের কোনো পরিবর্তনের প্র​য়োজন হয়না।** এর ফলে বিভিন্ন component-র মধ্যে হুক ব্যবহার করা অতি সহজ এবং অন্যান্যদের সাথে শেয়ার করা সম্ভব।
 
-We'll discuss this more in [Building Your Own Hooks](/docs/hooks-custom.html).
+[পরবর্তীতে](/docs/hooks-custom.html) আমরা এই নিয়ে আরও অধিক আলোচনা করব.
 
 ### Complex components become hard to understand {#complex-components-become-hard-to-understand}
 
