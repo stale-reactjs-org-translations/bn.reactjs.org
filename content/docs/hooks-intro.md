@@ -34,7 +34,7 @@ function Example() {
 >React 16.8.0 এ হুক প্রথম বার উপলব্ধ. অতএব ব্যবহার করবার সময় অন্যান্য প্যাকেজগুলি, যেমন React DOM আপডেট করতে হবে।
 >React Native এ ইতিমধ্যেই হুক উপলব্ধ [React Native এর 0.59 ভার্সন থেকে](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059)।
 
-## Video Introduction {#video-introduction}
+## ভিডিও দেখুন {#video-introduction}
 
 2018 সালে React কনফারেন্সে, সোফি অ্যালবর্ট এবং ড্যান আব্রামভ হুকের উপস্থাপনা করেন। পরবর্তীতে রায়ান ফ্লোরেন্স তার অ্যাপের মাধ্যমে হাতেকলমে হুকের প্রয়োগ করে দেখান. বিশদে দেখুন:
 
@@ -42,23 +42,23 @@ function Example() {
 
 <iframe width="650" height="366" src="//www.youtube.com/embed/dpw9EHDh2bM" frameborder="0" allowfullscreen></iframe>
 
-## No Breaking Changes {#no-breaking-changes}
+## কোনো ব্রেকিং পরিবর্তন নেই {#no-breaking-changes}
 
-Before we continue, note that Hooks are:
+আমরা চালিয়ে যাওয়ার আগে মনে রাখবেন:
 
-* **Completely opt-in.** You can try Hooks in a few components without rewriting any existing code. But you don't have to learn or use Hooks right now if you don't want to.
-* **100% backwards-compatible.** Hooks don't contain any breaking changes.
-* **Available now.** Hooks are now available with the release of v16.8.0.
+* **সম্পূর্ণরূপে ঐচ্ছিক:** আপনি কোনও বিদ্যমান কোড পুনর্লিখন না করে কিছুমাত্র কম্পনেন্টে হুকস ব্যবহার চেষ্টা করতে পারেন। আপনি না চাইলে আপনাকে এখনই হুকস শিখতে বা ব্যবহার করতে হবে না।
+* **কম্প্যাটিবল:** হুকগুলিতে কোনও ব্রেকিং পরিবর্তন থাকে না।
+* **উপলভ্যতা:** হুকগুলি এখন v16.8.0 প্রকাশের সাথে উপলব্ধ।
 
-**There are no plans to remove classes from React.** You can read more about the gradual adoption strategy for Hooks in the [bottom section](#gradual-adoption-strategy) of this page.
+**React থেকে ক্লাস অপসারণ করার কোনও পরিকল্পনা নেই:** আপনি এই পৃষ্ঠার [নীচের অংশে)(#gradual-adoption-strategy) হুকের জন্য ধাপে ধাপে পরিবর্তনের কৌশল সম্পর্কে আরও পড়তে পারেন।
 
-**Hooks don't replace your knowledge of React concepts.** Instead, Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle. As we will show later, Hooks also offer a new powerful way to combine them.
+**হুক আপনার React ধারণাগুলির কোনো বদল করে না** বরং, হুকগুলি আপনার ইতিমধ্যে জানা React-র ধারণাগুলির আরও সহজ API সরবরাহ করে: Props, State, Context, Ref এবং LifeCycle। আমরা পরে দেখাব যে, হুকস তাদের একসাথে ব্যবহার করার জন্য একটি নতুন শক্তিশালী উপায়ও সরবরাহ করে।
 
-**If you just want to start learning Hooks, feel free to [jump directly to the next page!](/docs/hooks-overview.html)** You can also keep reading this page to learn more about why we're adding Hooks, and how we're going to start using them without rewriting our applications.
+**আপনি যদি কেবল হুকস শিখতে শুরু করতে চান তবে নির্দ্বিধায় [সরাসরি পরবর্তী পৃষ্ঠায় ঝাঁপুন!](/docs/hooks-overview.html)** এই পৃষ্ঠায় আমরা আলোচনা করব যে কিভাবে আমরা হুক ব্যবহারের সিদ্ধান্তে এলাম, এবং কিভাবে কোনও বিদ্যমান কোড পুনর্লিখন না করে হুকস ব্যবহার করা সম্ভব।
 
-## Motivation {#motivation}
+## অনুপ্রেরণা {#motivation}
 
-Hooks solve a wide variety of seemingly unconnected problems in React that we've encountered over five years of writing and maintaining tens of thousands of components. Whether you're learning React, use it daily, or even prefer a different library with a similar component model, you might recognize some of these problems.
+হুকগুলি React-র এমন কিছু আপাতদৃষ্টিতে অসংলগ্ন সমস্যার সমাধান করে, যা গত পাঁচ বছর ধরে অসংখ্য Components লিখে এবং তা মেইন্টেন করতে গিয়ে আমরা অনুভব করে থাকি. আপনি React-র নবিশ হন, অথবা প্রতিদিন এটি ব্যবহার করে থাকেন, বা এমনকি অন্য কোনও অনুরূপ Component-মডেলযুক্ত একটি ভিন্ন লাইব্রেরি পছন্দ করুন না কেন, আপনি এই সমস্যার কিছুটি চিনতে পারেন।
 
 ### It's hard to reuse stateful logic between components {#its-hard-to-reuse-stateful-logic-between-components}
 
