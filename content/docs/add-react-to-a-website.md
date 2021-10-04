@@ -123,7 +123,11 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 ## অপশনাল: React এ JSX ব্যবহার করে দেখুন {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 উপরের উদাহরণ সমুহে আমরা শুধুমাত্র ব্রাউজারে আগে থেকেই সাপোর্ট করে এমন কোড নিয়ে কথা বলেছি। এই জন্য আমরা জাভাস্ক্রিপ্ট ফাংশন ব্যবহার করেছি React কে কাজ করানোর জন্য।
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 ```js
 const e = React.createElement;
@@ -159,7 +163,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 এখন আপনি আপনার যেকোনো `<script>` ট্যাগে `type="text/babel"` অ্যাট্রিবিউটটি সংযুক্ত করে খুব সহজেই JSX লিখতে পারবেন। [এখানে একটি উদাহরণের কোড দেয়া আছে](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html)।
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 এই উপায়টি শিখার জন্য এবং সহজ ডেমো তৈরির জন্য উত্তম। তবে, এই পদ্ধতি আপনার ওয়েবসাইটকে ধীরগতির করে দিবে **এটি প্রোডাকশনের জন্য মোটেও উপযুক্ত নয়।** আপনি যখন আরও গভীরে যেতে প্রস্তুত তখন শেষের `<script>` ট্যাগটি সরিয়ে ফেলুন যার অ্যাট্রিবিউট হিসেবে `type="text/babel"` ব্যবহার করেছিলেন। নিচের অনুচ্ছেদে আমরা দেখবো কিভাবে JSX প্রিপ্রসেসর ব্যবহার করে সকল `<script>` ট্যাগ সমুহকে একসাথে স্বয়ংক্রিয় ভাবে কনভার্ট করতে পারি।
 
