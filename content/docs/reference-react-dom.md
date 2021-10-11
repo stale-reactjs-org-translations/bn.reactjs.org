@@ -48,7 +48,13 @@ ReactDOM.render(element, container[, callback])
 >
 > `ReactDOM.render()` কন্টেইনার নোড কে কোনভাবে পরিবর্তন করেনা(শুধুমাত্র কন্টেইনার এর অভ্যন্তরীণ নোড গুলো পরিবর্তন করে)। কোন একটি উপস্থিত DOM নোডের অভ্যন্তরীণ উপাদানগুলোকে না বদলিয়েও নতুন কম্পোনেন্ট সংযুক্ত করা সম্ভব।
 >
+<<<<<<< HEAD
 > `ReactDOM.render()` বর্তমানে মূল `ReactComponent` ইন্সট্যান্স এর একটি রেফারেন্স রিটার্ন করে। কিন্তু এই রিটার্ন ভ্যালু যথাসম্ভব এড়িয়ে যাওয়া উচিত কারণ সামনের React ভার্সন গুলোতে কিছু কিছু ক্ষেত্রে হয়ত কম্পোনেন্ট গুলো asynchronous ভাবে রেন্ডার করা হবে। যদি আপনার `ReactComponent` ইন্সট্যান্স এর রেফারেন্স দরকার হয়, তাহলে ভাল উপায় হল মূল উপাদান এর সাথে একটি [callback ref](/docs/more-about-refs.html#the-ref-callback-attribute) সংযুক্ত করে দেয়া।
+=======
+> `ReactDOM.render()` currently returns a reference to the root `ReactComponent` instance. However, using this return value is legacy
+> and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root `ReactComponent` instance, the preferred solution is to attach a
+> [callback ref](/docs/refs-and-the-dom.html#callback-refs) to the root element.
+>>>>>>> 9b3c3f4e613440baf2e2f1775be65dac8c08ab5f
 >
 > `ReactDOM.render()` ব্যবহার করে কোন সার্ভার দ্বারা রেন্ডারকৃত কন্টেইনার hydrate করা এড়িয়ে চলা উচিত কারণ এটি React 17 এ বাদ দেয়া হবে।
 
