@@ -76,7 +76,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [CodePen এ চালিয়ে দেখুন](codepen://components-and-props/rendering-a-component)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> a08e1fd4b574a4d2d55e292af9eb01d55a526303
 
 আসুন দেখি এই উদাহরণে কি ঘটলোঃ
 
@@ -118,7 +122,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [CodePen এ চালিয়ে দেখুন](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> a08e1fd4b574a4d2d55e292af9eb01d55a526303
 
 সাধারণত, নতুন React অ্যাপে একটি সিঙ্গেল `App` কম্পোনেন্ট সবার উপরে থাকে। যাহোক, যদি আপনি বিদ্যমান অ্যাপ্লিকেশনে React সংযুক্ত করেন, আপনি নিচের অংশে ছোট্ট একটি কম্পোনেন্ট যেমন `Button` দিয়ে শুরু করুন এবং ধীরে ধীরে আপনার ভিউয়ের উপরে কাজ করুন।
 
@@ -152,7 +160,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> a08e1fd4b574a4d2d55e292af9eb01d55a526303
 
 এটি `author` (একটি অবজেক্ট), `text` (একটি string), এবং `date` (একটি date)কে props হিসেবে গ্রহণ করে, এবং সোশ্যাল মিডিয়া সাইটে একটি কমেন্ট বর্ণনা করে।
 
@@ -231,7 +243,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components-continued)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+>>>>>>> a08e1fd4b574a4d2d55e292af9eb01d55a526303
 
 কম্পোনেন্ট পৃথক করাকে শুরুতে খুব বিরক্তিকর কাজ মনে হবে, তবে পুনরায় ব্যবহারযোগ্য কম্পোনেন্টের একটি প্যালেট থাকা বড় অ্যাপ্লিকেশনগুলোর জন্য বেশ লাভজনক।  এটি বোঝার একটি সহজ উপায় হল, যদি আপনার UI এর কোন অংশ কয়েকবার ব্যবহৃত হয় (`Button`, `Panel`, `Avatar`), অথবা এটি নিজেই যথেষ্ট জটিল(`App`, `FeedStory`, `Comment`), তবে এটি আলাদা করে নিয়ে একটি ব্যবহারযোগ্য কম্পোনেন্ট হতে যোগ্য প্রার্থী।
 
