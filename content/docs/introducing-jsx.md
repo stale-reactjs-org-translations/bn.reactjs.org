@@ -68,7 +68,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
 
 আমরা JSX কে একাধিক লাইনে বিভক্ত করেছি যাতে সহজে পড়া যায়। যদিও এটি দরকারী নয়, এটি করার সময় আমরা প্যারেনথেসেস এ আবদ্ধ করার পরামর্শ দিয়ে থাকি যাতে [automatic semicolon insertion](https://stackoverflow.com/q/2846283) এর অসুবিধাসমূহ এড়িয়ে যাওয়া যায়।
 
@@ -92,7 +92,7 @@ function getGreeting(user) {
 আপনি চাইলে quotes ব্যবহার করে string লিটেরালকে এট্রিবিউট হিসেবে উল্লেখ করতে পারেনঃ
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 আপনি চাইলে কার্লি ব্রেস ব্যবহার করে একটি এট্রিবিউটে জাভাস্ক্রিপ্ট এক্সপ্রেশন এমবেড করতে পারেনঃ 
