@@ -38,7 +38,7 @@ React element গুলো সাধারণ অবজেক্ট, এবং �
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
 
 এটি পেজ এ "Hello, world" প্রদর্শন করে।
 
@@ -52,7 +52,7 @@ React element গুলা [immutable](https://en.wikipedia.org/wiki/Immutable_o
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
 এটি  প্রতি সেকেন্ডে [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) কলব্যাক থেকে [`ReactDOM.render()`](/docs/react-dom.html#render) কল করে।
 
@@ -66,7 +66,11 @@ React element গুলা [immutable](https://en.wikipedia.org/wiki/Immutable_o
 
 React DOM element এবং তার children দের আগেরটির সাথে তুলনা করে, এবং DOM কে কাঙ্ক্ষিত অবস্থায় আনতে শুধু প্রয়োজনীয় DOM আপডেট গুলো প্রয়োগ করে.
 
+<<<<<<< HEAD
 আপনি ব্রাউজার সরঞ্জামগুলির সাথে [সর্বশেষ উদাহরণটি](codepen://rendering-elements/update-rendered-element)  পরীক্ষা করে যাচাই করতে পারেনঃ
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 5e9d673c6bc1530c901548c0b51af3ad3f91d594
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
