@@ -17,10 +17,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Hello toWhat="World" />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Hello toWhat="World" />);
 ```
 
 যা কম্পাইল করে এই কোড পাওয়া যায় যা JSX ব্যবহার করেনাঃ
@@ -32,10 +30,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  React.createElement(Hello, {toWhat: 'World'}, null),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(Hello, {toWhat: 'World'}, null));
 ```
 
 আপনি যদি JSX কিভাবে জাভাস্ক্রিপ্টে রূপান্তরিত হয় এ ব্যাপারে কৌতূহলী হয়ে থাকেন, তাহলে আপনি [Babel এর অনলাইন কম্পাইলার](babel://jsx-simple-example) চালিয়ে দেখতে পারেন।
@@ -47,10 +43,8 @@ ReactDOM.render(
 ```js
 const e = React.createElement;
 
-ReactDOM.render(
-  e('div', null, 'Hello World'),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(e('div', null, 'Hello World'));
 ```
 
 আপনি যদি `React.createElement` এর এই সংক্ষিপ্ত নাম ব্যবহার করেন, তাহলে এটি JSX এর React ব্যবহার অনেকটাই সুবিধাজনক করে তোলে।
