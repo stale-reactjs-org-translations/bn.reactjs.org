@@ -9,18 +9,22 @@ next: release-channels.html
 React এবং ReactDOM উভয়ই CDN-এ পাওয়া যায়।
 
 ```html
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
 
 উপরের ভার্সনগুলো শুধুমাত্র ডেভেলপমেন্টের জন্য নির্দেশিত, এবং প্রোডাকশনের জন্য উপযুক্ত নয়। React এর সংক্ষেপিত এবং নিখুঁত প্রোডাকশন ভার্সন এখানে পাওয়া যাবেঃ
 
 ```html
-<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 `react` এবং `react-dom` এর নির্দিষ্ট ভার্সন পেতে, `17` এর স্থানে অন্য ভার্সন সংখ্যা প্রতিস্থাপন করুন।
+=======
+To load a specific version of `react` and `react-dom`, replace `18` with the version number.
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 ### `crossorigin` অ্যাট্রিবিউটটি কেন? {#why-the-crossorigin-attribute}
 
