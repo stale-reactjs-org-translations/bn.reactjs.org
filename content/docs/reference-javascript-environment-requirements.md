@@ -6,14 +6,22 @@ category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
+<<<<<<< HEAD
 React 16 [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) এবং [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) এর মত কালেকশন টাইপের উপর নির্ভর করে। আপনি যদি পুরনো ব্রাউজারগুলো বা ডিভাইসগুলো সাপোর্ট করেন যা হয়ত এই টাইপগুলো সাপোর্ট করেনা (যেমনঃ IE < 11) অথবা যা এই টাইপগুলো সাধারণের চেয়ে ভিন্নভাবে ইমপ্লিমেন্ট করে (যেমনঃ IE 11), সেক্ষেত্রে আপনার bundled অ্যাপ্লিকেশনের সাথে [core-js](https://github.com/zloirock/core-js) এর মত একটি গ্লোবাল পলিফিল সংযুক্ত করতে পারেন।
 
 পুরনো ব্রাউজারগুলো সাপোর্ট করার জন্য React 16 এ core-js এর মাধ্যমে পলিফিলকৃত একটি ইনভায়রনমেন্ট এমন হতে পারেঃ 
+=======
+React 18 supports all modern browsers (Edge, Firefox, Chrome, Safari, etc).
 
-```js
-import 'core-js/es/map';
-import 'core-js/es/set';
+If you support older browsers and devices such as Internet Explorer which do not provide modern browser features natively or have non-compliant implementations, consider including a global polyfill in your bundled application.
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
+Here is a list of the modern features React 18 uses:
+- [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -29,3 +37,6 @@ React এছাড়াও `requestAnimationFrame` এর উপর নির্�
 ```js
 import 'raf/polyfill';
 ```
+=======
+The correct polyfill for these features depend on your environment. For many users, you can configure your [Browserlist](https://github.com/browserslist/browserslist) settings. For others, you may need to import polyfills like [`core-js`](https://github.com/zloirock/core-js) directly.
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
