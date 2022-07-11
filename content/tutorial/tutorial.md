@@ -184,13 +184,13 @@ JSX জাভাস্ক্রিপ্টের পরিপূর্ণ ব�
 
 Square কম্পোনেন্টটি একটিমাত্র `<button>` রেন্ডার করে এবং Board রেন্ডার করে ৯টি স্কোয়ার। Game কম্পোনেন্টটি placeholder ভ্যালুসহ একটি বোর্ড রেন্ডার করে যেটা আমরা পরে পরিবর্তন করব। বর্তমানে এখানে কোনো ইন্টার‌্যাক্টিভ কম্পোনেন্ট নেই।
 
-### Passing Data Through Props {#passing-data-through-props}
+### Props এর মাধ্যমে ডটা পাস করা {#passing-data-through-props}
 
-To get our feet wet, let's try passing some data from our Board component to our Square component.
+প্রথমে আমাদের শুরু করার জন্য চলুন আমরা Board কম্পোনেন্ট থেকে Square কম্পোনেন্টে কিছু ডটা পাস করি।
 
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
+আমরা দৃঢ়ভাবে পরামর্শ দেই আপনি টিউটোরিয়ালের মাধ্যমে কাজ করছেন এবং শুধু কপি/পেস্ট করছেন না। এটি আপনার পেশী স্মৃতি এবং খুব ভালভাবে বোঝার বিকাশে সহায়তা করবে।
 
-In Board's `renderSquare` method, change the code to pass a prop called `value` to the Square:
+Board এর `renderSquare` মেথডটিতে Square `value` নামক Prop পাস করার জন্য কোড পরবর্তন করুনঃ
 
 ```js{3}
 class Board extends React.Component {
@@ -200,7 +200,7 @@ class Board extends React.Component {
 }
 ```
 
-Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+ Square এর `render` method পরিবর্তন করে সেই value কে  `{/* TODO */}` এর পরিবর্তে  `{this.props.value}` দিয়ে দেখান:
 
 ```js{5}
 class Square extends React.Component {
@@ -214,17 +214,20 @@ class Square extends React.Component {
 }
 ```
 
-Before:
+আগে:
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-After: You should see a number in each square in the rendered output.
+পরে: Render করা আউটপুটের প্রতিটি Square এ আপনি একটি একটি সংখ্যা দেখতে পাবেন।
+
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+
+অভিনন্দন! অপনি পেরেন্ট Board কম্পোনেন্ট থেকে চাইল্ড Square কম্পোনেন্টে prop পাস করেছেন। Prop পাসিং এর মাধ্যেমে React অ্যাপ্লিকেশনে এভাবেই পেরেন্ট থেকে চাইল্ডে তথ্য প্রবাহিত হয়।
+
 
 ### Making an Interactive Component {#making-an-interactive-component}
 
