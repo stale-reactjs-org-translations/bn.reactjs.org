@@ -26,21 +26,12 @@ This repo contains the source code and documentation powering [bn.reactjs.org](h
 
 ### Guidelines
 
-<<<<<<< HEAD
-The documentation is divided into several sections with a different tone and purpose. If you plan to write more than a few sentences, you might find it helpful to get familiar with the [contributing guidelines](https://github.com/reactjs/bn.reactjs.org/blob/master/CONTRIBUTING.md#guidelines-for-text) for the appropriate sections.
-
-### Create a branch
-
-1. `git checkout master` from any folder in your local `bn.reactjs.org` repository
-1. `git pull origin master` to ensure you have the latest main code
-=======
 The documentation is divided into several sections with a different tone and purpose. If you plan to write more than a few sentences, you might find it helpful to get familiar with the [contributing guidelines](https://github.com/reactjs/reactjs.org/blob/main/CONTRIBUTING.md#guidelines-for-text) for the appropriate sections.
 
 ### Create a branch
 
-1. `git checkout main` from any folder in your local `reactjs.org` repository
+1. `git checkout main` from any folder in your local `bn.reactjs.org` repository
 1. `git pull origin main` to ensure you have the latest main code
->>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 1. `git checkout -b the-name-of-my-branch` (replacing `the-name-of-my-branch` with a suitable name) to create a branch
 
 ### Make the change
