@@ -223,16 +223,17 @@ class Square extends React.Component {
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
 
 অভিনন্দন! অপনি পেরেন্ট Board কম্পোনেন্ট থেকে চাইল্ড Square কম্পোনেন্টে prop পাস করেছেন। Prop পাসিং এর মাধ্যেমে React অ্যাপ্লিকেশনে এভাবেই পেরেন্ট থেকে চাইল্ডে তথ্য প্রবাহিত হয়।
 
 
-### Making an Interactive Component {#making-an-interactive-component}
+###  একটি ইন্টারেক্টিভ কম্পোনেন্ট তৈরি করা {#making-an-interactive-component}
 
-Let's fill the Square component with an "X" when we click it.
-First, change the button tag that is returned from the Square component's `render()` function to this:
+ক্লিক করার সময় আমরা Square কম্পোনেন্টটিকে "X" দ্বারা পূর্ণ করি।
+প্রথমে, Square কম্পোনেন্টের  `render()` ফাংশন থেকে return আসা button ট্যাগটি পরিবর্তন করুনঃ
+
 
 ```javascript{4}
 class Square extends React.Component {
@@ -246,11 +247,12 @@ class Square extends React.Component {
 }
 ```
 
-If you click on a Square now, you should see an alert in your browser.
+এখন আপনি Square ক্লিক করলে, আপনি আপনার ব্রাউজারে alert দেখতে পারবেন।
 
->Note
+
+>নোট
 >
->To save typing and avoid the [confusing behavior of `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), we will use the [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for event handlers here and further below:
+> টাইপিং কমানোর জন্য এবং [`this` এর বিভ্রান্তিকর আচরণ এড়াতে](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), আমরা এখানে এবং নীচে আরও ইভেন্ট হ্যান্ডলারদের জন্য  [arrow function সিনট্যাক্স ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ব্যবহার করব:
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -264,13 +266,14 @@ If you click on a Square now, you should see an alert in your browser.
 >}
 >```
 >
->Notice how with `onClick={() => alert('click')}`, we're passing *a function* as the `onClick` prop. React will only call this function after a click. Forgetting `() =>` and writing `onClick={alert('click')}` is a common mistake, and would fire the alert every time the component re-renders.
+>লক্ষ্য করুন কিভাবে `onClick={() => alert('click')}` দিয়ে, আমরা একটি ফাংশনকে `onClick` prop হিসেবে পাস করছি। React শুধুমাত্র ক্লিকের পর এই ফাংশন কল করবে। `() =>` ভুলে যাওয়া এবং `onClick={alert('click')}` লেখা একটি সাধারণ ভুল, এবং প্রতিবার কম্পোনেন্ট রি-রেন্ডার করার সময় alert কল করবে।
 
-As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
+পরবর্তী পদক্ষেপ হিসাবে, আমরা চাই  Square কম্পোনেন্টি "মনে রাখুক" যে এটি ক্লিক করা হয়েছে, এবং এটি একটি "X" চিহ্ন দিয়ে পূরণ করুন। জিনিসগুলি "মনে রাখার" জন্য, কম্পোনেন্টগুলি **state** ব্যবহার করে।
 
-React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it's defined in. Let's store the current value of the Square in `this.state`, and change it when the Square is clicked.
+React কম্পোনেন্ট তাদের কনস্ট্রাক্টরগুলিতে `this.state` সেট করার মধ্যামে sate থাকতে পারে। `this.state` React কম্পোনেন্টে ব্যক্তিগত হিসাবে বিবেচনা করা হয়েছে যেখানে এটি সংজ্ঞায়িত করা হয়েছে। চলুন Square এর বর্তমান মান `this.state` এ সংরক্ষণ করি এবং Square এ ক্লিক করা হলে তা পরিবর্তন করি।
 
-First, we'll add a constructor to the class to initialize the state:
+প্রথমে, আমাদের state শুরু করার জন্য ক্লাসে এ একটি constructor যুক্ত করতে হবেঃ
+
 
 ```javascript{2-7}
 class Square extends React.Component {
@@ -291,17 +294,18 @@ class Square extends React.Component {
 }
 ```
 
->Note
+>নোট
 >
->In [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start with a `super(props)` call.
+>[JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) এ, সাবক্লাসের কনস্ট্রাক্টর সংজ্ঞায়িত করার সময় আপনাকে সর্বদা `super` কল করতে হবে। সকল React কম্পোনেন্ট 'কনস্ট্রাক্টর' আছে এমন ক্লাসগুলি `super(props)` দিয়ে কল শুরু করা উচিত।
 
-Now we'll change the Square's `render` method to display the current state's value when clicked:
+এখন আমরা ক্লিক করার সময় বর্তমান state এর মান প্রদর্শন করতে Square এর `render` পদ্ধতিটি পরিবর্তন করবঃ
 
-* Replace `this.props.value` with `this.state.value` inside the `<button>` tag.
-* Replace the `onClick={...}` event handler with `onClick={() => this.setState({value: 'X'})}`.
-* Put the `className` and `onClick` props on separate lines for better readability.
 
-After these changes, the `<button>` tag that is returned by the Square's `render` method looks like this:
+* `<button>` ট্যাগের ভিতরে 'this.props.value'- এর পরিবর্তে 'this.state.value' লিখুন।
+* ইভেন্ট হ্যান্ডলারে `onClick={...}` এর পরিবর্তে `onClick={() => this.setState({value: 'X'})}`লিখুন।
+* আরও ভালভাবে পড়ার জন্য  `className` এবং `onClick` prop কে আলাদা লাইনে রাখুন।
+
+এই পরিবর্তনগুলির পরে, Square এর `render` পদ্ধতি থেকে  return  আসা `<button>` ট্যাগটি এই রকম দেখায়:
 
 ```javascript{12-13,15}
 class Square extends React.Component {
@@ -325,11 +329,11 @@ class Square extends React.Component {
 }
 ```
 
-By calling `this.setState` from an `onClick` handler in the Square's `render` method, we tell React to re-render that Square whenever its `<button>` is clicked. After the update, the Square's `this.state.value` will be `'X'`, so we'll see the `X` on the game board. If you click on any Square, an `X` should show up.
+যখনই এর `<button>` ক্লিক করা হয় Square এর `render` পদ্ধতিতে একটি `onClick` হ্যান্ডলার থেকে 'this.setState' কল করে, আমরা React কে সেই Square কে নরায় রেন্ডার করতে বলি। আপডেটের পরে, Square এর this.state.value' হবে 'X', তাই আমরা গেম বোর্ডে 'X' দেখতে পাব।  আপনি যদি কোন Square এ ক্লিক করেন তাহলে একটি 'X' প্রদর্শিত হওয়া উচিত।
 
-When you call `setState` in a component, React automatically updates the child components inside of it too.
+যখন আপনি একটি কম্পোনেন্টে 'setState' কল করেন, React স্বয়ংক্রিয়ভাবে এর অভ্যন্তরের চাইল্ট কম্পোনেন্টগুলিও  আপডেট করে।
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
+**[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
 
 ### Developer Tools {#developer-tools}
 

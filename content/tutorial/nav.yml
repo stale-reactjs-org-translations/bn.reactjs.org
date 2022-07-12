@@ -48,7 +48,7 @@
           href: /tutorial/tutorial.html#passing-data-through-props
           forceInternal: true
         - id: making-an-interactive-component
-          title: Making an Interactive Component
+          title: একটি ইন্টারেক্টিভ কম্পোনেন্ট তৈরি করা
           href: /tutorial/tutorial.html#making-an-interactive-component
           forceInternal: true
         - id: developer-tools
