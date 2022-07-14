@@ -335,22 +335,22 @@ class Square extends React.Component {
 
 **[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
 
-### Developer Tools {#developer-tools}
+### ডেভেলপার টুলস {#developer-tools}
 
-The React Devtools extension for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) lets you inspect a React component tree with your browser's developer tools.
+[Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) এবং [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) এর জন্য React Devtools এক্সটেনশন আপনাকে আপনার ব্রাউজারের ডেভেলপার টুলগুলির সাথে একটি React কম্পোনেন্ট ট্রি পরিদর্শন করতে দেয়।
 
 <img src="../images/tutorial/devtools.png" alt="React Devtools" style="max-width: 100%">
 
-The React DevTools let you check the props and the state of your React components.
+React DevTools আপনাকে props আপনার React কম্পোনেন্টের state যাচাই করতে দেইয়।
 
-After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tabs ("⚛️ Components" and "⚛️ Profiler") will appear as the last tabs to the right. Use "⚛️ Components" to inspect the component tree.
+ React DevTools ইনস্টল করার পরে, আপনি পৃষ্ঠার যে কোনও উপাদানে right-click করতে পারেন, Developer tools ওপেন করার জন্য "Inspect" এ ক্লিক করুন, এবং React ট্যাবগুলি  ("⚛️ Components" এবং  "⚛️ Profiler") ডানদিকের শেষ ট্যাব হিসাবে উপস্থিত হবে। কম্পোনেন্ট ট্রি পরিদর্শন করতে "⚛️ Components" ব্যবহার করুন।
 
-**However, note there are a few extra steps to get it working with CodePen:**
+**যাইহোক, মনে রাখবেন CodePen এ কাজ করার জন্য কয়েকটি অতিরিক্ত পদক্ষেপ রয়েছে:**
 
-1. Log in or register and confirm your email (required to prevent spam).
-2. Click the "Fork" button.
-3. Click "Change View" and then choose "Debug mode".
-4. In the new tab that opens, the devtools should now have a React tab.
+1. লগ ইন করুন বা নিবন্ধন করুন এবং আপনার ইমেলটি নিশ্চিত করুন (স্প্যাম প্রতিরোধের জন্য প্রয়োজনীয়)।
+2. "Fork" বাটনে ক্লিক করুন।
+3. "Change View" এ ক্লিক করুন  and then choose "Debug mode" নির্বাচন করুন।
+4. যে নতুন ট্যাবটি ওপেন হবে তাতে, Devtools এ এখন একটি React ট্যাব থাকা উচিত।
 
 ## Completing the Game {#completing-the-game}
 
