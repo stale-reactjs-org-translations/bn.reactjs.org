@@ -352,9 +352,9 @@ React DevTools আপনাকে props আপনার React কম্পোন
 3. "Change View" এ ক্লিক করুন  and then choose "Debug mode" নির্বাচন করুন।
 4. যে নতুন ট্যাবটি ওপেন হবে তাতে, Devtools এ এখন একটি React ট্যাব থাকা উচিত।
 
-## Completing the Game {#completing-the-game}
+## গেমটি সম্পূর্ণ করা হচ্ছে {#completing-the-game}
 
-We now have the basic building blocks for our tic-tac-toe game. To have a complete game, we now need to alternate placing "X"s and "O"s on the board, and we need a way to determine a winner.
+আমাদের কাছে এখন আমাদের টিক-ট্যাক-টো গেমের জন্য মৌলিক বিল্ডিং ব্লক রয়েছে। গেমটি সম্পূর্ণ করার জন্য আমাদের এখন বোর্ডে বিকল্পভাবে "X" এবং "O" বসাতে হবে এবং বিজয়ী নির্ধারণের জন্য আমাদের একটি উপায় প্রয়োজন।
 
 ### Lifting State Up {#lifting-state-up}
 
