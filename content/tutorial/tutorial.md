@@ -220,7 +220,6 @@ class Square extends React.Component {
 
 পরে: Render করা আউটপুটের প্রতিটি Square এ আপনি একটি একটি সংখ্যা দেখতে পাবেন।
 
-
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
 **[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
