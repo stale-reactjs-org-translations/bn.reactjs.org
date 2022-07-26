@@ -341,7 +341,7 @@ class Square extends React.Component {
 
 <img src="../images/tutorial/devtools.png" alt="React Devtools" style="max-width: 100%">
 
-React DevTools আপনাকে props আপনার React কম্পোনেন্টের state যাচাই করতে দেইয়।
+React DevTools আপনাকে props এবং আপনার React কম্পোনেন্টের state যাচাই করতে দেয়।
 
  React DevTools ইনস্টল করার পরে, আপনি পৃষ্ঠার যে কোনও উপাদানে right-click করতে পারেন, Developer tools ওপেন করার জন্য "Inspect" এ ক্লিক করুন, এবং React ট্যাবগুলি  ("⚛️ Components" এবং  "⚛️ Profiler") ডানদিকের শেষ ট্যাব হিসাবে উপস্থিত হবে। কম্পোনেন্ট ট্রি পরিদর্শন করতে "⚛️ Components" ব্যবহার করুন।
 
