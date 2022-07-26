@@ -200,7 +200,7 @@ class Board extends React.Component {
 }
 ```
 
- Square এর `render` method পরিবর্তন করে সেই value কে  `{/* TODO */}` এর পরিবর্তে  `{this.props.value}` দিয়ে দেখান:
+ Square এর `render` method পরিবর্তন করে সেই value কে  `{/* TODO */}` এর পরিবর্তে  `{this.props.value}` দিয়ে প্রতিস্থাপিত করুনঃ
 
 ```js{5}
 class Square extends React.Component {
