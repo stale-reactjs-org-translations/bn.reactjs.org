@@ -184,13 +184,13 @@ JSX জাভাস্ক্রিপ্টের পরিপূর্ণ ব�
 
 Square কম্পোনেন্টটি একটিমাত্র `<button>` রেন্ডার করে এবং Board রেন্ডার করে ৯টি স্কোয়ার। Game কম্পোনেন্টটি placeholder ভ্যালুসহ একটি বোর্ড রেন্ডার করে যেটা আমরা পরে পরিবর্তন করব। বর্তমানে এখানে কোনো ইন্টার‌্যাক্টিভ কম্পোনেন্ট নেই।
 
-### Passing Data Through Props {#passing-data-through-props}
+### Props এর মাধ্যমে ডাটা পাস করা {#passing-data-through-props}
 
-To get our feet wet, let's try passing some data from our Board component to our Square component.
+প্রথমে শুরু করার জন্য চলুন আমরা Board কম্পোনেন্ট থেকে Square কম্পোনেন্টে কিছু ডাটা পাস করি।
 
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
+আমরা দৃঢ়ভাবে পরামর্শ দেই আপনি টিউটোরিয়ালের মাধ্যমে কাজ করছেন এবং শুধু কপি/পেস্ট করছেন না। এটি আপনার পেশী স্মৃতি এবং খুব ভালভাবে বোঝার বিকাশে সহায়তা করবে।
 
-In Board's `renderSquare` method, change the code to pass a prop called `value` to the Square:
+Board এর `renderSquare` মেথডটিতে Square এ `value` নামক Prop পাস করার জন্য কোড পরবর্তন করুনঃ
 
 ```js{3}
 class Board extends React.Component {
@@ -200,7 +200,7 @@ class Board extends React.Component {
 }
 ```
 
-Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+ Square এর `render` method পরিবর্তন করে সেই value কে  `{/* TODO */}` এর পরিবর্তে  `{this.props.value}` দিয়ে প্রতিস্থাপিত করুনঃ
 
 ```js{5}
 class Square extends React.Component {
@@ -214,22 +214,24 @@ class Square extends React.Component {
 }
 ```
 
-Before:
+আগেঃ
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-After: You should see a number in each square in the rendered output.
+পরেঃ Render করা আউটপুটের প্রতিটি Square এ আপনি একটি একটি সংখ্যা দেখতে পাবেন।
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+অভিনন্দন! আপনি পেরেন্ট Board কম্পোনেন্ট থেকে চাইল্ড Square কম্পোনেন্টে prop পাস করেছেন। Prop পাসিং এর মাধ্যেমে React অ্যাপ্লিকেশনে এভাবেই পেরেন্ট থেকে চাইল্ডে তথ্য প্রবাহিত হয়।
 
-### Making an Interactive Component {#making-an-interactive-component}
 
-Let's fill the Square component with an "X" when we click it.
-First, change the button tag that is returned from the Square component's `render()` function to this:
+###  একটি ইন্টারেক্টিভ কম্পোনেন্ট তৈরি করা {#making-an-interactive-component}
+
+ক্লিক করার সময় আমরা Square কম্পোনেন্টটিকে "X" দ্বারা পূর্ণ করি।
+প্রথমে, Square কম্পোনেন্টের  `render()` ফাংশন থেকে return আসা button ট্যাগটি পরিবর্তন করুনঃ
+
 
 ```javascript{4}
 class Square extends React.Component {
@@ -243,11 +245,11 @@ class Square extends React.Component {
 }
 ```
 
-If you click on a Square now, you should see an alert in your browser.
+এখন আপনি Square ক্লিক করলে, আপনি আপনার ব্রাউজারে alert দেখতে পারবেন।
 
->Note
+>নোট
 >
->To save typing and avoid the [confusing behavior of `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), we will use the [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for event handlers here and further below:
+> টাইপিং কমানোর জন্য এবং [`this` এর বিভ্রান্তিকর আচরণ এড়াতে](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), আমরা এখানে এবং নীচে আরও ইভেন্ট হ্যান্ডলারদের জন্য [arrow function সিনট্যাক্স](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ব্যবহার করবঃ
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -261,13 +263,14 @@ If you click on a Square now, you should see an alert in your browser.
 >}
 >```
 >
->Notice how with `onClick={() => alert('click')}`, we're passing *a function* as the `onClick` prop. React will only call this function after a click. Forgetting `() =>` and writing `onClick={alert('click')}` is a common mistake, and would fire the alert every time the component re-renders.
+>লক্ষ্য করুন কিভাবে `onClick={() => alert('click')}` দিয়ে, আমরা একটি ফাংশনকে `onClick` prop হিসেবে পাস করছি। React শুধুমাত্র ক্লিকের পর এই ফাংশন কল করবে। `() =>` ভুলে যাওয়া এবং `onClick={alert('click')}` লেখা একটি সাধারণ ভুল, এবং প্রতিবার কম্পোনেন্ট রি-রেন্ডার করার সময় alert কল করবে।
 
-As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
+পরবর্তী পদক্ষেপ হিসাবে, আমরা চাই  Square কম্পোনেন্টটি "মনে রাখুক" যে এটি ক্লিক করা হয়েছে, এবং এটি একটি "X" চিহ্ন দিয়ে পূরণ করুন। জিনিসগুলি "মনে রাখার" জন্য, কম্পোনেন্টগুলি **state** ব্যবহার করে।
 
-React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it's defined in. Let's store the current value of the Square in `this.state`, and change it when the Square is clicked.
+React কম্পোনেন্টে তাদের কনস্ট্রাক্টরগুলিতে `this.state` সেট করার মধ্যামে state থাকতে পারে। `this.state` React কম্পোনেন্টে ব্যক্তিগত হিসাবে বিবেচনা করা হয়েছে যেখানে এটি সংজ্ঞায়িত করা হয়েছে। চলুন Square এর বর্তমান মান `this.state` এ সংরক্ষণ করি এবং Square এ ক্লিক করা হলে তা পরিবর্তন করি।
 
-First, we'll add a constructor to the class to initialize the state:
+প্রথমে, আমাদের state শুরু করার জন্য ক্লাসে এ একটি constructor যুক্ত করতে হবেঃ
+
 
 ```javascript{2-7}
 class Square extends React.Component {
@@ -288,17 +291,17 @@ class Square extends React.Component {
 }
 ```
 
->Note
+>নোট
 >
->In [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start with a `super(props)` call.
+>[JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) এ, সাবক্লাসের কনস্ট্রাক্টর সংজ্ঞায়িত করার সময় আপনাকে সর্বদা `super` কল করতে হবে। সকল React কম্পোনেন্ট 'কনস্ট্রাক্টর' আছে এমন ক্লাসগুলি `super(props)` দিয়ে কল শুরু করা উচিত।
 
-Now we'll change the Square's `render` method to display the current state's value when clicked:
+এখন আমরা ক্লিক করার সময় বর্তমান state এর মান প্রদর্শন করতে Square এর `render` পদ্ধতিটি পরিবর্তন করবঃ
 
-* Replace `this.props.value` with `this.state.value` inside the `<button>` tag.
-* Replace the `onClick={...}` event handler with `onClick={() => this.setState({value: 'X'})}`.
-* Put the `className` and `onClick` props on separate lines for better readability.
+* `<button>` ট্যাগের ভিতরে `this.props.value`- এর পরিবর্তে `this.state.value` লিখুন।
+* ইভেন্ট হ্যান্ডলারে `onClick={...}` এর পরিবর্তে `onClick={() => this.setState({value: 'X'})}`লিখুন।
+* আরও ভালভাবে পড়ার জন্য  `className` এবং `onClick` prop কে আলাদা লাইনে রাখুন।
 
-After these changes, the `<button>` tag that is returned by the Square's `render` method looks like this:
+এই পরিবর্তনগুলির পরে, Square এর `render` পদ্ধতি থেকে  return  আসা `<button>` ট্যাগটি এই রকম দেখায়:
 
 ```javascript{12-13,15}
 class Square extends React.Component {
@@ -322,32 +325,32 @@ class Square extends React.Component {
 }
 ```
 
-By calling `this.setState` from an `onClick` handler in the Square's `render` method, we tell React to re-render that Square whenever its `<button>` is clicked. After the update, the Square's `this.state.value` will be `'X'`, so we'll see the `X` on the game board. If you click on any Square, an `X` should show up.
+যখনই এর `<button>` ক্লিক করা হয় Square এর `render` পদ্ধতিতে একটি `onClick` হ্যান্ডলার থেকে `this.setState` কল করে, আমরা React কে সেই Square কে পুনরায় রেন্ডার করতে বলি। আপডেটের পরে, Square এর `this.state.value` হবে `'X'`, তাই আমরা গেম বোর্ডে `X` দেখতে পাব।  আপনি যদি কোন Square এ ক্লিক করেন তাহলে একটি `X` প্রদর্শিত হওয়া উচিত।
 
-When you call `setState` in a component, React automatically updates the child components inside of it too.
+যখন আপনি একটি কম্পোনেন্টে `setState` কল করেন, React স্বয়ংক্রিয়ভাবে এর অভ্যন্তরের চাইল্ড কম্পোনেন্টগুলিও আপডেট করে।
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
+**[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
 
-### Developer Tools {#developer-tools}
+### ডেভেলপার টুলস {#developer-tools}
 
-The React Devtools extension for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) lets you inspect a React component tree with your browser's developer tools.
+[Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) এবং [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) এর জন্য React Devtools এক্সটেনশন আপনাকে আপনার ব্রাউজারের ডেভেলপার টুলগুলির সাথে একটি React কম্পোনেন্ট ট্রি পরিদর্শন করতে দেয়।
 
 <img src="../images/tutorial/devtools.png" alt="React Devtools" style="max-width: 100%">
 
-The React DevTools let you check the props and the state of your React components.
+React DevTools আপনাকে props এবং আপনার React কম্পোনেন্টের state যাচাই করতে দেয়।
 
-After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tabs ("⚛️ Components" and "⚛️ Profiler") will appear as the last tabs to the right. Use "⚛️ Components" to inspect the component tree.
+React DevTools ইনস্টল করার পরে, আপনি পৃষ্ঠার যে কোনও উপাদানে right-click করতে পারেন, Developer tools ওপেন করার জন্য "Inspect" এ ক্লিক করুন, এবং React ট্যাবগুলি  ("⚛️ Components" এবং  "⚛️ Profiler") ডানদিকের শেষ ট্যাব হিসাবে উপস্থিত হবে। কম্পোনেন্ট ট্রি পরিদর্শন করতে "⚛️ Components" ব্যবহার করুন।
 
-**However, note there are a few extra steps to get it working with CodePen:**
+**যাইহোক, মনে রাখবেন CodePen এ কাজ করার জন্য কয়েকটি অতিরিক্ত পদক্ষেপ রয়েছে:**
 
-1. Log in or register and confirm your email (required to prevent spam).
-2. Click the "Fork" button.
-3. Click "Change View" and then choose "Debug mode".
-4. In the new tab that opens, the devtools should now have a React tab.
+1. লগ ইন করুন বা নিবন্ধন করুন এবং আপনার ইমেলটি নিশ্চিত করুন (স্প্যাম প্রতিরোধের জন্য প্রয়োজনীয়)।
+2. "Fork" বাটনে ক্লিক করুন।
+3. "Change View" এ ক্লিক করুন এবং "Debug mode" নির্বাচন করুন।
+4. যে নতুন ট্যাবটি ওপেন হবে তাতে, Devtools এ এখন একটি React ট্যাব থাকা উচিত।
 
-## Completing the Game {#completing-the-game}
+## গেমটি সম্পূর্ণ করা হচ্ছে {#completing-the-game}
 
-We now have the basic building blocks for our tic-tac-toe game. To have a complete game, we now need to alternate placing "X"s and "O"s on the board, and we need a way to determine a winner.
+আমাদের কাছে এখন আমাদের টিক-ট্যাক-টো গেমের জন্য মৌলিক বিল্ডিং ব্লক রয়েছে। গেমটি সম্পূর্ণ করার জন্য আমাদের এখন বোর্ডে বিকল্পভাবে "X" এবং "O" বসাতে হবে এবং বিজয়ী নির্ধারণের জন্য আমাদের একটি উপায় প্রয়োজন।
 
 ### Lifting State Up {#lifting-state-up}
 
