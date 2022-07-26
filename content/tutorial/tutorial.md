@@ -343,7 +343,7 @@ class Square extends React.Component {
 
 React DevTools আপনাকে props এবং আপনার React কম্পোনেন্টের state যাচাই করতে দেয়।
 
- React DevTools ইনস্টল করার পরে, আপনি পৃষ্ঠার যে কোনও উপাদানে right-click করতে পারেন, Developer tools ওপেন করার জন্য "Inspect" এ ক্লিক করুন, এবং React ট্যাবগুলি  ("⚛️ Components" এবং  "⚛️ Profiler") ডানদিকের শেষ ট্যাব হিসাবে উপস্থিত হবে। কম্পোনেন্ট ট্রি পরিদর্শন করতে "⚛️ Components" ব্যবহার করুন।
+React DevTools ইনস্টল করার পরে, আপনি পৃষ্ঠার যে কোনও উপাদানে right-click করতে পারেন, Developer tools ওপেন করার জন্য "Inspect" এ ক্লিক করুন, এবং React ট্যাবগুলি  ("⚛️ Components" এবং  "⚛️ Profiler") ডানদিকের শেষ ট্যাব হিসাবে উপস্থিত হবে। কম্পোনেন্ট ট্রি পরিদর্শন করতে "⚛️ Components" ব্যবহার করুন।
 
 **যাইহোক, মনে রাখবেন CodePen এ কাজ করার জন্য কয়েকটি অতিরিক্ত পদক্ষেপ রয়েছে:**
 
