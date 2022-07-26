@@ -297,7 +297,6 @@ class Square extends React.Component {
 
 এখন আমরা ক্লিক করার সময় বর্তমান state এর মান প্রদর্শন করতে Square এর `render` পদ্ধতিটি পরিবর্তন করবঃ
 
-
 * `<button>` ট্যাগের ভিতরে `this.props.value`- এর পরিবর্তে `this.state.value` লিখুন।
 * ইভেন্ট হ্যান্ডলারে `onClick={...}` এর পরিবর্তে `onClick={() => this.setState({value: 'X'})}`লিখুন।
 * আরও ভালভাবে পড়ার জন্য  `className` এবং `onClick` prop কে আলাদা লাইনে রাখুন।
