@@ -44,7 +44,7 @@
           href: /tutorial/tutorial.html#inspecting-the-starter-code
           forceInternal: true
         - id: passing-data-through-props
-          title: Props এর মাধ্যমে ডটা পাস করা
+          title: Props এর মাধ্যমে ডাটা পাস করা
           href: /tutorial/tutorial.html#passing-data-through-props
           forceInternal: true
         - id: making-an-interactive-component
