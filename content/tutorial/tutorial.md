@@ -224,7 +224,6 @@ class Square extends React.Component {
 
 **[এখন পর্যন্ত সম্পূর্ণ কোডটি এখানে দেখুন](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-
 অভিনন্দন! আপনি পেরেন্ট Board কম্পোনেন্ট থেকে চাইল্ড Square কম্পোনেন্টে prop পাস করেছেন। Prop পাসিং এর মাধ্যেমে React অ্যাপ্লিকেশনে এভাবেই পেরেন্ট থেকে চাইল্ডে তথ্য প্রবাহিত হয়।
 
 
