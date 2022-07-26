@@ -249,7 +249,7 @@ class Square extends React.Component {
 
 >নোট
 >
-> টাইপিং কমানোর জন্য এবং [`this` এর বিভ্রান্তিকর আচরণ এড়াতে](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), আমরা এখানে এবং নীচে আরও ইভেন্ট হ্যান্ডলারদের জন্য  [arrow function সিনট্যাক্স ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ব্যবহার করব:
+> টাইপিং কমানোর জন্য এবং [`this` এর বিভ্রান্তিকর আচরণ এড়াতে](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), আমরা এখানে এবং নীচে আরও ইভেন্ট হ্যান্ডলারদের জন্য [arrow function সিনট্যাক্স](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ব্যবহার করবঃ
 >
 >```javascript{4}
 >class Square extends React.Component {
