@@ -214,7 +214,7 @@ class Square extends React.Component {
 }
 ```
 
-আগে:
+আগেঃ
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
