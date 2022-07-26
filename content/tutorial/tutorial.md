@@ -218,7 +218,7 @@ class Square extends React.Component {
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-পরে: Render করা আউটপুটের প্রতিটি Square এ আপনি একটি একটি সংখ্যা দেখতে পাবেন।
+পরেঃ Render করা আউটপুটের প্রতিটি Square এ আপনি একটি একটি সংখ্যা দেখতে পাবেন।
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
