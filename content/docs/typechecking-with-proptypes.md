@@ -173,13 +173,15 @@ Greeting.defaultProps = {
 };
 
 // Renders "Hello, Stranger":
-ReactDOM.render(
-  <Greeting />,
-  document.getElementById('example')
-);
+const root = ReactDOM.createRoot(document.getElementById('example')); 
+root.render(<Greeting />);
 ```
 
+<<<<<<< HEAD
 আপনি যদি এরকম কোন Babel ট্রান্সফর্ম ব্যাবহার করে থাকেন [ট্রান্সফর্ম-ক্লাস-প্রোপাটিস](https://babeljs.io/docs/plugins/transform-class-properties/) , তাহলে আপনি আপনার `defaultProps` কে React component class এর ভেতর static property হিসেবে ডিক্লেয়ার করতে পারবেন। যদিও এই সিনট্যাক্স টি এখনো ফাইনালাইজড করা হয় নাই এবং একটি ব্রাউজারের ভেতর কাজ করানোর জন্য এর জন্য আরো কম্পাইলেশন স্টেপ এর প্রয়োজন আছে। আরও তথ্যের জন্য, এটি দেখুন [ক্লাস-ফিল্ড-প্রপোজাল](https://github.com/tc39/proposal-class-fields).
+=======
+Since ES2022 you can also declare `defaultProps` as static property within a React component class. For more information, see the [class public static fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_static_fields). This modern syntax will require a compilation step to work within older browsers. 
+>>>>>>> ea9e9ab2817c8b7eff5ff60e8fe9b649fd747606
 
 ```javascript
 class Greeting extends React.Component {

@@ -75,9 +75,11 @@ const MarkdownPage = ({
         position: 'relative',
         zIndex: 0,
         '& h1, & h2, & h3, & h4, & h5, & h6': {
-          scrollMarginTop: 'var(--banner-height-normal)',
+          scrollMarginTop:
+            'calc(var(--survey-banner-height-normal) + var(--social-banner-height-normal))',
           [media.lessThan('small')]: {
-            scrollMarginTop: 'var(--banner-height-small)',
+            scrollMarginTop:
+              'calc(var(--survey-banner-height-small) + var(--social-banner-height-small))',
           },
         },
       }}>
@@ -97,7 +99,7 @@ const MarkdownPage = ({
                 <div css={{marginTop: 15}}>
                   {date}{' '}
                   {hasAuthors && (
-                    <span>
+                    <span css={{lineHeight: 1.75}}>
                       by{' '}
                       {toCommaSeparatedList(authors, author => (
                         <a
@@ -132,8 +134,13 @@ const MarkdownPage = ({
                     </span>
                     <a
                       css={sharedStyles.articleLayout.editLink}
+<<<<<<< HEAD
                       href={`https://github.com/reactjs/reactjs.org/tree/master/${markdownRemark.fields.path}`}>
                       এই পৃষ্ঠাটি এডিট করুন
+=======
+                      href={`https://github.com/reactjs/reactjs.org/tree/main/${markdownRemark.fields.path}`}>
+                      Edit this page
+>>>>>>> ea9e9ab2817c8b7eff5ff60e8fe9b649fd747606
                     </a>
                   </div>
                 )}
