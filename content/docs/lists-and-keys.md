@@ -33,13 +33,14 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<<<<<<< HEAD
 সম্পূর্ণ `listItems` array কে আমরা একটি `<ul>` element এর ভিতরে রাখি এবং [এটিকে DOM এ রেন্ডার করিঃ](/docs/rendering-elements.html#rendering-an-element-into-the-dom) 
+=======
+Then, we can include the entire `listItems` array inside a `<ul>` element:
+>>>>>>> c7d858947f832d1ba4e78caebc391fd964ff6de6
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -64,10 +65,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 আপনি যখন এই কোড রান করবেন তখন একটি সতর্কীকরণ বার্তা পাবেন যে লিস্ট আইটেমগুলোর জন্য একটি করে  `key` দরকার। "Key" হল একটি বিশেষ `string` attribute যা আপনার তখনই দরকার যখন আপনি elements এর লিস্ট তৈরি করবেন। এটি কি কারণে গুরুত্বপূর্ণ তা আমরা পরবর্তী অনুচ্ছেদে আলোচনা করব।
@@ -86,12 +85,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -130,7 +123,11 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
+<<<<<<< HEAD
 যে ক্ষেত্রে আইটেমের অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্সকে ব্যবহার করার পরামর্শ দেবনা। এটি পারফরমেন্সের উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল [ইনডেক্সকে key হিসাবে ব্যবহারের নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে।
+=======
+We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+>>>>>>> c7d858947f832d1ba4e78caebc391fd964ff6de6
 
 আপনি যদি বিস্তারিত জানতে চান তাহলে [keys কেন দরকারি এ বিষয়ে গভীর আলোচনাটি](/docs/reconciliation.html#recursing-on-children) দেখতে পারেন।
 
@@ -165,12 +162,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **উদাহারণ: Key এর সঠিক ব্যবহার**
@@ -193,12 +184,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -207,7 +192,11 @@ ReactDOM.render(
 
 ### পারিপার্শ্বিক elements গুলোর মধ্যে Keys কে ইউনিক হতে হবে {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 Array এর মধ্যে ব্যবহৃত keys তাদের পারিপার্শ্বিক অন্যান্য আইটেমগুলোর মধ্যে ইউনিক হতে হবে কিন্ত গ্লোবাল ভাবে তাদের ইউনিক হওয়া দরকারি নয়। আমরা দুইটি ভিন্ন ভিন্ন array এর ক্ষেত্রে একই keys ব্যবহার করতে পারিঃ
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> c7d858947f832d1ba4e78caebc391fd964ff6de6
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -239,10 +228,9 @@ const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
