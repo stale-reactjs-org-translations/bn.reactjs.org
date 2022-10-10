@@ -169,4 +169,8 @@ Facebook এ, আমরা হাজার হাজার কম্পোনে
 
 Props এবং কম্পোজিশন আপনাকে স্পষ্ট এবং নিরাপদভাবে সব ধরণের flexibility প্রদান করে যা একটি কম্পোনেন্টের বাহ্যিক চেহারা অথবা আচরণ কাস্টমাইজ করতে প্রয়োজন। মনে রাখবেন, কম্পোনেন্ট মৌলিক মান, React element অথবা ফাংশন সহ ইচ্ছামত props গ্রহণ করতে পারে।
 
+<<<<<<< HEAD
 আপনি যদি কম্পোনেন্টেগুলোর মাঝে নন-ইউজার-ইন্টারফেস ফাংশন ব্যবহার করতে চান, আমরা একে একটি আলাদা জাভাস্ক্রিপ্ট মডিউলে পৃথকভাবে নিয়ে আসার পরামর্শ দেব। কম্পোনেন্টগুলো এটি extend করা ছাড়াই এই ফাংশন, অবজেক্ট অথবা ক্লাস ইম্পোর্ট করার মাধ্যমে ব্যবহার করতে পারে।
+=======
+If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or class, without extending it.
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27

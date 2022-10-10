@@ -10,9 +10,15 @@ next: handling-events.html
 
 এই পৃষ্ঠায় আমরা React কম্পোনেন্টের state এবং lifecycle এর সাথে পরিচিত হব। আপনি [কম্পোনেন্ট API রেফারেন্স এর বিস্তারিত এখানে](/docs/react-component.html) জানতে পারবেন।
 
+<<<<<<< HEAD
 [আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `ReactDOM.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছি।
+=======
+Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
-```js{8-11}
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +26,7 @@ function tick() {
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -35,7 +38,9 @@ setInterval(tick, 1000);
 
 আমরা clock টি দেখতে কেমন হবে তা encapsulate করার মাধ্যমে শুরু করতে পারিঃ
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -46,10 +51,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -62,10 +64,7 @@ setInterval(tick, 1000);
 আদর্শভাবে আমরা চাইব যাতে এটা একবার লিখার পর `Clock` নিজে নিজে আপডেট হয়ঃ
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 এটা বাস্তবায়ন করার জন্য `Clock` কম্পোনেন্টে আমরা "state" সংযুক্ত করব।
@@ -158,10 +157,7 @@ class Clock extends React.Component {
 ৩) `<Clock />` element থেকে `date` prop টি মুছে ফেলুনঃ
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 আমরা পরে কম্পোনেন্টের মধ্যেই টাইমারের কোডগুলো সংযুক্ত করব।
@@ -185,10 +181,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -294,10 +288,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -306,7 +298,11 @@ ReactDOM.render(
 
 আমরা সংক্ষেপে আরেকবার দেখে নেই এখানে কি হচ্ছে এবং মেথডগুলো কোনটার পর কোনটা কল হচ্ছেঃ
 
+<<<<<<< HEAD
 ১) যখন `ReactDOM.render()` এ `<Clock />` পাস করা হয়, React `Clock` কম্পোনেন্টের constructor কে কল করে। যেহেতু `Clock` এর বর্তমান সময় দেখাতে হবে, এটি `this.state` কে একটি অবজেক্ট এর মাধ্যমে ইনিশিয়ালাইজ করে যা বর্তমান সময় ধারণ করে। আমরা পরে এই state টি আপডেট করব।
+=======
+1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
 ২) React এরপর `Clock` কম্পোনেন্টের `render()` মেথডকে কল করে। এটির মাধ্যমেই React জানতে পারে স্ক্রিনে কি দেখাতে হবে। React এরপর DOM আপডেট করে যাতে তা `Clock` এর রেন্ডার আউটপুটের মত হয়।
 
@@ -447,11 +443,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
