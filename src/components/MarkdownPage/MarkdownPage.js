@@ -16,9 +16,8 @@ import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import FeedbackForm from 'components/FeedbackForm';
 import findSectionForPath from 'utils/findSectionForPath';
 import toCommaSeparatedList from 'utils/toCommaSeparatedList';
-import {sharedStyles} from 'theme';
 import createCanonicalUrl from 'utils/createCanonicalUrl';
-import {colors, media} from 'theme';
+import {sharedStyles, colors, media, fonts} from 'theme';
 
 import type {Node} from 'types';
 
@@ -75,9 +74,10 @@ const MarkdownPage = ({
         position: 'relative',
         zIndex: 0,
         '& h1, & h2, & h3, & h4, & h5, & h6': {
-          scrollMarginTop: 'var(--banner-height-normal)',
-          [media.lessThan('small')]: {
-            scrollMarginTop: 'var(--banner-height-small)',
+          scrollMarginTop: fonts.header.fontSize,
+
+          [media.lessThan('medium')]: {
+            scrollMarginTop: fonts.header[media.lessThan('medium')].fontSize,
           },
         },
       }}>
@@ -97,7 +97,7 @@ const MarkdownPage = ({
                 <div css={{marginTop: 15}}>
                   {date}{' '}
                   {hasAuthors && (
-                    <span>
+                    <span css={{lineHeight: 1.75}}>
                       by{' '}
                       {toCommaSeparatedList(authors, author => (
                         <a
@@ -132,8 +132,13 @@ const MarkdownPage = ({
                     </span>
                     <a
                       css={sharedStyles.articleLayout.editLink}
+<<<<<<< HEAD
                       href={`https://github.com/reactjs/reactjs.org/tree/master/${markdownRemark.fields.path}`}>
                       এই পৃষ্ঠাটি এডিট করুন
+=======
+                      href={`https://github.com/reactjs/reactjs.org/tree/main/${markdownRemark.fields.path}`}>
+                      Edit this page
+>>>>>>> 8fe817e61e5fe50020ed9379ce9e1c5a2cf476a9
                     </a>
                   </div>
                 )}
