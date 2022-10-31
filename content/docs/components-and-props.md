@@ -74,25 +74,14 @@ const element = <Welcome name="Sara" />;
 root.render(element);
 ```
 
-<<<<<<< HEAD
-[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/rendering-a-component)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+[CodePen এ চালিয়ে দেখুন](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)
 
 আসুন দেখি এই উদাহরণে কি ঘটলোঃ
 
-<<<<<<< HEAD
-১. আমরা `<Welcome name="Sara" />` element সহ `ReactDOM.render()`কে কল করি।
+১. আমরা `<Welcome name="Sara" />` element সহ `root.render()`কে কল করি।
 ২. React, props হিসেবে `{name: 'Sara'}` সহ `Welcome` কম্পোনেন্টকে কল করে।
 ৩. আমাদের `Welcome` কম্পোনেন্টটি `<h1>Hello, Sara</h1>` element কে ফলাফল হিসেবে রিটার্ন করে।
 ৪. React DOM দক্ষতার সাথে `<h1>Hello, Sara</h1>` ম্যাচ করে DOM কে আপডেট করে।
-=======
-1. We call `root.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 >**বিঃদ্রঃ** সবসময় ক্যাপিটাল লেটার দিয়ে কম্পোনেন্টের নাম শুরু করবেন।
 >
@@ -122,11 +111,7 @@ function App() {
 }
 ```
 
-<<<<<<< HEAD
-[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/composing-components)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+[CodePen এ চালিয়ে দেখুন](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)
 
 সাধারণত, নতুন React অ্যাপে একটি সিঙ্গেল `App` কম্পোনেন্ট সবার উপরে থাকে। যাহোক, যদি আপনি বিদ্যমান অ্যাপ্লিকেশনে React সংযুক্ত করেন, আপনি নিচের অংশে ছোট্ট একটি কম্পোনেন্ট যেমন `Button` দিয়ে শুরু করুন এবং ধীরে ধীরে আপনার ভিউয়ের উপরে কাজ করুন।
 
@@ -160,11 +145,7 @@ function Comment(props) {
 }
 ```
 
-<<<<<<< HEAD
-[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+[CodePen এ চালিয়ে দেখুন](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)
 
 এটি `author` (একটি অবজেক্ট), `text` (একটি string), এবং `date` (একটি date)কে props হিসেবে গ্রহণ করে, এবং সোশ্যাল মিডিয়া সাইটে একটি কমেন্ট বর্ণনা করে।
 
@@ -243,11 +224,7 @@ function Comment(props) {
 }
 ```
 
-<<<<<<< HEAD
-[CodePen এ চালিয়ে দেখুন](codepen://components-and-props/extracting-components-continued)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+[CodePen এ চালিয়ে দেখুন](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)
 
 কম্পোনেন্ট পৃথক করাকে শুরুতে খুব বিরক্তিকর কাজ মনে হবে, তবে পুনরায় ব্যবহারযোগ্য কম্পোনেন্টের একটি প্যালেট থাকা বড় অ্যাপ্লিকেশনগুলোর জন্য বেশ লাভজনক।  এটি বোঝার একটি সহজ উপায় হল, যদি আপনার UI এর কোন অংশ কয়েকবার ব্যবহৃত হয় (`Button`, `Panel`, `Avatar`), অথবা এটি নিজেই যথেষ্ট জটিল(`App`, `FeedStory`, `Comment`), তবে এটি আলাদা করে নিয়ে একটি ব্যবহারযোগ্য কম্পোনেন্ট হতে যোগ্য প্রার্থী।
 
