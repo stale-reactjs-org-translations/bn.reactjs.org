@@ -10,9 +10,11 @@ next: handling-events.html
 
 এই পৃষ্ঠায় আমরা React কম্পোনেন্টের state এবং lifecycle এর সাথে পরিচিত হব। আপনি [কম্পোনেন্ট API রেফারেন্স এর বিস্তারিত এখানে](/docs/react-component.html) জানতে পারবেন।
 
-[আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `ReactDOM.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছি।
+[আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `root.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছিঃ
 
-```js{8-11}
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +22,7 @@ function tick() {
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -35,7 +34,9 @@ setInterval(tick, 1000);
 
 আমরা clock টি দেখতে কেমন হবে তা encapsulate করার মাধ্যমে শুরু করতে পারিঃ
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -46,10 +47,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -62,10 +60,7 @@ setInterval(tick, 1000);
 আদর্শভাবে আমরা চাইব যাতে এটা একবার লিখার পর `Clock` নিজে নিজে আপডেট হয়ঃ
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 এটা বাস্তবায়ন করার জন্য `Clock` কম্পোনেন্টে আমরা "state" সংযুক্ত করব।
@@ -158,10 +153,7 @@ class Clock extends React.Component {
 ৩) `<Clock />` element থেকে `date` prop টি মুছে ফেলুনঃ
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 আমরা পরে কম্পোনেন্টের মধ্যেই টাইমারের কোডগুলো সংযুক্ত করব।
@@ -185,10 +177,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -294,10 +284,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -447,11 +435,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
