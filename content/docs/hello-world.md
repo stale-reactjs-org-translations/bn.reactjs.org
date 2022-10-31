@@ -8,17 +8,9 @@ next: introducing-jsx.html
 
 সবচেয়ে ছোট React এর উদাহরণ এরকম দেখাবেঃ
 
-<<<<<<< HEAD
-```js
-ReactDOM.render(
-  <h1>হ্যালো, বিশ্ব!</h1>,
-  document.getElementById('root')
-);
-=======
 ```jsx
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<h1>Hello, world!</h1>);
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+root.render(<h1>হ্যালো, বিশ্ব!</h1>);
 ```
 
 এটি এই পৃষ্ঠার শিরোনামে "হ্যালো, বিশ্ব!" দেখাবে।
@@ -46,11 +38,7 @@ React একটি জাভাস্ক্রিপ্ট লাইব্রে
 
 >বিঃদ্রঃ
 >
-<<<<<<< HEAD
 > এই গাইড মাঝেমধ্যে উদাহরণে জাভাস্ক্রিপ্ট এর নতুন সিনট্যাক্স ব্যবহার করেছে। আপনি যদি গত কয়েক বছর জাভাস্ক্রিপ্ট এ কাজ না করে থাকেন, তাহলে [এই তিনটি পয়েন্ট](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) আপনাকে বুঝতে সাহায্য করবে।
-=======
->This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 
 ## চলুন শুরু করি! {#lets-get-started}
