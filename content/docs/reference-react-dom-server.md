@@ -6,7 +6,7 @@ category: Reference
 permalink: docs/react-dom-server.html
 ---
 
-`ReactDOMServer` কম্পোনেন্টকে static মার্কআপে রেন্ডার করতে সাহায্য করে। এটি সাধারণত Node সার্ভারে ব্যবহৃত হয়ঃ
+The `ReactDOMServer` object enables you to render components to static markup. Typically, it's used on a Node server:
 
 ```js
 // ES modules
@@ -15,11 +15,8 @@ import * as ReactDOMServer from 'react-dom/server';
 var ReactDOMServer = require('react-dom/server');
 ```
 
-## সারমর্ম {#overview}
+## Overview {#overview}
 
-<<<<<<< HEAD
-নিম্নোক্ত মেথডগুলো সার্ভার এবং ব্রাউজার উভয় ইনভায়রনমেন্টে ব্যবহৃত হয়ঃ
-=======
 These methods are only available in the **environments with [Node.js Streams](https://nodejs.dev/learn/nodejs-streams):**
 
 - [`renderToPipeableStream()`](#rendertopipeablestream)
@@ -31,23 +28,11 @@ These methods are only available in the **environments with [Web Streams](https:
 - [`renderToReadableStream()`](#rendertoreadablestream)
 
 The following methods can be used in the environments that don't support streams:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 - [`renderToString()`](#rendertostring)
 - [`renderToStaticMarkup()`](#rendertostaticmarkup)
 
-<<<<<<< HEAD
-এই অতিরিক্ত মেথডগুলো (`stream`) প্যাকেজের উপর নির্ভর করে যা **কেবল সার্ভারে কাজ করে**, ব্রাউজারে এগুলো কাজ করবে না।
-
-- [`renderToNodeStream()`](#rendertonodestream)
-- [`renderToStaticNodeStream()`](#rendertostaticnodestream)
-
-* * *
-
-## রেফারেন্স {#reference}
-=======
 ## Reference {#reference}
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 ### `renderToPipeableStream()` {#rendertopipeablestream}
 
@@ -55,11 +40,6 @@ The following methods can be used in the environments that don't support streams
 ReactDOMServer.renderToPipeableStream(element, options)
 ```
 
-<<<<<<< HEAD
-এটি React element কে তার প্রাথমিক HTML এ রেন্ডার করে। React তখন একটি HTML string রিটার্ন করবে। আপনি এই মেথডটি ব্যবহার করে সার্ভারে HTML তৈরি করতে পারেন এবং দ্রুত পেজ লোড ও SEO এর উদ্দেশ্যে সার্চ ইঞ্জিনকে আপনার পেজটি crawl করার জন্য প্রাথমিক রিকোয়েস্টেই এই মার্কআপটি প্রদান করতে পারেন।
-
-আপনি যদি [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)কে এমন একটি node এ কল করেন, যার ইতিমধ্যে ওই server-rendered মার্কআপটি রয়েছে, React তখন সেটিকে সংরক্ষণ করবে এবং শুধু ইভেন্ট হেন্ডেলারগুলোকে সংযুক্ত করবে, যা আপনাকে খুবই কার্যকর একটি first-load অভিজ্ঞতা দিবে।
-=======
 Render a React element to its initial HTML. Returns a stream with a `pipe(res)` method to pipe the output and `abort()` to abort the request. Fully supports Suspense and streaming of HTML with "delayed" content blocks "popping in" via inline `<script>` tags later. [Read more](https://github.com/reactwg/react-18/discussions/37)
 
 If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
@@ -106,7 +86,6 @@ See the [full list of options](https://github.com/facebook/react/blob/14c2be8dac
 >
 > This is a Node.js-specific API. Environments with [Web Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API), like Deno and modern edge runtimes, should use [`renderToReadableStream`](#rendertoreadablestream) instead.
 >
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 * * *
 
@@ -116,11 +95,6 @@ See the [full list of options](https://github.com/facebook/react/blob/14c2be8dac
 ReactDOMServer.renderToReadableStream(element, options);
 ```
 
-<<<<<<< HEAD
-এটি [`renderToString`](#rendertostring) এর মতই, তবে React তার নিজ প্রয়োজনে যেসব অতিরিক্ত DOM attributes ব্যবহার করে, এটি তা তৈরি করে না, যেমন `data-reactroot`। যদি আপনি Reactকে static পেজ জেনারেটরের মত ব্যবহার করতে চান, তবে এটি খুব উপকারি, কারণ এটি অতিরিক্ত attributes মুছে ফেলে কিছু bytes বাঁচিয়ে দেয়।
-
-আপনি যদি মার্কআপকে interactive করার জন্য ক্লায়েন্টে React ব্যবহার করার পরিকল্পনা করেন, তবে এই মেথডটি ব্যবহার করবেন না। এর পরিবর্তে সার্ভারে [`renderToString`](#rendertostring) এবং ক্লায়েন্টে [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) ব্যবহার করুন।
-=======
 Streams a React element to its initial HTML. Returns a Promise that resolves to a [Readable Stream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream). Fully supports Suspense and streaming of HTML. [Read more](https://github.com/reactwg/react-18/discussions/127)
 
 If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
@@ -169,7 +143,6 @@ See the [full list of options](https://github.com/facebook/react/blob/14c2be8dac
 >
 > This API depends on [Web Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). For Node.js, use [`renderToPipeableStream`](#rendertopipeablestream) instead.
 >
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 * * *
 
@@ -179,21 +152,15 @@ See the [full list of options](https://github.com/facebook/react/blob/14c2be8dac
 ReactDOMServer.renderToNodeStream(element)
 ```
 
-<<<<<<< HEAD
-এটি React element কে তার প্রাথমিক HTML এ রেন্ডার করে। এটি একটি [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) রিটার্ন করে যেটি একটি HTML string আউটপুট দেয়। এই stream থেকে আউটপুট পাওয়া HTMLটি আসলে [`ReactDOMServer.renderToString`](#rendertostring) যা রিটার্ন করে তার অনুরূপ। আপনি এই মেথডটি ব্যবহার করে সার্ভারে HTML তৈরি করতে পারেন এবং দ্রুত পেজ লোড ও SEO এর উদ্দেশ্যে সার্চ ইঞ্জিনকে আপনার পেজটি crawl করার জন্য প্রাথমিক রিকোয়েস্টেই এই মার্কআপটি প্রদান করতে পারেন।
-
-আপনি যদি [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)কে এমন একটি node এ কল করেন, যার ইতিমধ্যে ওই server-rendered মার্কআপটি রয়েছে, React তখন সেটিকে সংরক্ষণ করবে এবং শুধু ইভেন্ট হেন্ডেলারগুলোকে সংযুক্ত করবে, যা আপনাকে খুবই কার্যকর একটি first-load অভিজ্ঞতা দিবে।
-=======
 Render a React element to its initial HTML. Returns a [Node.js Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) that outputs an HTML string. The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToString`](#rendertostring) would return. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
 
 If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
-> বিঃদ্রঃ
+> Note:
 >
-> শুধুমাত্র সার্ভারে ব্যবহারযোগ্য। এই APIটি ব্রাউজারে পাওয়া যাবে না।
+> Server-only. This API is not available in the browser.
 >
-> এই মেথড যেই streamটি রিটার্ন করে সেটি আসলে একটি byte stream যা utf-8 এ এনকোড করা। আপনি যদি ভিন্ন কোন এনকোডের stream চান, তবে [iconv-lite](https://www.npmjs.com/package/iconv-lite) এর মত প্রজেক্ট দেখতে পারেন, যা streamকে ট্রান্সকোডিং টেক্সটের জন্য পরিবর্তন করতে পারে।
+> The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
 
 * * *
 
@@ -203,23 +170,16 @@ If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) 
 ReactDOMServer.renderToStaticNodeStream(element)
 ```
 
-এটি [`renderToNodeStream`](#rendertonodestream) এর মতই, তবে React তার নিজ প্রয়োজনে যেসব অতিরিক্ত DOM attributes ব্যবহার করে, এটি তা তৈরি করে না, যেমন `data-reactroot`। যদি আপনি Reactকে static পেজ জেনারেটরের মত ব্যবহার করতে চান, তবে এটি খুব উপকারি, কারণ এটি অতিরিক্ত attributes মুছে ফেলে কিছু bytes বাঁচিয়ে দেয়।
+Similar to [`renderToNodeStream`](#rendertonodestream), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
 
-এই stream থেকে আউটপুট পাওয়া HTML আসলে [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) যা রিটার্ন করে তার অনুরূপ।
+The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) would return.
 
-<<<<<<< HEAD
-আপনি যদি মার্কআপকে interactive করার জন্য ক্লায়েন্টে React ব্যবহার করার পরিকল্পনা করেন, তবে এই মেথডটি ব্যবহার করবেন না। এর পরিবর্তে সার্ভারে [`renderToNodeStream`](#rendertonodestream) এবং ক্লায়েন্টে [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) ব্যবহার করুন।
-=======
 If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToNodeStream`](#rendertonodestream) on the server and [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on the client.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
-> বিঃদ্রঃ
+> Note:
 >
-> শুধুমাত্র সার্ভারে ব্যবহারযোগ্য। এই APIটি ব্রাউজারে পাওয়া যাবে না।
+> Server-only. This API is not available in the browser.
 >
-<<<<<<< HEAD
-> এই মেথড যেই streamটি রিটার্ন করে সেটি আসলে একটি byte stream যা utf-8 এ এনকোড করা। আপনি যদি ভিন্ন কোন এনকোডের stream চান, তবে [iconv-lite](https://www.npmjs.com/package/iconv-lite) এর মত প্রজেক্ট দেখতে পারেন, যা streamকে ট্রান্সকোডিং টেক্সটের জন্য পরিবর্তন করতে পারে।
-=======
 > The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
 
 * * *
@@ -251,4 +211,3 @@ ReactDOMServer.renderToStaticMarkup(element)
 Similar to [`renderToString`](#rendertostring), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
 
 If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToString`](#rendertostring) on the server and [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on the client.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
