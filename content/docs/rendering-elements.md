@@ -34,11 +34,7 @@ React element গুলো সাধারণ অবজেক্ট, এবং �
 
 শুধু React দ্বারা নির্মিত এপ্লিকেশন গুলোতে সাধারণত একটিমাত্র রুট DOM নোড থাকে। আপনি যদি কোন বিদ্যমান এপ্লিকেশনে React একীভূত করেন, তাহলে আপনি যত গুলা খুশী ভিন্ন রুট DOM নোড রাখতে পারেন।
 
-<<<<<<< HEAD
-একটি React element রুট DOM নোড এ রেন্ডার করতে, উভয়কে [`ReactDOM.render()`](/docs/react-dom.html#render) এ pass করতে হবেঃ
-=======
-To render a React element, first pass the DOM element to [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot), then pass the React element to `root.render()`:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+প্রথমে DOM element কে [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot) এ পাস করুন, এরপর React element টিকে `root.render()` এ পাস করতে হবেঃ
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -50,11 +46,7 @@ To render a React element, first pass the DOM element to [`ReactDOM.createRoot()
 
 React element গুলা [immutable](https://en.wikipedia.org/wiki/Immutable_object)। একবার element বানানো হয়ে গেলে, আপনি এর children অথবা attributes পরিবর্তন করতে পারবেন না। একটি element হল সিনেমার একটি একক ফ্রেমের মতঃ এটি UI এর একটি নির্দিষ্ট সময়কে উপস্থাপিত করে।
 
-<<<<<<< HEAD
-এখন পর্যন্ত আমাদের অর্জিত জ্ঞান দিয়ে, UI আপডেট করার একমাত্র উপায় হল নতুন element তৈরি করা, এবং সেটিকে [`ReactDOM.render()`](/docs/react-dom.html#render) এ pass করা।
-=======
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `root.render()`.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+এখন পর্যন্ত আমাদের অর্জিত জ্ঞান দিয়ে, UI আপডেট করার একমাত্র উপায় হল নতুন element তৈরি করা, এবং সেটিকে [`root.render()`](/docs/react-dom.html#render) এ pass করা।
 
 এই টিক ঘড়ির উদহারণটি বিবেচনা করুনঃ
 
@@ -62,19 +54,11 @@ With our knowledge so far, the only way to update the UI is to create a new elem
 
 **[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
-<<<<<<< HEAD
-এটি  প্রতি সেকেন্ডে [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) কলব্যাক থেকে [`ReactDOM.render()`](/docs/react-dom.html#render) কল করে।
-=======
 It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 >**বিঃদ্রঃ**
 >
-<<<<<<< HEAD
->চর্চার খাতিরে, অধিকাংশ React এপ্লিকেশন শুধু একবার [`ReactDOM.render()`](/docs/react-dom.html#render) কল করে। পরবর্তী বিভাগে আমরা শিখব এই জাতীয় কোড কীভাবে  [stateful কম্পোনেন্ট](/docs/state-and-lifecycle.html) এ encapsulated হয়।
-=======
->In practice, most React apps only call `root.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+>চর্চার খাতিরে, অধিকাংশ React এপ্লিকেশন শুধু একবার [`root.render()`](/docs/react-dom.html#render) কল করে। পরবর্তী বিভাগে আমরা শিখব এই জাতীয় কোড কীভাবে  [stateful কম্পোনেন্ট](/docs/state-and-lifecycle.html) এ encapsulated হয়।
 >
 >আমরা আপনাকে পরামর্শ দিই যে আপনি বিষয়গুলি এড়িয়ে যাবেন না কারণ তারা একে অপরের উপর নির্ভরশীল।
 
@@ -82,11 +66,7 @@ It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`se
 
 React DOM element এবং তার children দের আগেরটির সাথে তুলনা করে, এবং DOM কে কাঙ্ক্ষিত অবস্থায় আনতে শুধু প্রয়োজনীয় DOM আপডেট গুলো প্রয়োগ করে.
 
-<<<<<<< HEAD
-আপনি ব্রাউজার সরঞ্জামগুলির সাথে [সর্বশেষ উদাহরণটি](codepen://rendering-elements/update-rendered-element)  পরীক্ষা করে যাচাই করতে পারেনঃ
-=======
-You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+আপনি ব্রাউজার সরঞ্জামগুলির সাথে [সর্বশেষ উদাহরণটি](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) পরীক্ষা করে যাচাই করতে পারেনঃ
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
