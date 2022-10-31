@@ -33,11 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-<<<<<<< HEAD
-সম্পূর্ণ `listItems` array কে আমরা একটি `<ul>` element এর ভিতরে রাখি এবং [এটিকে DOM এ রেন্ডার করিঃ](/docs/rendering-elements.html#rendering-an-element-into-the-dom) 
-=======
-Then, we can include the entire `listItems` array inside a `<ul>` element:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+এরপর, সম্পূর্ণ `listItems` array কে আমরা একটি `<ul>` element এর ভিতরে রাখিঃ
 
 ```javascript{2}
 <ul>{listItems}</ul>
@@ -123,11 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-<<<<<<< HEAD
-যে ক্ষেত্রে আইটেমের অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্সকে ব্যবহার করার পরামর্শ দেবনা। এটি পারফরমেন্সের উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর সমস্যা হতে পারে। এই বিষয় Robin Pokorny's এর আর্টিকেল [ইনডেক্সকে key হিসাবে ব্যবহারের নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে।
-=======
-We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+যে ক্ষেত্রে আইটেমের অর্ডার পরিবর্তন হতে পারে সে ক্ষেত্রে আমরা ইনডেক্সকে ব্যবহার করার পরামর্শ দেবনা। এটি পারফরমেন্সের উপর নেতিবাচক প্রভাব ফেলতে পারে এবং কম্পোনেন্টের state এর সমস্যা হতে পারে। এই বিষয়ে Robin Pokorny এর আর্টিকেল [ইনডেক্সকে key হিসাবে ব্যবহারের নেতিবাচক প্রভাব নিয়ে বিস্তারিত ব্যাখ্যা](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) দেখুন। আপনি যদি লিস্ট আইটেমকে সুস্পষ্ট কোন key নির্ধারণ করে না দেন তাহলে React ডিফল্ট হিসেবে ইনডেক্সকে keys হিসেবে ব্যবহার করবে।
 
 আপনি যদি বিস্তারিত জানতে চান তাহলে [keys কেন দরকারি এ বিষয়ে গভীর আলোচনাটি](/docs/reconciliation.html#recursing-on-children) দেখতে পারেন।
 
@@ -192,11 +184,7 @@ function NumberList(props) {
 
 ### পারিপার্শ্বিক elements গুলোর মধ্যে Keys কে ইউনিক হতে হবে {#keys-must-only-be-unique-among-siblings}
 
-<<<<<<< HEAD
 Array এর মধ্যে ব্যবহৃত keys তাদের পারিপার্শ্বিক অন্যান্য আইটেমগুলোর মধ্যে ইউনিক হতে হবে কিন্ত গ্লোবাল ভাবে তাদের ইউনিক হওয়া দরকারি নয়। আমরা দুইটি ভিন্ন ভিন্ন array এর ক্ষেত্রে একই keys ব্যবহার করতে পারিঃ
-=======
-Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
