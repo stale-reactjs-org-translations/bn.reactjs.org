@@ -10,11 +10,7 @@ next: handling-events.html
 
 এই পৃষ্ঠায় আমরা React কম্পোনেন্টের state এবং lifecycle এর সাথে পরিচিত হব। আপনি [কম্পোনেন্ট API রেফারেন্স এর বিস্তারিত এখানে](/docs/react-component.html) জানতে পারবেন।
 
-<<<<<<< HEAD
-[আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `ReactDOM.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছি।
-=======
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+[আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `root.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছিঃ
 
 ```js{10}
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -298,11 +294,7 @@ root.render(<Clock />);
 
 আমরা সংক্ষেপে আরেকবার দেখে নেই এখানে কি হচ্ছে এবং মেথডগুলো কোনটার পর কোনটা কল হচ্ছেঃ
 
-<<<<<<< HEAD
 ১) যখন `ReactDOM.render()` এ `<Clock />` পাস করা হয়, React `Clock` কম্পোনেন্টের constructor কে কল করে। যেহেতু `Clock` এর বর্তমান সময় দেখাতে হবে, এটি `this.state` কে একটি অবজেক্ট এর মাধ্যমে ইনিশিয়ালাইজ করে যা বর্তমান সময় ধারণ করে। আমরা পরে এই state টি আপডেট করব।
-=======
-1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 ২) React এরপর `Clock` কম্পোনেন্টের `render()` মেথডকে কল করে। এটির মাধ্যমেই React জানতে পারে স্ক্রিনে কি দেখাতে হবে। React এরপর DOM আপডেট করে যাতে তা `Clock` এর রেন্ডার আউটপুটের মত হয়।
 
