@@ -29,11 +29,7 @@ React এর ক্ষেত্রে কিছুটা ভিন্নঃ
 </button>
 ```
 
-<<<<<<< HEAD
-আরেকটা বড় পার্থক্য হল, React এ আপনি `false` রিটার্ন করে ডিফল্ট আচরণ প্রতিরোধ করতে পারবেন না। আপনার অবশ্যই আলাদাভাবে `preventDefault` কল করতে হবে। উদাহরণস্বরূপ, সাধারণ HTML এ একটি ডিফল্ট লিংককে একটি নতুন পৃষ্ঠা খোলা থেকে বিরত রাখতে আপনি লিখতে পারেনঃ
-=======
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+আরেকটা পার্থক্য হল, React এ আপনি `false` রিটার্ন করে ডিফল্ট আচরণ প্রতিরোধ করতে পারবেন না। আপনার অবশ্যই আলাদাভাবে `preventDefault` কল করতে হবে। উদাহরণস্বরূপ, সাধারণ HTML এ একটি ডিফল্ট লিংককে একটি নতুন পৃষ্ঠা খোলা থেকে বিরত রাখতে আপনি লিখতে পারেনঃ
 
 ```html
 <form onsubmit="console.log('You clicked submit.'); return false">
@@ -96,11 +92,7 @@ JSX কলব্যাকগুলোর মধ্যে `this` এর অর্
 
 এটি React সম্পর্কিত কোন বিষয় নয়; [জাভাস্ক্রিপ্টে ফাংশন এভাবেই কাজ করে](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)। সাধারণত আপনি যখন কোন ফাংশনের শেষে `()` ছাড়া উল্লেখ করবেন, যেমন `onClick={this.handleClick}`, তখন আপনার ঐ মেথডটি bind করা উচিত।
 
-<<<<<<< HEAD
-যদি `bind` কল করা আপনার জন্য বিরক্তিকর হয়, তাহলে দুই উপায়ে আপনি এটি এড়িয়ে যেতে পারেন। আপনি যদি পরীক্ষামূলক [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/) ব্যবহার করেন, তাহলে আপনি class fields ব্যবহারের মাধ্যমে সঠিকভাবে কলব্যাকগুলোকে bind করতে পারবেনঃ
-=======
-If calling `bind` annoys you, there are two ways you can get around this. You can use [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) to correctly bind callbacks:
->>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
+যদি `bind` কল করা আপনার জন্য বিরক্তিকর হয়, তাহলে দুই উপায়ে আপনি এটি এড়িয়ে যেতে পারেন। আপনি [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) ব্যবহার করে সঠিকভাবে কলব্যাকগুলোকে bind করতে পারবেনঃ
 
 ```js{2-6}
 class LoggingButton extends React.Component {
