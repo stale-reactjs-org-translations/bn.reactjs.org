@@ -1,22 +1,22 @@
 - title: Community Resources
   items:
     - id: support
-      title: Support
+      title: সহায়তা
     - id: team
-      title: Team
+      title: দল
     - id: courses
-      title: Courses
+      title: কোর্স সমূহ
     - id: examples
-      title: Examples
+      title: উদাহরণ সমূহ
     - id: meetups
-      title: Meetups
+      title: মিটআপ সমূহ
     - id: conferences
-      title: Conferences
+      title: কনফারেন্স সমূহ
     - id: articles
-      title: Articles
+      title: আর্টিকেল সমূহ
     - id: podcasts
-      title: Podcasts
+      title: পডকাস্ট সমূহ
     - id: videos
-      title: Videos
+      title: ভিডিও সমূহ
     - id: external-resources
-      title: External Resources
+      title: বাহ্যিক রিসোর্স সমূহ
