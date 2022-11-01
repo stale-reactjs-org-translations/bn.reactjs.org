@@ -20,8 +20,10 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 > বিঃদ্রঃ
 >
 > আমরা [React Testing Library](https://testing-library.com/react) ব্যবহার করার পরামর্শ দেই যেটা এমনভাবে ডিজাইন করা হয়েছে যাতে আপনি আপনার কম্পোনেন্টগুলোকে এদের ব্যবহারকারীদের মত টেস্ট করতে পারবেন।
->
-> অন্যথায়, Airbnb [Enzyme](https://airbnb.io/enzyme/) নামের একটি টেস্টিং ইউটিলিটি প্রকাশ করেছে, যেটা আপনার React কম্পোনেন্টের আউটপুট assert, manipulate এবং traverse করার কাজগুলো সহজ করে দেয়।
+> 
+> React ভার্সন <= 16, the [Enzyme](https://airbnb.io/enzyme/) লাইব্রেরি আপনার React কম্পোনেন্টের আউটপুট assert, manipulate এবং traverse করার কাজগুলো সহজ করে দেয়।
+
+
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -87,7 +89,7 @@ class Counter extends React.Component {
 
 ```js{3,20-22,29-31}
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import Counter from './Counter';
 
@@ -106,7 +108,7 @@ afterEach(() => {
 it('can render and update a counter', () => {
   // Test first render and componentDidMount
   act(() => {
-    ReactDOM.render(<Counter />, container);
+    ReactDOM.createRoot(container).render(<Counter />);
   });
   const button = container.querySelector('button');
   const label = container.querySelector('p');
@@ -141,8 +143,7 @@ mockComponent(
 
 > বিঃদ্রঃ
 >
-> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
-
+> `mockComponent()` হল একটি legacy এপিআই। আমরা এর পরিবর্তে [`jest.mock()`](https://jestjs.io/docs/tutorial-react-native#mock-native-modules-using-jestmock) ব্যবহার করার পরামর্শ দিয়ে থাকি।
 
 * * *
 
@@ -303,7 +304,7 @@ renderIntoDocument(element)
 
 ```js
 const domContainer = document.createElement('div');
-ReactDOM.render(element, domContainer);
+ReactDOM.createRoot(domContainer).render(element);
 ```
 
 > বিঃদ্রঃ

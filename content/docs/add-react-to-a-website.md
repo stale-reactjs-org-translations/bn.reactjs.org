@@ -25,7 +25,7 @@ React এমন ভাবে ডিজাইন করা হয়েছে যা
 
 এক্ষেত্রে কোন জটিল টুলস ইন্সটল করার ঝামেলা নেই -- **এই অনুচ্ছেদটি সম্পূর্ণ করতে প্রয়োজন শুধুমাত্র একটি ইন্টারনেট কানেকশন এবং আপনার মূল্যবান এক মিনিট সময়।**
 
-অপশনালঃ [সম্পূর্ণ উদাহারনটি ডাউনলোড করুন (২KB জিপ ফাইল)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+অপশনালঃ [সম্পূর্ণ উদাহারনটি ডাউনলোড করুন (২KB জিপ ফাইল)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
 
 ### ধাপ-১: HTML এ একটি DOM কন্টেইনার সংযুক্ত করুন {#step-1-add-a-dom-container-to-the-html}
 
@@ -54,8 +54,8 @@ React এমন ভাবে ডিজাইন করা হয়েছে যা
 
   <!-- Load React. -->
   <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Load our React component. -->
   <script src="like_button.js"></script>
@@ -75,16 +75,17 @@ React এমন ভাবে ডিজাইন করা হয়েছে যা
 >
 >এই কোডটিতে একটি `LikeButton` তৈরি করা আছে। আপনি যদি এই মুহূর্তে কোডটি বুঝতে না পারেন, তবে ভয় পাওয়ার কোন কারণ নেই। আমরা React এর কম্পোনেন্ট কিভাবে তৈরি করা হয় তা [হাতে কলমে টিউটোরিয়াল সিরিজে](/tutorial/tutorial.html) এবং [মেইন কনসেপ্ট গাইডে](/docs/hello-world.html) শিখাবো। এই মুহূর্তে চলুন দেখে আসি স্ক্রিনে কেমন দেখায়।
 
-এখন **[এই স্টার্টার কোড](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** এর সাথে `like_button.js` ফাইলের শেষে নিচের দুই লাইন কোড সংযুক্ত করুনঃ
+এখন **[এই স্টার্টার কোড](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** এর সাথে `like_button.js` ফাইলের শেষে নিচের তিন লাইন কোড সংযুক্ত করুনঃ
 
-```js{3,4}
+```js{3,4,5}
 // ... the starter code you pasted ...
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
-এই দুই লাইন কোড HTML পেজের কাঙ্ক্ষিত `<div>` ট্যাগটি খুঁজে বের করবে এবং সেখানে আমাদের "Like" বাটনের জন্য তৈরি React কম্পোনেন্টটি দেখাবে।
+এই তিন লাইন কোড HTML পেজের কাঙ্ক্ষিত `<div>` ট্যাগটি খুঁজে বের করবে, একটি React এপ তৈরি করবে এবং সেখানে আমাদের "Like" বাটনের জন্য তৈরি React কম্পোনেন্টটি দেখাবে।
 
 ### কাজ শেষ! {#thats-it}
 
@@ -94,7 +95,7 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 **[উদাহরণের সম্পূর্ণ সোর্স কোডটি দেখুন এখানে](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[উদাহরণের সম্পূর্ণ কোডটি ডাউনলোড করুন এখান থেকে (২KB জিপড)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[উদাহরণের সম্পূর্ণ কোডটি ডাউনলোড করুন এখান থেকে (২KB জিপড)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
 
 ### পরামর্শ: একটি কম্পোনেন্টকে একাধিকবার ব্যবহার করুন {#tip-reuse-a-component}
 
@@ -102,7 +103,7 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 [উদাহরণের সম্পূর্ণ সোর্স কোডটি দেখুন এখানে](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[উদাহরণের সম্পূর্ণ কোডটি ডাউনলোড করুন এখান থেকে (২KB জিপড)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[উদাহরণের সম্পূর্ণ কোডটি ডাউনলোড করুন এখান থেকে (২KB জিপড)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
 
 >নোট
 >
@@ -115,15 +116,15 @@ ReactDOM.render(e(LikeButton), domContainer);
 আপনি যদি ইতিমধ্যে অ্যাপ্লিকেশন স্ক্রিপ্ট সমূহ মিনিফাই করে থাকেন **তাহলে আপনার সাইট এখন প্রোডাকশনের জন্য প্রস্তুত**। আপনি যদি নির্দিষ্ট করতে চান যে আপনার প্রোডাকশন HTML পেজ React লোড করবে `production.min.js` এই স্ক্রিপ্ট, তাহলে নিচের মত স্ক্রিপ্ট অ্যাড করুন।
 
 ```js
-<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 আপনার যদি স্ক্রিপ্ট সমুহকে মিনিফাই করার বাবস্থা না থাকে তবে [এই পথ অনুসরন করতে পারেন](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)।
 
 ## অপশনাল: React এ JSX ব্যবহার করে দেখুন {#optional-try-react-with-jsx}
 
-উপরের উদাহরণ সমুহে আমরা শুধুমাত্র ব্রাউজারে আগে থেকেই সাপোর্ট করে এমন কোড নিয়ে কথা বলেছি। এই জন্য আমরা জাভাস্ক্রিপ্ট ফাংশন ব্যবহার করেছি React কে কাজ করানোর জন্য।
+উপরের উদাহরণ সমুহে আমরা শুধুমাত্র ব্রাউজারে আগে থেকেই সাপোর্ট করে এমন কোড নিয়ে কথা বলেছি। এই জন্য আমরা জাভাস্ক্রিপ্ট ফাংশন ব্যবহার করেছি React কে জানানোর জন্য কি দেখাতে হবেঃ
 
 ```js
 const e = React.createElement;
@@ -149,7 +150,7 @@ return (
 
 উপরের কোড দুইটি একে অপরের সমতুল্য। এখানে **JSX একটি [সম্পূর্ণ অপশনাল ফিচার](/docs/react-without-jsx.html)**, অনেকেই UI কোড লেখার জন্য JSX কে সহায়ক মনে করেন -- React এবং অন্যান্য লাইব্রেরির ক্ষেত্রেও।
 
-আপনি [এই অনলাইন কনভার্টারটির মাধ্যমে](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) JSX চেষ্টা করে দেখতে পারেন।
+আপনি [এই অনলাইন কনভার্টারটির মাধ্যমে](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7) JSX চেষ্টা করে দেখতে পারেন।
 
 ### দ্রুত JSX চেষ্টা করে দেখুন {#quickly-try-jsx}
 
@@ -159,7 +160,7 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-এখন আপনি আপনার যেকোনো `<script>` ট্যাগে `type="text/babel"` অ্যাট্রিবিউটটি সংযুক্ত করে খুব সহজেই JSX লিখতে পারবেন। [এখানে একটি উদাহরণের কোড দেয়া আছে](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html)।
+এখন আপনি আপনার যেকোনো `<script>` ট্যাগে `type="text/babel"` অ্যাট্রিবিউটটি সংযুক্ত করে খুব সহজেই JSX লিখতে পারবেন। [এখানে একটি উদাহরণের কোড দেয়া আছে](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html)।
 
 এই উপায়টি শিখার জন্য এবং সহজ ডেমো তৈরির জন্য উত্তম। তবে, এই পদ্ধতি আপনার ওয়েবসাইটকে ধীরগতির করে দিবে **এটি প্রোডাকশনের জন্য মোটেও উপযুক্ত নয়।** আপনি যখন আরও গভীরে যেতে প্রস্তুত তখন শেষের `<script>` ট্যাগটি সরিয়ে ফেলুন যার অ্যাট্রিবিউট হিসেবে `type="text/babel"` ব্যবহার করেছিলেন। নিচের অনুচ্ছেদে আমরা দেখবো কিভাবে JSX প্রিপ্রসেসর ব্যবহার করে সকল `<script>` ট্যাগ সমুহকে একসাথে স্বয়ংক্রিয় ভাবে কনভার্ট করতে পারি।
 
@@ -183,7 +184,7 @@ return (
 
 একটি ফোল্ডার তৈরি করুন `src` নামে এবং নিচের কমান্ড গুলো টার্মিনালে রান করুনঃ
 
-```
+```console
 npx babel --watch src --out-dir . --presets react-app/prod
 ```
 

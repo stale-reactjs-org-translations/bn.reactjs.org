@@ -6,26 +6,13 @@ category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
-React 16 [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) এবং [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) এর মত কালেকশন টাইপের উপর নির্ভর করে। আপনি যদি পুরনো ব্রাউজারগুলো বা ডিভাইসগুলো সাপোর্ট করেন যা হয়ত এই টাইপগুলো সাপোর্ট করেনা (যেমনঃ IE < 11) অথবা যা এই টাইপগুলো সাধারণের চেয়ে ভিন্নভাবে ইমপ্লিমেন্ট করে (যেমনঃ IE 11), সেক্ষেত্রে আপনার bundled অ্যাপ্লিকেশনের সাথে [core-js](https://github.com/zloirock/core-js) এর মত একটি গ্লোবাল পলিফিল সংযুক্ত করতে পারেন।
+React 18 সব মডার্ন ব্রাউজার সাপোর্ট করে(Edge, Firefox, Chrome, Safari, ইত্যাদি)।
 
-পুরনো ব্রাউজারগুলো সাপোর্ট করার জন্য React 16 এ core-js এর মাধ্যমে পলিফিলকৃত একটি ইনভায়রনমেন্ট এমন হতে পারেঃ 
+যদি আপনি পুরনো ব্রাউজার বা ডিভাইস যেমন ইন্টারনেট এক্সপ্লোরার সাপোর্ট করে থাকেন যাতে মডার্ন ব্রাউজার ফিচারগুলো নেটিভলি নেই বা non-compliant ইমপ্লিমেন্টেশন ব্যবহার করে, সেক্ষেত্রে আপনি একটি গ্লোবাল পলিফিল ব্যবহার করার কথা চিন্তা করে দেখতে পারেন। 
 
-```js
-import 'core-js/es/map';
-import 'core-js/es/set';
+React 18 এ নিচের মডার্ন ফিচারগুলো ব্যবহৃত হয়ঃ
+- [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
-```
-
-React এছাড়াও `requestAnimationFrame` এর উপর নির্ভর করে (এমনকি test ইনভায়রনমেন্টেও).
-আপনি [raf](https://www.npmjs.com/package/raf) package টি ব্যবহার করে `requestAnimationFrame` shim করতে পারেনঃ
-
-```js
-import 'raf/polyfill';
-```
+এই ফিচারগুলোর সঠিক পলিফিল আপনার environment এর উপর নির্ভর করে। অধিকাংশ ব্যবহারকারীর ক্ষেত্রে, আপনি আপনার [Browserlist](https://github.com/browserslist/browserslist) সেটিংস কনফিগার করে নিতে পারেন। অন্যদের ক্ষেত্রে আপনার [`core-js`](https://github.com/zloirock/core-js) এর মত পলিফিল সরাসরি ইম্পোর্ট করতে হতে পারে।

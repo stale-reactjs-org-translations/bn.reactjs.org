@@ -8,16 +8,14 @@ next: introducing-jsx.html
 
 সবচেয়ে ছোট React এর উদাহরণ এরকম দেখাবেঃ
 
-```js
-ReactDOM.render(
-  <h1>হ্যালো, বিশ্ব!</h1>,
-  document.getElementById('root')
-);
+```jsx
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>হ্যালো, বিশ্ব!</h1>);
 ```
 
 এটি এই পৃষ্ঠার শিরোনামে "হ্যালো, বিশ্ব!" দেখাবে।
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 অনলাইন এডিটরে দেখতে উপরের লিঙ্কটিতে যান। আপনার ইচ্ছামত কোডটি পরিবর্তন করুন, এবং দেখুন আউটপুট কিভাবে পরিবর্তিত হয়। এই গাইডের সব পৃষ্ঠাগুলিতে এইরকম সম্পাদনাযোগ্য উদাহরণ থাকবে।
 
