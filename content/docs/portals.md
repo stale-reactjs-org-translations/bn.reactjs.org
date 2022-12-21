@@ -46,7 +46,7 @@ render() {
 >
 > যখন পোর্টাল নিয়ে কাজ করবেন, মনে রাখবেন [কিবোর্ড ফোকাস ম্যানেজ](/docs/accessibility.html#programmatically-managing-focus) করা খুব গুরুত্বপূর্ণ।
 >
-> modal dialogs এর জন্য, আপনাকে নিশ্চিত করতে হবে প্রত্যেকে যেন  [WAI-ARIA Modal Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) অনুসরণ করে তাদের সাথে ইন্টারেক্ট করতে পারে।
+> modal dialogs এর জন্য, আপনাকে নিশ্চিত করতে হবে প্রত্যেকে যেন  [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/) অনুসরণ করে তাদের সাথে ইন্টারেক্ট করতে পারে।
 
 [**CodePen এ চালিয়ে দেখুন**](https://codepen.io/gaearon/pen/yzMaBd)
 
