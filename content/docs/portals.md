@@ -4,7 +4,19 @@ title: পোর্টাল
 permalink: docs/portals.html
 ---
 
+<<<<<<< HEAD
 পোর্টাল, একটি  DOM নোডে ফার্স্ট-ক্লাস উপায়ে children রেন্ডার করে থাকে যেটি আসলে parent কম্পোনেন্টের DOM hierarchy এর বাহিরে অবস্থান করে।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`createPortal`](https://beta.reactjs.org/reference/react-dom/createPortal)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 ```js
 ReactDOM.createPortal(child, container)

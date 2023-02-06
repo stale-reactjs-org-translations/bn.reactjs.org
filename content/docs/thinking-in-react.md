@@ -8,7 +8,17 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
+<<<<<<< HEAD
 আমাদের মতে, বড় এবং দ্রুত ওয়েব অ্যাপ তৈরির সবথেকে ভালো উপায় হচ্ছে React। আমাদের ফেইসবুক এবং ইনস্টাগ্রামে এটি খুব ভালো স্কেল হয়েছে।
+=======
+> Try the new React documentation.
+> 
+> The updated [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react) guide teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 React এর অন্যতম চমৎকার দিক হচ্ছে, এটা দিয়ে অ্যাপ তৈরির সময় যেভাবে চিন্তা করতে হয়। এই লেখাটিতে, React এ একটি সার্চযোগ্য প্রোডাক্ট টেবিল তৈরি করে, এই চিন্তা করার বিষয়টি তুলে ধরবো।
 
