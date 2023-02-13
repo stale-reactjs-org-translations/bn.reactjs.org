@@ -12,7 +12,17 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
+<<<<<<< HEAD
 এই টিউটোরিয়ালটির জন্য React সম্পর্কে পূর্ব ধারণা থাকার প্রয়োজন নেই।
+=======
+> Try the new React documentation.
+> 
+> The updated [Tutorial](https://beta.reactjs.org/learn/tutorial-tic-tac-toe) teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This tutorial doesn't assume any existing React knowledge.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 ## টিউটোরিয়াল শুরু করার আগে  {#before-we-start-the-tutorial}
 

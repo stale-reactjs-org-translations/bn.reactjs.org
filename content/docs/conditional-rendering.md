@@ -8,7 +8,20 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
+<<<<<<< HEAD
 React এ আপনি একটি স্বতন্ত্র কম্পোনেন্ট তৈরি করতে পারেন যা আপনার প্রয়োজনীয় চাহিদাগুলোকে পৃথক করে রাখবে। তারপরে, আপনার অ্যাপ্লিকেশনের স্টেটের উপর নির্ভর করে তাদের মধ্যে কয়েকটি রেন্ডার করতে পারেন।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Conditional Rendering](https://beta.reactjs.org/learn/conditional-rendering)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 React এ কন্ডিশানাল রেন্ডারিং, জাভাস্ক্রিপ্টে কন্ডিশান যেভাবে কাজ করে ঠিক সেভাবেই কাজ করে। [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) অথবা [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) এর মত জাভাস্ক্রিপ্টের অপারেটরগুলি ব্যবহার করে বর্তমান স্টেটের elements তৈরি করুন, এবং React কে তাদের সাথে মিলিয়ে UI আপডেট করতে দিন।
 

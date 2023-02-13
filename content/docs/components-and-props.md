@@ -16,7 +16,20 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+<<<<<<< HEAD
 কম্পোনেন্ট আপনার UIকে স্বতন্ত্র, পুনরায় ব্যবহারযোগ্য অংশে ভাগ করে, যাতে করে আপনি প্রতিটি অংশ নিয়ে পৃথকভাবে চিন্তা করতে পারেন। এই পেইজটি কম্পোনেন্টের ধারণা নিয়ে একটি ভূমিকা দেয়। আপনি [ডিটেইল্ড কম্পোনেন্ট API রেফারেন্স এখানে](/docs/react-component.html) খুঁজে পাবেন।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 মোটামুটিভাবে, কম্পোনেন্ট অনেকটা জাভাস্ক্রিপ্ট ফাংশনের মত। তারা আরবিটারি ইনপুট গ্রহণ করে (যাকে "props" বলা হয়) React elements রিটার্ন করে যা স্ক্রিনে কি দেখানো হবে তা বর্ণনা করে।
 

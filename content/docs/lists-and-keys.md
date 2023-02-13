@@ -6,7 +6,20 @@ prev: conditional-rendering.html
 next: forms.html
 ---
 
+<<<<<<< HEAD
 চলুন প্রথমে আমরা পর্যালোচনা করি কিভাবে আপনি জাভাস্ক্রিপ্টে লিস্ট রুপান্তর করবেন।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Rendering Lists](https://beta.reactjs.org/learn/rendering-lists)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+First, let's review how you transform lists in JavaScript.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 নিচে প্রদত্ত কোড অনুযায়ী আমরা [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ফাংশনটি ব্যবহার করে একটি `numbers` array নিয়ে তার মানকে দিগুণ করে দেই। `map()` ফাংশনটি দ্বারা প্রাপ্ত মানকে আমরা `doubled` ভ্যারিয়েবল নামে সংজ্ঞায়িত করে একে কনসোলে লগ করিঃ
 
