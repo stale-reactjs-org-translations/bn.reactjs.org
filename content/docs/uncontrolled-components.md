@@ -4,7 +4,21 @@ title: Uncontrolled Components
 permalink: docs/uncontrolled-components.html
 ---
 
+<<<<<<< HEAD
 বেশিরভাগ ক্ষেত্রেই, ফর্ম প্রস্তুতের জন্য আমরা [controlled components] ব্যবহার করার পরামর্শ দিয়ে থাকি (/docs/forms.html#controlled-components)। একটা কন্ট্রোল্ড কম্পোনেন্টে, ফর্ম ডাটা হ্যান্ডেল করা হয় React কম্পোনেন্টের মাধ্যমে। এর বিকল্প হচ্ছে আনকন্ট্রোল্ড কম্পোনেন্ট, যেখানে DOM নিজে ফর্ম ডাটা হ্যান্ডেল করে।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+In most cases, we recommend using [controlled components](/docs/forms.html#controlled-components) to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 একটি আনকন্ট্রোল্ড কম্পোনেন্ট লিখতে, প্রতি state আপডেটে ইভেন্ট হ্যান্ডেলার লেখার পরিবর্তে আপনি [ref](/docs/refs-and-the-dom.html) ব্যবহার করতে পারেন DOM থেকে ভ্যালু পাওয়ার জন্য।
 

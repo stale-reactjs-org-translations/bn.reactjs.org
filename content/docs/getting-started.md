@@ -18,7 +18,17 @@ redirect_from:
   - "docs/environments.html"
 ---
 
+<<<<<<< HEAD
 এই পৃষ্ঠাটিতে React এর ডকুমেন্টেশন ও এই সম্পর্কিত বিভিন্ন রিসোর্স এর সারমর্ম দেয়া আছে।
+=======
+> Try the new React documentation.
+> 
+> The new [Quick Start](https://beta.reactjs.org/learn) teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This page is an overview of the React documentation and related resources.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 **React** একটি জাভাস্ক্রিপ্ট লাইব্রেরী, যা দ্বারা ইউজার ইন্টারফেস বানানো যায়। React কি তা শিখতে আমাদের [হোমপেজ](/) অথবা আমাদের [টিউটোরিয়াল পৃষ্ঠাটি](/tutorial/tutorial.html) দেখুন।
 
