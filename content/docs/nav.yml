@@ -1,89 +1,89 @@
-- title: Installation
+- title: ইনস্টলেশন
   items:
     - id: getting-started
-      title: Getting Started
+      title: আসুন শুরু করি
     - id: add-react-to-a-website
-      title: Add React to a Website
+      title: একটি ওয়েবসাইটে React সংযুক্ত করুন
     - id: create-a-new-react-app
-      title: Create a New React App
+      title: নতুন একটি React অ্যাপ তৈরী করুন
     - id: cdn-links
-      title: CDN Links
+      title: CDN লিংকসমূহ
     - id: release-channels
-      title: Release Channels
-- title: Main Concepts
+      title: রিলিজ চ্যানেলসমূহ
+- title: প্রধান ধারণাগুলো
   isOrdered: true
   items:
     - id: hello-world
-      title: Hello World
+      title: হ্যালো বিশ্ব
     - id: introducing-jsx
-      title: Introducing JSX
+      title: JSX পরিচিতি
     - id: rendering-elements
-      title: Rendering Elements
+      title: রেন্ডারিং Elements
     - id: components-and-props
-      title: Components and Props
+      title: কম্পোনেন্ট এবং Props
     - id: state-and-lifecycle
-      title: State and Lifecycle
+      title: State এবং Lifecycle
     - id: handling-events
-      title: Handling Events
+      title: ইভেন্ট হ্যান্ডেলিং
     - id: conditional-rendering
-      title: Conditional Rendering
+      title: শর্তসাপেক্ষে রেন্ডারিং
     - id: lists-and-keys
-      title: Lists and Keys
+      title: লিস্ট এবং কি সমূহ
     - id: forms
-      title: Forms
+      title: ফর্ম সমূহ
     - id: lifting-state-up
-      title: Lifting State Up
+      title: State উপরে তোলা
     - id: composition-vs-inheritance
-      title: Composition vs Inheritance
+      title: কম্পোজিশন বনাম ইনহ্যারিটেন্স
     - id: thinking-in-react
-      title: Thinking In React
+      title: React এ চিন্তা করা
 - title: Advanced Guides
   items:
     - id: accessibility
-      title: Accessibility
+      title: এক্সেসিবিলিটি
     - id: code-splitting
-      title: Code-Splitting
+      title: কোড-বিভাজন
     - id: context
       title: Context
     - id: error-boundaries
       title: Error Boundaries
     - id: forwarding-refs
-      title: Forwarding Refs
+      title: ফরোয়ার্ডিং Refs
     - id: fragments
       title: Fragments
     - id: higher-order-components
-      title: Higher-Order Components
+      title: হায়্যার-অর্ডার কম্পোনেন্টস
     - id: integrating-with-other-libraries
-      title: Integrating with Other Libraries
+      title: অন্যান্য লাইব্রেরির সাথে ব্যবহার
     - id: jsx-in-depth
-      title: JSX In Depth
+      title: JSX এর গভীরে
     - id: optimizing-performance
-      title: Optimizing Performance
+      title: কার্যক্ষমতা অপ্টিমাইজ করা
     - id: portals
       title: Portals
     - id: profiler
-      title: Profiler
+      title: প্রোফাইলার
     - id: react-without-es6
-      title: React Without ES6
+      title: ES6 ছাড়া React
     - id: react-without-jsx
-      title: React Without JSX
+      title: JSX ছাড়া React
     - id: reconciliation
-      title: Reconciliation
+      title: সমন্বয়সাধন
     - id: refs-and-the-dom
-      title: Refs and the DOM
+      title: Refs এবং DOM
     - id: render-props
-      title: Render Props
+      title: রেন্ডার Props
     - id: static-type-checking
-      title: Static Type Checking
+      title: স্ট্যাটিক টাইপ চেকিং
     - id: strict-mode
-      title: Strict Mode
+      title: স্ট্রিক্ট মোড
     - id: typechecking-with-proptypes
-      title: Typechecking With PropTypes
+      title: PropTypes এর মাধ্যমে টাইপচেকিং
     - id: uncontrolled-components
       title: Uncontrolled Components
     - id: web-components
       title: Web Components
-- title: API Reference
+- title: API রেফারেন্স
   items:
     - id: react-api
       title: React
@@ -101,65 +101,65 @@
     - id: events
       title: SyntheticEvent
     - id: test-utils
-      title: Test Utilities
+      title: টেস্ট ইউটিলিটিস
     - id: test-renderer
-      title: Test Renderer
+      title: টেস্ট Renderer
     - id: javascript-environment-requirements
-      title: JS Environment Requirements
+      title: JS Environment এর প্রয়োজনীয় বিষয়
     - id: glossary
-      title: Glossary
+      title: শব্দকোষ
 - title: Hooks
   isOrdered: true
   items:
     - id: hooks-intro
-      title: Introducing Hooks
+      title: Hooks এর ভূমিকা
     - id: hooks-overview
-      title: Hooks at a Glance
+      title: এক নজরে Hooks
     - id: hooks-state
-      title: Using the State Hook
+      title: State Hook এর ব্যবহার
     - id: hooks-effect
-      title: Using the Effect Hook
+      title: Effect Hook এর ব্যবহার
     - id: hooks-rules
-      title: Rules of Hooks
+      title: Hooks ব্যবহারের নিয়মাবলী
     - id: hooks-custom
-      title: Building Your Own Hooks
+      title: নিজস্ব Hooks তৈরি করুন
     - id: hooks-reference
-      title: Hooks API Reference
+      title: Hooks API রেফারেন্স
     - id: hooks-faq
       title: Hooks FAQ
-- title: Testing
+- title: টেস্টিং
   items:
     - id: testing
-      title: Testing Overview
+      title: টেস্টিং এর সংক্ষিপ্ত বিবরণ
     - id: testing-recipes
-      title: Testing Recipes
+      title: টেস্টিং রেসিপি
     - id: testing-environments
-      title: Testing Environments
-- title: Contributing
+      title: টেস্টিং Environments
+- title: কান্ট্রিবিউটিং
   items:
     - id: how-to-contribute
-      title: How to Contribute
+      title: কিভাবে কান্ট্রিবিউট করবেন
     - id: codebase-overview
-      title: Codebase Overview
+      title: কোডবেস ওভারভিউ
     - id: implementation-notes
-      title: Implementation Notes
+      title: বাস্তবায়ন নোট
     - id: design-principles
-      title: Design Principles
+      title: ডিজাইনের মূলনীতি
 - title: FAQ
   items:
     - id: faq-ajax
-      title: AJAX and APIs
+      title: AJAX এবং APIs
     - id: faq-build
-      title: Babel, JSX, and Build Steps
+      title: Babel, JSX, এবং Build Steps
     - id: faq-functions
-      title: Passing Functions to Components
+      title: কম্পোনেন্টে ফাংশন পাস করা
     - id: faq-state
-      title: Component State
+      title: কম্পোনেন্ট স্টেট
     - id: faq-styling
-      title: Styling and CSS
+      title: স্টাইলিং এবং CSS
     - id: faq-structure
-      title: File Structure
+      title: ফাইল স্ট্রাকচার
     - id: faq-versioning
-      title: Versioning Policy
+      title: ভার্শনিং পলিসি
     - id: faq-internals
-      title: Virtual DOM and Internals
+      title: ভার্চুয়াল DOM এবং এর অভ্যন্তরীণ
