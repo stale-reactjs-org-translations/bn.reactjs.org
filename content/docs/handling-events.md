@@ -8,7 +8,20 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React element এর মাধ্যমে ইভেন্ট হ্যান্ডেল করা অনেকটা DOM element এর মাধ্যমে ইভেন্ট হ্যান্ডেল করার মতই। এই দুই পদ্ধতির মধ্যে কিছু গঠনগত পার্থক্য আছেঃ
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Responding to Events](https://beta.reactjs.org/learn/responding-to-events)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 * React এর ইভেন্টগুলো lowercase এর পরিবর্তে camelCase এর মাধ্যমে নামকরণ করা হয়।
 * আপনি ইভেন্ট হ্যান্ডলার হিসেবে string এর পরিবর্তে JSX এর মাধ্যমে একটি ফাংশন পাস করেন।
