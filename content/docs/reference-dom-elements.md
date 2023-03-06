@@ -14,7 +14,24 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
+<<<<<<< HEAD
 React পারফরমেন্স এবং ক্রস-ব্রাউজারের উপযোগিতা চিন্তা করে একটি ব্রাউজার-নিরপেক্ষ DOM সিস্টেম তৈরি করে। আমরা এই সুবিধাকে কাজে লাগিয়ে ব্রাউজারে DOM তৈরির সময় কিছু অপ্রয়োজনীয় কাজ মুছে ফেলতে পারি।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Common components (e.g. `<div>`)](https://beta.reactjs.org/reference/react-dom/components/common)
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<option>`](https://beta.reactjs.org/reference/react-dom/components/option)
+> - [`<progress>`](https://beta.reactjs.org/reference/react-dom/components/progress)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 React এ, সব DOM properties এবং attributes গুলো (ইভেন্ট হ্যান্ডেলারসহ) camelCase হওয়া উচিত। উদাহরণস্বরূপ, HTML `tabindex` attributeটি React এর `tabIndex` এর অনুরূপ। ব্যতিক্রম কেবল `aria-*` এবং `data-*` attributeগুলো, যেগুলো lowercase হওয়া উচিত। উদাহরণস্বরূপ, আপনি `aria-label`কে `aria-label` হিসেবেই রাখতে পারেন।
 
