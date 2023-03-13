@@ -8,7 +8,20 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
+<<<<<<< HEAD
 এই পৃষ্ঠায় আমরা React কম্পোনেন্টের state এবং lifecycle এর সাথে পরিচিত হব। আপনি [কম্পোনেন্ট API রেফারেন্স এর বিস্তারিত এখানে](/docs/react-component.html) জানতে পারবেন।
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [State: A Component's Memory](https://beta.reactjs.org/learn/state-a-components-memory)
+> - [Synchronizing with Effects](https://beta.reactjs.org/learn/synchronizing-with-effects)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 [আগের অনুচ্ছেদে আলোচিত](/docs/rendering-elements.html#updating-the-rendered-element) ticking clock এর উদাহরণটির কথাই ধরি। [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom) অনুচ্ছেদে আমরা UI আপডেট করার শুধু একটি উপায় সম্পর্কেই জেনেছি। আমরা `root.render()` মেথড কল করে রেন্ডারকৃত আউটপুট পরিবর্তন করেছিঃ
 
